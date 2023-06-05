@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}НКПиС{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>НКПиС</title>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/591871d84f.js" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        
+        
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{'assets/css/style.css'}}">
+
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src="{{'assets/js/burger.js'}}"></script>
+            <script src="{{'assets/js/For-visually-impaired.js'}}"></script>
+	        <script src="{{'assets/js/nav-menu.js'}}"></script>
+	        <script src="{{'assets/js/slick.min.js'}}"></script>
+	        <script src="{{'assets/js/For-slider-reklama.js'}}"></script>
+            <script src="{{'assets/js/For-slider-news.js'}}"></script>
+            <script src="{{'assets/js/For-slider.js'}}"></script>
+        {% endblock %}
+    </head>
+    <body>
+    <header>
+        {% block header %}
+            <div class="conteiner-for-visually-impaired">
+			
+		</div>
+
+		<div class="header-top-left">
+			<span class="for-slepix-pidorasov">
+				<a class="for-visually-impaired"><img src="{{'assets/img/Group 2.png'}}" alt=""></a>
+				<a href="#contakt"><img src="{{'assets/img/Group 1.png'}}" alt=""></a>
+			</span>
+				<span class="socialnetworks">
+					<a href="вк"><img src="{{'assets/img/uil_vk.png'}}" alt=""></a>
+					<a href="тг"><img src="{{'assets/img/Vector.png'}}" alt=""></a>
+				</span>
+		</div>
+		<div class="main_part_header">
+			<div class="logo">
+			<img  src="{{'assets/img/NKPiS.png'}}" alt="">
+			</div>
+			<div class="main_header">
+			<div class="ministr">
+			<p>Министерство образования Новосибирской области</p>
+			</div>
+			<div class="gos">
+			<p>Государственное автономное профессиональное образовательное</p> 
+			<p>учреждение Новосибирской области “Новосибирский колледж питания и сервиса”</p>
+			</div>
+			<div class="gos-mobile">
+				<p>ГБПОУ НКПиС</p>
+			</div>
+			</div>
+			<div class="div_header_burger">
+				<div class="header__burger">
+					<span></span>
+				</div>
+			<div class="call">
+				<div class="png_call">
+					<img src="{{'assets/img/Group 63.png'}}" alt="" width="52px">
+				</div>
+				<div class="call_me">
+					<p>Позвоните нам:</p>
+					<p>+7 (383) 342-95-26</p>
+				</div>
+			</div>
+			</div>
+		</div>
+	<div class="container-nav-menu">
+ 		<nav class="header__menu">
+ 			<div class="app-header-nav-menu">
+			        <span id="hh1"><img class="img_1" src="{{'assets/img/Group 64.png'}}" alt="">&nbsp;&nbsp;О нас</span>
+			 
+			        <div class="hide" id="nav-menu">
+			        	<ul >
+				        	 <ul>
+				        		<li><a href="">Общая информация</a></li>
+				        		<li><a href="">Педагогический состав</a></li>
+				        		<li><a href="">Контакты подразделений</a></li>
+				        		<li><a href="">Новости</a></li>
+				        	
+				        	
+				        		<span id="hh">Органы управления</span>
+		 						<li class="hide" id="pod-nav-menu">
+		 							<a href="">Управляющий совет</a>
+		 						</li>
+		 					</ul>
+		 					<ul>
+								<li><a href="">Отзывы</a></li>
+								<li><a href="">Наши достижения</a></li>
+								<li><a href="">Платные образовательные услуги</a></li>
+
+
+								<span id="hh">Фото и видео</span>
+									<li class="hide" id="pod-nav-menu">
+										<a href="">Фотогалерея</a>
+									</li>
+							 </ul>
+			        	</ul>
+			        	</div>
+			        
+			        </div>
+			       
+			       <div class="app-header-nav-menu">
+			        <span id="hh1"><img src="{{'assets/img/Group 65.png'}}" alt="">&nbsp;&nbsp;Родителям</span>
+			        <div class="hide" id="nav-menu">
+						<ul>
+				        	 <ul>
+				        		<li><a href="">Вакантные места для приема<br>(перевода) обучающихся</a></li>
+				        		<li><a href="">Вопрос - ответ</a></li>
+				        		<li><a href="">Психологическая поддержка ребенка</a></li>
+				        	
+				        	
+				        		<span id="hh">Медицинское обслуживание</span>
+		 						<li class="hide" id="pod-nav-menu">
+		 							<a href="">Документы</a>
+		 							<a href="">Организация медицинского<br>обслуживания</a>
+		 							<a href="">График проведения медицинских<br>осмотров</a>
+		 							<a href="">Это важно знать</a>
+		 						</li>
+		 					</ul>
+			        	</ul>
+			        </div>
+			    </div>
+
+			    <div class="app-header-nav-menu">
+			        <span id="hh1"><img src="{{'assets/img/Group 66.png'}}" alt="">&nbsp;&nbsp;Учащимся</span>
+			        <div class="hide" id="nav-menu">
+						<ul>
+				        	 <ul>
+				        		<li><a href="">Расписание, учебные периоды, каникулы</a></li>
+				        		<li><a href="">Расписание промежуточной аттестации</a></li>
+				        	
+				        	
+				        		<span id="hh">Государственная итоговая аттестация</span>
+		 						<li class="hide" id="pod-nav-menu">
+		 							<a href="">Демонстрационный экзамен</a>
+		 						</li>
+		 						<li><a href="">Олимпиады, конкурсы и конференции</a></li>
+		 						<span id="hh">Медицинское обслуживание</span>
+		 						<li class="hide" id="pod-nav-menu">
+		 							<a href="">О центре</a>
+		 							<a href="">Новости центра</a>
+		 							<a href="">В помощь выпускнику</a>
+		 							<a href="">Мониторинг трудоустройства</a>
+		 							<a href="">Вакансии и работодатели</a>
+		 							<a href="">Работодателям</a>
+		 						</li>
+		 					</ul>
+			        	</ul>
+			        </div>
+			    </div>
+			    
+			    <div class="app-header-nav-menu">
+			        <span id="hh1"><img src="{{'assets/img/Group 67.png'}}" alt="">&nbsp;&nbsp;Педагогам</span>
+			        <div class="hide" id="nav-menu" >
+						<ul>
+				        	 <ul>
+				        		<li><a href="">Вакансии</a></li>
+				        		<li><a href="">Конкурсы,олимпиады,конференции</a></li>
+				        		<li><a href="">Профсоюзная организация</a></li>
+				        		<li><a href="">Совет ветеранов педагогического труда</a></li>
+		 					</ul>
+			        	</ul>
+			        </div>
+			    </div>
+
+			    <div class="app-header-nav-menu">
+			        <span id="hh1"><img src="{{'assets/img/Group 68.png'}}" alt="">&nbsp;&nbsp;Поступление в колледж</span>
+			        <div class="hide" id="nav-menu">
+						<ul>
+				        	 <ul>
+				        		<li><a href="">Приемная комиссия</a></li>
+				        		<li><a href="">Специальности/профессии</a></li>
+				        		<li><a href="">Вступительные испытания</a></li>
+				        		<li><a href="">Дни открытых дверей</a></li>
+		 					</ul>
+			        	</ul>
+			        </div>
+			    </div>
+		</nav>
+	</div>
+        {% endblock %}
+    </header>
+    <main>
+        {% block main %}
+            <div class="wrapper">
+			<div class="slider">
+				<div class="slider__item">
+					<img src="{{'assets/img/8c23e0df1ff8e769016243a1ff88a5ef.jpeg'}}" alt="">
+				</div>
+				<div class="slider__item">
+					<img  src="{{'assets/img/50434b174cd5e29566d4e060fe19e53a.jpeg'}}" alt="">
+				</div>
+				<div class="slider__item">
+					<img  src="{{'assets/img/Best-67-1440P-Wallpaper-on-HipWallpaper-1440P-Wallpaper-.jpg'}}" alt="">
+				</div>
+				<div class="slider__item">
+					<img  src="{{'assets/img/wp4523592.jpg'}}" alt="">
+				</div>
+			</div>
+	
+            <div class="director-logo">
+                    <img src="{{'assets/img/director-logo.jpg'}}" alt="" class="director">
+                </div>
+            <div class="tab">
+                
+            <input id="tab-one" type="checkbox" name="tabs">
+                <label  for="tab-one">Обращение руководителя</label>
+                    <div class="tab-content">
+                    <div class="tab-content-first">
+                        <p>
+                        Приветствую Вас на официальном сайте Новосибирского колледжа питания и сервиса!
+                        <br>НКПиС сегодня – это консолидированная площадка, где встречаются представители бизнеса и образования, ведутся переговоры с работодателями о проведении совместных практических занятий и стажировок со специалистами предприятий пищевой индустрии, о сотрудничестве со школами и качественной профориентационной работе. 
+                        Обучающимся любого возраста мы помогаем найти перспективные для изучения и занятий направления, профессионалам – программы повышения квалификации, жителям Сибирского региона – программы переподготовки и проведения досуга. 
+                        <br>Выбирайте свою траекторию успеха вместе с НКПиС!
+                        #Учимбытьуспешными!
+                        </p>
+                    </div>
+                        <div class="tab-content-2">
+                            <p class="tab-content-21">Директор</p>
+                            <p class="tab-content-22">Федосеева Дарья Сергеевна</p>
+                        </div>
+                    </div>
+            </div>
+            </div>
+            
+                    <div class="icon">
+                        <p class="icon-fast-dostup">Быстрый доступ</p>
+                    </div>
+                    <div class="podpis">
+                        <p>Узнайте полезную и актуальную информацию о деятельности<br>нашей образовательной организации и проектах<br>новосибирского образования</p>
+                    </div>
+
+                    <div class="all-icon">
+                    <div class="first-str-icon">
+                    <a class="first-icon" href="#">
+                        <div class="button-fast-dostup">
+                                <img src="{{'assets/img/shkola_protiv_bullinga 1.png'}}" alt="">
+                                <br>
+                                <p class="button-fast-dostup-text">Приёмная комиссия<br>(номер телефона)</p>
+                            
+                        </div>
+                    </a>
+                    <a class="first-icon" href="#">
+                        <div class="button-fast-dostup">
+                                <img src="{{'assets/img/professii_i_specialnosti_2 1.png'}}" alt="">
+                                <br>
+                                <p class="button-fast-dostup-text">Специальности и<br>профессии</p>
+                            
+                        </div>
+                    </a>
+                    <a class="first-icon" href="#">
+                        <div class="button-fast-dostup">
+                                <img src="{{'assets/img/meropriyatiya 1.png'}}" alt="">
+                                <br>
+                                <p class="button-fast-dostup-text">Мероприятия для<br>абитуриентов</p>
+                            
+                        </div>
+                    </a>
+                    </div>
+                    <div class="second-str-icon">
+                    <a class="first-icon" href="#">
+                        <div class="button-fast-dostup">
+                                <img src="{{'assets/img/Kontakty 1.png'}}" alt="">
+                                <br>
+                                <p class="button-fast-dostup-text">Получить консультацию<br>приёмной комиссии</p>
+                            
+                        </div>
+                    </a>
+                    <a class="first-icon" href="#">
+                        <div class="button-fast-dostup">
+                                <img src="{{'assets/img/formy_dokumentov 1.png'}}" alt="">
+                                <br>
+                                <p class="button-fast-dostup-text">Заказать справку</p>
+                            
+                        </div>
+                    </a>
+                        </div>
+                    </div>
+                        
+                    <div class="Wrapper">
+                        <div class="news">
+                            <p>Новости</p>
+                        </div>
+                        
+                    <div class="Slider">
+                        <div class="Slider__item">
+                            <a href="">
+                            <div class="background-color">
+                            <img  src="{{'assets/img/i-35-35-1536x1004.jpeg'}}" alt="">
+                            <div  class="podpis_Slider_news">
+                            <p class="date-time" style="">Дата и время</p>
+                            <p class="name-corp" style="">Какая то подпись</p>
+                            </div>
+                            </div>
+                            </a>
+                        </div>
+                        <div  class="Slider__item">
+                            <a href="">
+                            <div class="background-color">
+                            <img  src="{{'assets/img/i-35-35-1536x1004.jpeg'}}" alt="">
+                            <div  class="podpis_Slider_news">
+                            <p class="date-time" style="">Дата и время</p>
+                            <p class="name-corp" style="">Какая то подпись</p>
+                            </div>
+                            </div>
+                            </a>
+                        </div>
+                        <div  class="Slider__item">
+                            <a href="">
+                            <div class="background-color">
+                            <img  src="{{'assets/img/8c23e0df1ff8e769016243a1ff88a5ef.jpeg'}}" alt="">
+                            <div  class="podpis_Slider_news">
+                            <p class="date-time" style="">Дата и время</p>
+                            <p class="name-corp" style="">Какая то подпись</p>
+                            </div>
+                            </div>
+                            </a>
+                        </div>
+                        <div  class="Slider__item">
+                            <a class="image-gradient" href="">
+                            <div class="background-color">
+                            <img  src="{{'assets/img/8c23e0df1ff8e769016243a1ff88a5ef.jpeg'}}" alt="">
+                            <div  class="podpis_Slider_news">
+                            <p class="date-time" style="">Дата и время</p>
+                            <p class="name-corp" style="">Какая то подпись</p>
+                            </div>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="Slider__item">
+                            <a href="">
+                            <div class="background-color">
+                            <img  src="{{'assets/img/50434b174cd5e29566d4e060fe19e53a.jpeg'}}" alt="">
+                            <div  class="podpis_Slider_news">
+                            <p class="date-time" style="">Дата и время</p>
+                            <p class="name-corp" style="">Какая то подпись</p>
+                            </div>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="Slider__item">
+                            <a href="">
+                            <div class="background-color">
+                            <img   src="{{'assets/img/Best-67-1440P-Wallpaper-on-HipWallpaper-1440P-Wallpaper-.jpg'}}" alt="">
+                            <div  class="podpis_Slider_news">
+                            <p class="date-time" style="">Дата и время</p>
+                            <p class="name-corp" style="">Какая то подпись</p>
+                            </div>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="Slider__item">
+                            <a href="">
+                            <div class="background-color">
+                            <img   src="{{'assets/img/wp4523592.jpg'}}" alt="">
+                            <div  class="podpis_Slider_news">
+                            <p class="date-time" style="">Дата и время</p>
+                            <p class="name-corp" style="">Какая то подпись</p>
+                            </div>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    </div>
+                    <div class="wRapper">
+                    <div class="sLider">
+                        <div class="sLider__item">
+                            <a class="first-child" href=""><img src="{{'assets/img/hlyXa.png'}}" alt=""></a>
+                            <a class="second-child" href=""><img src="{{'assets/img/8c23e0df1ff8e769016243a1ff88a5ef.jpeg'}}" alt=""></a>
+                        </div>
+                        <div class="sLider__item">
+                            <a class="first-child" href=""><img src="{{'assets/img/hlyXa.png'}}" alt=""></a>
+                            <a class="second-child" href=""><img src="{{'assets/img/8c23e0df1ff8e769016243a1ff88a5ef.jpeg'}}" alt=""></a>
+                        </div>
+                        <div class="sLider__item">
+                            <a class="first-child" href=""><img  src="{{'assets/img/hlyXa.png'}}" alt=""></a>
+                            <a class="second-child" href=""><img src="{{'assets/img/8c23e0df1ff8e769016243a1ff88a5ef.jpeg'}}" alt=""></a>
+                        </div>
+                        <div class="sLider__item">
+                            <a class="first-child" href=""><img  src="{{'assets/img/hlyXa.png'}}" alt=""></a>
+                            <a class="second-child" href=""><img src="{{'assets/img/8c23e0df1ff8e769016243a1ff88a5ef.jpeg'}}" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            <div class="question">
+                <div class="question-label">
+                    <p class="question-label-text">Задайте вопрос</p>
+                </div>
+                <div class="pod-question-label">
+                    <p class="pod-question-label-text">Если у вас есть вопросы или предложения, откройте форму обратной связи и<br>заполните все поля</p>
+                </div>
+            <div class="tab-1">
+            <input id="tab-one-1" type="checkbox" name="tabs">
+                <label style="font-size: 23px;" class="tab-one-text" for="tab-one-1">&nbsp;&#11167;</label>
+                    <div class="tab-content_1">
+                    <div class="tab-content-1-1">
+                        <ul class="cont">
+                            <li>
+                                <p>Кому адресован вопрос*:</p>
+                                <select class="pet-select" name="pets" id="pet-select">
+                                    <option value="dog">Администрация организации</option>
+                                    <option value="dog">(Имя текущего специалиста)</option>
+                                </select>
+                            </li>
+                            <li>
+                                <p>ФИО*:</p>
+                                <input  type="text">
+                            </li>
+                            <li>
+                                
+                                <p style="padding-top: 10px;"><br>Эл. почта*:</p>
+                                <input  type="email">
+                            </li>
+                            <li>
+                                <p style="padding-top: 10px;"><br>Контактный телефон*:</p>
+                                <input  type="text">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content-2-1">
+                    <ul class="tab-content-2_1">
+                        <li>
+                            <p class="text-question">Текст вопроса*:<br><textarea name="" class="text-question" id="" cols="30" rows="10"></textarea></p>
+                        </li>
+                        <li class="">
+                        <p class="text-quest">Вы можете прикрепить к сообщению один файл (текст, изображение, видео, аудио), объемом не больше 5 МБ.</p>
+                        </li>
+                        <li>
+                            <input class="file" size="5242880" type="file">
+                            <br>
+                        </li>
+                        <li>
+                            <input name="check" class="custom-checkbox" id="check" type="checkbox"><label  id="chec" for="check" >Я подтверждаю свое согласие:</label><p class="hui">На использование в качестве каналов передачи информации, содержащейся в обращении, открытых каналов связи сети Интернет. На обработку моих персональных данных в соответствии с федеральным законом РФ от 27.07.2006 № 152-ФЗ "О персональных данных".</p>
+                        </li>
+                    </ul>
+                    </div>		
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="karta-text">
+                    <div class="menu">
+                    <div class="adres">
+                    <p>&nbsp;Место нахождения образовательной организации:</p>
+                    <p id="adres"><i class="fa-solid fa-location-dot fa-sm"></i>&nbsp;Новосибирская обл, г. Новосибирск, ул. Зорге 2</p>
+                    </div>
+                    <div class="rezim_work">
+                        <p>&nbsp;Режим работы:</p>
+                        <p id="rezim_work"><i class="fa-regular fa-clock fa-sm"></i>&nbsp;понедельник-суббота, с 08:00 до 20:00</p>
+                    </div>
+                    <div class="phone">
+                        <p>&nbsp;Контакты</p>
+                        <p id="phone"><i class="fa-solid fa-square-phone fa-sm"></i>&nbsp;(383) 342-95-26 (учебная часть)<br><i class="fa-solid fa-square-phone fa-sm"></i>&nbsp;(383) 342-63-49 приемная директора колледжа</p>	
+                    </div>
+                    </div>
+                    </div>
+                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ac0d94f0d6d018363f9a25c59e88d900fa9ec51850e8db671072585bee34062f3&amp;width=100%25&amp;height=720&amp;lang=ru_RU&amp;scroll=true"></script>
+            {% endblock %}
+    </main>
+    <footer>
+        {% block footer %}
+            <nav class="nav-footer" >
+ 			
+ 			<div class="app-header-nav-menu">
+			        <span id="hh1">Сведения об образовательно организации</span>
+			 
+			        <div class="hide" id="nav-menu">
+			        	<ul >
+				        	 <ul>
+				        		<li><a style="line-height: 1.2;margin: 0 10px 15px;" href="">Основные сведения</a></li>
+				        		<li><a style="line-height: 1.2;margin: 0 10px 15px;" href="">Структура и органы<br>управления<br>образовательной<br>организацией</a></li>
+				        		<li><a style="line-height: 1.2;margin: 0 10px 15px;" href="">Документы</a></li>
+				        		<li><a style="line-height: 1.2;margin: 0 10px 15px;" href="">Образование</a></li>
+		 						<li><a style="line-height: 1.2;margin: 0 10px 15px;" href="">Руководство</a></li>
+		 						<li><a style="line-height: 1.2;margin: 0 10px 15px;" href="">Материально-техническое<br>обеспечение и<br>оснащенность<br>образовательного<br>процесса</a></li>
+		 					</ul>
+		 					<ul>
+								<li><a style="line-height: 1.2;margin: 0 10px 15px;" href="">Платные<br>образовательные услуги</a></li>
+								<li><a style="line-height: 1.2;margin: 0 10px 15px;" href="">Финансово-хозяйственная<br>деятельность</a></li>
+								<li><a style="line-height: 1.2;margin: 0 10px 15px;" href="">Вакантные места для<br>приёма (перевода)<br>обучающихся</a></li>
+								<li><a style="line-height: 1.2;margin: 0 10px 15px;" href="">Образовательные<br>стандарты и требования</a></li>
+								<li><a style="line-height: 1.2;margin: 0 10px 15px;" href="">Стипендии и меры<br>поддержки обучающихся</a></li>
+								<li><a style="margin: 0 10px;" href="">Доступная среда</a></li>
+							 </ul>
+							 <ul>
+								<li><a style="line-height: 1.2;margin: 0 10px 15px;" href="">Международно<br>сотрудничество</a></li>
+								<li><a style="margin: 0 10px 15px;" href="">Платежные реквизиты</a></li>								
+								<li><a style="line-height: 1.2;margin: 0 10px 15px;" href="">Публичный доклад<br>руководителя</a></li>
+								<li><a style="line-height: 1.2;margin: 0 10px 15px;" href="">Организация питания в<br>образовательной<br>организации</a></li>
+								<li><a style="line-height: 1.2;margin: 0 10px 15px;" href="">Режим работы<br>специалистов и служб</a></li>
+							 </ul>
+			        	</ul>
+			        	</div>
+			        
+			        </div>
+			       
+			       <div class="app-header-nav-menu">
+			        <span id="hh1">Дополнительная информация</span>
+			        <div class="hide" id="nav-menu">
+						<ul>
+				        	 <ul>
+				        		<li><a href="">Противодействие коррупции</a></li>
+				      			<li><a href="">Защита персональных данных</a></li>
+				      			<li><a href="">Охрана труда</a></li>
+		 					</ul>
+		 					<ul>
+				        		<li><a href="">Учебно-производственный комплекс</a></li>
+		 					</ul>
+			        	</ul>
+			        </div>
+			    </div>
+
+			    <div class="app-header-nav-menu">
+			        <a href="https://www.youtube.com/watch?v=ajnNdUImtCE" id="hh1">Учащимся</a>
+			    </div>
+		</nav>
+		<div id="contakt">
+			<div class="contakt-label">
+				<p>Контактные данные</p>
+			</div>
+		<div class="common-contackt">
+			<div class="our-contakt">
+				<h3 class="logo-otdel">Наши контакты</h3>
+				<ul>
+					<li><p class="Officials">Директор<br>Фамилия<br>Имя отчество</p></li>
+					<li><p>Тел.: 8 800 555 35 35<br>E-mail:Любой</p></li>
+					<li><p class="Officials">Секретарь<br>Фамилия<br>Имя отчество</p></p></li>
+					<li><p>Тел.: 8 800 555 35 35<br>E-mail:Любой</p></li>
+				</ul>
+			</div>
+			<div class="contakt-DONM">
+			<div class="contakt-DONM-1">
+				<h3 class="logo-otdel-1">Контакты ДОНМ</h3>
+				<ul>
+					<li><p class="Officials">Инспектор округа<br>Фамилия<br>Имя отчество</p></li>
+					<li><p>Тел.: 8 800 555 35 35</p></li>
+					<li><p>E-mail:Любой</p></li>
+					<li><p class="Officials">Межрайонный совет<br>Фамилия<br>Имя отчество</p></li>
+					<li><p>Тел.: 8 800 555 35 35</p></li>
+					<li><p>E-mail:Любой</p></li>
+				</ul>
+			</div>
+			<div class="contakt-DONM-2">
+				<ul >
+					<li><p class="Officials">Куратор округа<br>Фамилия<br>Имя отчество</p></li>
+					<li><p>Тел.: 8 800 555 35 35</p></li>
+					<li><p>E-mail:Любой</p></li>
+					<li><p class="Officials">Представитель управ. совета<br>Фамилия<br>Имя отчество</p></li>
+					<li><p>Тел.: 8 800 555 35 35</p></li>
+					<li><p>E-mail:Любой</p></li>
+				</ul>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="down-footer">
+				<div class="for-down-footer">
+					<span class="button-down-footer">
+						<a class="for-visually-impaired">
+							<img src="{{'assets/img/Group 2 (1).png'}}" alt="">
+						</a>
+					</span>
+					<p>2023 © Государственное автономное профессиональное образовательное<br>
+					учреждение Новосибирской области “Новосибирский колледж питания и сервиса”</p>	
+				</div>
+			</div>
+        {% endblock %}
+    </footer>
+    </body>
+</html>
