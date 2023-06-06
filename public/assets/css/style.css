@@ -2049,3 +2049,6 @@
     flex-direction: column;
     flex-wrap: wrap;
     }
+    .conteiner-for-visually-impaired{
+        display: none;
+    }

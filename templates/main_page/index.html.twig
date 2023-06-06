@@ -23,8 +23,14 @@
         
         
         {% block stylesheets %}
-            <link rel="stylesheet" href="{{'assets/css/style.css'}}">
 
+        <link rel="stylesheet" href="{{'assets/css/style.css'}}">
+         {# {% if customStyle is not null and customStyle == 1 %}
+            
+        
+        {% else  %}
+                <link rel="stylesheet" href="{{'assets/css/style1.css'}}">
+        {% endif %} #}
         {% endblock %}
 
         {% block javascripts %}
@@ -35,14 +41,61 @@
 	        <script src="{{'assets/js/For-slider-reklama.js'}}"></script>
             <script src="{{'assets/js/For-slider-news.js'}}"></script>
             <script src="{{'assets/js/For-slider.js'}}"></script>
+            <script>
+                var myData = '{{ app.session.all() | json_encode | raw }}';
+                var myData1 = JSON.parse(myData);
+            </script>
         {% endblock %}
     </head>
     {{ dump(app.session.all()) }}
     <body>
     <header>
         {% block header %}
-            <div class="conteiner-for-visually-impaired">
-
+        
+        <div class="conteiner-for-visually-impaired">
+                <div class="font-size">
+			<p class ="text-impaired">Размер шрифта</p>
+		<div class="flex-font-size">
+			<a class ="font-size-small">A</a>
+			<a class ="font-size-midle">A</a>
+			<a class ="font-size-large">A</a>
+		</div>
+		</div>
+		<div class="font-text">
+			<p class="text-impaired">Шрифт</p>
+		<div class="flex-font-text">
+			<a class ="font-classic">Без засечек</a>
+			<a class ="font-times-new">С засечками</a>
+		</div>
+		</div>
+		<div class="interval-text">
+			<p class="text-interval-p">Интервал между буквами</p>
+			<div class="switch-btn"></div>
+		</div>
+		<div class="between-interval">
+			<p class = "between-interval-text">Междустрочный итервал</p>
+		<div class="flex-between-interval">
+			<a class ="between-interval-small"><img  src="{{'assets/img/Group49.png'}}" alt=""></a>
+			<a class ="between-interval-midle"><img  src="{{'assets/img/Group 50.png'}}" alt=""></a>
+			<a class ="between-interval-large"><img  src="{{'assets/img/Group 51.png'}}" alt=""></a>
+		</div>
+		</div>
+		<div class = "color-site">
+			<p class = "color-site-text">Цвет сайта</p>
+		<div class="flex-color-site">
+			<a class = "color-site-black-white">A</a>
+			<a class = "color-site-white-black">A</a>
+			<a class = "color-site-blue-black">A</a>
+			<a class = "color-site-sand-black">A</a>
+		</div>
+		</div>
+		<div class="image-site">
+			<p class ="img-text">Изображения</p>
+			<div class="switch-btn2"></div>
+		</div>
+		<div class = "classic-site-version">
+			<a class ="classic-site-version-btn">Обычная версия</a>
+		</div>
 		</div>
 
 		<div class="header-top-left">
@@ -582,6 +635,9 @@
 						<a class="for-visually-impaired">
 							<img src="{{'assets/img/Group 2 (1).png'}}" alt="">
 						</a>
+                        <a class="classic-site-version-btn">
+			                <img src="{{'assets/img/Group 3.png'}}" alt="">
+		                </a>
 					</span>
 					<p>2023 © Государственное автономное профессиональное образовательное<br>
 					учреждение Новосибирской области “Новосибирский колледж питания и сервиса”</p>	

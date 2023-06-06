@@ -1,4 +1,4 @@
-"use strict";
+
 // const handleClick = event => {
 //   const divs = document.querySelectorAll("#nav-menu")
 //   const target = event.target.nextElementSibling
