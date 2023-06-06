@@ -176,10 +176,10 @@ $(document).on('click','.for-visually-impaired', function(){
 
 
 		$('.switch-btn2').on('on.switch2', function () {
-			replaceClass("html", "hcheckbox-img-f", "","", "hcheckbox-img-t");
+			replaceClass("html", "hcheckbox-img-t", "","", "hcheckbox-img-f");
 		});
 		$('.switch-btn2').on('off.switch2', function () {
-			replaceClass("html", "hcheckbox-img-t", "","", "hcheckbox-img-f");
+			replaceClass("html", "hcheckbox-img-f", "","", "hcheckbox-img-t");
 		});
 
 });
