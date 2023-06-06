@@ -20,14 +20,18 @@ $(document).on('click','.for-visually-impaired', function(){
 			VisuallyImpaired.innerHTML = `
 			<div class="font-size">
 				<p class ="text-impaired">Размер шрифта</p>
+			<div class="flex-font-size">
 				<a class ="font-size-small">A</a>
 				<a class ="font-size-midle">A</a>
 				<a class ="font-size-large">A</a>
 			</div>
+			</div>
 			<div class="font-text">
 				<p class="text-impaired">Шрифт</p>
+			<div class="flex-font-text">
 				<a class ="font-classic">Без засечек</a>
 				<a class ="font-times-new">С засечками</a>
+			</div>
 			</div>
 			<div class="interval-text">
 				<p class="text-interval-p">Интервал между буквами</p>
@@ -35,16 +39,20 @@ $(document).on('click','.for-visually-impaired', function(){
 			</div>
 			<div class="between-interval">
 				<p class = "between-interval-text">Междустрочный итервал</p>
-				<a class ="between-interval-small"></a>
-				<a class ="between-interval-midle"></a>
-				<a class ="between-interval-large"></a>
+			<div class="flex-between-interval">
+				<a class ="between-interval-small"><img  src="assets/img/Group49.png" alt=""></a>
+				<a class ="between-interval-midle"><img  src="assets/img/Group 50.png" alt=""></a>
+				<a class ="between-interval-large"><img  src="assets/img/Group 51.png" alt=""></a>
+			</div>
 			</div>
 			<div class = "color-site">
 				<p class = "color-site-text">Цвет сайта</p>
-				<a class = "color-site-white-black">A</a>
+			<div class="flex-color-site">
 				<a class = "color-site-black-white">A</a>
+				<a class = "color-site-white-black">A</a>
 				<a class = "color-site-blue-black">A</a>
 				<a class = "color-site-sand-black">A</a>
+			</div>
 			</div>
 			<div class="image-site">
 				<p class ="img-text">Изображения</p>

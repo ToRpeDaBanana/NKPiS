@@ -1805,7 +1805,7 @@
       width: 72px; /* ширина */
       height: 38px; /* высота */
       border-radius: 19px; /* радиус скругления */
-      background: #bfbfbf; /* цвет фона */
+      background:#118c4e; /* цвет фона */
       z-index: 0;
       margin: 0;
       padding: 0;
@@ -1821,15 +1821,231 @@
       border-radius: 17px;
       background: #fff; /* цвет кнопки */
       top: 3px; /* положение кнопки по вертикали относительно основы */
-      left: 3px; /* положение кнопки по горизонтали относительно основы */
+      right: 3px; /* положение кнопки по горизонтали относительно основы */
       transition-duration: 300ms; /* анимация */
       position: absolute;
       z-index: 1;
     }
     .switch-on2 {
-      background: #118c4e;
+      background: #bfbfbf;;
     }
     .switch-on2::after {
-      left: 37px;
+      right: 37px;
     }
     /*Конец*/
+    .font-size-small{
+        font-family: 'PT Sans', sans-serif;
+        font-size: 14px;
+        text-decoration: none;
+        color: black;
+        border: 1px solid black;
+        display: block;
+        width: 20px;
+        height: auto;
+        text-align: center;
+        border-radius: 3px;
+        margin: 5px;
+    }
+    .font-size-midle{
+        font-family: 'PT Sans', sans-serif;
+        font-size: 16px;
+        text-decoration: none;
+        color: black;
+        border: 1px solid black;
+        display: block;
+        width: 25px;
+        height: auto;
+        text-align: center;
+        border-radius: 3px;
+        margin: 5px;
+    }
+    .font-size-large{
+        font-family: 'PT Sans', sans-serif;
+        font-size: 18px;
+        text-decoration: none;
+        color: black;
+        border: 1px solid black;
+        display: block;
+        width: 30px;
+        height: auto;
+        text-align: center;
+        border-radius: 3px;
+        margin: 5px;
+    }
+    .flex-font-size{
+        display: flex;
+        align-items: center;
+        align-items: flex-end;
+    }
+    .font-size{
+        display: flex;
+        align-items: center;
+        align-content: flex-start;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .font-classic{
+        font-family: 'PT Sans', sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        color: black;
+        border: 1px solid black;
+        display: block;
+        text-align: center;
+        margin: 5px;
+        width: 100px;
+    }
+    .font-times-new{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 18px;
+        text-decoration: none;
+        color: black;
+        border: 1px solid black;
+        display: block;
+        text-align: center;
+        margin: 5px;
+        width: 100px;
+    }
+    .flex-font-text{
+        display: flex;
+    }
+    .font-text{
+        display: flex;
+        align-items: center;
+        align-content: flex-start;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .interval-text{
+        display: flex;
+        align-items: center;
+        align-content: flex-start;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .color-site-white-black{
+        font-family: 'PT Sans', sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        border: 2px solid black;
+        background-color: black;
+        display: block;
+        width: 40px;
+        height: 35px;
+        text-align: center;
+        border-radius: 3px;
+        margin: 5px;
+    }
+    .color-site-black-white{
+        font-family: 'PT Sans', sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        border: 2px solid black;
+        background-color: rgb(255, 255, 255);
+        display: block;
+        width: 40px;
+        height: 35px;
+        text-align: center;
+        border-radius: 3px;
+        margin: 5px;
+    }
+    .color-site-blue-black{
+        font-family: 'PT Sans', sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        border: 2px solid black;
+        background-color: rgb(101, 163, 255);
+        display: block;
+        width: 40px;
+        height: 35px;
+        text-align: center;
+        border-radius: 3px;
+        margin: 5px;
+    }
+    .color-site-sand-black{
+        font-family: 'PT Sans', sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        border: 2px solid black;
+        background-color: rgb(236, 235, 159);
+        display: block;
+        width: 40px;
+        height: 35px;
+        text-align: center;
+        border-radius: 3px;
+        margin: 5px;
+    }
+    .flex-color-site{
+        display: flex;
+        align-items: center;
+        align-items: flex-end;
+    }
+    .color-site{
+        display: flex;
+        align-items: center;
+        align-content: flex-start;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .image-site{
+        display: flex;
+        align-items: center;
+        align-content: flex-start;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .between-interval-small{
+        margin: 10px;
+        border: 2px solid black;
+        border-radius: 3px;
+        width: 50px;
+        height: 40px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    .between-interval-small img{
+        vertical-align: -webkit-baseline-middle;
+    }
+    .between-interval-midle{
+        margin: 10px;
+        border: 2px solid black;
+        border-radius: 3px;
+        width: 50px;
+        height: 40px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    .between-interval-midle img{
+        vertical-align: -webkit-baseline-middle;
+    }
+    .between-interval-large{
+        margin: 10px;
+        border: 2px solid black;
+        border-radius: 3px;
+        width: 50px;
+        height: 40px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    .between-interval-large img{
+        vertical-align: -webkit-baseline-middle;
+    }
+    .flex-between-interval{
+        display: flex;
+    }
+    .between-interval{
+    display: flex;
+    align-items: center;
+    align-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    }
