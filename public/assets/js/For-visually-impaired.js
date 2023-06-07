@@ -35,11 +35,12 @@ function customStyle(){
 	if(myData1.display == 'active'){
 		$('.conteiner-for-visually-impaired').toggleClass('active');
 		customObject.display = "active";
-		ajaxSend();
+		
 		//Font-Size
 			$('.gos').css("font-size",(myData1.fontSize ? myData1.fontSize : 16)+"px");
 			$('.').css("font-size",(myData1.fontSize ? myData1.fontSize : 16)+"px");
 		//*
+		ajaxSend();
 	}
 	else if (myData1.display == 'hide'){
 
