@@ -14,7 +14,8 @@ var customObject = {
 	display: 'hide',
 	checkboxInterval: 'normal',
 	betweenInterval: 1,
-	colorSite: 'none',
+	colorSite1: 'white',
+	colorSite2: 'black',
 	imgVisible: 'block',
 };
 function ajaxSend(){
@@ -31,81 +32,156 @@ function ajaxSend(){
 		}
 	});
 }
+function colorSiteCustom(color1,color2){
+	var cssColor = {
+		"background-color": color1,
+		"border": `1px solid ${color2}`,
+ 	}
+
+	//  {'background-color':(color1 ? color1 : 'white'), 'border':"1px solid"+(color2 ? color2 : 'black')}
+	$('.header-top-left').css(cssColor);
+	$('.main_part_header').css({'background-color':(color1 ? color1 : 'white'), 'border-bottom':'1px solid'+(color2 ? color2 : 'black')});
+	$('.wrapper').css({'background-color':(color1 ? color1 : 'white'), 'border':'1px solid'+(color2 ? color2 : 'black')});
+	$('.fast_icon_dostup').css({'background-color':(color1 ? color1 : 'white'), 'border':'1px solid'+(color2 ? color2 : 'black')});
+	$('.Wrapper').css({'background-color':(color1 ? color1 : 'white'), 'border':'1px solid'+(color2 ? color2 : 'black')});
+	$('.wRapper').css({'background-color':(color1 ? color1 : 'white'), 'border':'1px solid'+(color2 ? color2 : 'black')});
+	$('.question').css({'background-color':(color1 ? color1 : 'white'), 'border':'1px solid'+(color2 ? color2 : 'black')});
+	$('.body').css({'background-color':(color1 ? color1 : 'white'), 'border-top':'1px solid'+(color2 ? color2 : 'black'), 'boreder-bottom':'1px solid'+(color2 ? color2 : 'black')});
+	$('.contakt').css({'background-color':(color1 ? color1 : 'white'), 'border':'1px solid'+(color2 ? color2 : 'black')});
+	$('.down-footer').css({'background-color':(color1 ? color1 : 'white'), 'border-top':'1px solid'+(color2 ? color2 : 'black')});
+	$('.header-top-left').css({'background-color':(color1 ? color1 : 'white'), 'border':'1px solid'+(color2 ? color2 : 'black')});
+}
+function fontSizeCustom(sizeFont){
+	$('.gos').css("font-size",(sizeFont ? sizeFont : 16)+"px");
+	$('.ministr').css("font-size",(sizeFont ? sizeFont : 16)+"px");
+	$('.call_me').css("font-size",(sizeFont ? sizeFont : 16)+"px");
+	$('.tab-one').css("font-size",(sizeFont ? sizeFont : 16)+"px");
+	$('.tab-content-first').css("font-size",(sizeFont ? sizeFont : 16)+"px");
+	$('.podpis').css("font-size",(sizeFont ? sizeFont : 16)+"px");
+	$('.icon-fast-dostup').css("font-size",(sizeFont ? sizeFont : 16)+"px");
+	$('.button-fast-dostup-text').css("font-size",(sizeFont ? sizeFont : 16)+"px");
+	$('.news p').css("font-size",(sizeFont ? sizeFont : 16)+"px");
+	$('.date-time').css("font-size",(sizeFont ? sizeFont : 16)+"px");
+	$('.name-corp').css("font-size",(sizeFont ? sizeFont : 16)+"px");
+	$('.question-label-text').css("font-size",(sizeFont ? sizeFont : 16)+"px");
+	$('.adres').css("font-size",(sizeFont ? sizeFont : 16)+"px");
+	$('.rezim_work').css("font-size",(sizeFont ? sizeFont : 16)+"px");
+	$('.phone').css("font-size",(sizeFont ? sizeFont : 16)+"px");
+	$('.contakt-label').css("font-size",(sizeFont ? sizeFont : 16)+"px");
+	$('.logo-otdel').css("font-size",(sizeFont ? sizeFont : 16)+"px");
+	$('.our-contakt p').css("font-size",(sizeFont ? sizeFont : 16)+"px");
+	$('.contakt-DONM p').css("font-size",(sizeFont ? sizeFont : 16)+"px");
+}
+function fontFamilyCustom(fontFam){
+	$('p').css("font-family",(fontFam ? fontFam : 'PT Sans'));
+	$('a').css("font-family",(fontFam ? fontFam : 'PT Sans'));
+	$('span').css("font-family",(fontFam ? fontFam : 'PT Sans'));
+	$('label').css("font-family",(fontFam ? fontFam : 'PT Sans'));
+	$('ul').css("font-family",(fontFam ? fontFam : 'PT Sans'));
+}
+
+function letterSpacingCustom(letterSpa){
+	$('p').css('letter-spacing',(letterSpa ? letterSpa :'normal'));
+	$('a').css('letter-spacing',(letterSpa ? letterSpa :'normal'));
+	$('span').css('letter-spacing',(letterSpa ? letterSpa :'normal'));
+	$('label').css('letter-spacing',(letterSpa ? letterSpa :'normal'));
+	$('ul').css('letter-spacing',(letterSpa ? letterSpa :'normal'));
+}
+function lineHeightCustom(betweenInter){
+	$('p').css('line-height',(betweenInter ? betweenInter : 1));
+	$('a').css('line-height',(betweenInter ? betweenInter : 1));
+	$('span').css('line-height',(betweenInter ? betweenInter : 1));
+	$('label').css('line-height',(betweenInter ? betweenInter : 1));
+	$('ul').css('line-height',(betweenInter ? betweenInter : 1));
+}
+function imgVisibleCustom(imgVis){
+	$('.img_1').css('display',(imgVis ? imgVis : 'block'));
+	$('.img_slider').css('display',(imgVis ? imgVis : 'block'));
+}
+
 function customStyle(){
 	if(myData1.display == 'active'){
 		$('.conteiner-for-visually-impaired').toggleClass('active');
 		customObject.display = "active";
-		
-		//Font-Size
-			$('.gos').css("font-size",(myData1.fontSize ? myData1.fontSize : 16)+"px");
-			$('.').css("font-size",(myData1.fontSize ? myData1.fontSize : 16)+"px");
+		//fontSize
+			fontSizeCustom(myData1.fontSize);
 		//*
+		//font
+			fontFamilyCustom(myData1.font);
+		//*
+		//checkBoxInterval
+			letterSpacingCustom(myData1.checkboxInterval);
+		//*
+		//betweenInterval
+			lineHeightCustom(myData1.betweenInterval);
+		//*
+		//colorSite
+			//White-Black
+				if(myData1.colorSite1 == 'white' && myData1.colorSite2 == 'black'){
+					colorSiteCustom(myData1.colorSite1, myData1.colorSite2);
+				}
+			//*
+			//Black-White
+				else if(myData1.colorSite1 == 'black' && myData1.colorSite2 == 'white'){
+					colorSiteCustom(myData1.colorSite1, myData1.colorSite2);
+				}
+			//*
+			//Blue-Black
+				else if(myData1.colorSite1 == '#42b0ff' && myData1.colorSite2 == 'black'){
+					colorSiteCustom(myData1.colorSite1, myData1.colorSite2);
+				}
+			//*
+			//Sand-Black
+				else if(myData1.colorSite1 == '#fceea7' && myData1.colorSite2 == 'black'){
+					colorSiteCustom(myData1.colorSite1, myData1.colorSite2);
+				}
+			//*
+
+		//*
+		//switch
+			$('.switch-btn').toggleClass('switch-on');
+			if(myData1.checkboxInterval == '.1rem'){
+				$('.switch-btn').trigger('on.switch');
+			}
+			else if(myData1.checkboxInterval == 'normal'){
+				$('.switch-btn.switch-on').toggleClass('switch-on');
+				$('.switch-btn').trigger('off.switch');
+			}
+
+			$('.switch-btn2').toggleClass('switch-on2');
+			if(myData1.imgVisible == 'block'){
+				$('.switch-btn2').trigger('on.switch');
+			}
+			else if(myData1.imgVisible == 'none'){
+				$('.switch-btn2.switch-on2').toggleClass('switch-on2');
+				$('.switch-btn2').trigger('off.switch');
+			}
+		//*
+		//imgVisible
+			imgVisibleCustom(myData1.imgVisible);
+		//*
+		//forVisuallyImpairedBtn
+			$('.for-visually-impaired').css("display","none");
+		//*
+		//conteinerForVisuallyImpaired.active
+			$('.conteiner-for-visually-impaired.active').css("display","block");
+			$('.classic-site-version-btn').css("display","block");
+		//
+
 		ajaxSend();
-	}
-	else if (myData1.display == 'hide'){
-
-
-	}
-}
-
-
-
-
-
-$(document).ready(function() {
-	console.log(myData1);
-	console.log(myData1.fontSize);
-		// $('html').css("font-size",(myData1.*100)+"%");
-	// $('html').css("font-size",(myData1.fontSize ? myData1.fontSize : 15)+"px");
-	// $('.for-visually-impaired').css("display","block");
-	// $('.conteiner-for-visually-impaired').css("display","none");
-	// $('.classic-site-version-btn').css("display","none");
-	if (myData1.display == 'active'){
-		$('.conteiner-for-visually-impaired').toggleClass('active');
-		// $('html').addClass('hfont-size-small hfont-classic hcheckbox-interval-f hbetween-interval-small hcolor-site-white-black hcheckbox-img-t');
-		$('html').css("font-size",(myData1.fontSize ? myData1.fontSize : 16)+"px");
-		$('p').css("font-family",(myData1.font ? myData1.font : 'PT Sans'));
-		$('html').css('letter-spacing',(myData1.checkboxInterval ? myData1.checkboxInterval :'normal'));
-		$('p').css('line-height',myData1.betweenInterval ? myData1.betweenInterval : 1);
-		$('img').css('display',(myData1.imgVisible ? myData1.imgVisible : 'block'));
-		$('.for-visually-impaired').css("display","none");
-		customObject.display = "active";
-		ajaxSend();
-		$('.conteiner-for-visually-impaired.active').css("display","block");
-
-		$('.classic-site-version-btn').css("display","block");
-		$('.switch-btn').toggleClass('switch-on');
-		if(myData1.checkboxInterval == '.1rem'){
-			$('.switch-btn').trigger('on.switch');
-		}
-		else if(myData1.checkboxInterval == 'normal'){
-			$('.switch-btn.switch-on').toggleClass('switch-on');
-			$('.switch-btn').trigger('off.switch');
-		}
-
-		$('.switch-btn2').toggleClass('switch-on2');
-		if(myData1.imgVisible == 'block'){
-			$('.switch-btn2').trigger('on.switch');
-		}
-		else if(myData1.imgVisible == 'none'){
-			$('.switch-btn2.switch-on2').toggleClass('switch-on2');
-			$('.switch-btn2').trigger('off.switch');
-		}
 	}
 	else if (myData1.display == 'hide'){
 		$('.conteiner-for-visually-impaired.active').toggleClass('active');
 		customObject.display = "hide";
-		ajaxSend();
-		$('html').css("font-size","16px");
-		$('html').css('letter-spacing','normal');
-		$('p').css("font-family",'PT Sans');
-		$('p').css('line-height',myData1.betweenInterval ? myData1.betweenInterval : 1);
-		// $('html').addClass('hfont-size-small hfont-classic hcheckbox-interval-f hbetween-interval-small hcolor-site-white-black hcheckbox-img-t');
+		fontSizeCustom(16);
+		fontFamilyCustom('PT Sans');
+		letterSpacingCustom('normal');
+		lineHeightCustom(1);
+		colorSiteCustom('white','black')
+		imgVisibleCustom('block');
 		var impairedStyle = $(".for-visually-impaired").prop("style");
 		impairedStyle.removeProperty("display");
-
 		$('.conteiner-for-visually-impaired').css("display","none");
-
 		$('.classic-site-version-btn').css("display","none");
 
 		$('.switch-btn.switch-on').toggleClass('switch-on');
@@ -116,30 +192,35 @@ $(document).ready(function() {
 		if(!$('.switch-btn2.switch-on')){
 			$('.switch-btn2').trigger('on.switch');
 		}
-		$('p').css('line-height','1');
-		$('img').css('display','block');
-				
 	}
+}
+
+
+
+
+
+$(document).ready(function() {
+	console.log(myData1);
+	console.log(myData1.fontSize);
+	customStyle();
 	$('.font-size-small').click(function(event){
 		replaceClass("html", "hfont-size-midle", "hfont-size-large","", "hfont-size-small");
-		// $('html').css("font-size",(1*100)+"%");
-		$('html').css("font-size","16px");
+
+		fontSizeCustom(16);
 		customObject.fontSize = 16;
 		ajaxSend();
 		
 	});
 	$('.font-size-midle').click(function(event){
 		replaceClass("html", "hfont-size-small", "hfont-size-large","", "hfont-size-midle");
-		// $('html').css("font-size",(2*100)+"%");
-		$('html').css("font-size","18px");
+		fontSizeCustom(18);
 		customObject.fontSize = 18;
 		ajaxSend();
 		
 	});
 	$('.font-size-large').click(function(event){
 		replaceClass("html", "hfont-size-small", "hfont-size-midle","", "hfont-size-large");
-		// $('html').css("font-size",(3*100)+"%");
-		$('html').css("font-size","20px");
+		fontSizeCustom(20);
 		customObject.fontSize = 20;
 		ajaxSend();
 	});
@@ -148,14 +229,14 @@ $(document).ready(function() {
 
 	$('.font-classic').click(function(event){
 		replaceClass("html", "hfont-times-new","","","hfont-classic");
-		$('p').css("font-family",'PT Sans');
+		fontFamilyCustom('PT Sans');
 		customObject.font = 'PT Sans';
 		ajaxSend();
 	});
 
 	$('.font-times-new').click(function(event){
 		replaceClass("html", "hfont-classic", "","", "hfont-times-new");
-		$('p').css("font-family",'Times New Roman');
+		fontFamilyCustom('Times New Roman');
 		customObject.font = 'Times New Roman';
 		ajaxSend();
 	});
@@ -180,26 +261,26 @@ $(document).ready(function() {
 	});
 	$('.switch-btn').on('on.switch', function () {
 		replaceClass("html", "hcheckbox-interval-f", "","", "hcheckbox-interval-t");
-		$('html').css('letter-spacing','.1rem');
+		letterSpacingCustom('.1rem')
 		customObject.checkboxInterval = '.1rem';
 		ajaxSend();
 	});
 	$('.switch-btn').on('off.switch', function () {
 		replaceClass("html", "hcheckbox-interval-t", "","", "hcheckbox-interval-f");
-		$('html').css('letter-spacing','normal');
+		letterSpacingCustom('normal')
 		customObject.checkboxInterval = 'normal';
 		ajaxSend();
 	});
 
 	$('.switch-btn2').on('on.switch', function () {
 		replaceClass("html", "hcheckbox-img-f", "","", "hcheckbox-img-t");
-		$('img').css('display','block');
+		imgVisibleCustom('block');
 		customObject.imgVisible = 'block';
 		ajaxSend();
 	});
 	$('.switch-btn2').on('off.switch', function () {
 		replaceClass("html", "hcheckbox-img-t", "","", "hcheckbox-img-f");
-		$('img').css('display','none');
+		imgVisibleCustom('none');
 		customObject.imgVisible = 'none';
 		ajaxSend();
 	});
@@ -207,19 +288,19 @@ $(document).ready(function() {
 
 	$('.between-interval-small').click(function(event){
 		replaceClass("html", "hbetween-interval-midle", "hbetween-interval-large","", "hbetween-interval-small");	
-		$('p').css('line-height','1');
+		lineHeightCustom(1);
 		customObject.betweenInterval = 1;
 		ajaxSend();
 	});
 	$('.between-interval-midle').click(function(event){
 		replaceClass("html", "hbetween-interval-small", "hbetween-interval-large","", "hbetween-interval-midle");
-		$('p').css('line-height','1.4');
+		lineHeightCustom(1.4);
 		customObject.betweenInterval = 1.4;
 		ajaxSend();
 	});
 	$('.between-interval-large').click(function(event){
 		replaceClass("html", "hbetween-interval-small", "hbetween-interval-midle","", "hbetween-interval-large");
-		$('p').css('line-height','1.8');
+		lineHeightCustom(1.8);
 		customObject.betweenInterval = 1.8;
 		ajaxSend();
 	});
@@ -228,15 +309,31 @@ $(document).ready(function() {
 
 	$('.color-site-white-black').click(function(event){
 		replaceClass("html", "hcolor-site-black-white", "hcolor-site-blue-black","hcolor-site-sand-black", "hcolor-site-white-black");
+		colorSiteCustom('white','black');
+		customObject.colorSite1 = 'white';
+		customObject.colorSite2 = 'black';
+		ajaxSend();
 	});
 	$('.color-site-black-white').click(function(event){
 		replaceClass("html", "hcolor-site-white-black", "hcolor-site-blue-black","hcolor-site-sand-black", "hcolor-site-black-white");
+		colorSiteCustom('black','white');
+		customObject.colorSite1 = 'black';
+		customObject.colorSite2 = 'white';
+		ajaxSend();
 	});
 	$('.color-site-blue-black').click(function(event){
 		replaceClass("html", "hcolor-site-white-black", "hcolor-site-black-white","hcolor-site-sand-black", "hcolor-site-blue-black");
+		colorSiteCustom('#42b0ff','black');
+		customObject.colorSite1 = '#42b0ff';
+		customObject.colorSite2 = 'black';
+		ajaxSend();
 	});
 	$('.color-site-sand-black').click(function(event){
 		replaceClass("html", "hcolor-site-white-black", "hcolor-site-black-white","hcolor-site-blue-black", "hcolor-site-sand-black");
+		colorSiteCustom('#fceea7','black');
+		customObject.colorSite1 = '#fceea7';
+		customObject.colorSite2 = 'black';
+		ajaxSend();
 	});
 
 
@@ -250,16 +347,12 @@ $(document).on('click','.for-visually-impaired', function(){
 	var VisuallyImpaired = document.querySelector('.conteiner-for-visually-impaired.active');
 	if(VisuallyImpaired){
 		$('.for-visually-impaired').css("display","none");
-		// $('html').addClass('hfont-size-small hfont-classic hcheckbox-interval-f hbetween-interval-small hcolor-site-white-black hcheckbox-img-t');
-		// var conteinerInpaired = $(".conteiner-for-visually-impaired").prop("style");
-		// 	conteinerInpaired.removeProperty("display");
 		$('.classic-site-version-btn').css("display","block");
 		$('.conteiner-for-visually-impaired.active').css("display","block");
 		customObject.display = "active";
 		ajaxSend();
 	}
 	
-	// $('.conteiner-for-visually-impaired').toggleClass('active');
 	
 	
 });
@@ -268,88 +361,25 @@ $(document).on('click','.classic-site-version-btn', function(){
 	$('.conteiner-for-visually-impaired.active').toggleClass('active');
 	$('.conteiner-for-visually-impaired').css("display","none");
 	$('.classic-site-version-btn').css("display","none");
+	fontSizeCustom(16);
+	fontFamilyCustom('PT Sans');
+	letterSpacingCustom('normal');
+	lineHeightCustom(1);
+	colorSiteCustom('white','black')
+	imgVisibleCustom('block');
 	var impairedStyle = $(".for-visually-impaired").prop("style");
 		impairedStyle.removeProperty("display");
 	var impairedStyle = $(".button-down-footer .for-visually-impaired").prop("style");
 		impairedStyle.removeProperty("display");
 	$('html').removeClass();
-	// var impairedStyle3 = $(".conteiner-for-visually-impaired").prop("style");
-	// impairedStyle3.removeProperty("display");
-	// var impairedStyle = $(".button-down-footer .for-visually-impaired").prop("style");
-	// impairedStyle.removeProperty("display");
-
-
-	// var impairedStyle2 = $(".for-slepix-pidorasov .for-visually-impaired").prop("style");
-	// impairedStyle2.removeProperty("display");
 	customObject.fontSize = 16;
 	customObject.display = "hide";
+	customObject.font ='PT Sans';
+	customObject.checkboxInterval= 'normal';
+	customObject.betweenInterval = 1;
+	customObject.colorSite1 = 'white';
+	customObject.colorSite2 ='black';
+	customObject.imgVisible = 'block';
 	ajaxSend();
-	// var classicBtn = document.querySelector('.classic-site-version-btn');
-	// var parent = classicBtn.parentNode;
-	// parent.removeChild(classicBtn);
 	
 });
-	
-
-
-
-// });
-// $(document).on('click','.for-visually-impaired', function(){
-// 		$('.conteiner-for-visually-impaired').toggleClass('active');
-// 		$('html').addClass('hfont-size-small hfont-classic hcheckbox-interval-f hbetween-interval-small hcolor-site-white-black hcheckbox-img-t');
-// 		var VisuallyImpaired = document.querySelector('.conteiner-for-visually-impaired.active');
-// 		var VisuallyImpaired2 = document.querySelector('.button-down-footer');
-		 
-// 			if(VisuallyImpaired){
-// 				$('.for-visually-impaired').css("display","none");
-// 			VisuallyImpaired.innerHTML = `
-// 			<div class="font-size">
-// 				<p class ="text-impaired">Размер шрифта</p>
-// 			<div class="flex-font-size">
-// 				<a class ="font-size-small">A</a>
-// 				<a class ="font-size-midle">A</a>
-// 				<a class ="font-size-large">A</a>
-// 			</div>
-// 			</div>
-// 			<div class="font-text">
-// 				<p class="text-impaired">Шрифт</p>
-// 			<div class="flex-font-text">
-// 				<a class ="font-classic">Без засечек</a>
-// 				<a class ="font-times-new">С засечками</a>
-// 			</div>
-// 			</div>
-// 			<div class="interval-text">
-// 				<p class="text-interval-p">Интервал между буквами</p>
-// 				<div class="switch-btn"></div>
-// 			</div>
-// 			<div class="between-interval">
-// 				<p class = "between-interval-text">Междустрочный итервал</p>
-// 			<div class="flex-between-interval">
-// 				<a class ="between-interval-small"><img  src="assets/img/Group49.png" alt=""></a>
-// 				<a class ="between-interval-midle"><img  src="assets/img/Group 50.png" alt=""></a>
-// 				<a class ="between-interval-large"><img  src="assets/img/Group 51.png" alt=""></a>
-// 			</div>
-// 			</div>
-// 			<div class = "color-site">
-// 				<p class = "color-site-text">Цвет сайта</p>
-// 			<div class="flex-color-site">
-// 				<a class = "color-site-black-white">A</a>
-// 				<a class = "color-site-white-black">A</a>
-// 				<a class = "color-site-blue-black">A</a>
-// 				<a class = "color-site-sand-black">A</a>
-// 			</div>
-// 			</div>
-// 			<div class="image-site">
-// 				<p class ="img-text">Изображения</p>
-// 				<div class="switch-btn2"></div>
-// 			</div>
-// 			<div class = "classic-site-version">
-// 				<a class ="classic-site-version-btn">Обычная версия</a>
-// 			</div>
-// 		`;
-// 		VisuallyImpaired2.innerHTML += `
-// 			<a class="classic-site-version-btn">
-// 				<img src="assets/img/Group 3.png" alt="">
-// 			</a>`;
-// 		}
-		

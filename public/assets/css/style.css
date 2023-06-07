@@ -1953,3 +1953,6 @@
     .conteiner-for-visually-impaired{
         display: none;
     }
+    .classic-site-version-btn{
+        display: none;
+    }
