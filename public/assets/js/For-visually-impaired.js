@@ -38,21 +38,62 @@ function colorSiteCustom(color1,color2){
 		"border-top": `1px solid ${color2 ? color2 : 'black'}`,
 		"border-bottom": `1px solid ${color2 ? color2 : 'black'}`,
  	}
-
+	var textColor = {
+		"color": `${color2 ? color2 :'white'}`,
+	}
+	var textColorBlack = {
+		"color": `${color1 ? color1 :'black'}`,
+	}
+	var cssBorderColor = {
+		"border":`1px solid ${color2 ? color2 :'black'}`,
+		"background": `${color1 ? color1 : 'none'}`,
+	}
+	var cssBorderDown = {
+		"border-bottom": `1px solid ${color2 ? color2 : 'black'}`,
+		"background-color": `${color1 ? color1 : 'white'}`,
+	}
+	var cssBorderUp = {
+		"background-color": `${color1 ? color1 : 'white'}`,
+		"border-top": `1px solid ${color2 ? color2 : 'black'}`,
+	}
 	//  {'background-color':(color1 ? color1 : 'white'), 'border':"1px solid"+(color2 ? color2 : 'black')}
 	$('.header-top-left').css(cssColor);
+	$('.container-nav-menu').css(cssBorderDown);
+	$('.tab label').css(cssColor);
+	$('.tab-1 label').css(cssColor);
+	$('.icon-fast-dostup').css(cssBorderColor);
+	$('.first-icon').css(cssBorderColor);
 	$('main').css(cssColor);
 	$('footer').css(cssColor);
-	$('.main_part_header').css(cssColor);
+	$('.tab-content_1').css(cssColor);
+	$('.main_part_header').css(cssBorderUp);
 	$('.wrapper').css(cssColor);
 	$('.fast_icon_dostup').css(cssColor);
 	$('.Wrapper').css(cssColor);
+	$('.news p').css(cssBorderColor);
+	$('.our-contakt').css(cssBorderColor);
+	$('.contakt-DONM').css(cssBorderColor);
+	$('.for-down-footer').css(cssBorderColor);
+	$('.logo-otdel-1').css(textColor);
+	$('.contakt-label p').css(cssBorderColor);
+	$('#contakt').css(cssBorderColor);
+	$('.Slider').css(cssBorderColor);
+	$('.Wrapper').css(cssBorderColor);
+	$('.question-label-text').css(cssBorderColor);
 	$('.wRapper').css(cssColor);
 	$('.question').css(cssColor);
 	$('.body').css(cssColor);
 	$('.contakt').css(cssColor);
 	$('.down-footer').css(cssColor);
 	$('.header-top-left').css(cssColor);
+	$('label').css(textColor);
+	$('.logo-otdel').css(textColor);
+	$('logo-otdel-1').css(textColor);
+	$('p').css(textColor);
+	$('.tab-content').css(cssColor);
+	$('.adres p').css(textColorBlack);
+	$('.rezim_work p').css(textColorBlack);
+	$('.phone p').css(textColorBlack);
 }
 function fontSizeCustom(sizeFont){
 	$('.gos').css("font-size",(sizeFont ? sizeFont : 16)+"px");
@@ -71,7 +112,6 @@ function fontSizeCustom(sizeFont){
 	$('.rezim_work').css("font-size",(sizeFont ? sizeFont : 16)+"px");
 	$('.phone').css("font-size",(sizeFont ? sizeFont : 16)+"px");
 	$('.contakt-label').css("font-size",(sizeFont ? sizeFont : 16)+"px");
-	$('.logo-otdel').css("font-size",(sizeFont ? sizeFont : 16)+"px");
 	$('.our-contakt p').css("font-size",(sizeFont ? sizeFont : 16)+"px");
 	$('.contakt-DONM p').css("font-size",(sizeFont ? sizeFont : 16)+"px");
 }
@@ -91,11 +131,11 @@ function letterSpacingCustom(letterSpa){
 	$('ul').css('letter-spacing',(letterSpa ? letterSpa :'normal'));
 }
 function lineHeightCustom(betweenInter){
-	$('p').css('line-height',(betweenInter ? betweenInter : 1));
-	$('a').css('line-height',(betweenInter ? betweenInter : 1));
-	$('span').css('line-height',(betweenInter ? betweenInter : 1));
-	$('label').css('line-height',(betweenInter ? betweenInter : 1));
-	$('ul').css('line-height',(betweenInter ? betweenInter : 1));
+	$('.gos').css('line-height',(betweenInter ? betweenInter : 1));
+	$('.tab-content-first').css('line-height',(betweenInter ? betweenInter : 1));
+	$('.podpis').css('line-height',(betweenInter ? betweenInter : 1));
+	$('.button-fast-dostup-text').css('line-height',(betweenInter ? betweenInter : 1));
+	$('.pod-question-label-text').css('line-height',(betweenInter ? betweenInter : 1));
 }
 function imgVisibleCustom(imgVis){
 	$('.img_1').css('display',(imgVis ? imgVis : 'block'));
