@@ -34,22 +34,25 @@ function ajaxSend(){
 }
 function colorSiteCustom(color1,color2){
 	var cssColor = {
-		"background-color": color1,
-		"border": `1px solid ${color2}`,
+		"background-color": `${color1 ? color1 : 'white'}`,
+		"border-top": `1px solid ${color2 ? color2 : 'black'}`,
+		"border-bottom": `1px solid ${color2 ? color2 : 'black'}`,
  	}
 
 	//  {'background-color':(color1 ? color1 : 'white'), 'border':"1px solid"+(color2 ? color2 : 'black')}
 	$('.header-top-left').css(cssColor);
-	$('.main_part_header').css({'background-color':(color1 ? color1 : 'white'), 'border-bottom':'1px solid'+(color2 ? color2 : 'black')});
-	$('.wrapper').css({'background-color':(color1 ? color1 : 'white'), 'border':'1px solid'+(color2 ? color2 : 'black')});
-	$('.fast_icon_dostup').css({'background-color':(color1 ? color1 : 'white'), 'border':'1px solid'+(color2 ? color2 : 'black')});
-	$('.Wrapper').css({'background-color':(color1 ? color1 : 'white'), 'border':'1px solid'+(color2 ? color2 : 'black')});
-	$('.wRapper').css({'background-color':(color1 ? color1 : 'white'), 'border':'1px solid'+(color2 ? color2 : 'black')});
-	$('.question').css({'background-color':(color1 ? color1 : 'white'), 'border':'1px solid'+(color2 ? color2 : 'black')});
-	$('.body').css({'background-color':(color1 ? color1 : 'white'), 'border-top':'1px solid'+(color2 ? color2 : 'black'), 'boreder-bottom':'1px solid'+(color2 ? color2 : 'black')});
-	$('.contakt').css({'background-color':(color1 ? color1 : 'white'), 'border':'1px solid'+(color2 ? color2 : 'black')});
-	$('.down-footer').css({'background-color':(color1 ? color1 : 'white'), 'border-top':'1px solid'+(color2 ? color2 : 'black')});
-	$('.header-top-left').css({'background-color':(color1 ? color1 : 'white'), 'border':'1px solid'+(color2 ? color2 : 'black')});
+	$('main').css(cssColor);
+	$('footer').css(cssColor);
+	$('.main_part_header').css(cssColor);
+	$('.wrapper').css(cssColor);
+	$('.fast_icon_dostup').css(cssColor);
+	$('.Wrapper').css(cssColor);
+	$('.wRapper').css(cssColor);
+	$('.question').css(cssColor);
+	$('.body').css(cssColor);
+	$('.contakt').css(cssColor);
+	$('.down-footer').css(cssColor);
+	$('.header-top-left').css(cssColor);
 }
 function fontSizeCustom(sizeFont){
 	$('.gos').css("font-size",(sizeFont ? sizeFont : 16)+"px");
@@ -365,7 +368,7 @@ $(document).on('click','.classic-site-version-btn', function(){
 	fontFamilyCustom('PT Sans');
 	letterSpacingCustom('normal');
 	lineHeightCustom(1);
-	colorSiteCustom('white','black')
+	colorSiteCustom('white','white')
 	imgVisibleCustom('block');
 	var impairedStyle = $(".for-visually-impaired").prop("style");
 		impairedStyle.removeProperty("display");
