@@ -68,6 +68,7 @@ function colorSiteCustom(color1,color2){
 	$('.tab-content_1').css(cssColor);
 	$('.main_part_header').css(cssBorderUp);
 	$('.wrapper').css(cssColor);
+	$('.wrapper slider__item').css(cssBorderColor);
 	$('.fast_icon_dostup').css(cssColor);
 	$('.Wrapper').css(cssColor);
 	$('.news p').css(cssBorderColor);
