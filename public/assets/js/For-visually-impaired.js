@@ -16,7 +16,7 @@ var customObject = {
 	betweenInterval: 1,
 	colorSite1: 'white',
 	colorSite2: 'black',
-	imgVisible: 'block',
+	imgVisible: '1',
 };
 function ajaxSend(){
 	$.ajax({
@@ -42,7 +42,7 @@ function colorSiteCustom(color1,color2){
 		"color": `${color2 ? color2 :'white'}`,
 	}
 	var textColorBlack = {
-		"color": `${color1 ? color1 :'black'}`,
+		"color": `${color2 ? color2 :'black'}`,
 	}
 	var cssBorderColor = {
 		"border":`1px solid ${color2 ? color2 :'black'}`,
@@ -95,6 +95,7 @@ function colorSiteCustom(color1,color2){
 	$('.adres p').css(textColorBlack);
 	$('.rezim_work p').css(textColorBlack);
 	$('.phone p').css(textColorBlack);
+	$('.menu').css(cssColor);
 }
 function fontSizeCustom(sizeFont){
 	$('.gos').css("font-size",(sizeFont ? sizeFont : 16)+"px");
@@ -139,8 +140,9 @@ function lineHeightCustom(betweenInter){
 	$('.pod-question-label-text').css('line-height',(betweenInter ? betweenInter : 1));
 }
 function imgVisibleCustom(imgVis){
-	$('.img_1').css('display',(imgVis ? imgVis : 'block'));
-	$('.img_slider').css('display',(imgVis ? imgVis : 'block'));
+	$('.img_1').css('opacity',(imgVis ? imgVis : '1'));
+	$('.director').css('opacity',(imgVis ? imgVis : '1'));
+	$('.img_slider').css('opacity',(imgVis ? imgVis : '1'));
 }
 
 function customStyle(){
@@ -193,12 +195,14 @@ function customStyle(){
 			}
 
 			$('.switch-btn2').toggleClass('switch-on2');
-			if(myData1.imgVisible == 'block'){
+			if(myData1.imgVisible == '1'){
 				$('.switch-btn2').trigger('on.switch');
+				$('.logo').css('display','block');
 			}
-			else if(myData1.imgVisible == 'none'){
+			else if(myData1.imgVisible == '0'){
 				$('.switch-btn2.switch-on2').toggleClass('switch-on2');
 				$('.switch-btn2').trigger('off.switch');
+				$('.logo').css('display','none');
 			}
 		//*
 		//imgVisible
@@ -221,8 +225,9 @@ function customStyle(){
 		fontFamilyCustom('PT Sans');
 		letterSpacingCustom('normal');
 		lineHeightCustom(1);
-		colorSiteCustom('white','black')
-		imgVisibleCustom('block');
+		classicStyleSite();
+		imgVisibleCustom('1');
+		
 		var impairedStyle = $(".for-visually-impaired").prop("style");
 		impairedStyle.removeProperty("display");
 		$('.conteiner-for-visually-impaired').css("display","none");
@@ -239,6 +244,48 @@ function customStyle(){
 	}
 }
 
+function classicStyleSite(){
+	$('.header-top-left').removeAttr("style");
+	$('.container-nav-menu').removeAttr("style");
+	$('.tab label').removeAttr("style");
+	$('.tab-1 label').removeAttr("style");
+	$('.icon-fast-dostup').removeAttr("style");
+	$('.first-icon').removeAttr("style");
+	$('main').removeAttr("style");
+	$('footer').removeAttr("style");
+	$('.tab-content_1').removeAttr("style");
+	$('.main_part_header').removeAttr("style");
+	$('.wrapper').removeAttr("style");
+	$('.wrapper slider__item').removeAttr("style");
+	$('.fast_icon_dostup').removeAttr("style");
+	$('.Wrapper').removeAttr("style");
+	$('.news p').removeAttr("style");
+	$('.our-contakt').removeAttr("style");
+	$('.contakt-DONM').removeAttr("style");
+	$('.for-down-footer').removeAttr("style");
+	$('.logo-otdel-1').removeAttr("style");
+	$('.contakt-label p').removeAttr("style");
+	$('#contakt').removeAttr("style");
+	$('.Slider').removeAttr("style");
+	$('.Wrapper').removeAttr("style");
+	$('.question-label-text').removeAttr("style");
+	$('.wRapper').removeAttr("style");
+	$('.question').removeAttr("style");
+	$('.body').removeAttr("style");
+	$('.contakt').removeAttr("style");
+	$('.down-footer').removeAttr("style");
+	$('.header-top-left').removeAttr("style");
+	$('label').removeAttr("style");
+	$('.logo-otdel').removeAttr("style");
+	$('logo-otdel-1').removeAttr("style");
+	$('p').removeAttr("style");
+	$('.tab-content').removeAttr("style");
+	$('.adres p').removeAttr("style");
+	$('.rezim_work p').removeAttr("style");
+	$('.phone p').removeAttr("style");
+	$('.menu').removeAttr("style");
+	$('.logo').removeAttr('style');
+}
 
 
 
@@ -318,14 +365,16 @@ $(document).ready(function() {
 
 	$('.switch-btn2').on('on.switch', function () {
 		replaceClass("html", "hcheckbox-img-f", "","", "hcheckbox-img-t");
-		imgVisibleCustom('block');
-		customObject.imgVisible = 'block';
+		imgVisibleCustom('1');
+		$('.logo').css('display','block');
+		customObject.imgVisible = '1';
 		ajaxSend();
 	});
 	$('.switch-btn2').on('off.switch', function () {
 		replaceClass("html", "hcheckbox-img-t", "","", "hcheckbox-img-f");
-		imgVisibleCustom('none');
-		customObject.imgVisible = 'none';
+		imgVisibleCustom('0');
+		$('.logo').css('display','none');
+		customObject.imgVisible = '0';
 		ajaxSend();
 	});
 
@@ -388,12 +437,18 @@ $(document).ready(function() {
 });
 $(document).on('click','.for-visually-impaired', function(){
 	$('.conteiner-for-visually-impaired').toggleClass('active');
+	// customStyle();
 	var VisuallyImpaired = document.querySelector('.conteiner-for-visually-impaired.active');
 	if(VisuallyImpaired){
 		$('.for-visually-impaired').css("display","none");
 		$('.classic-site-version-btn').css("display","block");
 		$('.conteiner-for-visually-impaired.active').css("display","block");
 		customObject.display = "active";
+		fontSizeCustom(myData1.fontSize);
+		fontFamilyCustom(myData1.font);
+		letterSpacingCustom(myData1.checkboxInterval);
+		lineHeightCustom(myData1.betweenInterval);	
+		colorSiteCustom(myData1.colorSite1, myData1.colorSite2);
 		ajaxSend();
 	}
 	
@@ -409,8 +464,8 @@ $(document).on('click','.classic-site-version-btn', function(){
 	fontFamilyCustom('PT Sans');
 	letterSpacingCustom('normal');
 	lineHeightCustom(1);
-	colorSiteCustom('white','white')
-	imgVisibleCustom('block');
+	classicStyleSite();
+	imgVisibleCustom('1');
 	var impairedStyle = $(".for-visually-impaired").prop("style");
 		impairedStyle.removeProperty("display");
 	var impairedStyle = $(".button-down-footer .for-visually-impaired").prop("style");
@@ -423,7 +478,7 @@ $(document).on('click','.classic-site-version-btn', function(){
 	customObject.betweenInterval = 1;
 	customObject.colorSite1 = 'white';
 	customObject.colorSite2 ='black';
-	customObject.imgVisible = 'block';
+	customObject.imgVisible = '1';
 	ajaxSend();
 	
 });
