@@ -42,7 +42,7 @@
         font-family: 'PT Sans', sans-serif;
         column-gap: 100px;
 }
-    #nav-menu{
+    .nav-menu{
         background-color: whitesmoke;
         position: absolute;
         border: 1.5px solid black;
@@ -51,7 +51,7 @@
         padding: 20px;
     }
     
-    .app-header-nav-menu #nav-menu > ul{
+    .app-header-nav-menu .nav-menu > ul{
         margin: 10px;
         z-index: 40;
         display: flex;
@@ -203,9 +203,9 @@
     }
     
     
-    .show {animation-name: example;animation-duration: 0.8s; animation-direction: normal;}
-    .hide {animation-name:exam;
-        animation-duration: 1s; animation-direction: forwards;}
+    .nav-menu.show {animation-name: example;animation-duration: 0.8s; animation-direction: normal;}
+    .pod-nav-menu.show {animation-name: example;animation-duration: 0.8s; animation-direction: normal;}
+    /* .nav-menu.hide {animation-name:exam;animation-duration: 1s; animation-direction: forwards;} */
     @keyframes example {
         from {opacity:.0}
         to {opacity:2;}
@@ -214,9 +214,22 @@
         from {opacity: 2;}
         to {opacity: 0;}
     }
-    .hide{
-        display: none;
+    .nav-menu.hide{
+        /* display: none; */
+        opacity: 0;
+        animation-name: exam;
+        animation-duration: 0.8s;
+        animation-direction: normal;
+        z-index: 1;
+    }.pod-nav-menu.hide{
+        /* display: none; */
+        opacity: 0;
+        animation-name: exam;
+        animation-duration: 0.8s;
+        animation-direction: normal;
+        z-index: 1;
     }
+    
     .slick-list{
         overflow: hidden;
     }
