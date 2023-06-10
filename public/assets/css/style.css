@@ -41,6 +41,7 @@
             margin: 20px 0px 20px 0px;
         font-family: 'PT Sans', sans-serif;
         column-gap: 100px;
+        align-items: center;
 }
     .nav-menu{
         background-color: whitesmoke;
@@ -204,7 +205,7 @@
     
     
     .nav-menu.show {animation-name: example;animation-duration: 0.8s; animation-direction: normal;}
-    .pod-nav-menu.show {animation-name: example;animation-duration: 0.8s; animation-direction: normal;}
+    .pod-nav-menu.show {animation-name: example;animation-duration: 0.3s; animation-direction: normal; height: auto;opacity: 1;}
     /* .nav-menu.hide {animation-name:exam;animation-duration: 1s; animation-direction: forwards;} */
     @keyframes example {
         from {opacity:.0}
@@ -216,20 +217,44 @@
     }
     .nav-menu.hide{
         opacity: 0;
+        pointer-events: none;
         animation-name: exam;
         animation-duration: 0.8s;
         animation-direction: normal;
         z-index: 1;
-        right: 100%;
     }.pod-nav-menu.hide{
-        /* display: none; */
+        height: 0;
         opacity: 0;
+        pointer-events: none;
         animation-name: exam;
-        animation-duration: 0.8s;
+        animation-duration: 0.1s;
         animation-direction: normal;
         z-index: 1;
     }
-    
+    .nav-menu-first{
+        margin-left:20px ;
+    }
+    .nav-menu ul{
+        list-style-type: none;
+        margin: 10px;
+    }
+    .nav-menu ul ul li{
+        list-style-type: none;
+        margin: 10px;
+    }
+    .nav-menu ul ul li:hover{
+        text-decoration: underline;
+    }
+    .nav-menu-footer{
+        line-height: 2;
+        text-decoration: none;
+        color: black;
+    }
+    .link{
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+    }
     .slick-list{
         overflow: hidden;
     }

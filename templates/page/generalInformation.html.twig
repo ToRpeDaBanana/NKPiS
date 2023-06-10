@@ -1,0 +1,14 @@
+{% extends 'main_page/index.html.twig' %}
+
+{% block main %}
+{% for pageCont in pageData %}
+    {% if pageCont.category == 'about' %}
+        
+        <div>
+            <h1>{{ pageCont.title }}</h1>
+            {{ pageCont.text|raw}}
+        </div>
+    {% endif %}
+{% endfor %}
+
+{% endblock %}
