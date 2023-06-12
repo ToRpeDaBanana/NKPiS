@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controller;
-use App\Entity\Page;
+use App\Entity\Category;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -45,7 +45,7 @@ class MainPageController extends AbstractController
         }
         
         // $pageContent = $entityManager->getRepository(Page::class)->findAll();
-        $pageContent = $doctrine->getRepository(Page::class)->findAll();
+        $pageContent = $doctrine->getRepository(Category::class)->findAll();
         
         // if (!$session->has('customStyle'))
         // {
@@ -53,6 +53,7 @@ class MainPageController extends AbstractController
         // }
         // $customStyle = $session->get('customStyle');
         // echo($customStyle);
+        // var_dump($pageContent);
         // exit;
         // $session->clear();
         return $this->render('main_page/index.html.twig', [

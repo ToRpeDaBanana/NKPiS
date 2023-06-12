@@ -7,8 +7,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
-use App\Entity\Page;
-
+use App\Entity\GeneralInf;
+use Symfony\Component\HttpFoundation\Request;
 class PageController extends AbstractController
 {
     #[Route('/teachers', methods:['GET'])]
@@ -31,13 +31,13 @@ class PageController extends AbstractController
     ): Response
         
     {
-        $pageContent = $doctrine->getRepository(Page::class)->findBy(['title'=>'Общая информация']);
+        // $pageContent = $doctrine->getRepository(GeneralInf::class)->findBy(['title'=>'Общая информация']);
         // var_dump($pageAbout);
         // exit;
 
         return $this->render('page/generalInformation.html.twig', [
             'controller_name' => 'PageController',
-            'pageData' => $pageContent,
+            // 'pageData' => $pageContent,
         ]);
     }
     #[Route('/contactpod', methods:['GET'])]
@@ -118,6 +118,7 @@ class PageController extends AbstractController
     #[Route('/payedic', methods:['GET'])]
     public function payToEdicution(
         ManagerRegistry $doctrine,
+        Request $request
     ): Response
         
     {
