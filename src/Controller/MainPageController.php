@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
+use App\Service\ServiceGetSession;
 
 class MainPageController extends AbstractController
 {
@@ -21,7 +22,7 @@ class MainPageController extends AbstractController
         Request $request,
         EntityManagerInterface $entityManager, 
         ManagerRegistry $doctrine,
-    
+        // ServiceGetSession $serviceGetSession,
     ): Response
 
     {
@@ -58,7 +59,6 @@ class MainPageController extends AbstractController
             // }
         }
         
-        // $pageContent = $entityManager->getRepository(Page::class)->findAll();
         $pageContent = $doctrine->getRepository(Category::class)->findAll();
         $sessionValues = [];
         foreach($includeValues as $item){
@@ -67,6 +67,7 @@ class MainPageController extends AbstractController
             }
             
         }
+        // $serviceGetSession->setServiceData($sessionValues);
         // var_dump($sessionValues);
         // var_dump($_SESSION);
 

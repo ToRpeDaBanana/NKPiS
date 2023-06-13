@@ -7,17 +7,30 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
-use App\Entity\GeneralInf;
+use App\Entity\Comment;
+use App\Entity\ControlSovChairman;
+use App\Entity\ControlSovDocuments;
+use App\Entity\ControlSovMeetings;
+use App\Entity\ControlSovOther;
+use App\Entity\ControlSovPastMeetings;
+use App\Entity\DepartmentContacts;
+use App\Entity\News;
+use App\Entity\OurAchievements;
+use App\Entity\OurAchievementsTable;
+use App\Entity\PaidEduServ;
+use App\Entity\PhotoGallery;
+use App\Entity\Teachers;
 use Symfony\Component\HttpFoundation\Request;
+use App\Service\ServiceGetSession;
 class PageController extends AbstractController
 {
     #[Route('/teachers', methods:['GET'])]
-    public function index(
+    public function teachers(
         ManagerRegistry $doctrine,
     ): Response
         
     {
-        $pageContent = $doctrine->getRepository(Page::class)->findAll();
+        $pageContent = $doctrine->getRepository(Teachers::class)->findAll();
 
 
         return $this->render('page/teachers.html.twig', [
@@ -25,19 +38,22 @@ class PageController extends AbstractController
             'pageData' => $pageContent,
         ]);
     }
-    #[Route('/general', methods:['GET'])]
+    #[Route('/general', methods:['GET'], name:'general')]
     public function general(
         ManagerRegistry $doctrine,
+        Request $request,
+        // ServiceGetSession $serviceGetSession,
     ): Response
         
     {
-        // $pageContent = $doctrine->getRepository(GeneralInf::class)->findBy(['title'=>'Общая информация']);
+        // $pageContent = $doctrine->getRepository(GeneralInf::class)->findAll();
         // var_dump($pageAbout);
         // exit;
-
+        // $myData = $serviceGetSession->getServiceData();
         return $this->render('page/generalInformation.html.twig', [
             'controller_name' => 'PageController',
             // 'pageData' => $pageContent,
+            // 'sessionData' => $myData,
         ]);
     }
     #[Route('/contactpod', methods:['GET'])]
@@ -46,7 +62,7 @@ class PageController extends AbstractController
     ): Response
         
     {
-        $pageContent = $doctrine->getRepository(Page::class)->findBy(['title'=>'Педагогический состав']);
+        $pageContent = $doctrine->getRepository(DepartmentContacts::class)->findAll();
         // var_dump($pageAbout);
         // exit;
 
@@ -61,7 +77,7 @@ class PageController extends AbstractController
     ): Response
         
     {
-        $pageContent = $doctrine->getRepository(Page::class)->findBy(['title'=>'Педагогический состав']);
+        $pageContent = $doctrine->getRepository(News::class)->findAll();
         // var_dump($pageAbout);
         // exit;
 
@@ -76,13 +92,21 @@ class PageController extends AbstractController
     ): Response
         
     {
-        $pageContent = $doctrine->getRepository(Page::class)->findBy(['title'=>'Педагогический состав']);
+        $pageContent1 = $doctrine->getRepository(ControlSovChairman::class)->findAll();
+        $pageContent2 = $doctrine->getRepository(ControlSovOther::class)->findAll();
+        $pageContent3 = $doctrine->getRepository(ControlSovMeetings::class)->findAll();
+        $pageContent4 = $doctrine->getRepository(ControlSovDocuments::class)->findAll();
+        $pageContent5 = $doctrine->getRepository(ControlSovPastMeetings::class)->findAll();
         // var_dump($pageAbout);
         // exit;
 
         return $this->render('page/controlSov.html.twig', [
             'controller_name' => 'PageController',
-            'pageData' => $pageContent,
+            'pageData1' => $pageContent1,
+            'pageData2' => $pageContent2,
+            'pageData3' => $pageContent3,
+            'pageData4' => $pageContent4,
+            'pageData5' => $pageContent5,
         ]);
     }
     #[Route('/comment', methods:['GET'])]
@@ -91,7 +115,7 @@ class PageController extends AbstractController
     ): Response
         
     {
-        $pageContent = $doctrine->getRepository(Page::class)->findBy(['title'=>'Педагогический состав']);
+        $pageContent = $doctrine->getRepository(Comment::class)->findAll();
         // var_dump($pageAbout);
         // exit;
 
@@ -106,13 +130,15 @@ class PageController extends AbstractController
     ): Response
         
     {
-        $pageContent = $doctrine->getRepository(Page::class)->findBy(['title'=>'Педагогический состав']);
+        $pageContent1 = $doctrine->getRepository(OurAchievements::class)->findAll();
+        $pageContent2 = $doctrine->getRepository(OurAchievementsTable::class)->findAll();
         // var_dump($pageAbout);
         // exit;
 
         return $this->render('page/ourAch.html.twig', [
             'controller_name' => 'PageController',
-            'pageData' => $pageContent,
+            'pageData1' => $pageContent1,
+            'pageData2' => $pageContent2,
         ]);
     }
     #[Route('/payedic', methods:['GET'])]
@@ -122,7 +148,7 @@ class PageController extends AbstractController
     ): Response
         
     {
-        $pageContent = $doctrine->getRepository(Page::class)->findBy(['title'=>'Педагогический состав']);
+        $pageContent = $doctrine->getRepository(PaidEduServ::class)->findAll();
         // var_dump($pageAbout);
         // exit;
 
@@ -137,7 +163,7 @@ class PageController extends AbstractController
     ): Response
         
     {
-        $pageContent = $doctrine->getRepository(Page::class)->findBy(['title'=>'Педагогический состав']);
+        $pageContent = $doctrine->getRepository(PhotoGallery::class)->findAll();
         // var_dump($pageAbout);
         // exit;
 
