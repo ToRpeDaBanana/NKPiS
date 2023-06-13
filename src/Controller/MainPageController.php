@@ -9,8 +9,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
-use App\Service\ServiceGetSession;
-
+use App\Service\SessionService;
 class MainPageController extends AbstractController
 {
     #[Route('/', name: 'app_main_page')]
@@ -22,51 +21,52 @@ class MainPageController extends AbstractController
         Request $request,
         EntityManagerInterface $entityManager, 
         ManagerRegistry $doctrine,
-        // ServiceGetSession $serviceGetSession,
+        SessionService $sessionService,
     ): Response
 
     {
         
 
-        $includeValues = [
-            'fontSize',
-            'font',
-            'display',
-            'checkboxInterval',
-            'betweenInterval',
-            'colorSite1',
-            'colorSite2',
-            'imgVisible',
-        ];
-        if (!empty($_POST)){
-            // echo($_POST);
-            // var_dump($_POST);
-            // exit;
+        // $includeValues = [
+        //     'fontSize',
+        //     'font',
+        //     'display',
+        //     'checkboxInterval',
+        //     'betweenInterval',
+        //     'colorSite1',
+        //     'colorSite2',
+        //     'imgVisible',
+        // ];
+        // if (!empty($_POST)){
+        //     // echo($_POST);
+        //     // var_dump($_POST);
+        //     // exit;
             
-            foreach($_POST as $k => $item){
-                if( in_array($k, $includeValues)){
-                    $session->set($k, $item);
-                }
+        //     foreach($_POST as $k => $item){
+        //         if( in_array($k, $includeValues)){
+        //             $session->set($k, $item);
+        //         }
                 
-            }
-            // exit(json_encode(['success' => true]));
+        //     }
+        //     exit(json_encode(['success' => true]));
 
-            // if (!empty($_POST['zoom'])){
-            //     // echo($_POST);
-            //     $session->set('customStyle', $_POST['zoom']);
-            //     // var_dump($_POST);
-            //     exit(json_encode(['success' => true]));
-            // }
-        }
+        //     // if (!empty($_POST['zoom'])){
+        //     //     // echo($_POST);
+        //     //     $session->set('customStyle', $_POST['zoom']);
+        //     //     // var_dump($_POST);
+        //     //     exit(json_encode(['success' => true]));
+        //     // }
+        // }
         
         $pageContent = $doctrine->getRepository(Category::class)->findAll();
-        $sessionValues = [];
-        foreach($includeValues as $item){
-            if ($session->has($item)){
-                $sessionValues[$item] = $session->get($item);
-            }
+        // $sessionValues = [];
+        // foreach($includeValues as $item){
+        //     if ($session->has($item)){
+        //         $sessionValues[$item] = $session->get($item);
+        //     }
             
-        }
+        // }
+        
         // $serviceGetSession->setServiceData($sessionValues);
         // var_dump($sessionValues);
         // var_dump($_SESSION);
@@ -85,7 +85,7 @@ class MainPageController extends AbstractController
         return $this->render('main_page/index.html.twig', [
             'controller_name' => 'MainPageController',
             'pageData' => $pageContent,
-            'sessionData' => $sessionValues,
+            'sessionData' => $sessionService->getSessionData($session),
         ]);
     }
 }

@@ -20,13 +20,18 @@ use App\Entity\OurAchievementsTable;
 use App\Entity\PaidEduServ;
 use App\Entity\PhotoGallery;
 use App\Entity\Teachers;
+use App\Service\SessionService;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Request;
-use App\Service\ServiceGetSession;
+
 class PageController extends AbstractController
 {
     #[Route('/teachers', methods:['GET'])]
     public function teachers(
         ManagerRegistry $doctrine,
+        SessionService $sessionService,
+        SessionInterface $session,
+        
     ): Response
         
     {
@@ -36,29 +41,32 @@ class PageController extends AbstractController
         return $this->render('page/teachers.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
     #[Route('/general', methods:['GET'], name:'general')]
     public function general(
         ManagerRegistry $doctrine,
         Request $request,
-        // ServiceGetSession $serviceGetSession,
+        SessionService $sessionService,
+        SessionInterface $session, 
     ): Response
         
     {
         // $pageContent = $doctrine->getRepository(GeneralInf::class)->findAll();
         // var_dump($pageAbout);
         // exit;
-        // $myData = $serviceGetSession->getServiceData();
         return $this->render('page/generalInformation.html.twig', [
             'controller_name' => 'PageController',
             // 'pageData' => $pageContent,
-            // 'sessionData' => $myData,
+            'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
     #[Route('/contactpod', methods:['GET'])]
     public function contactPod(
         ManagerRegistry $doctrine,
+        SessionService $sessionService,
+        SessionInterface $session, 
     ): Response
         
     {
@@ -69,11 +77,14 @@ class PageController extends AbstractController
         return $this->render('page/contactPod.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
     #[Route('/news', methods:['GET'])]
     public function news(
         ManagerRegistry $doctrine,
+        SessionService $sessionService,
+        SessionInterface $session, 
     ): Response
         
     {
@@ -84,11 +95,14 @@ class PageController extends AbstractController
         return $this->render('page/news.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
     #[Route('/controlSov', methods:['GET'])]
     public function controlSov(
         ManagerRegistry $doctrine,
+        SessionService $sessionService,
+        SessionInterface $session, 
     ): Response
         
     {
@@ -107,11 +121,14 @@ class PageController extends AbstractController
             'pageData3' => $pageContent3,
             'pageData4' => $pageContent4,
             'pageData5' => $pageContent5,
+            'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
     #[Route('/comment', methods:['GET'])]
     public function comment(
         ManagerRegistry $doctrine,
+        SessionService $sessionService,
+        SessionInterface $session, 
     ): Response
         
     {
@@ -122,11 +139,14 @@ class PageController extends AbstractController
         return $this->render('page/comment.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
     #[Route('/ourAch', methods:['GET'])]
     public function ourAch(
         ManagerRegistry $doctrine,
+        SessionService $sessionService,
+        SessionInterface $session, 
     ): Response
         
     {
@@ -139,12 +159,15 @@ class PageController extends AbstractController
             'controller_name' => 'PageController',
             'pageData1' => $pageContent1,
             'pageData2' => $pageContent2,
+            'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
     #[Route('/payedic', methods:['GET'])]
     public function payToEdicution(
         ManagerRegistry $doctrine,
-        Request $request
+        Request $request,
+        SessionService $sessionService,
+        SessionInterface $session, 
     ): Response
         
     {
@@ -155,11 +178,14 @@ class PageController extends AbstractController
         return $this->render('page/payToEdicution.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
     #[Route('/photo', methods:['GET'])]
     public function photo(
         ManagerRegistry $doctrine,
+        SessionService $sessionService,
+        SessionInterface $session, 
     ): Response
         
     {
@@ -170,6 +196,7 @@ class PageController extends AbstractController
         return $this->render('page/photo.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
 }

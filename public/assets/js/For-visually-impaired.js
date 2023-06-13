@@ -21,7 +21,7 @@ var customObject = {
 function ajaxSend(){
 	$.ajax({
 		type: "POST",
-		url: "/",
+		url: "/ajaxResponder",
 		data: customObject,
 		dataType: "json",
 		success: function(response) {
@@ -216,7 +216,7 @@ function customStyle(){
 			$('.classic-site-version-btn').css("display","block");
 		//
 
-		ajaxSend();
+		// ajaxSend();
 	}
 	else if (myData1.display == 'hide'){
 		$('.conteiner-for-visually-impaired.active').toggleClass('active');
