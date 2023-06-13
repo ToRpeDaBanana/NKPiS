@@ -18,13 +18,11 @@ class PaidEduServ
     private ?int $id = null;
 
     #[ORM\Column(type: Types::ARRAY)]
-    private array $parent_folder = [];
+    private ?array $parent_folder = null;
 
     #[ORM\Column(type: Types::ARRAY)]
-    private array $procedur = [];
+    private ?array $procedur = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $category = null;
 
     public function getId(): ?int
     {
@@ -55,47 +53,4 @@ class PaidEduServ
         return $this;
     }
 
-    public function getCategory(): ?string
-    {
-        return $this->category;
-    }
-
-    public function setCategory(string $category): self
-    {
-        $this->category = $category;
-
-        return $this;
-    }
-    private $files;
-
-    public function __construct()
-    {
-        $this->files = new ArrayCollection();
-    }
-
-    /**
-     * @return ArrayCollection|File[]
-     */
-    public function getFiles(): ArrayCollection
-    {
-        return $this->files;
-    }
-
-    /**
-     * @param ArrayCollection|File[] $files
-     */
-    public function setFiles(ArrayCollection $files): void
-    {
-        $this->files = $files;
-    }
-
-    public function addFile(File $file): void
-    {
-        $this->files->add($file);
-    }
-
-    public function removeFile(File $file): void
-    {
-        $this->files->removeElement($file);
-    }
 }

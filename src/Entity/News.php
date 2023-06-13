@@ -20,20 +20,18 @@ class News
     #[ORM\Column(length: 255)]
     private ?string $first_text = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $first_photo = null;
+    #[ORM\Column(type: Types::ARRAY, nullable: true)]
+    private ?array $first_photo = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $second_text = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $second_photo = null;
+    #[ORM\Column(type: Types::ARRAY,nullable: true)]
+    private ?array $second_photo = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $file = null;
+    #[ORM\Column(type: Types::ARRAY,nullable: true)]
+    private ?array $file = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $category = null;
 
     public function getId(): ?int
     {
@@ -64,12 +62,12 @@ class News
         return $this;
     }
 
-    public function getFirstPhoto(): ?string
+    public function getFirstPhoto(): array
     {
         return $this->first_photo;
     }
 
-    public function setFirstPhoto(string $first_photo): self
+    public function setFirstPhoto(array $first_photo): self
     {
         $this->first_photo = $first_photo;
 
@@ -88,39 +86,28 @@ class News
         return $this;
     }
 
-    public function getSecondPhoto(): ?string
+    public function getSecondPhoto(): array
     {
         return $this->second_photo;
     }
 
-    public function setSecondPhoto(string $second_photo): self
+    public function setSecondPhoto(array $second_photo): self
     {
         $this->second_photo = $second_photo;
 
         return $this;
     }
 
-    public function getFile(): ?string
+    public function getFile(): array
     {
         return $this->file;
     }
 
-    public function setFile(string $file): self
+    public function setFile(array $file): self
     {
         $this->file = $file;
 
         return $this;
     }
 
-    public function getCategory(): ?string
-    {
-        return $this->category;
-    }
-
-    public function setCategory(string $category): self
-    {
-        $this->category = $category;
-
-        return $this;
-    }
 }

@@ -27,15 +27,29 @@ class MainPageController extends AbstractController
     {
         
 
-
+        $includeValues = [
+            'fontSize',
+            'font',
+            'display',
+            'checkboxInterval',
+            'betweenInterval',
+            'colorSite1',
+            'colorSite2',
+            'imgVisible',
+        ];
         if (!empty($_POST)){
             // echo($_POST);
             // var_dump($_POST);
             // exit;
+            
             foreach($_POST as $k => $item){
-                $session->set($k, $item);
+                if( in_array($k, $includeValues)){
+                    $session->set($k, $item);
+                }
+                
             }
-            exit(json_encode(['success' => true]));
+            // exit(json_encode(['success' => true]));
+
             // if (!empty($_POST['zoom'])){
             //     // echo($_POST);
             //     $session->set('customStyle', $_POST['zoom']);
@@ -46,7 +60,17 @@ class MainPageController extends AbstractController
         
         // $pageContent = $entityManager->getRepository(Page::class)->findAll();
         $pageContent = $doctrine->getRepository(Category::class)->findAll();
-        
+        $sessionValues = [];
+        foreach($includeValues as $item){
+            if ($session->has($item)){
+                $sessionValues[$item] = $session->get($item);
+            }
+            
+        }
+        // var_dump($sessionValues);
+        // var_dump($_SESSION);
+
+
         // if (!$session->has('customStyle'))
         // {
         //     $session->set('customStyle', 1);
@@ -56,9 +80,11 @@ class MainPageController extends AbstractController
         // var_dump($pageContent);
         // exit;
         // $session->clear();
+        
         return $this->render('main_page/index.html.twig', [
             'controller_name' => 'MainPageController',
             'pageData' => $pageContent,
+            'sessionData' => $sessionValues,
         ]);
     }
 }

@@ -20,10 +20,14 @@ class ControlSovDocumentsCrudController extends AbstractCrudController
     {
         return [
             ChoiceField::new('category_document')->setChoices([
-                'Нормативно-правовые документы' => true,
-                'Иные (дополнительные) документы управляющего совета' => false,
+                'Нормативно-правовые документы' => 1,
+                'Иные (дополнительные) документы управляющего совета' => 0,
             ])->setLabel('Категория файла'),
-            ImageField::new('document')->setUploadDir('public/assets/files')->setLabel('Выбрать файл'),
+            ImageField::new('document')
+            ->setUploadDir('public\assets\upload\files')
+            ->setBasePath('public\assets\upload\files')
+            ->setFormTypeOption('multiple', true)
+            ->setLabel('Выбрать файл')
         ];
     }
 }

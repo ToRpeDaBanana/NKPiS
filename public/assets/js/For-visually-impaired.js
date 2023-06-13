@@ -148,7 +148,7 @@ function imgVisibleCustom(imgVis){
 function customStyle(){
 	if(myData1.display == 'active'){
 		$('.conteiner-for-visually-impaired').toggleClass('active');
-		customObject.display = "active";
+		customObject.display = 'active';
 		//fontSize
 			fontSizeCustom(myData1.fontSize);
 		//*
@@ -220,7 +220,7 @@ function customStyle(){
 	}
 	else if (myData1.display == 'hide'){
 		$('.conteiner-for-visually-impaired.active').toggleClass('active');
-		customObject.display = "hide";
+		customObject.display = 'hide';
 		fontSizeCustom(16);
 		fontFamilyCustom('PT Sans');
 		letterSpacingCustom('normal');
@@ -291,12 +291,9 @@ function classicStyleSite(){
 
 
 $(document).ready(function() {
-	console.log(myData1);
-	console.log(myData1.fontSize);
 	customStyle();
 	$('.font-size-small').click(function(event){
 		replaceClass("html", "hfont-size-midle", "hfont-size-large","", "hfont-size-small");
-
 		fontSizeCustom(16);
 		customObject.fontSize = 16;
 		ajaxSend();
@@ -456,7 +453,6 @@ $(document).on('click','.for-visually-impaired', function(){
 	
 });
 $(document).on('click','.classic-site-version-btn', function(){
-	console.log('cl');
 	$('.conteiner-for-visually-impaired.active').toggleClass('active');
 	$('.conteiner-for-visually-impaired').css("display","none");
 	$('.classic-site-version-btn').css("display","none");
@@ -474,7 +470,7 @@ $(document).on('click','.classic-site-version-btn', function(){
 	customObject.fontSize = 16;
 	customObject.display = "hide";
 	customObject.font ='PT Sans';
-	customObject.checkboxInterval= 'normal';
+	customObject.checkboxInterval = 'normal';
 	customObject.betweenInterval = 1;
 	customObject.colorSite1 = 'white';
 	customObject.colorSite2 ='black';

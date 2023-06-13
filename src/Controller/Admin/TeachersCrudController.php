@@ -24,15 +24,9 @@ class TeachersCrudController extends AbstractCrudController
             TextField::new('job_title'),
             TextField::new('phone'),
             EmailField::new('email'),
-            ImageField::new('photo')->setUploadDir('public/assets/img'),
+            ImageField::new('photo')->setUploadDir('public\assets\upload\img')
+            ->setBasePath('public\assets\upload\img'),
             TextField::new('category_job_title'),
-            ChoiceField::new('category')->setChoices([
-                'О нас'=>'about',
-                'Родителям'=>'parents',
-                'Учащимся'=>'students',
-                'Педагогам'=>'teachers',
-                'Поступление в колледж'=>'admission',
-            ]),
         ];
     }
     

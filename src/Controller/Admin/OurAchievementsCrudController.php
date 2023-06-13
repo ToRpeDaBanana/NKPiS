@@ -22,13 +22,7 @@ class OurAchievementsCrudController extends AbstractCrudController
             TextEditorField::new('first_text')->setLabel('Текст-1'),
             TextField::new('title_table')->setLabel('Заголовок Таблицы'),
             TextEditorField::new('second_text')->setLabel('Текст-2'),
-            ChoiceField::new('category')->setChoices([
-                'О нас'=>'about',
-                'Родителям'=>'parents',
-                'Учащимся'=>'students',
-                'Педагогам'=>'teachers',
-                'Поступление в колледж'=>'admission',
-            ])->setLabel('Категория'),
+
         ];
     }
 

@@ -31,9 +31,6 @@ class Teachers
     #[ORM\Column(length: 255)]
     private ?string $category_job_title = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $category = null;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -107,18 +104,6 @@ class Teachers
     public function setCategoryJobTitle(string $category_job_title): self
     {
         $this->category_job_title = $category_job_title;
-
-        return $this;
-    }
-
-    public function getCategory(): ?string
-    {
-        return $this->category;
-    }
-
-    public function setCategory(string $category): self
-    {
-        $this->category = $category;
 
         return $this;
     }

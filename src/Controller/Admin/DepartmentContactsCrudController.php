@@ -23,13 +23,6 @@ class DepartmentContactsCrudController extends AbstractCrudController
             TextField::new('phone'),
             TextField::new('day_week'),
             TextField::new('email'),
-            ChoiceField::new('category')->setChoices([
-                'О нас'=>'about',
-                'Родителям'=>'parents',
-                'Учащимся'=>'students',
-                'Педагогам'=>'teachers',
-                'Поступление в колледж'=>'admission',
-            ]),
         ];
     }
 

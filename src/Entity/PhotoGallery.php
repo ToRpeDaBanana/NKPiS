@@ -21,10 +21,7 @@ class PhotoGallery
     private ?string $main_photo = null;
 
     #[ORM\Column(type: Types::ARRAY)]
-    private array $photo = [];
-
-    #[ORM\Column(length: 255)]
-    private ?string $category = null;
+    private ?array $photo = null;
 
     public function getId(): ?int
     {
@@ -67,15 +64,4 @@ class PhotoGallery
         return $this;
     }
 
-    public function getCategory(): ?string
-    {
-        return $this->category;
-    }
-
-    public function setCategory(string $category): self
-    {
-        $this->category = $category;
-
-        return $this;
-    }
 }

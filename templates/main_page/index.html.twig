@@ -34,6 +34,10 @@
         {% endblock %}
 
         {% block javascripts %}
+            <script>
+                var myData = '{{ sessionData | json_encode | raw }}';
+                var myData1 = JSON.parse(myData);
+            </script>
             <script src="{{'/assets/js/burger.js'}}"></script>
             <script src="{{'/assets/js/For-visually-impaired.js'}}"></script>
 	        <script src="{{'/assets/js/nav-menu.js'}}"></script>
@@ -41,13 +45,10 @@
 	        <script src="{{'/assets/js/For-slider-reklama.js'}}"></script>
             <script src="{{'/assets/js/For-slider-news.js'}}"></script>
             <script src="{{'/assets/js/For-slider.js'}}"></script>
-            <script>
-                var myData = '{{ app.session.all() | json_encode | raw }}';
-                var myData1 = JSON.parse(myData);
-            </script>
+            
         {% endblock %}
     </head>
-    {{ dump(app.session.all()) }}
+    {# {{ dump(app.session.all()) }} #}
     <body>
     <header>
         {% block header %}

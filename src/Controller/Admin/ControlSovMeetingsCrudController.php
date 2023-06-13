@@ -4,7 +4,8 @@ namespace App\Controller\Admin;
 
 use App\Entity\ControlSovMeetings;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 class ControlSovMeetingsCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
@@ -14,10 +15,15 @@ class ControlSovMeetingsCrudController extends AbstractCrudController
 
 
     public function configureFields(string $pageName): iterable
-    {
+    {   
+        // phpinfo();
+        // exit;
         return [
-            TextField::new('planned')->setLabel('Запланировать заседание'),
-            TextField::new('date_planned')->setLabel('Дата-время'),
+            ChoiceField::new('planned')->setChoices([
+                'Заседание запланировано на ' => 1,
+                'В ближайшее время заседаний не запланированно' => 0,
+            ])->setLabel('Запланировать заседание'),
+            DateTimeField::new('date_planned')->setLabel('Дата-время')
         ];
     }
 }

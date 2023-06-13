@@ -19,13 +19,7 @@ class GeneralInfCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         yield TextEditorField::new('text');
-        yield ChoiceField::new('category')->setChoices([
-            'О нас'=>'about',
-            'Родителям'=>'parents',
-            'Учащимся'=>'students',
-            'Педагогам'=>'teachers',
-            'Поступление в колледж'=>'admission',
-        ]);
+
         // return [
         //     IdField::new('id'),
         //     TextField::new('title'),

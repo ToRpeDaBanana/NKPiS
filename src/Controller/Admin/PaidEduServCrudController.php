@@ -6,6 +6,7 @@ use App\Entity\PaidEduServ;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Form\Type\FileUploadType;
 
 class PaidEduServCrudController extends AbstractCrudController
 {
@@ -18,7 +19,17 @@ class PaidEduServCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            CollectionField::new('parent_folder')->onlyOnForms()->setLabel('Выбрать файлы'),
+            ImageField::new('parent_folder')
+            ->setUploadDir('public\assets\upload\files')
+            ->setBasePath('public\assets\upload\files')
+            ->setFormTypeOption('multiple', true)
+            ->setLabel('Родительская плата'),
+
+            ImageField::new('procedur')
+            ->setUploadDir('public\assets\upload\files')
+            ->setBasePath('public\assets\upload\files')
+            ->setFormTypeOption('multiple', true)
+            ->setLabel('Порядок оказания услуг')
         ];
     }
 

@@ -20,8 +20,8 @@ class ControlSovOtherCrudController extends AbstractCrudController
             TextField::new('name')->setLabel('ФИО'),
             TextField::new('category_us')->setLabel('Категория члена УС'),
             ChoiceField::new('coop')->setChoices([
-                'Да' => true,
-                'Нет' => false,
+                'Да' => 1,
+                'Нет' => 0,
             ])->setLabel('Кооптированный член (да/нет)'),
             TextField::new('job_title_us')->setLabel('Должность в УС'),
             TextField::new('job_loc')->setLabel('Место работы'),

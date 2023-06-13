@@ -5,8 +5,9 @@ namespace App\Controller\Admin;
 use App\Entity\ControlSovPastMeetings;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
+use Symfony\Component\Intl\Locales;
 
 class ControlSovPastMeetingsCrudController extends AbstractCrudController
 {
@@ -19,10 +20,15 @@ class ControlSovPastMeetingsCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-           TextField::new('date_past')->setLabel('Дата'),
-           ImageField::new('agenda')->setUploadDir('public/assets/files')->setLabel('Повестка'),
-           ImageField::new('protocol')->setUploadDir('public/assets/files')->setLabel('Протокол'),
-           UrlField::new('link')->setLabel('Ссылка'),
+        
+           DateField::new('date_past')->setFormat('dd MM yyyy')->setLabel('Дата'),
+           ImageField::new('agenda')->setUploadDir('public\assets\upload\files')
+           ->setBasePath('public\assets\upload\files')
+           ->setLabel('Повестка'),
+           ImageField::new('protocol')->setUploadDir('public\assets\upload\files')
+           ->setBasePath('public\assets\upload\files')
+           ->setLabel('Протокол'),
+           TextField::new('link')->setLabel('Ссылка'),
         ];
     }
 }
