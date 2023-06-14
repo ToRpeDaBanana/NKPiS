@@ -34,6 +34,10 @@
         {% endblock %}
 
         {% block javascripts %}
+            <script>
+                var myData = '{{ sessionData | json_encode | raw }}';
+                var myData1 = JSON.parse(myData);
+            </script>
             <script src="{{'/assets/js/burger.js'}}"></script>
             <script src="{{'/assets/js/For-visually-impaired.js'}}"></script>
 	        <script src="{{'/assets/js/nav-menu.js'}}"></script>
@@ -41,13 +45,10 @@
 	        <script src="{{'/assets/js/For-slider-reklama.js'}}"></script>
             <script src="{{'/assets/js/For-slider-news.js'}}"></script>
             <script src="{{'/assets/js/For-slider.js'}}"></script>
-            <script>
-                var myData = '{{ app.session.all() | json_encode | raw }}';
-                var myData1 = JSON.parse(myData);
-            </script>
+            
         {% endblock %}
     </head>
-    {{ dump(app.session.all()) }}
+    {# {{ dump(app.session.all()) }} #}
     <body>
     <header>
         {% block header %}
@@ -152,24 +153,24 @@
                         
 				        	 <ul>
                                 <li><a href="{{'/general'}}">Общая информация</a></li>
-				        		<li><a href="">Педагогический состав</a></li>
-				        		<li><a href="">Контакты подразделений</a></li>
-				        		<li><a href="">Новости</a></li>
+				        		<li><a href="{{'/teachers'}}">Педагогический состав</a></li>
+				        		<li><a href="{{'/contactpod'}}">Контакты подразделений</a></li>
+				        		<li><a href="{{'/news'}}">Новости</a></li>
 				        	
 				        		<span id="hh">Органы управления</span>
 		 						<li class="pod-nav-menu">
-		 							<a href="">Управляющий совет</a>
+		 							<a href="/controlSov">Управляющий совет</a>
 		 						</li>
 		 					</ul>
 		 					<ul>
-								<li><a href="">Отзывы</a></li>
-								<li><a href="">Наши достижения</a></li>
-								<li><a href="">Платные образовательные услуги</a></li>
+								<li><a href="{{'/comment'}}">Отзывы</a></li>
+								<li><a href="{{'/ourAch'}}">Наши достижения</a></li>
+								<li><a href="{{'/payedic'}}">Платные образовательные услуги</a></li>
 
 
 								<span id="hh">Фото и видео</span>
 									<li class="pod-nav-menu">
-										<a href="">Фотогалерея</a>
+										<a href="{{'/photo'}}">Фотогалерея</a>
 									</li>
 							 </ul>
 			        	</ul>

@@ -2,24 +2,21 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\User;
+use App\Entity\OurAchievementsTable;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-
-class UserCrudController extends AbstractCrudController
+class OurAchievementsTableCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return User::class;
+        return OurAchievementsTable::class;
     }
-
 
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('email')->setLabel('Почта'),
-            TextField::new('roles')->setLabel('Роль'),
-            TextField::new('password')->setLabel('Пароль'),
+            TextField::new('championship')->setLabel('Чемпионат'),
+            TextField::new('count')->setLabel('Количество победителей'),
         ];
     }
 
