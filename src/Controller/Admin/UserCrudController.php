@@ -14,13 +14,13 @@ class UserCrudController extends AbstractCrudController
     }
 
 
-    public function configureFields(string $pageName): iterable
-    {
-        return [
-            TextField::new('email')->setLabel('Почта'),
-            TextField::new('roles')->setLabel('Роль'),
-            TextField::new('password')->setLabel('Пароль'),
-        ];
-    }
+    // public function configureFields(string $pageName): iterable
+    // {
+    //     return [
+    //         TextField::new('email')->setLabel('Почта'),
+    //         TextField::new('roles')->setLabel('Роль'),
+    //         TextField::new('password')->setLabel('Пароль'),
+    //     ];
+    // }
 
 }
