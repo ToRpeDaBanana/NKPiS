@@ -177,7 +177,6 @@
                     position: relative;
                 }
                     .header__menu ul ul ul {
-                    position: absolute;
                     top:0;
             }
     .header__burger{
