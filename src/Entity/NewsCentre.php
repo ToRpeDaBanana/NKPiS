@@ -24,7 +24,7 @@ class NewsCentre
     private ?string $text_one = null;
 
     #[ORM\Column(type: Types::ARRAY, nullable: true)]
-    private array $photo = [];
+    private ?array $photo = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $text_two = null;
@@ -70,7 +70,7 @@ class NewsCentre
         return $this;
     }
 
-    public function getPhoto(): array
+    public function getPhoto(): ?array
     {
         return $this->photo;
     }

@@ -37,12 +37,12 @@ class ControlSovDocuments
         return $this;
     }
 
-    public function getDocument(): array
+    public function getDocument(): ?array
     {
         return $this->document;
     }
 
-    public function setDocument(array $document): self
+    public function setDocument(?array $document): self
     {
         $this->document = $document;
 

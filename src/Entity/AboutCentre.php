@@ -33,10 +33,10 @@ class AboutCentre
     private ?string $text_tree = null;
 
     #[ORM\Column(type: Types::ARRAY, nullable: true)]
-    private array $photo = [];
+    private ?array $photo = null;
 
     #[ORM\Column(type: Types::ARRAY, nullable: true)]
-    private array $file = [];
+    private ?array $file = null;
 
     public function getId(): ?int
     {
@@ -115,7 +115,7 @@ class AboutCentre
         return $this;
     }
 
-    public function getPhoto(): array
+    public function getPhoto(): ?array
     {
         return $this->photo;
     }
@@ -127,7 +127,7 @@ class AboutCentre
         return $this;
     }
 
-    public function getFile(): array
+    public function getFile(): ?array
     {
         return $this->file;
     }
