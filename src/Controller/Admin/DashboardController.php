@@ -15,7 +15,7 @@ use App\Entity\OurAchievements;
 use App\Entity\OurAchievementsTable;
 use App\Entity\PaidEduServ;
 use App\Entity\Category;
-use App\Controller\Admin\UserCrudController;
+use App\Controller\Admin\NewsCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -35,7 +35,7 @@ class DashboardController extends AbstractDashboardController
         // Option 1. You can make your dashboard redirect to some common page of your backend
         //
         $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
-        return $this->redirect($adminUrlGenerator->setController(UserCrudController::class)->generateUrl());
+        return $this->redirect($adminUrlGenerator->setController(NewsCrudController::class)->generateUrl());
         // return $this->redirect($adminUrlGenerator->setController(GeneralInfCrudController::class)->generateUrl());
         // Option 2. You can make your dashboard redirect to different pages depending on the user
         //
@@ -87,9 +87,9 @@ class DashboardController extends AbstractDashboardController
             ]),
             MenuItem::section('Новости'),
             MenuItem::linkToCrud('Новости', 'fa fa-tags', News::class),
-            MenuItem::section('Пользователи'),
+            // MenuItem::section('Пользователи'),
             // MenuItem::linkToCrud('Категории', 'fa fa-tags', Category::class),
-            MenuItem::linkToCrud('Администраторы', 'fas fa-list', User::class),
+            // MenuItem::linkToCrud('Администраторы', 'fas fa-list', User::class),
         ];
     }
 }
