@@ -1,36 +1,48 @@
 {% extends 'main_page/index.html.twig' %}
 
 {% block main %}
-    <h1>Отзывы об учреждении</h1>
+    <h1 class="label-contactPod">Задать вопрос</h1>
     {# Шаблон вопроса #}
-    <div>
-        <div>
-            <div>
-                <span>Дата вопроса</span>
-                <b>ФИО кто оставил вопрос</b>
-            </div>
-            <div>
-                <span>Вопрос</span>
-                <span>№ вопроса</span>
-            </div>
-        </div>
-        <div>
-            Текст вопроса
-        </div>
+
+<div class="all-answer-question">
+<div class="news-div-1-1">
+    <div class="news-div">
+                    <div class="news-date-div">
+                        <div class="news-border"></div>
+                        <div class="news-date">
+                            03.06.2023
+                        </div>
+                        <div class="news-number">
+                        №1
+                        </div>
+                    </div>
+                    <div class="news-label">
+                        <p>Вопрос</p>
+                        <br>
+                        <br>
+                    </div>
+
     </div>
+</div>
     {# Шаблон ответа #}
-        <div>
-        <div>
-            <div>
-                <span>Дата ответа</span>
-                <b>ФИО кто оставил ответ</b>
-            </div>
-            <div>
-                <span>Ответ на вопрос: <b>№ на какой вопрос отвечают</b></span>
-            </div>
-        </div>
-        <div>
-            Текст ответа
-        </div>
+        <div class="news-div-1">
+    <div class="news-div">
+                    <div class="news-date-div">
+                        <div class="news-border"></div>
+                        <div class="news-date">
+                            03.06.2023
+                        </div>
+                        <div class="news-number">
+                        №1
+                        </div>
+                    </div>
+                    <div class="news-label">
+                        <p class="QandA">Ответ</p>
+                        <br>
+                        <br>
+                    </div>
+
     </div>
+</div>
+</div>
 {% endblock %}

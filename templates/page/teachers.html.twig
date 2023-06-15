@@ -3,65 +3,54 @@
 {% block title %}PageController!{% endblock %}
 
 {% block main %}
-    <fieldset>
-    <legend>О руководителе образовательной организации</legend>
-        <ul>
-            <li>
-                <div>
-                    <div>Федосеева Дарья Сергеевна</div>
-                    <ul>
-                     <div>
-                        <div>Фото</div>
-                        <div>
-                            <ul>
-                                <li>
-                                    <b>Должность: </b>
-                                    <p>Директор</p>
-                                </li>
-                                <li>
-                                    <b>Тел.: </b>
-                                    <i><a>(383) 342 95 26</a></i>
-                                </li>
-                                <li>
-                                    <b>Email: </b>
-                                    <i><a>fedoseevads@edu54.ru</a></i>
-                                </li>
-                                <li>
-                                    <b>Приём:</b>
-                                    <p>
-                                    Режим работы: пн.-пт. с 8-30 до 17-00
-                                    <br>
-                                    перерыв на обед с 12-00 до 12-30
-                                    <br>
-                                    выходной суббота, воскресенье.
-                                    <br>
-                                    прием по личным вопросам: понедельник с 16.00-17.00
-                                    </p>
-                                </li>
-                            </ul>
-                            <h1>
-                                <a href="">Подробная информация</a>
-                            </h1>
-                            <br>
+    <div class="flex-all-prepod">
+        <fieldset class="teacher-fieldset-1">
+        <legend class="teacher-legend-1">О руководителе образовательной организации</legend>
+                    <div>
+                        <div><h4>Федосеева Дарья Сергеевна</h4></div>
+                        <ul>
+                        <div class="teacher-flex-box-1">
+                            <div class="directro-logo-teacher"><img src="{{'/assets/img/director-logo.jpg'}}" alt=""></div>
                             <div>
-                                Подробная информация о преподе
+                                <ul>
+                                    <li>
+                                        <b>Должность: </b>
+                                        <p>Директор</p>
+                                    </li>
+                                    <li>
+                                        <b>Тел.: </b>
+                                        <i><a>(383) 342 95 26</a></i>
+                                    </li>
+                                    <li>
+                                        <b>Email: </b>
+                                        <i><a>fedoseevads@edu54.ru</a></i>
+                                    </li>
+                                    <li>
+                                        <b>Приём:</b>
+                                        <p>
+                                        Режим работы: пн.-пт. с 8-30 до 17-00
+                                        <br>
+                                        перерыв на обед с 12-00 до 12-30
+                                        <br>
+                                        выходной суббота, воскресенье.
+                                        <br>
+                                        прием по личным вопросам: понедельник с 16.00-17.00
+                                        </p>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                     </div>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-    </fieldset>
-    <fieldset>
-    <legend>О заместителях руководителя образовательной организации<legend>
-     <ul>
-        <li>
-            <div>
-                <div>Мордвинова Екатерина Владимировна</div>
+                        </ul>
+                    </div>
+        </fieldset>
+    <fieldset class="teacher-fieldset-1">
+    <legend class="teacher-legend-2">О заместителях руководителя образовательной организации</legend>
+
+            <div class="prepod-div">
+                <div><h5>Мордвинова Екатерина Владимировна</h5></div>
                     <ul>
-                     <div>
-                        <div>Фото</div>
+                     <div class="teacher-flex-box-1">
+                        <div><img src="{{'/assets/img/siluet.png'}}" alt=""></div>
                         <div>
                             <ul>
                                 <li>
@@ -89,24 +78,15 @@
                                     </p>
                                 </li>
                             </ul>
-                            <h1>
-                                <a href="">Подробная информация</a>
-                            </h1>
-                            <br>
-                            <div>
-                                Подробная информация о преподе
-                            </div>
                         </div>
                      </div>
                     </ul>
                 </div>
-        </li>
-        <li>
-            <div>
-                    <div>Петрова Юлия Николаевна</div>
+                <div class="prepod-div">
+                    <div><h5>Петрова Юлия Николаевна</h5></div>
                     <ul>
-                     <div>
-                        <div>Фото</div>
+                     <div class="teacher-flex-box-1">
+                        <div><img src="{{'/assets/img/siluet.png'}}" alt=""></div>
                         <div>
                             <ul>
                                 <li>
@@ -134,24 +114,15 @@
                                     </p>
                                 </li>
                             </ul>
-                            <h1>
-                                <a href="">Подробная информация</a>
-                            </h1>
-                            <br>
-                            <div>
-                                Подробная информация о преподе
-                            </div>
                         </div>
                      </div>
                     </ul>
                 </div>
-        </li>
-        <li>
-            <div>
-                    <div>Девищенко Ольга Борисовна</div>
+                <div class="prepod-div">
+                    <div><h5>Девищенко Ольга Борисовна</h5></div>
                     <ul>
-                     <div>
-                        <div>Фото</div>
+                     <div class="teacher-flex-box-1">
+                        <div><img src="{{'/assets/img/a349f34025c59cd29e0aa40931d605c0.jpg'}}" alt=""></div>
                         <div>
                             <ul>
                                 <li>
@@ -179,38 +150,147 @@
                                     </p>
                                 </li>
                             </ul>
-                            <h1>
-                                <a href=""></a>
-                            </h1>
-                            <br>
-                            <div>
-                                Подробная информация о преподе
-                            </div>
                         </div>
                      </div>
                     </ul>
                 </div>
-        </li>
-     </ul>
-    </fieldset>
-    <fieldset>
-        <legend>Персональный состав педагогических работников каждой реализуемой образовательной программы в форме электронного документа</legend>
+        </fieldset>
+    </div>
+ <div> 
+ <div class="file-teacher">
+    <fieldset class="teacher-fieldset-1">
+        <legend class="teacher-legend-2">Персональный состав педагогических работников каждой реализуемой образовательной программы в форме электронного документа</legend>
             <ul>
                 <li>
-                <a href="" ></a>
+                <a href="" >Название файла</a>
                 </li>
             </ul>
     </fieldset>
-    <div>
+</div> 
+    <div class="all-screen-center">
         <i><a>Фотогалерея сотрудников</a></i>
-        <div>
-         <div>
-            <div>
-                <img>
+        <div class="flex-column-galery">
+        <div class="flex-galery-sotrudnik">
+         <div class="element-galery">
+            <div >
+            <img class="galery-sotrudnik" src="{{'/assets/img/a349f34025c59cd29e0aa40931d605c0.jpg'}}">
             </div>
             <p>Ф.И.О сотрудника</p>
             <p>Должность</p>
          </div>
+         <div class="element-galery">
+            <div >
+            <img class="galery-sotrudnik" src="{{'/assets/img/a349f34025c59cd29e0aa40931d605c0.jpg'}}">
+            </div>
+            <p>Ф.И.О сотрудника</p>
+            <p>Должность</p>
+         </div>
+         <div class="element-galery">
+            <div >
+            <img class="galery-sotrudnik" src="{{'/assets/img/a349f34025c59cd29e0aa40931d605c0.jpg'}}">
+            </div>
+            <p>Ф.И.О сотрудника</p>
+            <p>Должность</p>
+         </div>
+         <div class="element-galery">
+            <div >
+            <img class="galery-sotrudnik" src="{{'/assets/img/a349f34025c59cd29e0aa40931d605c0.jpg'}}">
+            </div>
+            <p>Ф.И.О сотрудника</p>
+            <p>Должность</p>
+         </div>
+        </div>
+        <div class="flex-galery-sotrudnik">
+         <div class="element-galery">
+            <div >
+            <img class="galery-sotrudnik" src="{{'/assets/img/a349f34025c59cd29e0aa40931d605c0.jpg'}}">
+            </div>
+            <p>Ф.И.О сотрудника</p>
+            <p>Должность</p>
+         </div>
+         <div class="element-galery">
+            <div >
+            <img class="galery-sotrudnik" src="{{'/assets/img/a349f34025c59cd29e0aa40931d605c0.jpg'}}">
+            </div>
+            <p>Ф.И.О сотрудника</p>
+            <p>Должность</p>
+         </div>
+         <div class="element-galery">
+            <div >
+            <img class="galery-sotrudnik" src="{{'/assets/img/a349f34025c59cd29e0aa40931d605c0.jpg'}}">
+            </div>
+            <p>Ф.И.О сотрудника</p>
+            <p>Должность</p>
+         </div>
+         <div class="element-galery">
+            <div >
+            <img class="galery-sotrudnik" src="{{'/assets/img/a349f34025c59cd29e0aa40931d605c0.jpg'}}">
+            </div>
+            <p>Ф.И.О сотрудника</p>
+            <p>Должность</p>
+         </div>
+        </div>
+            <div class="flex-galery-sotrudnik">
+            <div class="element-galery">
+                <div >
+                <img class="galery-sotrudnik" src="{{'/assets/img/a349f34025c59cd29e0aa40931d605c0.jpg'}}">
+                </div>
+                <p>Ф.И.О сотрудника</p>
+                <p>Должность</p>
+            </div>
+            <div class="element-galery">
+                <div >
+                <img class="galery-sotrudnik" src="{{'/assets/img/a349f34025c59cd29e0aa40931d605c0.jpg'}}">
+                </div>
+                <p>Ф.И.О сотрудника</p>
+                <p>Должность</p>
+            </div>
+            <div class="element-galery">
+                <div >
+                <img class="galery-sotrudnik" src="{{'/assets/img/a349f34025c59cd29e0aa40931d605c0.jpg'}}">
+                </div>
+                <p>Ф.И.О сотрудника</p>
+                <p>Должность</p>
+            </div>
+            <div class="element-galery">
+                <div >
+                <img class="galery-sotrudnik" src="{{'/assets/img/a349f34025c59cd29e0aa40931d605c0.jpg'}}">
+                </div>
+                <p>Ф.И.О сотрудника</p>
+                <p>Должность</p>
+            </div>
+            </div>
+            <div class="flex-galery-sotrudnik">
+            <div class="element-galery">
+                <div >
+                <img class="galery-sotrudnik" src="{{'/assets/img/a349f34025c59cd29e0aa40931d605c0.jpg'}}">
+                </div>
+                <p>Ф.И.О сотрудника</p>
+                <p>Должность</p>
+            </div>
+            <div class="element-galery">
+                <div >
+                <img class="galery-sotrudnik" src="{{'/assets/img/a349f34025c59cd29e0aa40931d605c0.jpg'}}">
+                </div>
+                <p>Ф.И.О сотрудника</p>
+                <p>Должность</p>
+            </div>
+            <div class="element-galery">
+                <div >
+                <img class="galery-sotrudnik" src="{{'/assets/img/a349f34025c59cd29e0aa40931d605c0.jpg'}}">
+                </div>
+                <p>Ф.И.О сотрудника</p>
+                <p>Должность</p>
+            </div>
+            <div class="element-galery">
+                <div >
+                <img class="galery-sotrudnik" src="{{'/assets/img/a349f34025c59cd29e0aa40931d605c0.jpg'}}">
+                </div>
+                <p>Ф.И.О сотрудника</p>
+                <p>Должность</p>
+            </div>
+            </div>
+            </div>
         </div>
     </div>
 {% endblock %}

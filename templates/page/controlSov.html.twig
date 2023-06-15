@@ -1,14 +1,16 @@
 {% extends 'main_page/index.html.twig' %}
 
 {% block main %}
-    <h1>Управляющий совет</h1>
+    <h2 class="label-contactPod">Управляющий совет</h2>
     <div>
-        <h2>Состав управляющего совета</h2>
-        <h3>Должность в управ совете</h3>
-        <div>
-            <div><img src="" alt=""></div>
-            <div>
-                <h1>ФИО человека</h1>
+    <div class="controlSov-main">
+        <h4>Состав управляющего совета</h4>
+        <h5>Должность в управ совете</h5>
+    </div>
+        <div class="controlSov-lider">
+            <div><img class="controlSov-img" src="{{'/assets/img/siluet.png'}}" alt=""></div>
+            <div class="controlSov-lider-text">
+                <h3>ФИО человека</h3>
                 <dl>
                     <dt>Основное место работы: </dt>
                     <dd>ГУП "Московский метрополитен"</dd>
@@ -25,67 +27,230 @@
         </div>
     </div>
     <div class="">
-        <h3>Иные участники управляющего совета</h3>
-            <div>
-                <div>
-                    <div>
-                        <div><p>ФИО</p></div>
-                        <div><p>Категория члена УС</p></div>
-                        <div><p>Кооптированный член (да/нет)</p></div>
-                        <div><p>Должность в УС</p></div>
-                        <div><p>Место работы</p></div>
-                        <div><p>Должность</p></div>
-                        <div><p>Адрес электронной почты</p></div>
-                        <div><p>Примечание</p></div>
-                    </div>
-                    <div>
-                        <div><p>Печеная Анна Сегреевна</p></div>
-                        <div><p>Директор ОО</p></div>
-                        <div><p>Нет</p></div>
-                        <div><p>Иное</p></div>
-                        <div><p>ГБПОУ КМТ</p></div>
-                        <div><p>Директор</p></div>
-                        <div><p><a href="mailto:PechenayaAS@kmt.moscow">PechenayaAS@kmt.moscow</a></p></div>
-                        <div><p> </p></div>
-                    </div>
-                </div>
-            </div>
+        <h3 class="label-contactPod">Иные участники управляющего совета</h3>
+<div class="contactPod-table">
+    <table class="table">
+	<thead>
+		<tr>
+			<th rowspan="2">ФИО</th>
+			<th rowspan="2">Категория члена УС</th>
+			<th rowspan="2">Кооптированный член (да/нет)</th>
+			<th rowspan="2">Должность в УС</th>
+		</tr>
+		<tr>
+			<th rowspan="2">Место работы</th>
+			<th rowspan="2">Должность</th>
+			<th rowspan="2">Адрес электронной почты</th>
+			<th rowspan="2">Примечание</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>1</td>
+			<td>1</td>
+			<td>1</td>
+			<td>1</td>
+			<td>1</td>
+            <td>1</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+            <td></td>
+			<td></td>
+		</tr>
+		<tr>
+            <td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+            <td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+            <td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+            <td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+            <td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+            <td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+            <td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+            <td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
+</div>
     </div>
     <div>
-        <h2>Документы управляющего совета</h2>
-        <h3>Нормативно-правовые документы</h3>
-            <div>
+        <h2 class="label-contactPod">Документы управляющего совета</h2>
+        <h4 class="label-contactPod">Нормативно-правовые документы</h4>
+            <div class="label-contactPod-link">
                 <i class="fa-regular fa-file-pdf"><a href="">вставка названия документа(Только pdf формат)</a></i>
             </div>
-        <h3>Иные (дополнительные) документы управляющего совета</h3>
-            <div>
+        <h4 class="label-contactPod">Иные (дополнительные) документы управляющего совета</h4>
+            <div class="label-contactPod-link">
                 <i class="fa-regular fa-file-pdf"><a href="">название таких то таких то документов (Только pdf формат)</a></i>
             </div>
     </div>
     <div >
-        <h3>Заседания управляющего совета</h3>
+        <h4 class="label-contactPod">Заседания управляющего совета</h4>
         <div class="upcoming_meetings">
-            <h4>Предстоящие заседания</h4>
-            <p> В настоящий момент заседаний управляющего совета не запланировано </p>
+            <h4 class="label-contactPod">Предстоящие заседания</h4>
+            <p class="label-contactPod-link"> В настоящий момент заседаний управляющего совета не запланировано </p>
         </div>
         <div class="past_meetings">
-            <h4>Прошедшие заседания</h4>
-                <div>
-                    <div>
-                        <div>
-                            <div><p>Дата</p></div>
-                            <div><p>Повестка</p></div>
-                            <div><p>Протокол</p></div>
-                            <div><p>Ссылка на видеозапись</p></div>
-                        </div>
-                        <div>
-                            <div><p>31.05.2023</p></div>
-                            <div><p><a href="">Повестка заседания</a></p></div>
-                            <div><p><a href="" target="_blank">Протокол заседания</a></p></div>
-                            <div></div>
-                        </div>
-                    </div>
-                </div>
+            <h4 class="label-contactPod">Прошедшие заседания</h4>
+                <div class="contactPod-table">
+    <table class="table">
+	<thead>
+		<tr>
+			<th  rowspan="2">Дата</th>
+			<th  rowspan="2">Повестка</th>
+			<th  rowspan="2">Протокол</th>
+			<th  rowspan="2">Ссылка на видеозапись</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>1</td>
+			<td>1</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+
+		</tr>
+		<tr>
+            <td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+
+		</tr>
+		<tr>
+            <td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+
+		</tr>
+		<tr>
+            <td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+
+		</tr>
+		<tr>
+            <td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+
+		</tr>
+		<tr>
+            <td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+
+		</tr>
+		<tr>
+            <td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+
+		</tr>
+		<tr>
+            <td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+
+		</tr>
+		<tr>
+            <td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+
+		</tr>
+	</tbody>
+</table>
+</div>
         </div>
     </div>
 {% endblock %}
