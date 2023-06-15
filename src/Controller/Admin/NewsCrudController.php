@@ -8,6 +8,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
+
 class NewsCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
@@ -20,6 +22,7 @@ class NewsCrudController extends AbstractCrudController
     {
         return [
             TextField::new('title')->setLabel('Заголовок'),
+            DateField::new('date')->setLabel('Дата'),
             TextEditorField::new('first_text')->setLabel('Текст-1'),
             ImageField::new('first_photo')
             ->setUploadDir('public\assets\upload\img')
@@ -33,11 +36,11 @@ class NewsCrudController extends AbstractCrudController
             ->setFormTypeOption('multiple', true)
             ->setLabel('Фото-2'),
             ImageField::new('file')
-            ->setUploadDir('public\assets\upload\img')
-            ->setBasePath('public\assets\upload\img')
+            ->setUploadDir('public\assets\upload\files')
+            ->setBasePath('public\assets\upload\files')
             ->setFormTypeOption('multiple', true)
             ->setLabel('Выбрать файл'),
-
+            
             
         ];
     }

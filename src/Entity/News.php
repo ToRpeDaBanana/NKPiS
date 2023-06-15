@@ -32,6 +32,9 @@ class News
     #[ORM\Column(type: Types::ARRAY,nullable: true)]
     private ?array $file = null;
 
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: false)]
+    private ?\DateTimeInterface $date = null;
+
 
     public function getId(): ?int
     {
@@ -67,7 +70,7 @@ class News
         return $this->first_photo;
     }
 
-    public function setFirstPhoto(array $first_photo): self
+    public function setFirstPhoto(?array $first_photo): self
     {
         $this->first_photo = $first_photo;
 
@@ -91,7 +94,7 @@ class News
         return $this->second_photo;
     }
 
-    public function setSecondPhoto(array $second_photo): self
+    public function setSecondPhoto(?array $second_photo): self
     {
         $this->second_photo = $second_photo;
 
@@ -103,9 +106,20 @@ class News
         return $this->file;
     }
 
-    public function setFile(array $file): self
+    public function setFile(?array $file): self
     {
         $this->file = $file;
+
+        return $this;
+    }
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
 
         return $this;
     }

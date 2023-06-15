@@ -14,8 +14,34 @@ use App\Entity\ControlSovDocuments;
 use App\Entity\OurAchievements;
 use App\Entity\OurAchievementsTable;
 use App\Entity\PaidEduServ;
-use App\Entity\Category;
 use App\Controller\Admin\NewsCrudController;
+use App\Entity\AboutCentre;
+use App\Entity\BannersVacancies;
+use App\Entity\CalendarStudy;
+use App\Entity\CallSchedule;
+use App\Entity\DemoExam;
+use App\Entity\EmployMonitoring;
+use App\Entity\ForEmloyText;
+use App\Entity\ForEmployTable;
+use App\Entity\HelpAGraduate;
+use App\Entity\Holidays;
+use App\Entity\ImportantKnow;
+use App\Entity\InterCertSchedule;
+use App\Entity\MedicalExam;
+use App\Entity\MedicalServiceDocument;
+use App\Entity\NewsCentre;
+use App\Entity\Olympiads;
+use App\Entity\OraganizationMedicalLink;
+use App\Entity\PhotoGallery;
+use App\Entity\ProfDocument;
+use App\Entity\PsychologicalSupport;
+use App\Entity\Schedule;
+use App\Entity\TeachersContests;
+use App\Entity\Vacancies;
+use App\Entity\VacanciesTeachers;
+use App\Entity\VacannciesForAdmission;
+use App\Entity\VeteransLabor;
+use App\Entity\VeteransLaborDocument;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -60,33 +86,70 @@ class DashboardController extends AbstractDashboardController
         return [
 
             MenuItem::linkToDashboard('Панель управления', 'fa fa-home'),
+            MenuItem::section('Новости', ''),
+            MenuItem::linkToCrud('Новости', '', News::class),
+            MenuItem::linkToCrud('Новости центра', '', NewsCentre::class),
 
-                // MenuItem::linkToCrud('Text', 'fa fa-tags', Page::class),
-                MenuItem::section('О нас'),
-                MenuItem::linkToCrud('Общая информация', 'fa fa-tags', GeneralInf::class),
-                MenuItem::linkToCrud('Педагогический состав', 'fa fa-tags', Teachers::class),
-                MenuItem::linkToCrud('Контакты подразделений', 'fa fa-tags', DepartmentContacts::class),
+            MenuItem::section('О нас'),
+                MenuItem::linkToCrud('Общая информация', '', GeneralInf::class),
+                MenuItem::linkToCrud('Педагогический состав', '', Teachers::class),
+                MenuItem::linkToCrud('Контакты подразделений', '', DepartmentContacts::class),
 
-            MenuItem::subMenu('Органы уравления', 'fa-solid fa-file-word')->setSubItems([
-                MenuItem::linkToCrud('Председатель УС', 'fa fa-tags', ControlSovChairman::class),
-                MenuItem::linkToCrud('Иные участники УС', 'fa fa-tags', ControlSovOther::class),
-                MenuItem::linkToCrud('Документы', 'fa fa-tags', ControlSovDocuments::class),
-                MenuItem::linkToCrud('Запланировать заседание', 'fa fa-tags', ControlSovMeetings::class),
-                MenuItem::linkToCrud('Прошедшие заседания', 'fa fa-tags', ControlSovPastMeetings::class),
+            MenuItem::subMenu('Органы уравления', '')->setSubItems([
+                MenuItem::linkToCrud('Председатель УС', '', ControlSovChairman::class),
+                MenuItem::linkToCrud('Иные участники УС', '', ControlSovOther::class),
+                MenuItem::linkToCrud('Документы', '', ControlSovDocuments::class),
+                MenuItem::linkToCrud('Запланировать заседание', '', ControlSovMeetings::class),
+                MenuItem::linkToCrud('Прошедшие заседания', '', ControlSovPastMeetings::class),
                 
 
             ]),
-            MenuItem::subMenu('Наши достижения', 'fa-solid fa-file-word')->setSubItems([
-                MenuItem::linkToCrud('Достижения', 'fa fa-tags', OurAchievements::class),
-                MenuItem::linkToCrud('Таблица достижений', 'fa fa-tags', OurAchievementsTable::class),
+            MenuItem::subMenu('Наши достижения', '')->setSubItems([
+                MenuItem::linkToCrud('Достижения', '', OurAchievements::class),
+                MenuItem::linkToCrud('Таблица достижений', '', OurAchievementsTable::class),
             ]),
-            MenuItem::linkToCrud('Платные образовательные услуги', 'fa fa-tags', PaidEduServ::class),
-            MenuItem::section('Родителям'),
-            MenuItem::subMenu('Родителям', 'fa-solid fa-file-word')->setSubItems([
+            MenuItem::linkToCrud('Платные образовательные услуги', '', PaidEduServ::class),
+            MenuItem::linkToCrud('Фотогалерея', '', PhotoGallery::class),
 
-            ]),
-            MenuItem::section('Новости'),
-            MenuItem::linkToCrud('Новости', 'fa fa-tags', News::class),
+            MenuItem::section('Родителям'),
+                MenuItem::linkToCrud('Вакантные места для приема(перевода) обучающихся', '', VacannciesForAdmission::class),
+                MenuItem::linkToCrud('Психологическая поддержка ребенка', '', PsychologicalSupport::class),
+                MenuItem::subMenu('Медицинское обслуживание', '')->setSubItems([
+                    MenuItem::linkToCrud('Документы', '', MedicalServiceDocument::class),
+                    MenuItem::linkToCrud('Организация медицинского обслуживания', '', OraganizationMedicalLink::class),
+                    MenuItem::linkToCrud('График проведения медицинских осмотров', '', MedicalExam::class),
+                    MenuItem::linkToCrud('Это важно знать', '', ImportantKnow::class),
+                ]),
+            MenuItem::section('Учащимся'),
+                MenuItem::subMenu('Расписание, учебные периоды, каникулы', '')->setSubItems([
+                    MenuItem::linkToCrud('Документ об учреждении сроков каникул', '', Holidays::class),
+                    MenuItem::linkToCrud('Расписание', '', Schedule::class),
+                    MenuItem::linkToCrud('Расписание звонков', '', CallSchedule::class),
+                    MenuItem::linkToCrud('Календарные учебные графики', '', CalendarStudy::class),
+                ]),
+                MenuItem::linkToCrud('Расписание промежуточной аттестации', '', InterCertSchedule::class),
+                MenuItem::subMenu('Государственная итоговая аттестация', '')->setSubItems([
+                    MenuItem::linkToCrud('Демонстрационный экзамен', '', DemoExam::class),
+                ]),
+                MenuItem::linkToCrud('Олимпиады, конкурсы и конференции', '', Olympiads::class),
+                MenuItem::subMenu('Центр содействия трудоустройству выпускников', '')->setSubItems([
+                    MenuItem::linkToCrud('О центре', '', AboutCentre::class),
+                    MenuItem::linkToCrud('В помощь выпускнику', '', HelpAGraduate::class),
+                    MenuItem::linkToCrud('Мониторинг трудоустройства', '', EmployMonitoring::class),
+                    MenuItem::linkToCrud('Вакансии и работодатели банеры', '', BannersVacancies::class),
+                    MenuItem::linkToCrud('Вакансии', '', Vacancies::class),
+                    MenuItem::linkToCrud('Работодателям текст', '', ForEmloyText::class),
+                    MenuItem::linkToCrud('Работодателям таблица', '', ForEmployTable::class),
+                ]),
+            MenuItem::section('Педагогам'),
+                MenuItem::linkToCrud('Вакансии педагогам', '', VacanciesTeachers::class),
+                MenuItem::linkToCrud('Конкурсы, олимпиады, конференции педагогам', '', TeachersContests::class),
+                MenuItem::linkToCrud('Профсоюзная организация', '', ProfDocument::class),
+                MenuItem::subMenu('Совет ветеранов педагогического труда', '')->setSubItems([
+                    MenuItem::linkToCrud('Новости совет ветеранов', '', VeteransLabor::class),
+                    MenuItem::linkToCrud('Совет ветеранов документы', '', VeteransLaborDocument::class),
+                ]),
+            
             // MenuItem::section('Пользователи'),
             // MenuItem::linkToCrud('Категории', 'fa fa-tags', Category::class),
             // MenuItem::linkToCrud('Администраторы', 'fas fa-list', User::class),
