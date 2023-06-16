@@ -16,11 +16,16 @@ use App\Entity\OurAchievementsTable;
 use App\Entity\PaidEduServ;
 use App\Controller\Admin\NewsCrudController;
 use App\Entity\AboutCentre;
+use App\Entity\AcceptanceCheckDigits;
+use App\Entity\AcceptanceCheckDigitsTable;
 use App\Entity\BannersVacancies;
 use App\Entity\CalendarStudy;
 use App\Entity\CallSchedule;
+use App\Entity\CollegeAdmission;
+use App\Entity\CollegeAdmissionTitle;
 use App\Entity\DemoExam;
 use App\Entity\EmployMonitoring;
+use App\Entity\EntranceTests;
 use App\Entity\ForEmloyText;
 use App\Entity\ForEmployTable;
 use App\Entity\HelpAGraduate;
@@ -28,20 +33,28 @@ use App\Entity\Holidays;
 use App\Entity\ImportantKnow;
 use App\Entity\InterCertSchedule;
 use App\Entity\MedicalExam;
+use App\Entity\MedicalExamAdm;
 use App\Entity\MedicalServiceDocument;
 use App\Entity\NewsCentre;
+use App\Entity\NormativeDocuments;
 use App\Entity\Olympiads;
+use App\Entity\OpenDoorsTable;
 use App\Entity\OraganizationMedicalLink;
+use App\Entity\PassingScores;
 use App\Entity\PhotoGallery;
 use App\Entity\ProfDocument;
 use App\Entity\PsychologicalSupport;
 use App\Entity\Schedule;
+use App\Entity\SpecialtiesProfessions;
 use App\Entity\TeachersContests;
+use App\Entity\TransferCollege;
+use App\Entity\TransferWithinCollege;
 use App\Entity\Vacancies;
 use App\Entity\VacanciesTeachers;
 use App\Entity\VacannciesForAdmission;
 use App\Entity\VeteransLabor;
 use App\Entity\VeteransLaborDocument;
+use App\Entity\VideosDaysOpenDoors;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -149,7 +162,24 @@ class DashboardController extends AbstractDashboardController
                     MenuItem::linkToCrud('Новости совет ветеранов', '', VeteransLabor::class),
                     MenuItem::linkToCrud('Совет ветеранов документы', '', VeteransLaborDocument::class),
                 ]),
-            
+            MenuItem::section('Поступление в колледж'),
+                MenuItem::subMenu('Приёмная комиссия', '')->setSubItems([
+                    MenuItem::linkToCrud('Информация о приёмной комиссии', '', CollegeAdmissionTitle::class),
+                    MenuItem::linkToCrud('Поступление в колледж', '', CollegeAdmission::class),
+                    MenuItem::linkToCrud('Нормативные документы Приемной комиссии', '', NormativeDocuments::class),
+                    MenuItem::linkToCrud('Контрольные цифры приема год приёма', '', AcceptanceCheckDigits::class),
+                    MenuItem::linkToCrud('Контрольные цифры приема таблица', '', AcceptanceCheckDigitsTable::class),
+                    MenuItem::linkToCrud('Проходные баллы прошлых лет', '', PassingScores::class),
+                    MenuItem::linkToCrud('Медицинский осмотр для поступления', '', MedicalExamAdm::class),
+                    MenuItem::linkToCrud('Перевод в колледж из другого учебного заведения', '', TransferCollege::class),
+                    MenuItem::linkToCrud('Переводы внутри колледжа', '', TransferWithinCollege::class),
+                ]),
+                MenuItem::linkToCrud('Специальности/профессии', '', SpecialtiesProfessions::class),
+                MenuItem::linkToCrud('Вступительные испытания', '', EntranceTests::class),
+                MenuItem::subMenu('Дни открытых дверей', '')->setSubItems([
+                    MenuItem::linkToCrud('Дни открытых дверей информация', '', VideosDaysOpenDoors::class),
+                    MenuItem::linkToCrud('Дни открытых дверей таблица', '', OpenDoorsTable::class),
+                ]),
             // MenuItem::section('Пользователи'),
             // MenuItem::linkToCrud('Категории', 'fa fa-tags', Category::class),
             // MenuItem::linkToCrud('Администраторы', 'fas fa-list', User::class),

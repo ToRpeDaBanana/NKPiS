@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ControlSovChairmanRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ControlSovChairmanRepository::class)]
@@ -16,6 +17,9 @@ class ControlSovChairman
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
+    #[ORM\Column(length: 255, nullable: false)]
+    private ?string $photo = null;
+
     #[ORM\Column(length: 255)]
     private ?string $job_title = null;
 
@@ -27,6 +31,7 @@ class ControlSovChairman
 
     #[ORM\Column(length: 255)]
     private ?string $days_time = null;
+
 
     public function getId(): ?int
     {
@@ -41,6 +46,18 @@ class ControlSovChairman
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getPhoto(): ?string
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(?string $photo): self
+    {
+        $this->photo = $photo;
 
         return $this;
     }
@@ -92,4 +109,5 @@ class ControlSovChairman
 
         return $this;
     }
+    
 }
