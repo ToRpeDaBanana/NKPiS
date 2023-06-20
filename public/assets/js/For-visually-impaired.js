@@ -56,7 +56,33 @@ function colorSiteCustom(color1,color2){
 		"background-color": `${color1 ? color1 : 'white'}`,
 		"border-top": `1px solid ${color2 ? color2 : 'black'}`,
 	}
+	var news = {
+		"background-color": `${color1 ? color1 : 'white'}`,
+		"color": `${color2 ? color2 :'black'}`,
+	}
 	//  {'background-color':(color1 ? color1 : 'white'), 'border':"1px solid"+(color2 ? color2 : 'black')}
+	$('.teacher-legend-1').css(textColor);
+	$('h4').css(textColor);
+	$('h5').css(textColor);
+	$('h3').css(textColor);
+	$('h2').css(textColor);
+	$('h1').css(textColor);
+	$('dl').css(textColor);
+	$('.tab-page-student label').css(cssBorderColor);
+	$('.tab-content-titcher').css(cssColor);
+	$('.page-titcher label').css(cssBorderColor);
+	$('.color-txt').css(textColor);
+	$('.link-color').css(textColor);
+	$('.news-date').css(news);
+	$('.news-number').css(news);
+	$('thead').css(cssColor);
+	$('td').css(textColor);
+	$('legend').css(textColor);
+	$('b').css(textColor);
+	$('strong').css(textColor);
+	$('link-color').css(textColor);
+	$('legend').css(textColor);
+	$('fieldset').css(cssBorderColor);
 	$('.header-top-left').css(cssColor);
 	$('.container-nav-menu').css(cssBorderDown);
 	$('.tab label').css(cssColor);

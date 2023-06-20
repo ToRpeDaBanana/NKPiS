@@ -2094,7 +2094,6 @@
         line-height: 1.2;
         border-radius: 5px;
         margin: 5%;
-        max-width: 60%;
         height: auto;
     }
     .teacher-legend-1{
@@ -2567,4 +2566,108 @@
     }
     .text-decor{
         text-decoration: none;
+    }
+    .link-color{
+        text-decoration: none;
+    }
+    @media (max-width:1000px) {
+        .flex-galery-sotrudnik {
+            display: flex;
+            flex-direction: column;
+        }
+        .teacher-legend-1 {
+            float: none;
+            width: auto;
+            font-size: 15px;
+        }
+        .teacher-legend-2 {
+            float: none;
+            width: auto;
+            font-size: 15px;
+        }
+        .directro-logo-teacher {
+            width: 150px;
+            height: auto;
+        }
+        .teacher-flex-box-1 ul li p{
+            font-size: 12px;
+        }
+        .teacher-flex-box-1 ul li {
+            list-style-type: none;
+        }
+         .table{
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+         }
+         .work {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .img-style {
+            width: 90%;
+            height: auto;
+            
+        }
+
+
+
+    }
+    @media (max-width:500px) {
+        .flex-galery-sotrudnik {
+            display: flex;
+            flex-direction: column;
+        }
+        .teacher-legend-1 {
+            float: none;
+            width: auto;
+            font-size: 13px;
+        }
+        .teacher-legend-2 {
+            float: none;
+            width: auto;
+            font-size: 13px;
+        }
+        .directro-logo-teacher {
+            width: 150px;
+            height: auto;
+        }
+        .teacher-flex-box-1 ul li p{
+            font-size: 12px;
+        }
+        .teacher-flex-box-1 ul {
+            padding-left: 0;
+        }
+        .teacher-flex-box-1{
+            flex-direction: column; 
+            align-items: flex-start;
+        }
+        .controlSov-main{
+            font-size: 12px;
+        }
+        .controlSov-lider{
+            flex-direction: column;
+        }
+        .controlSov-img{
+            width: 150px;
+            height: auto;
+            margin-left: 5%;
+        }
+        .fa-regular.fa-file-pdf a{
+            font-size: 12px;
+        }
+        .medical-exam-label {
+            margin-top: 3%;
+            margin-left: 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        
+        }
+        .label-small{
+            font-size: calc(1rem + .1vw);
+        }
     }

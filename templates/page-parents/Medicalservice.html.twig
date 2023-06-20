@@ -1,7 +1,7 @@
 {% extends 'main_page/index.html.twig' %}
 
 {% block main %}
-    <h1>Организация медицинского обслуживания</h1>
+    <h1 class="label-contactPod">Организация медицинского обслуживания</h1>
 {% for pageCont in pageData %}
     {% if pageCont is not empty %}
 		<a href="{{ pageCont.importantKnow|raw }}">Это важно знать о COVID-19</a>
