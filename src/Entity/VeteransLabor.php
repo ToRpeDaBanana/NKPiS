@@ -21,7 +21,7 @@ class VeteransLabor
     private ?string $text = null;
 
     #[ORM\Column(type: Types::ARRAY, nullable: true)]
-    private array $photo = [];
+    private ?array $photo = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date = null;
@@ -55,7 +55,7 @@ class VeteransLabor
         return $this;
     }
 
-    public function getPhoto(): array
+    public function getPhoto(): ?array
     {
         return $this->photo;
     }

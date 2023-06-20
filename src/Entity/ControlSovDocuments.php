@@ -17,8 +17,8 @@ class ControlSovDocuments
     #[ORM\Column]
     private ?bool $category_document = null;
 
-    #[ORM\Column(type: Types::ARRAY)]
-    private ?array $document = null;
+    #[ORM\Column(length: 255)]
+    private ?string $document = null;
 
     public function getId(): ?int
     {
@@ -37,12 +37,12 @@ class ControlSovDocuments
         return $this;
     }
 
-    public function getDocument(): ?array
+    public function getDocument(): ?string
     {
         return $this->document;
     }
 
-    public function setDocument(?array $document): self
+    public function setDocument(?string $document): self
     {
         $this->document = $document;
 

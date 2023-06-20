@@ -18,6 +18,7 @@ class ControlSovChairmanCrudController extends AbstractCrudController
     {
         return [
             TextField::new('name')->setLabel('ФИО'),
+            TextField::new('job_loc')->setLabel('Место работы'),
             TextField::new('job_title')->setLabel('Должность'),
             TextField::new('email')->setLabel('Email'),
             TextField::new('phone')->setLabel('Номер телефона'),

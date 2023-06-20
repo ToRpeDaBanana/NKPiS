@@ -18,13 +18,9 @@ class GeneralInfCrudController extends AbstractCrudController
     
     public function configureFields(string $pageName): iterable
     {
-        yield TextEditorField::new('text');
-
-        // return [
-        //     IdField::new('id'),
-        //     TextField::new('title'),
-        //     TextEditorField::new('description'),
-        // ];
+        return [
+            TextEditorField::new('text')->setLabel('Текст'),
+        ];
     }
     
 }

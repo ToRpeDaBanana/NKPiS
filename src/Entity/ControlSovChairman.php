@@ -17,8 +17,11 @@ class ControlSovChairman
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column(length: 255, nullable: false)]
+    #[ORM\Column(length: 255, nullable:true)]
     private ?string $photo = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $job_loc = null;
 
     #[ORM\Column(length: 255)]
     private ?string $job_title = null;
@@ -58,6 +61,17 @@ class ControlSovChairman
     public function setPhoto(?string $photo): self
     {
         $this->photo = $photo;
+
+        return $this;
+    }
+    public function getJobLoc(): ?string
+    {
+        return $this->job_loc;
+    }
+
+    public function setJobLoc(string $job_loc): self
+    {
+        $this->job_loc = $job_loc;
 
         return $this;
     }

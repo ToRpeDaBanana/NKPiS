@@ -18,7 +18,7 @@ class OurAchievementsTable
     private ?string $championship = null;
 
     #[ORM\Column(type: Types::SMALLINT)]
-    private ?int $count = null;
+    private ?string $count = null;
 
     public function getId(): ?int
     {
@@ -37,12 +37,12 @@ class OurAchievementsTable
         return $this;
     }
 
-    public function getCount(): ?int
+    public function getCount(): ?string
     {
         return $this->count;
     }
 
-    public function setCount(int $count): self
+    public function setCount(string $count): self
     {
         $this->count = $count;
 

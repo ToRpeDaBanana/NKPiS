@@ -20,8 +20,8 @@ class ControlSovMeetingsCrudController extends AbstractCrudController
         // exit;
         return [
             ChoiceField::new('planned')->setChoices([
-                'Заседание запланировано на ' => 1,
-                'В ближайшее время заседаний не запланированно' => 0,
+                'Заседание запланировано на ' => 'Заседание запланировано на',
+                'В ближайшее время заседаний не запланированно' => 'В ближайшее время заседаний не запланированно',
             ])->setLabel('Запланировать заседание'),
             DateTimeField::new('date_planned')->setLabel('Дата-время')
         ];

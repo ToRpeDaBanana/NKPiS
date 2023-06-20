@@ -2,30 +2,35 @@
 
 {% block main %}
     <h2 class="label-contactPod">Управляющий совет</h2>
-    <div>
-    <div class="controlSov-main">
-        <h4>Состав управляющего совета</h4>
-        <h5>Должность в управ совете</h5>
-    </div>
-        <div class="controlSov-lider">
-            <div><img class="controlSov-img" src="{{'/assets/img/siluet.png'}}" alt=""></div>
-            <div class="controlSov-lider-text">
-                <h3>ФИО человека</h3>
-                <dl>
-                    <dt>Основное место работы: </dt>
-                    <dd>ГУП "Московский метрополитен"</dd>
-                    <dt>Должность:</dt>
-                    <dd>Заместитель начальника метрополитена по управлению персоналом</dd>
-                    <dt>Адрес электронной почты:</dt>
-                    <dd>mezhidova-oa@mosmetro.ru</dd>
-                    <dt>Контактный телефон:</dt>
-                    <dd>+7 (495) 688-06-73</dd>
-                    <dt>Дни и время приема:</dt>
-                    <dd>понедельник, 17.30 (по предварительной записи)</dd>
-                </dl>
-            </div>
-        </div>
-    </div>
+	<h4 class="label-contactPod">Состав управляющего совета</h4>
+{% for pageCont in pageData1 %}
+    {% if pageCont is not empty %}
+		<div>
+			<div class="controlSov-main">
+				<h5>Председатель управляющего совета</h5>
+			</div>
+
+			<div class="controlSov-lider">
+				<div><img class="controlSov-img" src="{{'/assets/upload/img/'}}{{ pageCont.photo|default('siluet.png')|raw }}" alt=""></div>
+				<div class="controlSov-lider-text">
+					<h3>{{ pageCont.name|raw }}</h3>
+					<dl>
+						<dt>Основное место работы: </dt>
+							<dd>{{ pageCont.jobLoc|raw }}</dd>
+							<dt>Должность:</dt>
+							<dd>{{ pageCont.jobTitle|raw }}</dd>
+							<dt>Адрес электронной почты:</dt>
+							<dd>{{ pageCont.email|raw }}</dd>
+							<dt>Контактный телефон:</dt>
+							<dd>{{ pageCont.phone|raw }}</dd>
+							<dt>Дни и время приема:</dt>
+							<dd>{{ pageCont.daysTime|raw }}</dd>
+						</dl>
+				</div>
+			</div>
+		</div>
+	{% endif %}
+{% endfor %}
     <div class="">
         <h3 class="label-contactPod">Иные участники управляющего совета</h3>
 <div class="contactPod-table">
@@ -45,106 +50,20 @@
 		</tr>
 	</thead>
 	<tbody>
+{% for pageCont in pageData2 %}
+    {% if pageCont is not empty %}
 		<tr>
-			<td>1</td>
-			<td>1</td>
-			<td>1</td>
-			<td>1</td>
-			<td>1</td>
-			<td>1</td>
-            <td>1</td>
-			<td>1</td>
+			<td>{{ pageCont.name|raw }}</td>
+			<td>{{ pageCont.categoryUs|raw }}</td>
+			<td>{{ pageCont.coop|raw }}</td>
+			<td>{{ pageCont.jobTitleUs|raw }}</td>
+			<td>{{ pageCont.jobLoc|raw }}</td>
+			<td>{{ pageCont.jobTitle|raw }}</td>
+            <td>{{ pageCont.email|raw }}</td>
+			<td>{{ pageCont.notes|raw }}1</td>
 		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-            <td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
+	{% endif %}
+{% endfor %}
 	</tbody>
 </table>
 </div>
@@ -153,18 +72,34 @@
         <h2 class="label-contactPod">Документы управляющего совета</h2>
         <h4 class="label-contactPod">Нормативно-правовые документы</h4>
             <div class="label-contactPod-link">
-                <i class="fa-regular fa-file-pdf"><a href="">вставка названия документа(Только pdf формат)</a></i>
+			{% for pageCont in pageData4 %}
+            	{% if pageCont is not empty %}
+                	{% if pageCont.categoryDocument == '0' %}
+                		<i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/'}}{{ pageCont.document|raw }}">{{ pageCont.document|raw }}</a></i>
+				{% endif %}
+            {% endif %}
+        {% endfor %}
             </div>
         <h4 class="label-contactPod">Иные (дополнительные) документы управляющего совета</h4>
             <div class="label-contactPod-link">
-                <i class="fa-regular fa-file-pdf"><a href="">название таких то таких то документов (Только pdf формат)</a></i>
+			{% for pageCont in pageData4 %}
+            	{% if pageCont is not empty %}
+                	{% if pageCont.categoryDocument == '1' %}
+                <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/'}}{{ pageCont.document|raw }}">{{ pageCont.document|raw }}</a></i>
+				{% endif %}
+            {% endif %}
+        {% endfor %}
             </div>
     </div>
     <div >
         <h4 class="label-contactPod">Заседания управляющего совета</h4>
         <div class="upcoming_meetings">
             <h4 class="label-contactPod">Предстоящие заседания</h4>
-            <p class="label-contactPod-link"> В настоящий момент заседаний управляющего совета не запланировано </p>
+			{% for pageCont in pageData3 %}
+            	{% if pageCont is not empty %}
+            		<p class="label-contactPod-link"> {{ pageCont.planned|raw }} {{ pageCont.datePlanned|date('d-m-Y H:i')|raw }} </p>
+				{% endif %}
+			{% endfor %}
         </div>
         <div class="past_meetings">
             <h4 class="label-contactPod">Прошедшие заседания</h4>
@@ -179,75 +114,16 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<td>1</td>
-			<td>1</td>
-			<td>1</td>
-			<td>1</td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-
-		</tr>
+	{% for pageCont in pageData5 %}
+        {% if pageCont is not empty %}
+			<tr>
+				<td>{{ pageCont.datePast|date('d-m-Y')|raw }}</td>
+				<td><a href="{{'/assets/upload/files/'}}{{ pageCont.agenda|raw }}">Повестка заседания</a></td>
+				<td><a href="{{'/assets/upload/files/'}}{{ pageCont.protocol|raw }}">Протокол заседания</a></td>
+				<td><a href="{{ pageCont.link|raw}}">Смотреть</a></td>
+			</tr>
+		{% endif %}
+	{% endfor %}
 	</tbody>
 </table>
 </div>

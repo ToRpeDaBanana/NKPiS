@@ -4,7 +4,11 @@
     <h1 class="label-contactPod">Расписание,учебные периоды,каникулы</h1>
     <div class="label-contactPod">
         <ul>
-            <li><i class="fa-regular fa-file-pdf"><a class="style-link" href="">Документ об утверждении сроков каникул</a></i></li>
+        {% for pageCont in pageData1 %}
+            {% if pageCont is not empty %}
+                <li><i class="fa-regular fa-file-pdf"><a class="style-link" href="{{'/assets/upload/files/'}}{{ pageCont.file|raw }}">{{ pageCont.title|raw }}</a></i></li>
+            {% endif %}
+        {% endfor %}
         </ul>
     </div>
     <h5 class="label-contactPod">РАСПИСАНИЕ УЧЕБНЫХ ЗАНЯТИЙ И ПРАКТИК</h1>
@@ -13,13 +17,20 @@
             <div class="tab-page-student">
                 
             <input id="tab-one" type="checkbox" name="tabs">
-                <label  for="tab-one">Расписание</label>
+        {% for pageCont in pageData2 %}
+            {% if pageCont is not empty %}
+                <label  for="tab-one">Расписание&nbsp{{ pageCont.semester|raw }}</label>
+        {% endif %}
+        {% endfor %}
                     <div class="tab-content">
                     <div class="tab-content-first-page-student">
-                        <p><a class="style-link" href="">название документа</a></p>
-						<p><a class="style-link" href="">название документа</a></p>
-						<p><a class="style-link" href="">название документа</a></p>
-						<p><a class="style-link" href="">название документа</a></p>
+                    {% for pageCont in pageData2 %}
+                        {% if pageCont is not empty %}
+                            {% for file in pageCont.file %}
+                                <p><a class="style-link" href="{{'/assets/upload/files/' ~ file|raw }}">{{ file|raw }}</a></p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
                     </div>
                     </div>
             </div>
@@ -31,24 +42,36 @@
     <table class="table">
 	<thead>
 		<tr>
-			<th rowspan="1"></th>
 			<th rowspan="1">1 пара</th>
             <th rowspan="1">2 пара</th>
 			<th rowspan="1">3 пара</th>
 			<th rowspan="1">4 пара</th>
 			<th rowspan="1">5 пара</th>
+            <th rowspan="1">6 пара</th>
 		</tr>
 	</thead>
 	<tbody>
+{% for pageCont in pageData3 %}
+    {% if pageCont is not empty %}
 		<tr>
-			<td>ул. Зорге, 2</td>
-			<td>1</td>
-			<td>1</td>
-			<td>1</td>
-			<td>1</td>
-			<td>1</td>
+			<td>{{ pageCont.firstPair|raw }}</td>
+			<td>{{ pageCont.secondPair|raw }}</td>
+			<td>{{ pageCont.thirdPair|raw }}</td>
+			<td>{{ pageCont.fourthPair|raw }}</td>
+			<td>{{ pageCont.fifthPair|raw }}</td>
+            <td>{{ pageCont.sixthPair|raw }}</td>
 		</tr>
+    {% endif %}
+{% endfor %}
 	</tbody>
 </table>
+
 </div>
+{% for pageCont in pageData4 %}
+    {% if pageCont is not empty %}
+        {% for file in pageCont.file %}
+            <a href="{{'/assets/upload/files/' ~ file|raw }}">{{ file|raw }}</a>
+        {% endfor %}
+    {% endif %}
+{% endfor %}
 {% endblock %}

@@ -14,12 +14,16 @@ use App\Entity\ControlSovMeetings;
 use App\Entity\ControlSovOther;
 use App\Entity\ControlSovPastMeetings;
 use App\Entity\DepartmentContacts;
+use App\Entity\GeneralInf;
 use App\Entity\News;
 use App\Entity\OurAchievements;
 use App\Entity\OurAchievementsTable;
 use App\Entity\PaidEduServ;
 use App\Entity\PhotoGallery;
 use App\Entity\Teachers;
+use App\Entity\TeachersDocument;
+use App\Repository\GeneralInfRepository;
+use App\Repository\TeachersRepository;
 use App\Service\SessionService;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -31,34 +35,38 @@ class PageController extends AbstractController
         ManagerRegistry $doctrine,
         SessionService $sessionService,
         SessionInterface $session,
+        EntityManagerInterface $entityManager 
         
     ): Response
         
     {
-        $pageContent = $doctrine->getRepository(Teachers::class)->findAll();
+        $pageContent1 = $entityManager->getRepository(Teachers::class)->findAll();
+        $pageContent2 = $entityManager->getRepository(TeachersDocument::class)->findAll();
 
 
         return $this->render('page/teachers.html.twig', [
             'controller_name' => 'PageController',
-            'pageData' => $pageContent,
+            'pageData1' => $pageContent1,
+            'pageData2' => $pageContent2,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
-    #[Route('/general', methods:['GET'], name:'general')]
+    #[Route('/general', methods:['GET'])]
     public function general(
         ManagerRegistry $doctrine,
         Request $request,
         SessionService $sessionService,
-        SessionInterface $session, 
+        SessionInterface $session,
+        EntityManagerInterface $entityManager 
     ): Response
         
     {
-        // $pageContent = $doctrine->getRepository(GeneralInf::class)->findAll();
+        $pageContent = $entityManager->getRepository(GeneralInf::class)->findAll();
         // var_dump($pageAbout);
         // exit;
         return $this->render('page/generalInformation.html.twig', [
             'controller_name' => 'PageController',
-            // 'pageData' => $pageContent,
+            'pageData' => $pageContent,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -66,11 +74,12 @@ class PageController extends AbstractController
     public function contactPod(
         ManagerRegistry $doctrine,
         SessionService $sessionService,
-        SessionInterface $session, 
+        SessionInterface $session,
+        EntityManagerInterface $entityManager  
     ): Response
         
     {
-        $pageContent = $doctrine->getRepository(DepartmentContacts::class)->findAll();
+        $pageContent = $entityManager->getRepository(DepartmentContacts::class)->findAll();
         // var_dump($pageAbout);
         // exit;
 
@@ -84,11 +93,12 @@ class PageController extends AbstractController
     public function news(
         ManagerRegistry $doctrine,
         SessionService $sessionService,
-        SessionInterface $session, 
+        SessionInterface $session,
+        EntityManagerInterface $entityManager  
     ): Response
         
     {
-        $pageContent = $doctrine->getRepository(News::class)->findAll();
+        $pageContent = $entityManager->getRepository(News::class)->findAll();
         // var_dump($pageAbout);
         // exit;
 
@@ -98,19 +108,39 @@ class PageController extends AbstractController
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
-    #[Route('/controlSov', methods:['GET'])]
-    public function controlSov(
+    #[Route('/news/{id}', methods:['GET'])]
+    public function newsId(
         ManagerRegistry $doctrine,
         SessionService $sessionService,
-        SessionInterface $session, 
+        SessionInterface $session,
+        EntityManagerInterface $entityManager  
     ): Response
         
     {
-        $pageContent1 = $doctrine->getRepository(ControlSovChairman::class)->findAll();
-        $pageContent2 = $doctrine->getRepository(ControlSovOther::class)->findAll();
-        $pageContent3 = $doctrine->getRepository(ControlSovMeetings::class)->findAll();
-        $pageContent4 = $doctrine->getRepository(ControlSovDocuments::class)->findAll();
-        $pageContent5 = $doctrine->getRepository(ControlSovPastMeetings::class)->findAll();
+        $pageContent = $entityManager->getRepository(News::class)->findAll();
+        // var_dump($pageAbout);
+        // exit;
+
+        return $this->render('page/newsId.html.twig', [
+            'controller_name' => 'PageController',
+            'pageData' => $pageContent,
+            'sessionData' => $sessionService->getSessionData($session)
+        ]);
+    }
+    #[Route('/governingBodies/controlSoviet', methods:['GET'])]
+    public function controlSov(
+        ManagerRegistry $doctrine,
+        SessionService $sessionService,
+        SessionInterface $session,
+        EntityManagerInterface $entityManager  
+    ): Response
+        
+    {
+        $pageContent1 = $entityManager->getRepository(ControlSovChairman::class)->findAll();
+        $pageContent2 = $entityManager->getRepository(ControlSovOther::class)->findAll();
+        $pageContent3 = $entityManager->getRepository(ControlSovMeetings::class)->findAll();
+        $pageContent4 = $entityManager->getRepository(ControlSovDocuments::class)->findAll();
+        $pageContent5 = $entityManager->getRepository(ControlSovPastMeetings::class)->findAll();
         // var_dump($pageAbout);
         // exit;
 
@@ -128,11 +158,12 @@ class PageController extends AbstractController
     public function comment(
         ManagerRegistry $doctrine,
         SessionService $sessionService,
-        SessionInterface $session, 
+        SessionInterface $session,
+        EntityManagerInterface $entityManager  
     ): Response
         
     {
-        $pageContent = $doctrine->getRepository(Comment::class)->findAll();
+        $pageContent = $entityManager->getRepository(Comment::class)->findAll();
         // var_dump($pageAbout);
         // exit;
 
@@ -146,12 +177,13 @@ class PageController extends AbstractController
     public function ourAch(
         ManagerRegistry $doctrine,
         SessionService $sessionService,
-        SessionInterface $session, 
+        SessionInterface $session,
+        EntityManagerInterface $entityManager  
     ): Response
         
     {
-        $pageContent1 = $doctrine->getRepository(OurAchievements::class)->findAll();
-        $pageContent2 = $doctrine->getRepository(OurAchievementsTable::class)->findAll();
+        $pageContent1 = $entityManager->getRepository(OurAchievements::class)->findAll();
+        $pageContent2 = $entityManager->getRepository(OurAchievementsTable::class)->findAll();
         // var_dump($pageAbout);
         // exit;
 
@@ -167,11 +199,12 @@ class PageController extends AbstractController
         ManagerRegistry $doctrine,
         Request $request,
         SessionService $sessionService,
-        SessionInterface $session, 
+        SessionInterface $session,
+        EntityManagerInterface $entityManager  
     ): Response
         
     {
-        $pageContent = $doctrine->getRepository(PaidEduServ::class)->findAll();
+        $pageContent = $entityManager->getRepository(PaidEduServ::class)->findAll();
         // var_dump($pageAbout);
         // exit;
 
@@ -181,19 +214,39 @@ class PageController extends AbstractController
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
-    #[Route('/photo', methods:['GET'])]
+    #[Route('/photoAndVideo/photoGallery', methods:['GET'])]
     public function photo(
         ManagerRegistry $doctrine,
         SessionService $sessionService,
-        SessionInterface $session, 
+        SessionInterface $session,
+        EntityManagerInterface $entityManager  
     ): Response
         
     {
-        $pageContent = $doctrine->getRepository(PhotoGallery::class)->findAll();
+        $pageContent = $entityManager->getRepository(PhotoGallery::class)->findAll();
         // var_dump($pageAbout);
         // exit;
 
         return $this->render('page/photo.html.twig', [
+            'controller_name' => 'PageController',
+            'pageData' => $pageContent,
+            'sessionData' => $sessionService->getSessionData($session)
+        ]);
+    }
+    #[Route('/photoAndVideo/photoGallery/{id}', methods:['GET'])]
+    public function photoId(
+        ManagerRegistry $doctrine,
+        SessionService $sessionService,
+        SessionInterface $session,
+        EntityManagerInterface $entityManager  
+    ): Response
+        
+    {
+        $pageContent = $entityManager->getRepository(PhotoGallery::class)->findAll();
+        // var_dump($pageAbout);
+        // exit;
+
+        return $this->render('page/photoId.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
             'sessionData' => $sessionService->getSessionData($session)

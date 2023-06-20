@@ -26,6 +26,9 @@ class Teachers
     private ?string $email = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    private ?string $priem = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $photo = null;
 
     #[ORM\Column(length: 255)]
@@ -83,13 +86,24 @@ class Teachers
 
         return $this;
     }
+    public function getPriem(): ?string
+    {
+        return $this->priem;
+    }
+
+    public function setPriem(?string $priem): self
+    {
+        $this->priem = $priem;
+
+        return $this;
+    }
 
     public function getPhoto(): ?string
     {
         return $this->photo;
     }
 
-    public function setPhoto(string $photo): self
+    public function setPhoto(?string $photo): self
     {
         $this->photo = $photo;
 

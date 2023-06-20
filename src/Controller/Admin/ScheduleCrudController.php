@@ -21,7 +21,7 @@ class ScheduleCrudController extends AbstractCrudController
             ChoiceField::new('semester')->setChoices([
                 '1 Семестр' => '1 Семестр',
                 '2 Семестр' => '2 Семестр',
-            ])->setLabel('Курс'),
+            ])->setLabel('Семестр'),
             ImageField::new('file')->setUploadDir('public\assets\upload\files')
             ->setBasePath('public\assets\upload\files')
             ->setFormTypeOption('multiple', true)

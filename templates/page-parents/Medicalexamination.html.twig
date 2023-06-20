@@ -4,14 +4,16 @@
     <h1 class="label-contactPod">График проведения медецинских осмотров</h1>
     <div class="medical-exam-label">
         <strong>График</strong>
-		<p>работы медицинских кабинетов в ГАПОУ НКПиС в 2022-2023 учебном году</p>
+{% for pageCont in pageData %}
+    {% if pageCont is not empty %}
+		<p>{{ pageCont.title|raw }}</p>
+	{% endif %}
+{% endfor %}
     </div>
     <div class="contactPod-table">
     <table class="table">
 	<thead>
 		<tr>
-			<th rowspan="2">№ п/п</th>
-            <th rowspan="2">Адрес образовательной площадки</th>
 			<th colspan="5">Дни недели</th>
 		</tr>
 		<tr>
@@ -23,96 +25,17 @@
 		</tr>
 	</thead>
 	<tbody>
+{% for pageCont in pageData %}
+    {% if pageCont is not empty %}
 		<tr>
-			<td>1</td>
-			<td>1</td>
-			<td>1</td>
-			<td>1</td>
-			<td>1</td>
-			<td>1</td>
-			<td>1</td>
+			<td>{{ pageCont.monday|raw }}</td>
+			<td>{{ pageCont.tuesday|raw }}</td>
+			<td>{{ pageCont.wednesday|raw }}</td>
+			<td>{{ pageCont.trursday|raw }}</td>
+			<td>{{ pageCont.friday|raw }}</td>
 		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-           	<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
+	{% endif %}
+{% endfor %}
 	</tbody>
 </table>
 </div>

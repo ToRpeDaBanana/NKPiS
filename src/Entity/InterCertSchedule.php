@@ -15,7 +15,7 @@ class InterCertSchedule
     private ?int $id = null;
 
     #[ORM\Column(type: Types::ARRAY, nullable: true)]
-    private array $file = [];
+    private ?array $file = null;
 
     #[ORM\Column(length: 255)]
     private ?string $title = null;
@@ -25,7 +25,7 @@ class InterCertSchedule
         return $this->id;
     }
 
-    public function getFile(): array
+    public function getFile(): ?array
     {
         return $this->file;
     }

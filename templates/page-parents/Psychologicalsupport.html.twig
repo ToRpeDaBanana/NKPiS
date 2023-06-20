@@ -3,10 +3,13 @@
 {% block main %}
     <h1 class="label-contactPod">Психологическая поддержка ребенка</h1>
     <div class="label-contactPod">
-    <p>Какой то текст</p>
-    <p>Какой то текст</p>
-    <ul>
-        <li><span>Какие то пункты списка</span></li>
-    </ul>
+{% for pageCont in pageData %}
+    {% if pageCont is not empty %}
+        <p>{{ pageCont.textOne|raw }}</p>
+        <p>{{ pageCont.textTwo|raw }}</p>
+        <h4>{{ pageCont.subTitle|raw }}</h4>
+        <p>{{ pageCont.textTree|raw }}</p>
+    {% endif %}
+{% endfor %}
     </div>
 {% endblock %}

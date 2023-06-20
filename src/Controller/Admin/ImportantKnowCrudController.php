@@ -20,7 +20,7 @@ class ImportantKnowCrudController extends AbstractCrudController
     {
         return [
 
-            TextField::new('title')->setLabel('Заголовок документа'),
+            TextField::new('title')->setLabel('Заголовок документа или ссылки'),
             UrlField::new('link')->setLabel('Ссылка'),
             ImageField::new('file')->setUploadDir('public\assets\upload\files')
             ->setBasePath('public\assets\upload\files')

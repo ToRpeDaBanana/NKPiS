@@ -4,8 +4,12 @@
     <h1 class="label-contactPod">Олимпиады, конкурсы и конференции</h1>
     <div class="label-contactPod">
         <ul>
-            <li class="li-style-none"><h4>Название олимпиады или конференции</h4></li>
-            <li><i>Официальный сайт&nbsp;</i><a class="style-link" href="ссылка на него">ссылка на сайт укороченная если длинная</a></li>
+    {% for pageCont in pageData %}
+        {% if pageCont is not empty %}
+            <li class="li-style-none"><h4>{{ pageCont.title|raw }}</h4></li>
+            <li><i>Официальный сайт&nbsp;</i><a class="style-link" href="{{ pageCont.link|raw }}">{{ pageCont.link|raw }}</a></li>
+        {% endif %}
+    {% endfor %}
         </ul>
     </div>
 {% endblock %}

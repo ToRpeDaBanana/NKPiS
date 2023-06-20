@@ -3,43 +3,39 @@
 {% block main %}
     <h1 class="label-contactPod">Наши достижения</h1>
     <div class="label-contactPod">
-        <p><strong>Колледж Московского транспорта входит в топ-100 лучших колледжей России по версии Агентства развития профессий и навыков.</strong></p>
-        <p>Наши студенты преподаватели участвуют и побеждают в региональных, отраслевых,&nbsp;федеральных&nbsp;и международных&nbsp;соревнованиях профессионального мастерства.</p>
+{% for pageCont in pageData1 %}
+        {% if pageCont is not empty %}
+			<p>{{ pageCont.title|raw }}</p>
+			<p>{{ pageCont.firstText|raw }}</p>
+		{% endif %}
+{% endfor %}
     <table class="table-ourAch"   border="1" style="width:700px;">
-	<p><strong>Победители и призеры чемпионатов за 2021-2022 учебный год:</strong></p>
+{% for pageCont in pageData1 %}
+    {% if pageCont is not empty %}
+		<p>{{ pageCont.titleTable|raw }}</p>
+	{% endif %}
+{% endfor %}
+	
 	<tbody>
+	
+{% for pageCont in pageData2 %}
+    {% if pageCont is not empty %}
 		<tr>
-			<td>Открытый чемпионат профессионального мастерства г. Москвы<br>
-			<strong>"Московские мастера"</strong></td>
-			<td>&nbsp;46 &nbsp; &nbsp;</td>
+			<td>{{ pageCont.championship|raw }}</td>
+			<td>&nbsp;{{ pageCont.count|raw }} &nbsp; &nbsp;</td>
 		</tr>
-		<tr>
-			<td>Финал национального чемпоната<br>
-			<strong>"Молодые профессионалы"</strong></td>
-			<td>&nbsp; 5</td>
-		</tr>
-		<tr>
-			<td>Национальный чемпионат сквозных рабочих профессий<br>
-			высокотехнологичных отраслей промышленности <strong>Hi-Tech</strong></td>
-			<td>&nbsp; 4 &nbsp;</td>
-		</tr>
-		<tr>
-			<td>Международный чемпионат по перспективным профессиональным навыкам<br>
-			<strong>BRICS Future Skills Challenge&nbsp;</strong></td>
-			<td>&nbsp; 1</td>
-		</tr>
+	{% endif %}
+{% endfor %}
 	</tbody>
     </table>
 	<br>
     <div>
-        <p>Также студенты КМТ принимают участие в городских мероприятиях системы Департамента образования и науки города Москвы и в федеральных проектах:</p>
-        <ul>
-            <li><strong>Московская метапредметная олимпиада «Не прервется связь поколений – 2022»</strong> - 2 победителя;</li>
-            <li><strong>Открытый городской конкурс мультимедийных проектов «История моей семьи в истории России – 2022»</strong> - 1 победитель;</li>
-            <li><strong>Олимпиады «Музеи. Парки. Усадьбы 2022»</strong> - 3 суперпобедителя, 38&nbsp;победителей и 4 призера;</li>
-            <li><strong>«Большая перемена 2022»</strong> - 3 победителя и 1 призер.</li>
-            <li><strong>Грант Правительства Москвы в сфере образования 2022</strong>&nbsp;- 2 лауреата</li>
-        </ul>
+{% for pageCont in pageData1 %}
+    {% if pageCont is not empty %}
+		<p>{{ pageCont.secondText|raw }}</p>
+	{% endif %}
+{% endfor %}
     </div>
     </div>
+	
 {% endblock %}

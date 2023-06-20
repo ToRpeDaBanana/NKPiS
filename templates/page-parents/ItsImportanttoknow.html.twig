@@ -5,25 +5,17 @@
 <div class="label-contactPod">
     <div>
         <ul>
-            <li><a href=""></a></li>
-        </ul>
-    </div>
-    <div>
-        <ul>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-        </ul>
-    </div>
-    <div>
-        <ul>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
+        {% for pageCont in pageData %}
+            {% if pageCont.link is not empty %}
+                <li><a href="{{ pageCont.link|raw }}">{{ pageCont.title|raw }}</a></li>
+            {% endif %}
+        {% endfor %}
+        <p>----------------------</p>
+        {% for pageCont in pageData %}
+            {% if pageCont.link is empty %}
+                <li><a href="{{'/assets/upload/files/'}}{{ pageCont.file|raw }}">{{ pageCont.title|raw }}</a></li>
+            {% endif %}
+        {% endfor %}
         </ul>
     </div>
 </div>

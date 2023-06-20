@@ -4,7 +4,14 @@
     <h1 class="label-contactPod">Расписание промежуточной аттестации</h1>
     <div class="label-contactPod">
         <ul>
-            <li><i class="fa-regular fa-file-pdf"><a class="style-link" href="ссылка на него">Название документа</a></i></li>
+    {% for pageCont in pageData %}
+        {% if pageCont is not empty %}
+            {% for file in pageCont.file %}
+                    <li><i class="fa-regular fa-file-pdf"><a class="style-link" href="{{'/assets/upload/files/' ~ file|raw }}">{{ pageCont.title|raw }}</a></i></li>
+                    <a href="{{'/assets/upload/files/' ~ file|raw }}"></a>
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
         </ul>
     </div>
 {% endblock %}

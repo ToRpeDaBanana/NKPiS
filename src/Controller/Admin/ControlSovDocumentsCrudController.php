@@ -26,7 +26,6 @@ class ControlSovDocumentsCrudController extends AbstractCrudController
             ImageField::new('document')
             ->setUploadDir('public\assets\upload\files')
             ->setBasePath('public\assets\upload\files')
-            ->setFormTypeOption('multiple', true)
             ->setLabel('Выбрать файл')
         ];
     }

@@ -47,10 +47,12 @@ use App\Entity\PsychologicalSupport;
 use App\Entity\Schedule;
 use App\Entity\SpecialtiesProfessions;
 use App\Entity\TeachersContests;
+use App\Entity\TeachersDocument;
 use App\Entity\TransferCollege;
 use App\Entity\TransferWithinCollege;
 use App\Entity\Vacancies;
 use App\Entity\VacanciesTeachers;
+use App\Entity\VacanForAdmTitle;
 use App\Entity\VacannciesForAdmission;
 use App\Entity\VeteransLabor;
 use App\Entity\VeteransLaborDocument;
@@ -105,7 +107,10 @@ class DashboardController extends AbstractDashboardController
 
             MenuItem::section('О нас'),
                 MenuItem::linkToCrud('Общая информация', '', GeneralInf::class),
-                MenuItem::linkToCrud('Педагогический состав', '', Teachers::class),
+                MenuItem::subMenu('Педагоги', '')->setSubItems([
+                    MenuItem::linkToCrud('Педагогический состав', '', Teachers::class),
+                    MenuItem::linkToCrud('Документ','',TeachersDocument::class),
+                ]),
                 MenuItem::linkToCrud('Контакты подразделений', '', DepartmentContacts::class),
 
             MenuItem::subMenu('Органы уравления', '')->setSubItems([
@@ -125,7 +130,10 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToCrud('Фотогалерея', '', PhotoGallery::class),
 
             MenuItem::section('Родителям'),
-                MenuItem::linkToCrud('Вакантные места для приема(перевода) обучающихся', '', VacannciesForAdmission::class),
+                MenuItem::subMenu('Вакантные места для приема(перевода) обучающихся', '')->setSubItems([
+                    MenuItem::linkToCrud('Вакантные места', '', VacannciesForAdmission::class),
+                    MenuItem::linkToCrud('Актуальность', '', VacanForAdmTitle::class),
+                ]),
                 MenuItem::linkToCrud('Психологическая поддержка ребенка', '', PsychologicalSupport::class),
                 MenuItem::subMenu('Медицинское обслуживание', '')->setSubItems([
                     MenuItem::linkToCrud('Документы', '', MedicalServiceDocument::class),

@@ -15,14 +15,14 @@ class VeteransLaborDocument
     private ?int $id = null;
 
     #[ORM\Column(type: Types::ARRAY, nullable: true)]
-    private array $file = [];
+    private ?array $file = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getFile(): array
+    public function getFile(): ?array
     {
         return $this->file;
     }

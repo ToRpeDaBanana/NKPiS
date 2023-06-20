@@ -3,12 +3,14 @@
 {% block main %}
     <h1 class="label-contactPod">О центре</h1>
     <div class="label-contactPod">
-       <p>Какой либо текст о центре</p>
-    <div >
-       <p>текст для списка</p>
-       <ul>
-            <li><p>Текст пунктов</p></li>
-       </ul>
-    </div>
+{% for pageCont in pageData %}
+   {% if pageCont is not empty %}
+         <p>{{ pageCont.textOne|raw }}</p>
+      <div >
+         <p>текст для списка</p>
+      </div>
+   {% endif %}
+{% endfor %}
+    
     </div>
 {% endblock %}
