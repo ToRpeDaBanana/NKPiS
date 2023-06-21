@@ -2308,7 +2308,7 @@
         width: 200px;
         height: auto;
         display: block;
-      margin: 0 auto;
+        margin: 0 auto;
       
     }
     .platform-for-photo-main{
@@ -2570,6 +2570,11 @@
     .link-color{
         text-decoration: none;
     }
+    .photo-galery{
+        display: flex;
+        justify-content: center;
+    align-items: center;
+    }
     @media (max-width:1000px) {
         .flex-galery-sotrudnik {
             display: flex;
@@ -2611,7 +2616,12 @@
             height: auto;
             
         }
-
+        .photo-galery{
+            display: flex;
+            justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        }
 
 
     }
