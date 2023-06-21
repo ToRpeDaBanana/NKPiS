@@ -2575,6 +2575,11 @@
         justify-content: center;
     align-items: center;
     }
+    .photo-albom{
+        display: flex;
+        justify-content: center;
+    align-items: center;
+    }
     @media (max-width:1000px) {
         .flex-galery-sotrudnik {
             display: flex;
@@ -2622,7 +2627,12 @@
         align-items: center;
         flex-direction: column;
         }
-
+        .photo-albom{
+            display: flex;
+            justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        }
 
     }
     @media (max-width:500px) {

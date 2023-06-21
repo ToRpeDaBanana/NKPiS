@@ -11,20 +11,9 @@
                 <img class="for-galery" src="{{'/assets/upload/img/'}}{{ pageCont.mainPhoto|raw }}" alt="">
                 <span>{{pageCont.title}}</span>
                 {% set count = pageCont.photo|length %}
-                <span>{{ count }}&nbspфото</span>
+                <span>{{ count }}&nbsp;фото</span>
             </a>
        </div>
     {% endif %}
 {% endfor %}
-    </div>
-    <div  class="platform-for-photo-main">
-       <div class="platform-for-photo">
-        <a href="">
-            <img class="for-galery" src="{{'/assets/img/siluet.png'}}" alt="">
-            <span>Название альбома</span>
-            <span>Количество фотографий в альбоме</span>
-        </a>
-       </div>
-    </div>
-</div>
 {% endblock %}

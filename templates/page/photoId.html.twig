@@ -7,7 +7,9 @@
     <div>
         <h1>{{pageCont.title}}</h1>
         {% for photo in pageCont.photo %}
-                <img src="{{ '/assets/upload/img/' ~ photo|raw }}" alt="">
+            <div class="photo-albom">
+                <img class="for-galery" src="{{ '/assets/upload/img/' ~ photo|raw }}" alt="">
+            </div>
         {% endfor %}
     </div>
     {% endif %}
