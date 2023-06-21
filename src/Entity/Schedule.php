@@ -18,7 +18,7 @@ class Schedule
     private ?string $semester = null;
 
     #[ORM\Column(type: Types::ARRAY)]
-    private array $file = [];
+    private ?array $file = null;
 
     public function getId(): ?int
     {
@@ -37,12 +37,12 @@ class Schedule
         return $this;
     }
 
-    public function getFile(): array
+    public function getFile(): ?array
     {
         return $this->file;
     }
 
-    public function setFile(array $file): static
+    public function setFile(?array $file): static
     {
         $this->file = $file;
 

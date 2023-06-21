@@ -14,8 +14,8 @@ class ImportantKnow
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type: Types::ARRAY, nullable: true)]
-    private array $file = [];
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $file = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $link = null;
@@ -28,12 +28,12 @@ class ImportantKnow
         return $this->id;
     }
 
-    public function getFile(): array
+    public function getFile(): ?string
     {
         return $this->file;
     }
 
-    public function setFile(?array $file): static
+    public function setFile(?string $file): static
     {
         $this->file = $file;
 

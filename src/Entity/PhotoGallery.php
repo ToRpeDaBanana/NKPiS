@@ -52,12 +52,12 @@ class PhotoGallery
         return $this;
     }
 
-    public function getPhoto(): array
+    public function getPhoto(): ?array
     {
         return $this->photo;
     }
 
-    public function setPhoto(array $photo): self
+    public function setPhoto(?array $photo): self
     {
         $this->photo = $photo;
 

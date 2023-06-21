@@ -1,0 +1,33 @@
+{% extends 'main_page/index.html.twig' %}
+
+{% block main %}
+
+{% for pageCont in pageData %}
+    {% if pageCont is not empty %}
+        <div class="news-div">
+            <div class="news-date-div">
+                <div class="news-border"></div>
+                    <div class="news-date">
+                        {{ pageCont.date|date('d-m-Y')|raw }}
+                    </div>
+                </div>
+            <div class="news-label">
+                <h1>{{ pageCont.title|raw }}</h1>
+                <p>{{ pageCont.firstText|raw }}</p>
+                {% for photo in pageCont.firstPhoto %}
+                    <img src="{{ '/assets/upload/img/' ~ photo|raw }}" alt="">
+                {% endfor %}
+                <p>{{ pageCont.secondText|raw }}</p>
+                {% for photo in pageCont.secondPhoto %}
+                    <img src="{{ '/assets/upload/img/' ~ photo|raw }}" alt="">
+                {% endfor %}
+                {% for file in pageCont.file %}
+                    <a href="{{'/assets/upload/files/' ~ file|raw }}"></a>
+                {% endfor %}
+                
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
+
+{% endblock %}

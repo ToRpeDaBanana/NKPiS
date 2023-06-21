@@ -18,7 +18,7 @@ class NormativeDocuments
     private ?string $text = null;
 
     #[ORM\Column(type: Types::ARRAY, nullable: true)]
-    private array $file = [];
+    private ?array $file = null;
 
     public function getId(): ?int
     {
@@ -37,7 +37,7 @@ class NormativeDocuments
         return $this;
     }
 
-    public function getFile(): array
+    public function getFile(): ?array
     {
         return $this->file;
     }

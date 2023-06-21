@@ -4,13 +4,18 @@
     <h1 class="label-contactPod">Фотогалерея</h1>
 <div class="photo-galery">
     <div  class="platform-for-photo-main">
+{% for pageCont in pageData %}
+    {% if pageCont is not empty %}
        <div class="platform-for-photo">
-        <a href="">
-            <img class="for-galery" src="{{'/assets/img/siluet.png'}}" alt="">
-            <span>Название альбома</span>
-            <span>Количество фотографий в альбоме</span>
-        </a>
+            <a href="{{'/photoAndVideo/photoGallery/'}}{{pageCont.id}}">
+                <img class="for-galery" src="{{'/assets/upload/img/'}}{{ pageCont.mainPhoto|raw }}" alt="">
+                <span>{{pageCont.title}}</span>
+                {% set count = pageCont.photo|length %}
+                <span>{{ count }}&nbspфото</span>
+            </a>
        </div>
+    {% endif %}
+{% endfor %}
     </div>
     <div  class="platform-for-photo-main">
        <div class="platform-for-photo">

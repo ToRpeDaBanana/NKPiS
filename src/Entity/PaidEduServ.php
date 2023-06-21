@@ -29,24 +29,24 @@ class PaidEduServ
         return $this->id;
     }
 
-    public function getParentFolder(): array
+    public function getParentFolder(): ?array
     {
         return $this->parent_folder;
     }
 
-    public function setParentFolder(array $parent_folder): self
+    public function setParentFolder(?array $parent_folder): self
     {
         $this->parent_folder = $parent_folder;
 
         return $this;
     }
 
-    public function getProcedur(): array
+    public function getProcedur(): ?array
     {
         return $this->procedur;
     }
 
-    public function setProcedur(array $procedur): self
+    public function setProcedur(?array $procedur): self
     {
         $this->procedur = $procedur;
 

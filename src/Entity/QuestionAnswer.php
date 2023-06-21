@@ -100,7 +100,7 @@ class QuestionAnswer
         return $this;
     }
 
-    public function getFile(): array
+    public function getFile(): ?array
     {
         return $this->file;
     }

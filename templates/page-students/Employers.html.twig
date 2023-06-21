@@ -2,7 +2,11 @@
 
 {% block main %}
     <h1 class="label-contactPod">Работодателям</h1>
-    <p class="label-contactPod">Текст</p>
+{% for pageCont in pageData1 %}
+    {% if pageCont is not empty %}
+    	<p class="label-contactPod">{{ pageCont.text }}</p>
+	{% endif %}
+{% endfor %}
    <div class="contactPod-table">
     <table class="table">
 	<thead>
@@ -12,46 +16,14 @@
 		</tr>
 	</thead>
 	<tbody>
+{% for pageCont in pageData2 %}
+    {% if pageCont is not empty %}
 		<tr>
-			<td>1</td>
-			<td>1</td>
+			<td>{{ pageCont.code }}</td>
+			<td>{{ pageCont.speciality }}</td>
 		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-		</tr>
+	{% endif %}
+{% endfor %}
 	</tbody>
 </table>
 </div>

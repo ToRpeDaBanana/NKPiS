@@ -13,11 +13,8 @@ class GeneralInf
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 400)]
     private ?string $text = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $category = null;
 
     public function getId(): ?int
     {
@@ -32,18 +29,6 @@ class GeneralInf
     public function setText(string $text): self
     {
         $this->text = $text;
-
-        return $this;
-    }
-
-    public function getCategory(): ?string
-    {
-        return $this->category;
-    }
-
-    public function setCategory(string $category): self
-    {
-        $this->category = $category;
 
         return $this;
     }

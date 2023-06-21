@@ -89,10 +89,12 @@ class News
         return $this;
     }
 
-    public function getSecondPhoto(): array
+    public function getSecondPhoto(): ?array
     {
-        return $this->second_photo;
+            return $this->second_photo;
+        
     }
+    
 
     public function setSecondPhoto(?array $second_photo): self
     {

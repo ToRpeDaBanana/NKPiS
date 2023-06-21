@@ -26,7 +26,7 @@ class BannersVacancies
         return $this->photo;
     }
 
-    public function setPhoto(string $photo): static
+    public function setPhoto(?string $photo): static
     {
         $this->photo = $photo;
 

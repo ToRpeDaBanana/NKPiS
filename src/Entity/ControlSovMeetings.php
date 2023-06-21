@@ -15,7 +15,7 @@ class ControlSovMeetings
     private ?int $id = null;
 
     #[ORM\Column(nullable: false)]
-    private ?bool $planned = null;
+    private ?string $planned = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $date_planned = null;
@@ -25,12 +25,12 @@ class ControlSovMeetings
         return $this->id;
     }
 
-    public function isPlanned(): ?bool
+    public function getPlanned(): ?string
     {
         return $this->planned;
     }
 
-    public function setPlanned(bool $planned): self
+    public function setPlanned(string $planned): self
     {
         $this->planned = $planned;
 

@@ -5,11 +5,23 @@
     <div>
         <h4 class="label-contactPod">Родительская плата</h3>
         <div class="label-contactPod-link">
-            <i class="fa-regular fa-file-pdf"><a class="link-color" href="">Название документа</a></i>
+            {% for pageCont in pageData %}
+                {% if pageCont is not empty %}
+                 {% for file in pageCont.parentFolder %}
+                    <i class="fa-regular fa-file-pdf"><a class="link-color" href="{{'/assets/upload/files/' ~ file|raw }}">{{ file|raw }}</a></i>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
         </div>
         <h4 class="label-contactPod">Порядок оказания платных образовательных услуг</h3>
         <div class="label-contactPod-link">
-            <i class="fa-regular fa-file-pdf"><a class="link-color" href="">Название документа</a></i>
+            {% for pageCont in pageData %}
+                {% if pageCont is not empty %}
+                    {% for file in pageCont.procedur %}
+                        <i class="fa-regular fa-file-pdf"><a class="link-color" href="{{'/assets/upload/files/' ~ file|raw }}">{{file|raw }}</a></i>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

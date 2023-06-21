@@ -22,7 +22,6 @@ class EmployMonitoringCrudController extends AbstractCrudController
             TextField::new('title')->setLabel('Заголовок документа'),
             ImageField::new('file')->setUploadDir('public\assets\upload\files')
             ->setBasePath('public\assets\upload\files')
-            ->setFormTypeOption('multiple', true)
             ->setLabel('Выбрать файл'),
         ];
     }

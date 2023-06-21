@@ -29,7 +29,7 @@ class DemoExam
         return $this->file;
     }
 
-    public function setFile(string $file): static
+    public function setFile(?string $file): static
     {
         $this->file = $file;
 

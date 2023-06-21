@@ -3,46 +3,28 @@
 {% block main %}
     <h1 class="label-contactPod">Документы</h1>
     <div class="label-contactPod">
-        <div class="text-style">
-            <h5>ПРАВОУСТАНАВЛИВАЮЩИЕ ДОКУМЕНТЫ</h5>
-            <div>
-                <i class="fa-regular fa-file-pdf"><a class="color-txt" href="">название документа</a></i>
-            </div>
-        </div>
-        <br>
-        <div class="text-style">
-            <h5>ЛОКАЛЬНЫЕ АКТЫ</h5>
-            <div>
-                <i class="fa-regular fa-file-pdf"><a class="color-txt" href="">название документа</a></i>
-            </div>
-        </div>
-        <br>
-        <div class="text-style">
-            <h5>КОЛЛЕКТИВНО - ДОГОВОРНОЕ РЕГУЛИРОВАНИЕ</h5>
-            <div>
-                <i class="fa-regular fa-file-pdf"><a class="color-txt" href="">название документа</a></i>
-            </div>
-        </div>
-        <br>
-        <div class="text-style">
-            <h5>ФИНАНСОВАЯ ДЕЯТЕЛЬНОСТЬ</h5>
-            <div>
-                <i class="fa-regular fa-file-pdf"><a class="color-txt" href="">название документа</a></i>
-            </div>
-        </div>
-        <br>
-        <div class="text-style">
-            <h5>ОТЧЕТ О РЕЗУЛЬТАТАХ САМООБСЛЕДОВАНИЯ</h5>
-            <div>
-                <i class="fa-regular fa-file-pdf"><a class="color-txt" href="">название документа</a></i>
-            </div>
-        </div>
-        <br>
+{% for pageCont in pageData %}
+    {% if pageCont is not empty %}
          <div class="text-style">
-            <h5>РЕЗУЛЬТАТЫ ПРОВЕРОК</h5>
             <div>
-                <i class="fa-regular fa-file-pdf"><a class="color-txt" href="">название документа</a></i>
+                {% for file in pageCont.treaty %}
+                <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' ~ file|raw }}">{{ file|raw }}</a></i>
+                {% endfor %}
             </div>
         </div>
+    {% endif %}
+{% endfor %}
+<h3>Иные документы</h3>
+{% for pageCont in pageData %}
+    {% if pageCont is not empty %}
+         <div class="text-style">
+            <div>
+                {% for file in pageCont.vaccination %}
+                <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' ~ file|raw }}">{{ file|raw }}</a></i>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
     </div>
 {% endblock %}

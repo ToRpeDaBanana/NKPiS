@@ -38,7 +38,7 @@ class ProfDocument
         return $this->collective_agreement;
     }
 
-    public function setCollectiveAgreement(string $collective_agreement): static
+    public function setCollectiveAgreement(?string $collective_agreement): static
     {
         $this->collective_agreement = $collective_agreement;
 

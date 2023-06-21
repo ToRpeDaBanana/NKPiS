@@ -3,20 +3,23 @@
 {% block main %}
     <h1 class="label-contactPod">Новости</h1>
 <div class="news-div-1">
-    <div class="news-div">
-                    <div class="news-date-div">
-                        <div class="news-border"></div>
-                        <div class="news-date">
-                            03.06.2023
-                        </div>
+{% for pageCont in pageData %}
+    {% if pageCont is not empty %}
+        <div class="news-div">
+            <div class="news-date-div">
+                <div class="news-border"></div>
+                    <div class="news-date">
+                        {{ pageCont.date|date('d-m-Y')|raw }}
                     </div>
-                    <div class="news-label">
-                        <a class="link-color" href="">Нам с тобой по пути!</a>
-                        <br>
-                        <br>
-                        <a class="link-color" href="">подробнее</a>
-                    </div>
-
-    </div>
+                </div>
+            <div class="news-label">
+                <a href="">{{ pageCont.title|raw }}</a>
+                <br>
+                <br>
+                <a href="{{'/news/'}}{{pageCont.id}}">подробнее</a>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
 </div>
 {% endblock %}

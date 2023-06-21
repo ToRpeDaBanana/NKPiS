@@ -6,11 +6,14 @@
     <div class="label-contactPod">
         <div class="work">
         {# Банеры с приглашением на работу #}
-            <img class="img-style" src="{{'/assets/img/work.jpg'}}" alt="">
+    {% for pageCont in pageData1 %}
+        {% if pageCont is not empty %}
+            <img class="img-style" src="{{'/assets/upload/img/'}}{{ pageCont.photo|raw }}" alt="">
             &nbsp;
             &nbsp;
             &nbsp;
-            <img class="img-style" src="{{'/assets/img/work.jpg'}}" alt="">
+        {% endif %}
+    {% endfor %}
         </div>
     </div>
 {% endblock %}

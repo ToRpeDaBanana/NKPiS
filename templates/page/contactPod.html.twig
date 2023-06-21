@@ -22,86 +22,18 @@
 		</tr>
 	</thead>
 	<tbody>
+{% for pageCont in pageData %}
+    {% if pageCont is not empty %}
 		<tr>
-			<td>1</td>
-			<td>1</td>
-			<td>1</td>
-			<td>1</td>
-			<td>1</td>
-			<td>1</td>
+			<td>{{ pageCont.jobTitle|raw }}</td>
+			<td>{{ pageCont.name|raw }}</td>
+			<td>{{ pageCont.phone|raw }}</td>
+			<td>{{ pageCont.dayWeek|raw }}</td>
+			<td>{{ pageCont.time|raw }}</td>
+			<td>{{ pageCont.email|raw }}</td>
 		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
+	{% endif %}
+{% endfor %}
 	</tbody>
 </table>
 </div>

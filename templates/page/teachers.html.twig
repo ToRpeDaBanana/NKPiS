@@ -6,154 +6,82 @@
     <div class="flex-all-prepod">
         <fieldset class="teacher-fieldset-1">
         <legend class="teacher-legend-1">О руководителе образовательной организации</legend>
-                    <div class="prepod-div">
-                        <div><h4>Федосеева Дарья Сергеевна</h4></div>
+                    <div>
+        {% for pageCont in pageData1 %}
+            {% if pageCont is not empty %}
+                {% if pageCont.categoryJobTitle == 'high' %}
+            
+                
+                        <div><h4>{{ pageCont.name|raw }}</h4></div>
+                    
                         <ul>
                         <div class="teacher-flex-box-1">
-                            <div ><img class="directro-logo-teacher" src="{{'/assets/img/director-logo.jpg'}}" alt=""></div>
+                            <img class="directro-logo-teacher" src="{{'/assets/upload/img/'}}{{ pageCont.photo|default('siluet.png')|raw }}" alt="">
                             <div>
                                 <ul>
                                     <li>
                                         <b>Должность: </b>
-                                        <p>Директор</p>
+                                        <p>{{ pageCont.jobTitle|raw }}</p>
                                     </li>
                                     <li>
                                         <b>Тел.: </b>
-                                        <i><a class="link-color">(383) 342 95 26</a></i>
+                                        <i><a>{{ pageCont.phone|raw }}</a></i>
                                     </li>
                                     <li>
                                         <b>Email: </b>
-                                        <i><a class="link-color">fedoseevads@edu54.ru</a></i>
+                                        <i><a>{{ pageCont.email|raw }}</a></i>
                                     </li>
                                     <li>
                                         <b>Приём:</b>
-                                        <p>
-                                        Режим работы: пн.-пт. с 8-30 до 17-00
-                                        <br>
-                                        перерыв на обед с 12-00 до 12-30
-                                        <br>
-                                        выходной суббота, воскресенье.
-                                        <br>
-                                        прием по личным вопросам: понедельник с 16.00-17.00
-                                        </p>
+                                        <p>{{ pageCont.priem|raw }}</p>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         </ul>
                     </div>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
         </fieldset>
     <fieldset class="teacher-fieldset-1">
     <legend class="teacher-legend-2">О заместителях руководителя образовательной организации</legend>
+        {% for pageCont in pageData1 %}
+            {% if pageCont is not empty %}
+                {% if pageCont.categoryJobTitle == 'midle' %}
+                    <div class="prepod-div">
+                            <div><h5>{{ pageCont.name|raw }}</h5></div>
+                        <ul>
+                            <div class="teacher-flex-box-1">
+                                    <img class="directro-logo-teacher" src="{{'/assets/upload/img/'}}{{ pageCont.photo|default('siluet.png')|raw }}" alt="">
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <b>Должность: </b>
+                                            <p>{{ pageCont.jobTitle|raw }}</p>
+                                        </li>
+                                        <li>
+                                            <b>Тел.: </b>
+                                            <i><a>{{ pageCont.phone|raw }}</a></i>
+                                        </li>
 
-            <div class="prepod-div">
-                <div><h5>Мордвинова Екатерина Владимировна</h5></div>
-                    <ul>
-                     <div class="teacher-flex-box-1">
-                        <div><img class="directro-logo-teacher" src="{{'/assets/img/siluet.png'}}" alt=""></div>
-                        <div>
-                            <ul>
-                                <li>
-                                    <b>Должность: </b>
-                                    <p>Заместитель директора по учебной работе</p>
-                                </li>
-                                <li>
-                                    <b>Тел.: </b>
-                                    <i><a class="link-color">(383) 342 95 26</a></i>
-                                </li>
-                                <li>
-                                    <b>Email: </b>
-                                    <i><a class="link-color">mordvinovaev@edu54.ru</a></i>
-                                </li>
-                                <li>
-                                    <b>Приём:</b>
-                                    <p>
-                                    Режим работы: пн.-пт. с 8-00 до 16-30
-                                    <br>
-                                    перерыв на обед с 11-30 до 12-00
-                                    <br>
-                                    выходной день: суббота, воскресенье
-                                    <br>
-                                    Прием по личным вопросам: четверг с 14:00 до 16:30
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-                     </div>
-                    </ul>
-                </div>
-                <div class="prepod-div">
-                    <div><h5>Петрова Юлия Николаевна</h5></div>
-                    <ul>
-                     <div class="teacher-flex-box-1">
-                        <div><img class="directro-logo-teacher" src="{{'/assets/img/siluet.png'}}" alt=""></div>
-                        <div>
-                            <ul>
-                                <li>
-                                    <b>Должность: </b>
-                                    <p>Заместитель директора по административно-хозяйственной работе</p>
-                                </li>
-                                <li>
-                                    <b>Тел.: </b>
-                                    <i><a class="link-color">(383) 342 63 49</a></i>
-                                </li>
-                                <li>
-                                    <b>Email: </b>
-                                    <i><a class="link-color">petrovayun@edu54.ru</a></i>
-                                </li>
-                                <li>
-                                    <b>Приём:</b>
-                                    <p>
-                                    Режим работы: пн.-пт. с 8-30 до 17-00
-                                    <br>
-                                    перерыв на обед с 12-00 до 12-30
-                                    <br>
-                                    выходной суббота, воскресенье.
-                                    <br>
-                                    прием по личным вопросам: пятница с 14.00-16.00
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-                     </div>
-                    </ul>
-                </div>
-                <div class="prepod-div">
-                    <div><h5>Девищенко Ольга Борисовна</h5></div>
-                    <ul>
-                     <div class="teacher-flex-box-1">
-                        <div><img class="directro-logo-teacher" src="{{'/assets/img/a349f34025c59cd29e0aa40931d605c0.jpg'}}" alt=""></div>
-                        <div>
-                            <ul>
-                                <li>
-                                    <b>Должность: </b>
-                                    <p>Заместитель директора по учебно-воспитательной работе</p>
-                                </li>
-                                <li>
-                                    <b>Тел.: </b>
-                                    <i><a>(383) 342 95 26</a></i>
-                                </li>
-                                <li>
-                                    <b>Email: </b>
-                                    <i><a>devischenkoob@edu54.ru</a></i>
-                                </li>
-                                <li>
-                                    <b>Приём:</b>
-                                    <p>
-                                    Режим работы: пн.-пт. с 8-30 до 17-00
-                                    <br>
-                                    перерыв на обед с 12-00 до 12-30
-                                    <br>
-                                    выходной суббота, воскресенье.
-                                    <br>
-                                    прием по личным вопросам: пятница с 14.00-16.00
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-                     </div>
-                    </ul>
-                </div>
+                                        <li>
+                                            <b>Email: </b>
+                                            <i><a>{{ pageCont.email|raw }}</a></i>
+                                        </li>
+
+                                        <li>
+                                            <b>Приём:</b>
+                                            <p>{{ pageCont.priem|raw }}</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
         </fieldset>
     </div>
  <div> 
@@ -161,46 +89,32 @@
     <fieldset class="teacher-fieldset-1">
         <legend class="teacher-legend-2">Персональный состав педагогических работников каждой реализуемой образовательной программы в форме электронного документа</legend>
             <ul>
+        {% for pageCont in pageData2 %}
+            {% if pageCont is not empty %}
                 <li>
-                <a href="" >Название файла</a>
+                    <a href="{{'/assets/upload/files/'}}{{ pageCont.file|raw }}">{{ pageCont.title|raw }}</a>
                 </li>
+            {% endif %}
+        {% endfor %}
             </ul>
     </fieldset>
 </div> 
     <div class="all-screen-center">
-        <i><a class="link-color">Фотогалерея сотрудников</a></i>
-        <div class="flex-column-galery">
-        <div class="flex-galery-sotrudnik">
-         <div class="element-galery">
-            <div >
-            <img class="galery-sotrudnik" src="{{'/assets/img/a349f34025c59cd29e0aa40931d605c0.jpg'}}">
+        <i><a>Фотогалерея сотрудников</a></i>
+            <div class="flex-column-galery">
+                <div class="flex-galery-sotrudnik">
+        {% for pageCont in pageData1 %}
+            {% if pageCont is not empty %}
+                {% if pageCont.categoryJobTitle == 'low' %}
+                    <div class="element-galery">
+                        <div ><img class="galery-sotrudnik" src="{{'/assets/upload/img/'}}{{ pageCont.photo|default('siluet.png')|raw }}"></div>
+                        <p>{{ pageCont.name|raw }}</p>
+                        <p>{{ pageCont.jobTitle|raw }}</p>
+                    </div>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+                </div>
             </div>
-            <p>Ф.И.О сотрудника</p>
-            <p>Должность</p>
-         </div>
-         <div class="element-galery">
-            <div >
-            <img class="galery-sotrudnik" src="{{'/assets/img/a349f34025c59cd29e0aa40931d605c0.jpg'}}">
-            </div>
-            <p>Ф.И.О сотрудника</p>
-            <p>Должность</p>
-         </div>
-         <div class="element-galery">
-            <div >
-            <img class="galery-sotrudnik" src="{{'/assets/img/a349f34025c59cd29e0aa40931d605c0.jpg'}}">
-            </div>
-            <p>Ф.И.О сотрудника</p>
-            <p>Должность</p>
-         </div>
-         <div class="element-galery">
-            <div >
-            <img class="galery-sotrudnik" src="{{'/assets/img/a349f34025c59cd29e0aa40931d605c0.jpg'}}">
-            </div>
-            <p>Ф.И.О сотрудника</p>
-            <p>Должность</p>
-         </div>
-            </div>
-            </div>
-        </div>
     </div>
 {% endblock %}

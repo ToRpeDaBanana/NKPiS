@@ -1,0 +1,15 @@
+{% extends 'main_page/index.html.twig' %}
+
+{% block main %}
+
+{% for pageCont in pageData %}
+    {% if pageCont is not empty %}
+    <div>
+        <h1>{{pageCont.title}}</h1>
+        {% for photo in pageCont.photo %}
+                <img src="{{ '/assets/upload/img/' ~ photo|raw }}" alt="">
+        {% endfor %}
+    </div>
+    {% endif %}
+{% endfor %}
+{% endblock %}

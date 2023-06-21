@@ -8,6 +8,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 
 class TeachersCrudController extends AbstractCrudController
 {
@@ -24,11 +25,13 @@ class TeachersCrudController extends AbstractCrudController
             TextField::new('job_title')->setLabel('Должность'),
             TextField::new('phone')->setLabel('Телефон'),
             EmailField::new('email')->setLabel('Почта'),
+            TextEditorField::new('priem')->setLabel('Приём'),
             ImageField::new('photo')->setUploadDir('public\assets\upload\img')
             ->setBasePath('public\assets\upload\img'),
             ChoiceField::new('category_job_title')->setChoices([
-                'Директор/замы'=>'up',
-                'Предователи/заведующие'=>'down',
+                'Директор'=>'high',
+                'Заместители'=>'midle',
+                'Предователи/заведующие'=>'low',
             ])->setLabel('Категория'),
         ];
     }

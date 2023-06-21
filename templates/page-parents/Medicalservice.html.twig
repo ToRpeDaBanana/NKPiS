@@ -2,66 +2,27 @@
 
 {% block main %}
     <h1 class="label-contactPod">Организация медицинского обслуживания</h1>
+{% for pageCont in pageData %}
+    {% if pageCont is not empty %}
+		<a href="{{ pageCont.importantKnow|raw }}">Это важно знать о COVID-19</a>
+		<a href="{{ pageCont.recommendations|raw }}">Рекомендации РОСПОТРЕБНАДЗОРА</a>
+	{% endif %}
+{% endfor %}
 <div class="contactPod-table">
     <table class="table">
 	<thead>
 		<tr>
-			<th rowspan="2">Номер образовательной площадки</th>
-            <th rowspan="2">Адрес Образовательной площадки</th>
 			<th rowspan="2">Медицинское учреждение</th>
 		</tr>
 	</thead>
 	<tbody>
+{% for pageCont in pageData %}
+    {% if pageCont is not empty %}
 		<tr>
-			<td>1</td>
-			<td>1</td>
-			<td>1</td>
+			<td>{{ pageCont.text|raw }}</td>
 		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-            <td></td>
-			<td></td>
-			<td></td>
-		</tr>
+	{% endif %}
+{% endfor %}
 	</tbody>
 </table>
 </div>

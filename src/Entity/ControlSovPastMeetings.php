@@ -48,7 +48,7 @@ class ControlSovPastMeetings
         return $this->agenda;
     }
 
-    public function setAgenda(string $agenda): self
+    public function setAgenda(?string $agenda): self
     {
         $this->agenda = $agenda;
 
@@ -60,7 +60,7 @@ class ControlSovPastMeetings
         return $this->protocol;
     }
 
-    public function setProtocol(string $protocol): self
+    public function setProtocol(?string $protocol): self
     {
         $this->protocol = $protocol;
 
