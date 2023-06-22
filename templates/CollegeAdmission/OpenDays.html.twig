@@ -2,6 +2,13 @@
 
 {% block main %}
     <h1 class="label-contactPod">Дни открытых дверей</h1>
+{% for pageCont in pageData1 %}
+    {% if pageCont is not empty %}
+		<h3>{{pageCont.title|raw}}</h3>
+		<p>{{pageCont.text|raw}}</p>
+		<a href="{{pageCont.link|raw}}">{{pageCont.link|raw}}</a>
+	{% endif %}
+{% endfor %}
        <div class="contactPod-table">
     <table class="table">
 	<thead>
@@ -13,66 +20,16 @@
 		</tr>
 	</thead>
 	<tbody>
+{% for pageCont in pageData2 %}
+    {% if pageCont is not empty %}
 		<tr>
-			<td>1</td>
-			<td>1</td>
-			<td>1</td>
-			<td>1</td>
+			<td>{{ pageCont.date|date('d-m-Y')|raw }}</td>
+			<td>{{pageCont.address|raw}}</td>
+			<td>{{pageCont.text|raw}}</td>
+			<td>{{pageCont.register|raw}}</td>
 		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
+	{% endif %}
+{% endfor %}
 	</tbody>
 </table>
 </div>

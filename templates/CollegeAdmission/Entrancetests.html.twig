@@ -3,6 +3,10 @@
 {% block main %}
     <h1 class="label-contactPod">Вступительные испытания</h1>
         <div class="label-contactPod">
-            <p>Какой то текст</p>
+{% for pageCont in pageData %}
+    {% if pageCont is not empty %}
+            <p>{{pageCont.text|raw}}</p>
+    {% endif %}
+{% endfor %}
         </div>
 {% endblock %}

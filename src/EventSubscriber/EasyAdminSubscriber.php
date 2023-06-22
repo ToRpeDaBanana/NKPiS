@@ -321,12 +321,12 @@ class EasyAdminSubscriber implements EventSubscriberInterface{
             '/public/assets/upload/img/'.$item;
             if(file_exists($imgpath)) unlink($imgpath);
         }
-        if ($entity instanceof TeachersContests){
-            $item = $entity->getFile();
-            $imgpath = $this->parameterBag->get('kernel.project_dir') . 
-            '/public/assets/upload/files/'.$item;
-            if(file_exists($imgpath)) unlink($imgpath);
-        }
+        // if ($entity instanceof TeachersContests){
+        //     $item = $entity->getFile();
+        //     $imgpath = $this->parameterBag->get('kernel.project_dir') . 
+        //     '/public/assets/upload/files/'.$item;
+        //     if(file_exists($imgpath)) unlink($imgpath);
+        // }
         if ($entity instanceof VeteransLabor){
             if(is_array($entity->getPhoto())){
                 foreach($entity->getPhoto() as $item){
@@ -337,13 +337,10 @@ class EasyAdminSubscriber implements EventSubscriberInterface{
             }    
         }
         if ($entity instanceof VeteransLaborDocument){
-            if(is_array($entity->getFile())){
-                foreach($entity->getFile() as $item){
-                    $imgpath = $this->parameterBag->get('kernel.project_dir') . 
-                    '/public/assets/upload/files/'.$item;
-                    if(file_exists($imgpath)) unlink($imgpath);
-                }
-            }    
+            $item = $entity->getFile();
+            $imgpath = $this->parameterBag->get('kernel.project_dir') . 
+            '/public/assets/upload/files/'.$item;
+            if(file_exists($imgpath)) unlink($imgpath);
         }
         if ($entity instanceof TeachersDocument){
             $item = $entity->getFile();

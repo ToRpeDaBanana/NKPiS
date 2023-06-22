@@ -3,35 +3,34 @@
 {% block main %}
     <h1 class="label-contactPod">Вакансии и работодатели</h1>
 
-    <div class="label-contactPod">
+<div class="label-contactPod">
         <div class="work">
         {# Банеры с приглашением на работу #}
-    {% for pageCont in pageData1 %}
+            {% for pageCont in pageData1 %}
+                {% if pageCont is not empty %}
+                    <img class="img-style" src="{{'/assets/upload/img/'}}{{ pageCont.photo|raw }}" alt="">
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                {% endif %}
+            {% endfor %}
+        </div>
+</div>
+<div class="label-contactPod" >
+    <div>
+    {% for pageCont in pageData2 %}
         {% if pageCont is not empty %}
-            <img class="img-style" src="{{'/assets/upload/img/'}}{{ pageCont.photo|raw }}" alt="">
-            &nbsp;
-            &nbsp;
-            &nbsp;
+            <div class="tab-page-student">
+                <input id="tab-one{{ pageCont.id|raw }}" type="checkbox" name="tabs">
+                <label  for="tab-one{{ pageCont.id|raw }}">{{ pageCont.title|raw }}</label>
+                <div class="tab-content">
+                    <div class="tab-content-first-page-student">
+                        <p>{{ pageCont.text|raw }}</p>
+                    </div>
+                </div>
+            </div>
         {% endif %}
     {% endfor %}
-        </div>
     </div>
-     <div class="label-contactPod" >
-        <div>
-            <div class="tab-page-student">
-                
-            <input id="tab-one" type="checkbox" name="tabs">
-                <label  for="tab-one">Вакансия</label>
-                    <div class="tab-content">
-                    <div class="tab-content-first-page-student">
-                        <p></p>
-						<p></p>
-						<p></p>
-						<p></p>
-                    </div>
-                    </div>
-            </div>
-            </div>
-        </div>
-    </div>
+</div>
 {% endblock %}

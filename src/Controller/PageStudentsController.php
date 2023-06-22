@@ -136,7 +136,7 @@ class PageStudentsController extends AbstractController
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
-    #[Route('/alumniAdvocacyCenter/newscente/{id}', methods:['GET'])]
+    #[Route('/alumniAdvocacyCenter/newscenter/{id}', methods:['GET'])]
     public function newscenterId(
         ManagerRegistry $doctrine,
         SessionService $sessionService,

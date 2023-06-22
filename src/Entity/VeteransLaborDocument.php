@@ -14,20 +14,20 @@ class VeteransLaborDocument
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type: Types::ARRAY, nullable: true)]
-    private ?array $file = null;
+    #[ORM\Column(length: 255)]
+    private ?string $file = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getFile(): ?array
+    public function getFile(): ?string
     {
         return $this->file;
     }
 
-    public function setFile(?array $file): static
+    public function setFile(?string $file): static
     {
         $this->file = $file;
 

@@ -4,19 +4,29 @@
     <h1 class="label-contactPod">Совет ветеранов педагогического труда</h1>
    <div class="news-div-1">
     <div class="news-div">
-                    <div class="news-date-div">
-                        <div class="news-border"></div>
-                        <div class="news-date">
-                            03.06.2023
+{% for pageCont in pageData1 %}
+    {% if pageCont is not empty %}
+        <div class="news-div">
+                        <div class="news-date-div">
+                            <div class="news-border"></div>
+                            <div class="news-date">
+                                {{ pageCont.date|date('d-m-Y')|raw }}
+                            </div>
                         </div>
-                    </div>
-                    <div class="news-label">
-                        <a class="style-link" href="">Нам с тобой по пути!</a>
-                        <br>
-                        <br>
-                        <a class="style-link" href="">подробнее</a>
-                    </div>
+                        <div class="news-label">
+                            <a href="{{'/councilofVeteransofPedagogicalLabor/'}}{{pageCont.id}}">{{pageCont.title}}</a>
+                            <br>
+                            <br>
+                            <a href="{{'/councilofVeteransofPedagogicalLabor/'}}{{pageCont.id}}">подробнее</a>
+                        </div>
+        </div>
+    {% endif %}
+{% endfor %}
+{% for pageCont in pageData2 %}
+    {% if pageCont is not empty %}
 
-    </div>
-</div>
+        <a href="{{pageCont.file|raw}}">{{pageCont.file|raw}}</a>
+
+    {% endif %}
+{% endfor %}
 {% endblock %}

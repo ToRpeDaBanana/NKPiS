@@ -3,30 +3,34 @@
 {% block main %}
     <h1 class="label-contactPod">Профсоюзная организация</h1>
     <div class="label-contactPod">
+{% for pageCont in pageData %}
+    {% if pageCont is not empty %}
         <div>
             <h4 class="label-small">Коллективно - договорное регулирование</h4>
-            <i class="fa-regular fa-file-pdf"><a class="color-txt" href="">a</a></i>
+            <i class="fa-regular fa-file-pdf"><a class="color-txt" href="{{ pageCont.collectiveAgreement|raw }}">Коллективный договор</a></i>
         </div>
         <br>
          <div>
             <h4 class="label-small">Соглашение об изменении коллективного договора.</h4>
-            <i class="fa-regular fa-file-pdf"><a class="color-txt" href="">a</a></i>
+            <i class="fa-regular fa-file-pdf"><a class="color-txt" href="{{ pageCont.agreementChange|raw }}">Соглашение об изменении коллективного договора</a></i>
         </div>
         <br>
          <div>
             <h4 class="label-small">Сведения по результатам уведомительной регистрации коллективного договора</h4>
-            <i class="fa-regular fa-file-pdf"><a class="color-txt" href="">a</a></i>
+            <i class="fa-regular fa-file-pdf"><a class="color-txt" href="{{ pageCont.informAbout|raw }}">Сведения по результатам уведомительной регистрации коллективного договора</a></i>
         </div>
         <br>
          <div>
             <h4 class="label-small">Документы о комиссии по подготовке, заключению и контролю выполнения коллективного договора</h4>
-            <i class="fa-regular fa-file-pdf"><a class="color-txt" href="">a</a></i>
+            <i class="fa-regular fa-file-pdf"><a class="color-txt" href="{{ pageCont.commissionDocuments|raw }}">Заключение по контролю выполнения коллективного договора</a></i>
         </div>
         <br>
          <div>
             <h4 class="label-small">Документы по реализации и контролю за выполнением коллективного договора</h4>
-            <i class="fa-regular fa-file-pdf"><a class="color-txt" href="">a</a></i>
+            <i class="fa-regular fa-file-pdf"><a class="color-txt" href="{{ pageCont.implementationDocuments|raw }}">реализация и контроль за выполнением коллективного договора</a></i>
         </div>
         <br>
+    {% endif %}
+{% endfor %}
     </div>
 {% endblock %}
