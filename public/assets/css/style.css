@@ -565,9 +565,7 @@
     }
     .Slider .slick-track{
         display: flex;
-        justify-content: center;
-        width: 100% !important;
-        transform: translate3d(0px, 0px, 0px) !important;
+
     }
     .Slider .slick-arrow.slick-prev{
         left: 0;
