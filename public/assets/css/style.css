@@ -560,9 +560,14 @@
     
     .Slider .slick-list{
         overflow: hidden;
+        height: auto;
+        width: 100%;
     }
     .Slider .slick-track{
         display: flex;
+        justify-content: center;
+        width: 100% !important;
+        transform: translate3d(0px, 0px, 0px) !important;
     }
     .Slider .slick-arrow.slick-prev{
         left: 0;
@@ -636,6 +641,7 @@
     .Slider__item{
         max-height: 20%;
         max-width: 100%;
+        /* width: 100% !important; */
     margin-left:auto;
     margin-right: auto;
     margin: 0 10px;
@@ -1302,7 +1308,6 @@
         font-family: 'PT Sans', sans-serif;
         background-color: white;
         border-radius: 10px;
-        width: 4%;
         max-width: 150px;
         text-decoration: none;
         color: black;

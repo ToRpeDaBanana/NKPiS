@@ -7,7 +7,7 @@ $(document).ready(function(){
 		arrows: true,
 		dots:true,
 		infinite:false,
-		// centerMode:true,
+		centerMode:true,
 		responsive: [
 		{
 			breakpoint: 1640,
