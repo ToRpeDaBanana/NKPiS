@@ -25,12 +25,6 @@
         {% block stylesheets %}
 
         <link rel="stylesheet" href="{{'/assets/css/style.css'}}">
-         {# {% if customStyle is not null and customStyle == 1 %}
-            
-        
-        {% else  %}
-                <link rel="stylesheet" href="{{'assets/css/style1.css'}}">
-        {% endif %} #}
         {% endblock %}
 
         {% block javascripts %}
@@ -48,7 +42,6 @@
             
         {% endblock %}
     </head>
-    {# {{ dump(app.session.all()) }} #}
     <body>
     <header>
         {% block header %}
@@ -265,59 +258,25 @@
         {% block main %}
             <div class="wrapper">
 			<div class="slider">
+    {% for pageCont in pageData1 %}
+        {% if pageCont is not empty %}
 				 <div class="slider__item">
+                 <div class="slider__item">
                     <div  class="podpis_first_slider">
-                            <a href="">
+                            <a href="{{ pageCont.link|raw }}">
                             <div class="first-slider">
-                            <img class="img_slider" src="{{'/assets/img/50434b174cd5e29566d4e060fe19e53a.jpeg'}}" alt="">
-                            <h1 class="logo-slide" style="">Лого слайда</h1>
-                            <p class="podpis-slide" style="">Подпись к лого</p>
-                            <a class="button-slide" href="">Подробнее</a>
+                            <img class="img_slider" src="{{'/assets/upload/img/'}}{{ pageCont.photo|raw }}" alt="">
+                            <div class="logo-slide" style="">{{ pageCont.title|raw }}</div>
+                            <div class="podpis-slide" style="">{{ pageCont.text|raw }}</div>
+                            <a class="button-slide" href="{{ pageCont.link|raw }}">Подробнее</a>
                             </div>
                             </a>
                     </div>
                  </div>
-				<div class="slider__item">
-					<div class="slider__item">
-                    <div  class="podpis_first_slider">
-                            <a href="">
-                            <div class="first-slider">
-                            <img class="img_slider" src="{{'/assets/img/50434b174cd5e29566d4e060fe19e53a.jpeg'}}" alt="">
-                            <h1 class="logo-slide" style="">Лого слайда</h1>
-                            <p class="podpis-slide" style="">Подпись к лого</p>
-                            <a class="button-slide" href="">Подробнее</a>
-                            </div>
-                            </a>
-                    </div>
-                 </div>
-				</div>
-				<div class="slider__item">
-					<div class="slider__item">
-                    <div  class="podpis_first_slider">
-                            <a href="">
-                            <div class="first-slider">
-                            <img class="img_slider" src="{{'/assets/img/50434b174cd5e29566d4e060fe19e53a.jpeg'}}" alt="">
-                            <h1 class="logo-slide" style="">Лого слайда</h1>
-                            <p class="podpis-slide" style="">Подпись к лого</p>
-                            <a class="button-slide" href="">Подробнее</a>
-                            </div>
-                            </a>
-                    </div>
-                 </div>
-				</div>
-				<div class="slider__item">
-					<div class="slider__item">
-                    <div  class="podpis_first_slider">
-                            <a href="">
-                            <div class="first-slider">
-                            <img class="img_slider" src="{{'/assets/img/50434b174cd5e29566d4e060fe19e53a.jpeg'}}" alt="">
-                            <h1 class="logo-slide" style="">Лого слайда</h1>
-                            <p class="podpis-slide" style="">Подпись к лого</p>
-                            <a class="button-slide" href="">Подробнее</a>
-                            </div>
-                            </a>
-                    </div>
-                 </div>
+                </div>
+        {% endif %}
+    {% endfor %}
+				
 				</div>
 			</div>
 	
@@ -406,112 +365,37 @@
                         </div>
                         
                     <div class="Slider">
-                        <div class="Slider__item">
-                            
-                            <div  class="podpis_first_slider">
-                            <a href="">
+        {% for pageCont in pageData3 %}
+            {% if pageCont is not empty %}
+                <div class="Slider__item">
+                 <div class="Slider__item">
+                    <div  class="podpis_first_slider">
+                            <a href="{{'/news/'}}{{pageCont.id}}">
                             <div class="first-slider">
-                            <img class="img_slider" src="{{'/assets/img/50434b174cd5e29566d4e060fe19e53a.jpeg'}}" alt="">
-                            <p class="date-time" style="">Дата и время</p>
-                            <h2 class="logo-slide-2" style="">Надпись на слайдере</h2>
-                            <a class="button-slide-2" href="">Подробнее</a>
+                            <img class="img_slider" src="{{'/assets/upload/img/'}}{{ pageCont.firstPhoto|first|raw }}" alt="">
+                            <p class="date-time" style="">{{ pageCont.date|date('d-m-Y')|raw }}</p>
+                            <h2 class="logo-slide-2" style="">{{ pageCont.Title|raw }}</h2>
+                            <a class="button-slide-2" href="{{'/news/'}}{{pageCont.id}}">Подробнее</a>
                             </div>
                             </a>
-                            </div>
-                        </div>
-                        <div  class="Slider__item">
-                            <div  class="podpis_first_slider">
-                            <a href="">
-                            <div class="first-slider">
-                            <img class="img_slider" src="{{'/assets/img/50434b174cd5e29566d4e060fe19e53a.jpeg'}}" alt="">
-                            <p class="date-time" style="">Дата и время</p>
-                            <h2 class="logo-slide-2" style="">Надпись на слайдере</h2>
-                            <a class="button-slide-2" href="">Подробнее</a>
-                            </div>
-                            </a>
-                            </div>
-                        </div>
-                        <div  class="Slider__item">
-                            <div  class="podpis_first_slider">
-                            <a href="">
-                            <div class="first-slider">
-                            <img class="img_slider" src="{{'/assets/img/50434b174cd5e29566d4e060fe19e53a.jpeg'}}" alt="">
-                            <p class="date-time" style="">Дата и время</p>
-                            <h2 class="logo-slide-2" style="">Надпись на слайдере</h2>
-                            <a class="button-slide-2" href="">Подробнее</a>
-                            </div>
-                            </a>
-                            </div>
-                        </div>
-                        <div  class="Slider__item">
-                            <div  class="podpis_first_slider">
-                            <a href="">
-                            <div class="first-slider">
-                            <img class="img_slider" src="{{'/assets/img/50434b174cd5e29566d4e060fe19e53a.jpeg'}}" alt="">
-                            <p class="date-time" style="">Дата и время</p>
-                            <h2 class="logo-slide-2" style="">Надпись на слайдере</h2>
-                            <a class="button-slide-2" href="">Подробнее</a>
-                            </div>
-                            </a>
-                            </div>
-                        </div>
-                        <div class="Slider__item">
-                            <div  class="podpis_first_slider">
-                            <a href="">
-                            <div class="first-slider">
-                            <img class="img_slider" src="{{'/assets/img/50434b174cd5e29566d4e060fe19e53a.jpeg'}}" alt="">
-                            <p class="date-time" style="">Дата и время</p>
-                            <h2 class="logo-slide-2" style="">Надпись на слайдере</h2>
-                            <a class="button-slide-2" href="">Подробнее</a>
-                            </div>
-                            </a>
-                            </div>
-                        </div>
-                        <div class="Slider__item">
-                            <div  class="podpis_first_slider">
-                            <a href="">
-                            <div class="first-slider">
-                            <img class="img_slider" src="{{'/assets/img/50434b174cd5e29566d4e060fe19e53a.jpeg'}}" alt="">
-                            <p class="date-time" style="">Дата и время</p>
-                            <h2 class="logo-slide-2" style="">Надпись на слайдере</h2>
-                            <a class="button-slide-2" href="">Подробнее</a>
-                            </div>
-                            </a>
-                            </div>
-                        </div>
-                        <div class="Slider__item">
-                            <div  class="podpis_first_slider">
-                            <a href="">
-                            <div class="first-slider">
-                            <img class="img_slider" src="{{'/assets/img/50434b174cd5e29566d4e060fe19e53a.jpeg'}}" alt="">
-                            <p class="date-time" style="">Дата и время</p>
-                            <h2 class="logo-slide-2" style="">Надпись на слайдере</h2>
-                            <a class="button-slide-2" href="">Подробнее</a>
-                            </div>
-                            </a>
-                            </div>
-                        </div>
+                    </div>
+                 </div>
+                </div>
+            {% endif %}
+        {% endfor %}
                     </div>
 
                     </div>
                     <div class="wRapper">
                     <div class="sLider">
+                {% for pageCont in pageData2 %}
+                    {% if pageCont is not empty %}
                         <div class="sLider__item">
-                            <a class="first-child" href=""><img class="img_slider" src="{{'/assets/img/hlyXa.png'}}" alt=""></a>
-                            <a class="second-child" href=""><img  class="img_slider" src="{{'/assets/img/8c23e0df1ff8e769016243a1ff88a5ef.jpeg'}}" alt=""></a>
+                            <a class="first-child" href=""><img class="img_slider" src="{{'/assets/upload/img/'}}{{ pageCont.photoPc|raw }}" alt=""></a>
+                            <a class="second-child" href=""><img  class="img_slider" src="{{'/assets/upload/img/'}}{{ pageCont.photoMobile|raw }}" alt=""></a>
                         </div>
-                        <div class="sLider__item">
-                            <a class="first-child" href=""><img class="img_slider" src="{{'/assets/img/hlyXa.png'}}" alt=""></a>
-                            <a class="second-child" href=""><img class="img_slider" src="{{'/assets/img/8c23e0df1ff8e769016243a1ff88a5ef.jpeg'}}" alt=""></a>
-                        </div>
-                        <div class="sLider__item">
-                            <a class="first-child" href=""><img  class="img_slider" src="{{'/assets/img/hlyXa.png'}}" alt=""></a>
-                            <a class="second-child" href=""><img class="img_slider" src="{{'/assets/img/8c23e0df1ff8e769016243a1ff88a5ef.jpeg'}}" alt=""></a>
-                        </div>
-                        <div class="sLider__item">
-                            <a class="first-child" href=""><img class="img_slider" src="{{'/assets/img/hlyXa.png'}}" alt=""></a>
-                            <a class="second-child" href=""><img class="img_slider" src="{{'/assets/img/8c23e0df1ff8e769016243a1ff88a5ef.jpeg'}}" alt=""></a>
-                        </div>
+                    {% endif %}
+                {% endfor %}
                     </div>
                 </div>
             <div class="question">

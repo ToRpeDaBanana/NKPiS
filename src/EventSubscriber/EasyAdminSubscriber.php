@@ -47,6 +47,8 @@ use App\Entity\ProfDocument;
 use App\Entity\PsychologicalSupport;
 use App\Entity\QuestionAnswer;
 use App\Entity\Schedule;
+use App\Entity\SliderMain;
+use App\Entity\SliderReclama;
 use App\Entity\SpecialtiesProfessions;
 use App\Entity\TeachersContests;
 use App\Entity\TeachersDocument;
@@ -346,6 +348,24 @@ class EasyAdminSubscriber implements EventSubscriberInterface{
             $item = $entity->getFile();
             $imgpath = $this->parameterBag->get('kernel.project_dir') . 
             '/public/assets/upload/files/'.$item;
+            if(file_exists($imgpath)) unlink($imgpath);
+        }
+        if ($entity instanceof SliderMain){
+            $item = $entity->getPhoto();
+            $imgpath = $this->parameterBag->get('kernel.project_dir') . 
+            '/public/assets/upload/img/'.$item;
+            if(file_exists($imgpath)) unlink($imgpath);
+        }
+        if ($entity instanceof SliderReclama){
+            $item = $entity->getPhotoPc();
+            $imgpath = $this->parameterBag->get('kernel.project_dir') . 
+            '/public/assets/upload/img/'.$item;
+            if(file_exists($imgpath)) unlink($imgpath);
+        }
+        if ($entity instanceof SliderReclama){
+            $item = $entity->getPhotoMobile();
+            $imgpath = $this->parameterBag->get('kernel.project_dir') . 
+            '/public/assets/upload/img/'.$item;
             if(file_exists($imgpath)) unlink($imgpath);
         }
     }

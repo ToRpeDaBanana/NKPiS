@@ -2,6 +2,9 @@
 
 namespace App\Controller;
 use App\Entity\Category;
+use App\Entity\News;
+use App\Entity\SliderMain;
+use App\Entity\SliderReclama;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -58,7 +61,10 @@ class MainPageController extends AbstractController
         //     // }
         // }
         
-        $pageContent = $doctrine->getRepository(Category::class)->findAll();
+        // $pageContent = $doctrine->getRepository(Category::class)->findAll();
+        $pageContent1 = $entityManager->getRepository(SliderMain::class)->findAll();
+        $pageContent2 = $entityManager->getRepository(SliderReclama::class)->findAll();
+        $pageContent3 = $entityManager->getRepository(News::class)->findAll();
         // $sessionValues = [];
         // foreach($includeValues as $item){
         //     if ($session->has($item)){
@@ -84,7 +90,9 @@ class MainPageController extends AbstractController
         
         return $this->render('main_page/index.html.twig', [
             'controller_name' => 'MainPageController',
-            'pageData' => $pageContent,
+            'pageData1' => $pageContent1,
+            'pageData2' => $pageContent2,
+            'pageData3' => $pageContent3,
             'sessionData' => $sessionService->getSessionData($session),
         ]);
     }

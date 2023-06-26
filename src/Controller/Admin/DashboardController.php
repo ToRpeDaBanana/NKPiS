@@ -45,6 +45,8 @@ use App\Entity\PhotoGallery;
 use App\Entity\ProfDocument;
 use App\Entity\PsychologicalSupport;
 use App\Entity\Schedule;
+use App\Entity\SliderMain;
+use App\Entity\SliderReclama;
 use App\Entity\SpecialtiesProfessions;
 use App\Entity\TeachersContests;
 use App\Entity\TeachersDocument;
@@ -102,8 +104,12 @@ class DashboardController extends AbstractDashboardController
 
             MenuItem::linkToDashboard('Панель управления', 'fa fa-home'),
             MenuItem::section('Новости', ''),
-            MenuItem::linkToCrud('Новости', '', News::class),
-            MenuItem::linkToCrud('Новости центра', '', NewsCentre::class),
+                MenuItem::linkToCrud('Новости', '', News::class),
+                MenuItem::linkToCrud('Новости центра', '', NewsCentre::class),
+                
+            MenuItem::section('Слайдеры', ''),
+                MenuItem::linkToCrud('Основной слайдер', '', SliderMain::class),
+                MenuItem::linkToCrud('Слайдер рекламы', '', SliderReclama::class),
 
             MenuItem::section('О нас'),
                 MenuItem::linkToCrud('Общая информация', '', GeneralInf::class),

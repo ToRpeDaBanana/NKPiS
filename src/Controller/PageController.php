@@ -20,6 +20,8 @@ use App\Entity\OurAchievements;
 use App\Entity\OurAchievementsTable;
 use App\Entity\PaidEduServ;
 use App\Entity\PhotoGallery;
+use App\Entity\SliderMain;
+use App\Entity\SliderReclama;
 use App\Entity\Teachers;
 use App\Entity\TeachersDocument;
 use App\Repository\GeneralInfRepository;
@@ -42,8 +44,7 @@ class PageController extends AbstractController
     {
         $pageContent1 = $entityManager->getRepository(Teachers::class)->findAll();
         $pageContent2 = $entityManager->getRepository(TeachersDocument::class)->findAll();
-
-
+        
         return $this->render('page/teachers.html.twig', [
             'controller_name' => 'PageController',
             'pageData1' => $pageContent1,
