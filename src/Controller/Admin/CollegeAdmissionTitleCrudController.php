@@ -20,12 +20,12 @@ class CollegeAdmissionTitleCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('title')->setLabel('Заголовок'),
-            TextEditorField::new('text')->setLabel('Выбрать файл'),
+            TextEditorField::new('text')->setLabel('Текст'),
             EmailField::new('email')->setLabel('Почта'),
             TextField::new('schedule')->setLabel('График работы'),
+            TextField::new('phone')->setLabel('Телефон'),
             TextField::new('address')->setLabel('Адрес'),
-            ImageField::new('phone')
+            ImageField::new('photo')
             ->setUploadDir('public\assets\upload\img')
             ->setBasePath('public\assets\upload\img')
             ->setLabel('Выбрать фото'),

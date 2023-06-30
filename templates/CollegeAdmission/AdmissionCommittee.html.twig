@@ -4,23 +4,93 @@
     <h1 class="label-contactPod">Приемная комиссия</h1>
 
     <div class="label-contactPod">
-        <p>Какой то текст</p>
+{% for pageCont in pageData1 %}
+    {% if pageCont is not empty %}
+        <img class = "img" src="{{'/assets/upload/img/'}}{{ pageCont.photo|raw }}" alt="">
+        <p>{{ pageCont.text|raw}}</p>
+        <p>Звоните:&nbsp;{{ pageCont.phone|raw}}</p>
+        <p>Пишите:&nbsp;{{ pageCont.email|raw}}</p>
+        <p>Адрес:&nbsp;{{ pageCont.address|raw}}</p>
+        <p>График работы:&nbsp;{{ pageCont.schedule|raw}}</p>
+    {% endif %}
+{% endfor %}
+
+    
     </div>
-     <div class="label-contactPod" >
-        <div>
-            <div class="tab-page-student">
-                
+<div class="label-contactPod" >
+    <div>
+        <div class="tab-page-student">   
             <input id="tab-one" type="checkbox" name="tabs">
-                <label  for="tab-one">Вакансия</label>
+                <label  for="tab-one">Поступление в колледж</label>
                     <div class="tab-content">
-                    <div class="tab-content-first-page-student">
-                        <p></p>
-						<p></p>
-						<p></p>
-						<p></p>
+                        <div class="tab-content-first-page-student">
+                            {% for pageCont in pageData2 %}
+                                {% if pageCont is not empty %}
+                                     <p>{{ pageCont.text|raw}}</p>
+                                            <div class="tab-page-student">   
+                                                <input id="tab-one2" type="checkbox" name="tabs">
+                                                    <label  for="tab-one2">Документы для граждан РФ</label>
+                                                        <div class="tab-content">
+                                                            <div class="tab-content-first-page-student">
+                                                                {% for pageCont in pageData2 %}
+                                                                    {% if pageCont is not empty %}
+                                                                        <p>{{ pageCont.documentsRf|raw}}</p>
+                                                                    {% endif %}
+                                                                {% endfor %}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            <div class="tab-page-student">   
+                                                <input id="tab-one3" type="checkbox" name="tabs">
+                                                    <label  for="tab-one3">Документы для иностранных граждан</label>
+                                                        <div class="tab-content">
+                                                            <div class="tab-content-first-page-student">
+                                                                {% for pageCont in pageData2 %}
+                                                                    {% if pageCont is not empty %}
+                                                                        <p>{{ pageCont.documentsForeign|raw}}</p>
+                                                                    {% endif %}
+                                                                {% endfor %}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                        <p>{{ pageCont.textTwo|raw}}</p>
+                                            <div class="tab-page-student">   
+                                                <input id="tab-one4" type="checkbox" name="tabs">
+                                                    <label  for="tab-one4">Стоимость обучения на внебюджетной основе</label>
+                                                        <div class="tab-content">
+                                                            <div class="tab-content-first-page-student">
+                                                                {% for pageCont in pageData2 %}
+                                                                    {% if pageCont is not empty %}
+                                                                        <p>{{ pageCont.costEducation|raw}}</p>
+                                                                    {% endif %}
+                                                                {% endfor %}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                        <p>{{ pageCont.textThree|raw}}</p>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
                     </div>
+                </div>
+                 <div class="tab-page-student">   
+                    <input id="tab-one5" type="checkbox" name="tabs">
+                        <label  for="tab-one5">Нормативные документы Приемной комиссии</label>
+                        <div class="tab-content">
+                            <div class="tab-content-first-page-student">
+                                {% for pageCont in pageData3 %}
+                                    {% if pageCont is not empty %}
+                                        <p>{{ pageCont.text|raw}}</p>
+                                        {% for file in pageCont.file %}
+                                            <div>
+                                                <a href="{{ '/assets/upload/files/' ~ file|raw }}" alt="">{{file}}</a>
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
                     </div>
-            </div>
             </div>
         </div>
     </div>

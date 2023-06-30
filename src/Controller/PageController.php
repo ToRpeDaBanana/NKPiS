@@ -63,8 +63,6 @@ class PageController extends AbstractController
         
     {
         $pageContent = $entityManager->getRepository(GeneralInf::class)->findAll();
-        // var_dump($pageAbout);
-        // exit;
         return $this->render('page/generalInformation.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
@@ -114,17 +112,20 @@ class PageController extends AbstractController
         ManagerRegistry $doctrine,
         SessionService $sessionService,
         SessionInterface $session,
-        EntityManagerInterface $entityManager  
+        EntityManagerInterface $entityManager,
+        int $id  
     ): Response
         
     {
-        $pageContent = $entityManager->getRepository(News::class)->findAll();
+        $pageContent = $entityManager->getRepository(News::class)->find($id);
+        // $pageContent = $entityManager->getRepository(News::class)->findAll();
         // var_dump($pageAbout);
         // exit;
 
         return $this->render('page/newsId.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            // 'pageData2' => $pageContent2,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }

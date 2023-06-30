@@ -24,6 +24,7 @@ use App\Entity\CallSchedule;
 use App\Entity\CollegeAdmission;
 use App\Entity\CollegeAdmissionTitle;
 use App\Entity\DemoExam;
+use App\Entity\Documents;
 use App\Entity\EmployMonitoring;
 use App\Entity\EntranceTests;
 use App\Entity\ForEmloyText;
@@ -31,6 +32,7 @@ use App\Entity\ForEmployTable;
 use App\Entity\HelpAGraduate;
 use App\Entity\Holidays;
 use App\Entity\ImportantKnow;
+use App\Entity\InformOfRealizeEduProgram;
 use App\Entity\InterCertSchedule;
 use App\Entity\MedicalExam;
 use App\Entity\MedicalExamAdm;
@@ -193,6 +195,11 @@ class DashboardController extends AbstractDashboardController
                 MenuItem::subMenu('Дни открытых дверей', '')->setSubItems([
                     MenuItem::linkToCrud('Дни открытых дверей информация', '', VideosDaysOpenDoors::class),
                     MenuItem::linkToCrud('Дни открытых дверей таблица', '', OpenDoorsTable::class),
+                ]),
+            MenuItem::section('Сведения об образовательно организации'),
+                MenuItem::linkToCrud('Документы', '', Documents::class),
+                MenuItem::subMenu('Образование', '')->setSubItems([
+                    MenuItem::linkToCrud('Сведения о реализации образовательных программ', '', InformOfRealizeEduProgram::class),
                 ]),
             // MenuItem::section('Пользователи'),
             // MenuItem::linkToCrud('Категории', 'fa fa-tags', Category::class),

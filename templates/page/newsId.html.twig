@@ -2,32 +2,36 @@
 
 {% block main %}
 
-{% for pageCont in pageData %}
-    {% if pageCont is not empty %}
-        <div class="news-div">
-            <div class="news-date-div">
-                <div class="news-border"></div>
-                    <div class="news-date">
-                        {{ pageCont.date|date('d-m-Y')|raw }}
+{# {% for pageCont in pageData %} #}
+    {% if pageData is not empty %}
+        {# {% if pageCont.id ==  %} #}
+            
+        
+            <div class="news-div">
+                <div class="news-date-div">
+                    <div class="news-border"></div>
+                        <div class="news-date">
+                            {{ pageData.date|date('d-m-Y')|raw }}
+                        </div>
                     </div>
+                <div class="news-label">
+                    <h1>{{ pageData.title|raw }}</h1>
+                    <p>{{ pageData.firstText|raw }}</p>
+                    {% for photo in pageData.firstPhoto %}
+                        <img src="{{ '/assets/upload/img/' ~ photo|raw }}" alt="">
+                    {% endfor %}
+                    <p>{{ pageData.secondText|raw }}</p>
+                    {% for photo in pageData.secondPhoto %}
+                        <img src="{{ '/assets/upload/img/' ~ photo|raw }}" alt="">
+                    {% endfor %}
+                    {% for file in pageData.file %}
+                        <a href="{{'/assets/upload/files/' ~ file|raw }}"></a>
+                    {% endfor %}
+                    
                 </div>
-            <div class="news-label">
-                <h1>{{ pageCont.title|raw }}</h1>
-                <p>{{ pageCont.firstText|raw }}</p>
-                {% for photo in pageCont.firstPhoto %}
-                    <img src="{{ '/assets/upload/img/' ~ photo|raw }}" alt="">
-                {% endfor %}
-                <p>{{ pageCont.secondText|raw }}</p>
-                {% for photo in pageCont.secondPhoto %}
-                    <img src="{{ '/assets/upload/img/' ~ photo|raw }}" alt="">
-                {% endfor %}
-                {% for file in pageCont.file %}
-                    <a href="{{'/assets/upload/files/' ~ file|raw }}"></a>
-                {% endfor %}
-                
             </div>
-        </div>
+        {# {% endif %} #}
     {% endif %}
-{% endfor %}
+{# {% endfor %} #}
 
 {% endblock %}
