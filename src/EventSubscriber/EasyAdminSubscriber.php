@@ -24,6 +24,7 @@ use App\Entity\CallSchedule;
 use App\Entity\CollegeAdmission;
 use App\Entity\CollegeAdmissionTitle;
 use App\Entity\DemoExam;
+use App\Entity\Documents;
 use App\Entity\DrivingDirections;
 use App\Entity\EmployMonitoring;
 use App\Entity\EntranceTests;
@@ -364,6 +365,12 @@ class EasyAdminSubscriber implements EventSubscriberInterface{
         }
         if ($entity instanceof SliderReclama){
             $item = $entity->getPhotoMobile();
+            $imgpath = $this->parameterBag->get('kernel.project_dir') . 
+            '/public/assets/upload/img/'.$item;
+            if(file_exists($imgpath)) unlink($imgpath);
+        }
+        if ($entity instanceof Documents){
+            $item = $entity->getDocument();
             $imgpath = $this->parameterBag->get('kernel.project_dir') . 
             '/public/assets/upload/img/'.$item;
             if(file_exists($imgpath)) unlink($imgpath);
