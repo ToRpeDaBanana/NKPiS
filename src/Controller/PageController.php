@@ -63,8 +63,6 @@ class PageController extends AbstractController
         
     {
         $pageContent = $entityManager->getRepository(GeneralInf::class)->findAll();
-        // var_dump($pageAbout);
-        // exit;
         return $this->render('page/generalInformation.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
