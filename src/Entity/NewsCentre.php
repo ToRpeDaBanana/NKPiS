@@ -20,13 +20,13 @@ class NewsCentre
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 1000)]
     private ?string $text_one = null;
 
     #[ORM\Column(type: Types::ARRAY, nullable: true)]
     private ?array $photo = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 1000, nullable: true)]
     private ?string $text_two = null;
 
     public function getId(): ?int

@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\ForEmployTable;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
@@ -20,5 +21,11 @@ class ForEmployTableCrudController extends AbstractCrudController
             TextField::new('code')->setLabel('Код'),
             TextField::new('speciality')->setLabel('Специальность'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Работодателям таблица');
     }
 }

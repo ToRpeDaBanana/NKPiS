@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\DemoExam;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -25,6 +26,12 @@ class DemoExamCrudController extends AbstractCrudController
             ->setBasePath('public\assets\upload\files')
             ->setLabel('Документ'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Демонстрационный экзамен');
     }
 
 }

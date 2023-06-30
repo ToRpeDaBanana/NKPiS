@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\ForEmloyText;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 
@@ -20,5 +21,10 @@ class ForEmloyTextCrudController extends AbstractCrudController
             TextEditorField::new('text')->setLabel('Работодателям текст'),
         ];
     }
-
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Работодателям');
+    }
 }

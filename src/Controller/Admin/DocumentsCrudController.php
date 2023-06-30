@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Documents;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
@@ -35,6 +36,12 @@ class DocumentsCrudController extends AbstractCrudController
             ->setBasePath('public\assets\upload\files')
             ->setLabel('Документ'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Документы');
     }
 
 }

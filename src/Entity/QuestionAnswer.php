@@ -26,7 +26,7 @@ class QuestionAnswer
     #[ORM\Column(length: 255)]
     private ?string $phone = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 1000)]
     private ?string $text_question = null;
 
     #[ORM\Column(type: Types::ARRAY, nullable: true)]

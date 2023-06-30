@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\VacannciesForAdmission;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -33,5 +34,11 @@ class VacannciesForAdmissionCrudController extends AbstractCrudController
             TextField::new('count_budget_places')->setLabel('Количество бюджетных мест'),
             TextField::new('count_pay_places')->setLabel('Количество внебюджетных мест'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Вакантные места');
     }
 }

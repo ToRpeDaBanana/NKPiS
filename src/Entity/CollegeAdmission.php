@@ -13,22 +13,22 @@ class CollegeAdmission
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 1000)]
     private ?string $text = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 800)]
     private ?string $documents_rf = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 800)]
     private ?string $documents_foreign = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 1000)]
     private ?string $text_two = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 300)]
     private ?string $cost_education = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 1000)]
     private ?string $text_three = null;
 
     public function getId(): ?int

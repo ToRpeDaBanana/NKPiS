@@ -19,7 +19,7 @@ class OraganizationMedicalLink
     #[ORM\Column(length: 255)]
     private ?string $recommendations = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 1000)]
     private ?string $text = null;
 
 

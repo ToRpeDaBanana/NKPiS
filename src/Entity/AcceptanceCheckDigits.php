@@ -16,7 +16,7 @@ class AcceptanceCheckDigits
     #[ORM\Column(length: 255)]
     private ?string $years_title = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 800)]
     private ?string $text = null;
 
     public function getId(): ?int

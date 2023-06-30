@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Vacancies;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -21,6 +22,12 @@ class VacanciesCrudController extends AbstractCrudController
             TextField::new('title')->setLabel('Заголовок вакансии'),
             TextEditorField::new('text')->setLabel('Описание вакансии'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Вакансии');
     }
 
 }

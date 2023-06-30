@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\ControlSovMeetings;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
@@ -25,5 +26,11 @@ class ControlSovMeetingsCrudController extends AbstractCrudController
             ])->setLabel('Запланировать заседание'),
             DateTimeField::new('date_planned')->setLabel('Дата-время')
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Запланированные заседания');
     }
 }

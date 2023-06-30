@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\SliderMain;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
@@ -27,6 +28,12 @@ class SliderMainCrudController extends AbstractCrudController
             ->setBasePath('public\assets\upload\img')
             ->setLabel('Фото'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('элемент')
+            ->setEntityLabelInPlural('Элементы основного слайдера');
     }
 
 }

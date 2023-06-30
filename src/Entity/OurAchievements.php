@@ -16,13 +16,13 @@ class OurAchievements
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 1000)]
     private ?string $first_text = null;
 
     #[ORM\Column(length: 255)]
     private ?string $title_table = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 1000)]
     private ?string $second_text = null;
 
     public function getId(): ?int

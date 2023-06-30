@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\ControlSovOther;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
@@ -29,6 +30,12 @@ class ControlSovOtherCrudController extends AbstractCrudController
             TextField::new('email')->setLabel('Адрес электронной почты'),
             TextField::new('notes')->setLabel('Примечание'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Иные участники УС');
     }
 
 }

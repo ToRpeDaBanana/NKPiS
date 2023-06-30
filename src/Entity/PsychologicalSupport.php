@@ -13,16 +13,16 @@ class PsychologicalSupport
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 1000)]
     private ?string $text_one = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 1000, nullable: true)]
     private ?string $text_two = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $sub_title = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 1000, nullable: true)]
     private ?string $text_tree = null;
 
     public function getId(): ?int

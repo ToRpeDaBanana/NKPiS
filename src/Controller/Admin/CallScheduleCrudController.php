@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\CallSchedule;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
@@ -23,5 +24,11 @@ class CallScheduleCrudController extends AbstractCrudController
             TextField::new('fifth_pair')->setLabel('5 пара'),
             TextField::new('sixth_pair')->setLabel('6 пара'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Расписание звонков');
     }
 }

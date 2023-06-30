@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\ProfDocument;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 
@@ -38,6 +39,12 @@ class ProfDocumentCrudController extends AbstractCrudController
             ->setBasePath('public\assets\upload\files')
             ->setLabel('Документы по реализации и контролю за выполнением коллективного договора'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Профсоюзная организация');
     }
 
 }

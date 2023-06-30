@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\ControlSovPastMeetings;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
@@ -30,5 +31,11 @@ class ControlSovPastMeetingsCrudController extends AbstractCrudController
            ->setLabel('Протокол'),
            TextField::new('link')->setLabel('Ссылка'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Прошедшие заседания');
     }
 }

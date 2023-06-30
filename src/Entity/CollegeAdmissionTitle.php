@@ -16,7 +16,7 @@ class CollegeAdmissionTitle
     #[ORM\Column(length: 255)]
     private ?string $photo = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 1000)]
     private ?string $text = null;
 
     #[ORM\Column(length: 255)]

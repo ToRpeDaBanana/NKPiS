@@ -17,13 +17,13 @@ class News
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 1000)]
     private ?string $first_text = null;
 
     #[ORM\Column(type: Types::ARRAY, nullable: true)]
     private ?array $first_photo = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 1000, nullable: true)]
     private ?string $second_text = null;
 
     #[ORM\Column(type: Types::ARRAY,nullable: true)]

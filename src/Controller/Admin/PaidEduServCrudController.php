@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\PaidEduServ;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
@@ -31,6 +32,12 @@ class PaidEduServCrudController extends AbstractCrudController
             ->setFormTypeOption('multiple', true)
             ->setLabel('Порядок оказания услуг')
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Платные образовательные услуги');
     }
 
 }

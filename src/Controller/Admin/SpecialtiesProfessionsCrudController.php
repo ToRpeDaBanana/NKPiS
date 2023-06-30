@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\SpecialtiesProfessions;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
@@ -26,6 +27,12 @@ class SpecialtiesProfessionsCrudController extends AbstractCrudController
             TextField::new('title')->setLabel('Специальность'),
             TextEditorField::new('text')->setLabel('Описание'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Специальности/профессии');
     }
 
 }

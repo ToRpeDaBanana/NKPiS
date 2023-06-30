@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\DepartmentContacts;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
@@ -26,6 +27,12 @@ class DepartmentContactsCrudController extends AbstractCrudController
             TextEditorField::new('time')->setLabel('Время'),
             TextField::new('email')->setLabel('Почта'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Контакры подразделений');
     }
 
 }

@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\PsychologicalSupport;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -23,6 +24,12 @@ class PsychologicalSupportCrudController extends AbstractCrudController
             TextField::new('sub_title')->setLabel('Подзаголовок'),
             TextEditorField::new('text_tree')->setLabel(' '),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Психологическая поддержка ребёнка');
     }
 
 }

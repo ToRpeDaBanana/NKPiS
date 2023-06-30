@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\GeneralInf;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
@@ -21,6 +22,12 @@ class GeneralInfCrudController extends AbstractCrudController
         return [
             TextEditorField::new('text')->setLabel('Текст'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Общая информация');
     }
     
 }

@@ -18,22 +18,46 @@ use App\Controller\Admin\NewsCrudController;
 use App\Entity\AboutCentre;
 use App\Entity\AcceptanceCheckDigits;
 use App\Entity\AcceptanceCheckDigitsTable;
+use App\Entity\AccessIs;
+use App\Entity\AvailableEnvironment;
 use App\Entity\BannersVacancies;
+use App\Entity\Cabinet;
 use App\Entity\CalendarStudy;
+use App\Entity\CalendarTrainingSchedule;
 use App\Entity\CallSchedule;
 use App\Entity\CollegeAdmission;
 use App\Entity\CollegeAdmissionTitle;
+use App\Entity\Curriculum;
 use App\Entity\DemoExam;
 use App\Entity\Documents;
+use App\Entity\DopEdu;
+use App\Entity\EconomucActivity;
+use App\Entity\EconomucActivityDocument;
+use App\Entity\EduAndProductionComplex;
+use App\Entity\EduStandards;
 use App\Entity\EmployMonitoring;
 use App\Entity\EntranceTests;
+use App\Entity\Food;
 use App\Entity\ForEmloyText;
 use App\Entity\ForEmployTable;
 use App\Entity\HelpAGraduate;
 use App\Entity\Holidays;
 use App\Entity\ImportantKnow;
+use App\Entity\InformAboutWorkPrograms;
+use App\Entity\InformMedical;
 use App\Entity\InformOfRealizeEduProgram;
+use App\Entity\InformRealizeDopEdu;
+use App\Entity\InformResultPriem;
+use App\Entity\InforRealizeDopEduDate;
+use App\Entity\InfPay;
+use App\Entity\InstructionsOrgDistance;
 use App\Entity\InterCertSchedule;
+use App\Entity\InternationalCoop;
+use App\Entity\LaboratoriesAndWorkshops;
+use App\Entity\LaborProtection;
+use App\Entity\Libraries;
+use App\Entity\LicenseEdu;
+use App\Entity\MeansEduUpbringing;
 use App\Entity\MedicalExam;
 use App\Entity\MedicalExamAdm;
 use App\Entity\MedicalServiceDocument;
@@ -43,13 +67,20 @@ use App\Entity\Olympiads;
 use App\Entity\OpenDoorsTable;
 use App\Entity\OraganizationMedicalLink;
 use App\Entity\PassingScores;
+use App\Entity\PaymentAccount;
+use App\Entity\PersonalAccount;
+use App\Entity\PersonalDataProtection;
 use App\Entity\PhotoGallery;
 use App\Entity\ProfDocument;
+use App\Entity\ProfessionalEdu;
 use App\Entity\PsychologicalSupport;
+use App\Entity\PublicReport;
 use App\Entity\Schedule;
 use App\Entity\SliderMain;
 use App\Entity\SliderReclama;
 use App\Entity\SpecialtiesProfessions;
+use App\Entity\SportsFacilities;
+use App\Entity\StudentSupport;
 use App\Entity\TeachersContests;
 use App\Entity\TeachersDocument;
 use App\Entity\TransferCollege;
@@ -61,6 +92,7 @@ use App\Entity\VacannciesForAdmission;
 use App\Entity\VeteransLabor;
 use App\Entity\VeteransLaborDocument;
 use App\Entity\VideosDaysOpenDoors;
+use App\Entity\WorkingServices;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -200,7 +232,46 @@ class DashboardController extends AbstractDashboardController
                 MenuItem::linkToCrud('Документы', '', Documents::class),
                 MenuItem::subMenu('Образование', '')->setSubItems([
                     MenuItem::linkToCrud('Сведения о реализации образовательных программ', '', InformOfRealizeEduProgram::class),
+                    MenuItem::linkToCrud('Дополнительное образование дата', '', InforRealizeDopEduDate::class),
+                    MenuItem::linkToCrud('Дополнительное образование', '', InformRealizeDopEdu::class),
+                    MenuItem::linkToCrud('Сведения о результатах приема', '', InformResultPriem::class),
+                    MenuItem::linkToCrud('Копия лицензии на право ведения образовательной деятельности', '', LicenseEdu::class),
+                    MenuItem::linkToCrud('Положение (инструкция) об организации дистанционного обучения', '', InstructionsOrgDistance::class),
+                    MenuItem::linkToCrud('Образовательные программы -> профессиональное образование', '', ProfessionalEdu::class),
+                    MenuItem::linkToCrud('Образовательные программы -> дополнительное образование', '', DopEdu::class),
+                    MenuItem::linkToCrud('Информация о рабочих программах', '', InformAboutWorkPrograms::class),
+                    MenuItem::linkToCrud('Учебный план', '', Curriculum::class),
+                    MenuItem::linkToCrud('Календарный учебный график', '', CalendarTrainingSchedule::class),
                 ]),
+                MenuItem::subMenu('Материально-техническое обеспечение и оснащенность образовательного процесса', '')->setSubItems([
+                    MenuItem::linkToCrud('Кабинеты', '', Cabinet::class),
+                    MenuItem::linkToCrud('Лаборатории и мастерские', '', LaboratoriesAndWorkshops::class),
+                    MenuItem::linkToCrud('Библиотеки', '', Libraries::class),
+                    MenuItem::linkToCrud('Спортивные объекты', '', SportsFacilities::class),
+                    MenuItem::linkToCrud('Средства обучения и воспитания', '', MeansEduUpbringing::class),
+                    MenuItem::linkToCrud('Питание', '', Food::class),
+                    MenuItem::linkToCrud('Медицинское обслуживание', '', InformMedical::class),
+                    MenuItem::linkToCrud('Доступ к информационным системам', '', AccessIs::class),
+                ]),
+                MenuItem::subMenu('Финансово-хозяйственная деятельность', '')->setSubItems([
+                    MenuItem::linkToCrud('Средства', '', EconomucActivity::class),
+                    MenuItem::linkToCrud('Документы', '', EconomucActivityDocument::class),
+                ]),
+                MenuItem::linkToCrud('Образовательные стандарты и требования', '', EduStandards::class),
+                MenuItem::linkToCrud('Стипендии и меры поддержки обучающихся', '', StudentSupport::class),
+                MenuItem::linkToCrud('Доступная среда', '', AvailableEnvironment::class),
+                MenuItem::linkToCrud('Международное сотрудничество', '', InternationalCoop::class),
+                MenuItem::subMenu('Платежные реквизиты', '')->setSubItems([
+                    MenuItem::linkToCrud('Лицевой счет учреждения', '', PersonalAccount::class),
+                    MenuItem::linkToCrud('Расчетный счет учреждения', '', PaymentAccount::class),
+                    MenuItem::linkToCrud('ИНН, КПП, ОКАТО, ОГРН, ОКТМО', '', InfPay::class),
+                ]),
+                MenuItem::linkToCrud('Публичный доклад руководителя', '', PublicReport::class),
+                MenuItem::linkToCrud('Режим работы специалистов и служб', '', WorkingServices::class),
+            MenuItem::section('Дополнительная информация'),
+                MenuItem::linkToCrud('Защита персональных данных', '', PersonalDataProtection::class),
+                MenuItem::linkToCrud('Охрана труда', '', LaborProtection::class),
+                MenuItem::linkToCrud('Учебно-производственный комплекс', '', EduAndProductionComplex::class),
             // MenuItem::section('Пользователи'),
             // MenuItem::linkToCrud('Категории', 'fa fa-tags', Category::class),
             // MenuItem::linkToCrud('Администраторы', 'fas fa-list', User::class),

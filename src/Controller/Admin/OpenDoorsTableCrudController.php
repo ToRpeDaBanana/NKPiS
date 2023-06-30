@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\OpenDoorsTable;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
@@ -24,6 +25,12 @@ class OpenDoorsTableCrudController extends AbstractCrudController
             TextEditorField::new('text')->setLabel('Описание'),
             TextEditorField::new('register')->setLabel('Регистрация участников'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Дни открытых дверей таблица');
     }
 
 }
