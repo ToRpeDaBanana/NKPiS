@@ -62,6 +62,7 @@ function colorSiteCustom(color1,color2){
 	}
 	//  {'background-color':(color1 ? color1 : 'white'), 'border':"1px solid"+(color2 ? color2 : 'black')}
 	$('.teacher-legend-1').css(textColor);
+	$('.app-header-nav-menu span').css(textColor);
 	$('h4').css(textColor);
 	$('h5').css(textColor);
 	$('h3').css(textColor);
@@ -238,7 +239,7 @@ function customStyle(){
 			$('.for-visually-impaired').css("display","none");
 		//*
 		//conteinerForVisuallyImpaired.active
-			$('.conteiner-for-visually-impaired.active').css("display","block");
+			$('.conteiner-for-visually-impaired.active').css("display","flex");
 			$('.classic-site-version-btn').css("display","block");
 		//
 
@@ -465,7 +466,7 @@ $(document).on('click','.for-visually-impaired', function(){
 	if(VisuallyImpaired){
 		$('.for-visually-impaired').css("display","none");
 		$('.classic-site-version-btn').css("display","block");
-		$('.conteiner-for-visually-impaired.active').css("display","block");
+		$('.conteiner-for-visually-impaired.active').css("display","flex");
 		customObject.display = "active";
 		fontSizeCustom(myData1.fontSize);
 		fontFamilyCustom(myData1.font);

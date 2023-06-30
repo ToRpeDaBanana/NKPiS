@@ -2693,3 +2693,40 @@
             font-size: calc(1rem + .1vw);
         }
     }
+    .text-impaired{
+        color: black !important;
+    }
+    .text-interval-p{
+        color: black !important;
+    }
+    .between-interval-text{
+        color: black !important;
+    }
+    .color-site-text{
+        color: black !important;
+    }
+    .img-text{
+        color: black !important;
+    }
+    .classic-site-version-btn{
+        color: black !important;
+    }
+    .conteiner-for-visually-impaired.active{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .conteiner-for-visually-impaired.active div{
+        margin: 10px;
+    }
+    @media (max-width:500px) {
+        .conteiner-for-visually-impaired.active{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .conteiner-for-visually-impaired.active div{
+            margin: 0px;
+        }
+    }
