@@ -44,6 +44,25 @@ use Symfony\Component\HttpFoundation\Request;
 
 class PageInformationAboutEdu extends AbstractController
 {
+    #[Route('/basicInformation', methods:['GET'])]
+    public function basicInformation(
+        ManagerRegistry $doctrine,
+        SessionService $sessionService,
+        SessionInterface $session,
+        EntityManagerInterface $entityManager 
+        
+    ): Response
+        
+    {
+        // $pageContent = $entityManager->getRepository(Documents::class)->findAll();
+
+
+        return $this->render('Information-about-educational/OsnovSved.html.twig', [
+            'controller_name' => 'PageController',
+            // 'pageData' => $pageContent,
+            'sessionData' => $sessionService->getSessionData($session)
+        ]);
+    }
     #[Route('/documents', methods:['GET'])]
     public function documents(
         ManagerRegistry $doctrine,
