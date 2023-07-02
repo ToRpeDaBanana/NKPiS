@@ -1,13 +1,16 @@
+{% extends 'main_page/index.html.twig' %}
+
 {% block main %}
     <h1 class="label-contactPod">Образование</h1>
-    <div>
-        <div>
+    <div >
+        <div class="label-contactPod">
             <h3>Язык преподаваня</h3>
             <p>Русский язык</p>
         </div>
         <div>
-            <h3>Сведения о реализации образовательных программ</h3>
-            <table>
+            <h3 class="label-contactPod">Сведения о реализации образовательных программ</h3>
+        <div class="contactPod-table">
+            <table class="table">
                         <thead>
                         <tr>
                             <th rowspan="2">Уровень образования</th>
@@ -16,10 +19,10 @@
                             <th rowspan="2">Численность обучающихся, являющихся иностранными гражданами</th>
                         </tr>
                         <tr>
-                            <th style="vertical-align:top;">
+                            <th >
                                 За счет средств бюджета
                             </th>
-                            <th style="vertical-align:top;">
+                            <th >
                                 По договорам
                             </th>
                         </tr>
@@ -37,18 +40,262 @@
                                     1169
                                 </td>
                                 <td>
-                                    <span id="external_prof">0</span>
+                                    0
                                 </td>
                             </tr>
                         </tbody>
                     </table>
+            </div>
+        </div>
+        <div >
+            <h3 class="label-contactPod">Сведения о реализации образовательных программ дополнительного образования</h3>
+        <div class="label-contactPod" >
+            <div class="tab-page-student">   
+                    <input id="tab-one1" type="checkbox" name="tabs">
+                        <label class="label-tab-for-other-pages" for="tab-one1">Техническая направленность</label>
+                        <div class="tab-content">
+                            <div class="tab-content-first-page-student">                            
+                                <div class="contactPod-table">
+                                    <table class="table">
+                                    <thead>
+                                        <tr>
+                                                </tr>
+                                        <tr>
+                                            <th >Вид деятельности</th>
+                                            <th >Название объединения</th>
+                                            <th >Название группы</th>
+                                            <th >Категория программы</th>
+                                            <th >Возрастная группа обучающихся (лет)</th>
+                                            <th >ФИО Педагога</th>
+                                            <th >Бесплатное ли обучение</th>
+                                            <th >Срок обучения</th>
+                                            <th >Форма занятия</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-page-student">   
+                    <input id="tab-one2" type="checkbox" name="tabs">
+                        <label class="label-tab-for-other-pages" for="tab-one2">Физкультурно-спортивная направленность</label>
+                        <div class="tab-content">
+                            <div class="tab-content-first-page-student">                            
+                                <div class="contactPod-table">
+                                    <table class="table">
+                                    <thead>
+                                        <tr>
+                                                </tr>
+                                        <tr>
+                                            <th >Вид деятельности</th>
+                                            <th >Название объединения</th>
+                                            <th >Название группы</th>
+                                            <th >Категория программы</th>
+                                            <th >Возрастная группа обучающихся (лет)</th>
+                                            <th >ФИО Педагога</th>
+                                            <th >Бесплатное ли обучение</th>
+                                            <th >Срок обучения</th>
+                                            <th >Форма занятия</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-page-student">   
+                    <input id="tab-one3" type="checkbox" name="tabs">
+                        <label class="label-tab-for-other-pages" for="tab-one3">Естественно-научная направленность</label>
+                        <div class="tab-content">
+                            <div class="tab-content-first-page-student">                            
+                               <div class="contactPod-table">
+                                    <table class="table">
+                                    <thead>
+                                        <tr>
+                                                </tr>
+                                        <tr>
+                                            <th >Вид деятельности</th>
+                                            <th >Название объединения</th>
+                                            <th >Название группы</th>
+                                            <th >Категория программы</th>
+                                            <th >Возрастная группа обучающихся (лет)</th>
+                                            <th >ФИО Педагога</th>
+                                            <th >Бесплатное ли обучение</th>
+                                            <th >Срок обучения</th>
+                                            <th >Форма занятия</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-page-student">   
+                    <input id="tab-one4" type="checkbox" name="tabs">
+                        <label class="label-tab-for-other-pages" for="tab-one4">Социально-гуманитарная направленность</label>
+                        <div class="tab-content">
+                            <div class="tab-content-first-page-student">                            
+                                <div class="contactPod-table">
+                                    <table class="table">
+                                    <thead>
+                                        <tr>
+                                                </tr>
+                                        <tr>
+                                            <th >Вид деятельности</th>
+                                            <th >Название объединения</th>
+                                            <th >Название группы</th>
+                                            <th >Категория программы</th>
+                                            <th >Возрастная группа обучающихся (лет)</th>
+                                            <th >ФИО Педагога</th>
+                                            <th >Бесплатное ли обучение</th>
+                                            <th >Срок обучения</th>
+                                            <th >Форма занятия</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-page-student">   
+                    <input id="tab-one5" type="checkbox" name="tabs">
+                        <label class="label-tab-for-other-pages" for="tab-one5">Туристско-краеведческая направленность</label>
+                        <div class="tab-content">
+                            <div class="tab-content-first-page-student">                            
+                                <div class="contactPod-table">
+                                    <table class="table">
+                                    <thead>
+                                        <tr>
+                                                </tr>
+                                        <tr>
+                                            <th >Вид деятельности</th>
+                                            <th >Название объединения</th>
+                                            <th >Название группы</th>
+                                            <th >Категория программы</th>
+                                            <th >Возрастная группа обучающихся (лет)</th>
+                                            <th >ФИО Педагога</th>
+                                            <th >Бесплатное ли обучение</th>
+                                            <th >Срок обучения</th>
+                                            <th >Форма занятия</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-page-student">   
+                    <input id="tab-one6" type="checkbox" name="tabs">
+                        <label class="label-tab-for-other-pages" for="tab-one6">Художественная направленность</label>
+                        <div class="tab-content">
+                            <div class="tab-content-first-page-student">                            
+                                <div class="contactPod-table">
+                                    <table class="table">
+                                    <thead>
+                                        <tr>
+                                                </tr>
+                                        <tr>
+                                            <th >Вид деятельности</th>
+                                            <th >Название объединения</th>
+                                            <th >Название группы</th>
+                                            <th >Категория программы</th>
+                                            <th >Возрастная группа обучающихся (лет)</th>
+                                            <th >ФИО Педагога</th>
+                                            <th >Бесплатное ли обучение</th>
+                                            <th >Срок обучения</th>
+                                            <th >Форма занятия</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
         </div>
         <div>
-            {# здесь должны быть табы #}
-        </div>
-        <div>
-        <h3>Сведения о результатах приема</h3>
-            <table>
+        <h3 class="label-contactPod">Сведения о результатах приема</h3>
+        <div class="contactPod-table">
+            <table class="table">
                 <thead>
                     <tr>
                         <th rowspan="2">Наименование профессии/специальности</th>
@@ -77,9 +324,10 @@
                 </tbody>
             </table>
         </div>
+        </div>
         <div>
-            <div>
-                <h3>ЛИЦЕНЗИЯ НА ПРАВО ВЕДЕНИЯ ОБРАЗОВАТЕЛЬНОЙ ДЕЯТЕЛЬНОСТИ:</h3>
+            <div class="label-contactPod">
+                <h4>ЛИЦЕНЗИЯ НА ПРАВО ВЕДЕНИЯ ОБРАЗОВАТЕЛЬНОЙ ДЕЯТЕЛЬНОСТИ:</h4>
                 <div class="text-style">
                     <div>
                         <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' }}"></a></i>
@@ -88,8 +336,8 @@
             </div>
         </div>
         <div>
-           <div>
-                <h3>СВИДЕТЕЛЬСТВО О ГОСУДАРСТВЕННОЙ АККРЕДИТАЦИИ:</h3>
+           <div class="label-contactPod">
+                <h4>СВИДЕТЕЛЬСТВО О ГОСУДАРСТВЕННОЙ АККРЕДИТАЦИИ:</h4>
                 <div class="text-style">
                     <div>
                         <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' }}"></a></i>
@@ -98,19 +346,19 @@
             </div>
         </div>
         <div>
-            <h3>Формы обучения</h3>
-            <table>
+            <h3 class="label-contactPod">Формы обучения</h3>
+        <div class="contactPod-table">
+            <table class="table">
                 <thead>
                     <tr><th>Форма обучения:</th></tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>очная</td>
-                        <td>заочная</td>
-                        <td>дистанционная</td>
-                    </tr>
+                    <tr><th>Очная</th></tr>
+                    <tr><th>Заочная</th></tr>
+                    <tr><th>Дистанционная</th></tr>  
                 </tbody>
             </table>
+        </div>
         </div>
     </div>
 

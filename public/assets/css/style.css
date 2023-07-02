@@ -2155,7 +2155,7 @@
         justify-content: center;
     }
     .contactPod-table table{
-        width: 80%;
+        width: 90%;
         margin-bottom: 20px;
         border-collapse: collapse;
     }
@@ -2743,4 +2743,15 @@
         .conteiner-for-visually-impaired.active div{
             margin: 0px;
         }
+    }
+    .label-tab-for-other-pages{
+        position: relative;
+    display: block;
+    padding: 0 0 0 1em;
+    background: white;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bold;
+    line-height: 3;
+    cursor: pointer;
+    font-size: 15px !important;
     }

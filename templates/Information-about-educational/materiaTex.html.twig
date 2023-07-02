@@ -1,13 +1,15 @@
+{% extends 'main_page/index.html.twig' %}
+
 {% block main %}
     <h1 class="label-contactPod">Материально-техническое обеспечение и оснащенность образовательного процесса</h1>
-    <div>
-    <h3>СВЕДЕНИЯ О НАЛИЧИИ ОБОРУДОВАННЫХ УЧЕБНЫХ КАБИНЕТОВ</h3>
+    <div class="label-contactPod">
+    <h4>СВЕДЕНИЯ О НАЛИЧИИ ОБОРУДОВАННЫХ УЧЕБНЫХ КАБИНЕТОВ</h4>
         <div class="tab-page-student">  
-                    <input id="tab-one7" type="checkbox" name="tabs">
-                        <label  for="tab-one7">Кабинеты</label>
+                    <input id="tab-one1" type="checkbox" name="tabs">
+                        <label  for="tab-one1">Кабинеты</label>
                         <div class="tab-content">
-                            <div class="tab-content-first-page-student">                            
-                                <table>
+                            <div class="contactPod-table">                            
+                                <table class="table">
                                     <thead>
                                         <tr>
                                             <th>№п/п</th>
@@ -27,18 +29,18 @@
                         </div>
                     </div>
     </div>
-    <div>
-    <h3>СВЕДЕНИЯ ОБ ОБЪЕКТАХ ДЛЯ ПРОВЕДЕНИЯ ПРАКТИЧЕСКИХ ЗАНЯТИЙ</h3>
+    <div class="label-contactPod">
+    <h4>СВЕДЕНИЯ ОБ ОБЪЕКТАХ ДЛЯ ПРОВЕДЕНИЯ ПРАКТИЧЕСКИХ ЗАНЯТИЙ</h4>
         <div class="tab-page-student">  
-                    <input id="tab-one7" type="checkbox" name="tabs">
-                        <label  for="tab-one7">Лаборатории и мастерские</label>
+                    <input id="tab-one2" type="checkbox" name="tabs">
+                        <label  for="tab-one2">Лаборатории и мастерские</label>
                         <div class="tab-content">
-                            <div class="tab-content-first-page-student">                            
-                                <table>
+                            <div class="contactPod-table">                            
+                                <table class="table">
                                     <thead>
                                         <tr>
                                             <th>№п/п</th>
-                                            <th>Наименование учебных кабинетов</th>
+                                            <th>Наименование лабораторий и мастерских</th>
                                             <th>Количество</th>
                                         </tr>
                                     </thead>
@@ -54,41 +56,28 @@
                         </div>
                     </div>
     </div>
-    <div>
-    <h3>СВЕДЕНИЯ О БИБЛИОТЕКАХ</h3>
+    <div class="label-contactPod">
+    <h4>СВЕДЕНИЯ О БИБЛИОТЕКАХ</h4>
         <div class="tab-page-student">  
-                    <input id="tab-one7" type="checkbox" name="tabs">
-                        <label  for="tab-one7">Библиотеки</label>
+                    <input id="tab-one3" type="checkbox" name="tabs">
+                        <label  for="tab-one3">Библиотеки</label>
                         <div class="tab-content">
-                            <div class="tab-content-first-page-student">                            
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>№п/п</th>
-                                            <th>Наименование учебных кабинетов</th>
-                                            <th>Количество</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="contactPod-table">                            
+                               <ul>
+                                <li><p></p></li>
+                               </ul>
                             </div>
                         </div>
                     </div>
     </div>
-    <div>
-        <h3>СВЕДЕНИЯ ОБ ОБЪЕКТАХ СПОРТА</h3>
+    <div class="label-contactPod">
+        <h4>СВЕДЕНИЯ ОБ ОБЪЕКТАХ СПОРТА</h4>
         <div class="tab-page-student">  
-                    <input id="tab-one7" type="checkbox" name="tabs">
-                        <label  for="tab-one7">Спортивные объекты</label>
+                    <input id="tab-one4" type="checkbox" name="tabs">
+                        <label  for="tab-one4">Спортивные объекты</label>
                         <div class="tab-content">
-                            <div class="tab-content-first-page-student">                            
-                                <table>
+                            <div class="contactPod-table">                            
+                                <table class="table">
                                     <thead>
                                         <tr>
                                             <th>Территория</th>
@@ -106,11 +95,11 @@
                         </div>
                     </div>
     </div>
-    <div>
-        <h3>СВЕДЕНИЯ О СРЕДСТВАХ ОБУЧЕНИЯ И ВОСПИТАНИЯ</h3>
+    <div class="label-contactPod">
+        <h4>СВЕДЕНИЯ О СРЕДСТВАХ ОБУЧЕНИЯ И ВОСПИТАНИЯ</h4>
         <div class="tab-page-student">  
-                    <input id="tab-one7" type="checkbox" name="tabs">
-                        <label  for="tab-one7">Средства обучения и воспитания</label>
+                    <input id="tab-one5" type="checkbox" name="tabs">
+                        <label  for="tab-one5">Средства обучения и воспитания</label>
                         <div class="tab-content">
                             <ul>
                                 <li></li>
@@ -118,11 +107,11 @@
                         </div>
                     </div>
     </div>
-    <div>
-        <h3>СВЕДЕНИЯ ОБ УСЛОВИЯХ ПИТАНИЯ</h3>
+    <div class="label-contactPod">
+        <h4>СВЕДЕНИЯ ОБ УСЛОВИЯХ ПИТАНИЯ</h4>
         <div class="tab-page-student">  
-                    <input id="tab-one7" type="checkbox" name="tabs">
-                        <label  for="tab-one7">Питание</label>
+                    <input id="tab-one6" type="checkbox" name="tabs">
+                        <label  for="tab-one6">Питание</label>
                         <div class="tab-content">
                             <ul>
                                 <li><a href=""></a></li>
@@ -132,8 +121,8 @@
                         </div>
                     </div>
     </div>
-    <div>
-        <h3>СВЕДЕНИЯ ОБ УСЛОВИЯХ ОХРАНЫ ЗДОРОВЬЯ ОБУЧАЮЩИХСЯ</h3>
+    <div class="label-contactPod">
+        <h4>СВЕДЕНИЯ ОБ УСЛОВИЯХ ОХРАНЫ ЗДОРОВЬЯ ОБУЧАЮЩИХСЯ</h4>
         <div class="tab-page-student">  
                     <input id="tab-one7" type="checkbox" name="tabs">
                         <label  for="tab-one7">Медицинское обслуживание</label>
@@ -142,14 +131,14 @@
                         </div>
                     </div>
     </div>
-    <div>
-        <h3>СВЕДЕНИЯ О ДОСТУПЕ К ИНФОРМАЦИОННЫМ СИСТЕМАМ И ИНФОРМАЦИОННО-ТЕЛЕКОММУНИКАЦИОННЫМ СЕТЯМ</h3>
+    <div class="label-contactPod">
+        <h4>СВЕДЕНИЯ О ДОСТУПЕ К ИНФОРМАЦИОННЫМ СИСТЕМАМ И ИНФОРМАЦИОННО-ТЕЛЕКОММУНИКАЦИОННЫМ СЕТЯМ</h4>
         <div class="tab-page-student">  
-                    <input id="tab-one7" type="checkbox" name="tabs">
-                        <label  for="tab-one7">Доступ к информационным системам</label>
+                    <input id="tab-one8" type="checkbox" name="tabs">
+                        <label  for="tab-one8">Доступ к информационным системам</label>
                         <div class="tab-content">
-                            <div class="tab-content-first-page-student">                            
-                                <table>
+                            <div class="contactPod-table">                            
+                                <table class="table">
                                     <thead>
                                         <tr>
                                             <th>Территория</th>

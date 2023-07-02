@@ -1,11 +1,12 @@
 {% extends 'main_page/index.html.twig' %}
 
 {% block main %}
-    <h1 class="label-contactPod">Международное сотрудничество</h1>
+    <h1 class="label-contactPod">Платежные реквизиты</h1>
 
-    <div>
+    <div class="label-contactPod">
         <h3>Лицевой счет учреждения</h3>
-        <table>
+        <div class="contactPod-table">
+        <table class="table">
             <thead>
                 <tr>
                             <td>№ п/п</td>
@@ -23,10 +24,12 @@
                 </tr>
             </tbody>
         </table>
+        </div>
     </div>
-    <div>
+    <div class="label-contactPod">
         <h3>Расчетный счет учреждения</h3>
-        <table>
+        <div class="contactPod-table">
+        <table class="table">
             <thead>
                 <tr>
                             <td>№ п/п</td>
@@ -48,9 +51,10 @@
                 </tr>
             </tbody>
         </table>
+        </div>
         <br>
-        <br>
-        <table>
+        <div class="contactPod-table">
+        <table class="table">
             <thead>
                 <tr>
                             <td>ИНН</td>
@@ -70,6 +74,7 @@
                 </tr>
             </tbody>
         </table>
+        </div>
     </div>
 
 {% endblock %}

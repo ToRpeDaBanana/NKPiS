@@ -1,10 +1,12 @@
+{% extends 'main_page/index.html.twig' %}
+
 {% block main %}
     <h1 class="label-contactPod">Финансово-хозяйственная деятельность</h1>
 
-    <p>Сведения об остатках денежных средств по состоянию на (дата изменяемая) (тыс.рублей)</p>
+    <p class="label-contactPod">Сведения об остатках денежных средств по состоянию на (дата изменяемая) (тыс.рублей)</p>
     <br>
-<div>
-    <table>
+<div class="contactPod-table">
+    <table class="table">
         <thead>
             <tr>
                 <th rowspan="2">Всего</th>
@@ -32,7 +34,7 @@
         </tbody>
     </table>
 </div>
-<div>
+<div class="label-contactPod">
     <div class="text-style">
         <div>
             <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' }}"></a></i>
