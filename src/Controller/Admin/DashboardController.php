@@ -215,7 +215,7 @@ class DashboardController extends AbstractDashboardController
                     MenuItem::linkToCrud('Информация о приёмной комиссии', '', CollegeAdmissionTitle::class),
                     MenuItem::linkToCrud('Поступление в колледж', '', CollegeAdmission::class),
                     MenuItem::linkToCrud('Нормативные документы Приемной комиссии', '', NormativeDocuments::class),
-                    MenuItem::linkToCrud('Контрольные цифры приема год приёма', '', AcceptanceCheckDigits::class),
+                    // MenuItem::linkToCrud('Контрольные цифры приема год приёма', '', AcceptanceCheckDigits::class),
                     MenuItem::linkToCrud('Контрольные цифры приема таблица', '', AcceptanceCheckDigitsTable::class),
                     MenuItem::linkToCrud('Проходные баллы прошлых лет', '', PassingScores::class),
                     MenuItem::linkToCrud('Медицинский осмотр для поступления', '', MedicalExamAdm::class),

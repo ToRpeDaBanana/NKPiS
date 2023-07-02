@@ -6,6 +6,7 @@ use App\Entity\AcceptanceCheckDigitsTable;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class AcceptanceCheckDigitsTableCrudController extends AbstractCrudController
@@ -28,7 +29,7 @@ class AcceptanceCheckDigitsTableCrudController extends AbstractCrudController
             ])->setLabel('Основа'),
             TextField::new('speciality')->setLabel('Специальность'),
             TextField::new('training_period')->setLabel('Срок обучения'),
-            TextField::new('cpc')->setLabel('КЦП'),
+            IntegerField::new('cpc')->setLabel('КЦП'),
         ];
     }
     public function configureCrud(Crud $crud): Crud

@@ -1,12 +1,21 @@
 {% extends 'main_page/index.html.twig' %}
 {% block main %}
     <h1 class="label-contactPod">Документы</h1>
+    
         <div>
             <div>
                 <h3>Правоустанавливающие документы</h3>
                 <div class="text-style">
                     <div>
-                        <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' }}"></a></i>
+                    {% for pageCont in pageData %}
+                        {% if pageCont is not empty %}
+                            {% if pageCont.titleCategory == '1' %} 
+                            <i class="fa-regular fa-file-pdf">
+                            <a href="{{'/assets/upload/files/' ~ pageCont.document|raw }}">{{pageCont.titleDocument}}</a>
+                            </i>
+                        {% endif %}
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -14,7 +23,15 @@
                 <h3>Локальные акты</h3>
                 <div class="text-style">
                     <div>
-                        <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' }}"></a></i>
+                        {% for pageCont in pageData %}
+                        {% if pageCont is not empty %}
+                            {% if pageCont.titleCategory == '2' %} 
+                            <i class="fa-regular fa-file-pdf">
+                            <a href="{{'/assets/upload/files/' ~ pageCont.document|raw }}">{{pageCont.titleDocument}}</a>
+                            </i>
+                        {% endif %}
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -22,7 +39,15 @@
                 <h3>Коллективно - договорное регулирование</h3>
                 <div class="text-style">
                     <div>
-                        <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' }}"></a></i>
+                        {% for pageCont in pageData %}
+                        {% if pageCont is not empty %}
+                            {% if pageCont.titleCategory == '3' %} 
+                            <i class="fa-regular fa-file-pdf">
+                            <a href="{{'/assets/upload/files/' ~ pageCont.document|raw }}">{{pageCont.titleDocument}}</a>
+                            </i>
+                        {% endif %}
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -30,7 +55,15 @@
                 <h3>Финансовая деятельность</h3>
                 <div class="text-style">
                     <div>
-                        <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' }}"></a></i>
+                        {% for pageCont in pageData %}
+                        {% if pageCont is not empty %}
+                            {% if pageCont.titleCategory == '4' %} 
+                            <i class="fa-regular fa-file-pdf">
+                            <a href="{{'/assets/upload/files/' ~ pageCont.document|raw }}">{{pageCont.titleDocument}}</a>
+                            </i>
+                        {% endif %}
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -38,7 +71,15 @@
                 <h3>Отчёт о результатах самообследования</h3>
                 <div class="text-style">
                     <div>
-                        <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' }}"></a></i>
+                        {% for pageCont in pageData %}
+                        {% if pageCont is not empty %}
+                            {% if pageCont.titleCategory == '5' %} 
+                            <i class="fa-regular fa-file-pdf">
+                            <a href="{{'/assets/upload/files/' ~ pageCont.document|raw }}">{{pageCont.titleDocument}}</a>
+                            </i>
+                        {% endif %}
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -46,10 +87,18 @@
                 <h3>Результаты проверок</h3>
                 <div class="text-style">
                     <div>
-                        <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' }}"></a></i>
+                        {% for pageCont in pageData %}
+                        {% if pageCont is not empty %}
+                            {% if pageCont.titleCategory == '6' %} 
+                            <i class="fa-regular fa-file-pdf">
+                            <a href="{{'/assets/upload/files/' ~ pageCont.document|raw }}">{{pageCont.titleDocument}}</a>
+                            </i>
+                        {% endif %}
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
         </div>
-
+    
 {% endblock %}
