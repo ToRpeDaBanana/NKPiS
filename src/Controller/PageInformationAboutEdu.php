@@ -272,7 +272,7 @@ class PageInformationAboutEdu extends AbstractController
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
-    #[Route('/public-report-of-the-head', methods:['GET'])]
+    #[Route('/publicReportOfTheHead', methods:['GET'])]
     public function PublicDocklad(
         ManagerRegistry $doctrine,
         SessionService $sessionService,
@@ -291,7 +291,7 @@ class PageInformationAboutEdu extends AbstractController
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
-    #[Route('/specialists-and-services', methods:['GET'])]
+    #[Route('/specialistsAndServices', methods:['GET'])]
     public function RezimWorkSpecSupport(
         ManagerRegistry $doctrine,
         SessionService $sessionService,
