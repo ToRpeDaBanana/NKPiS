@@ -3,7 +3,7 @@
 {% block main %}
     <h1 class="label-contactPod">Образовательные стандарты и требования</h1>
 
-        <p class="label-contactPod"><a href="">Официальный сайт Министерства просвещения Российской Федерации</a></p>
+        <p class="label-contactPod"><a href="https://edu.gov.ru/">Официальный сайт Министерства просвещения Российской Федерации</a></p>
     <div class="label-contactPod">
         <div class="tab-page-student">  
                     <input id="tab-one7" type="checkbox" name="tabs">
@@ -12,7 +12,13 @@
                         <div class="label-contactPod">
                             <div class="text-style">
                                 <div>
-                                    <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' }}"></a></i>
+                                    {% for pageCont in pageData %}
+                                        {% if pageCont is not empty %}
+                                            <i class="fa-regular fa-file-pdf">
+                                                <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">{{pageCont.title}}</a>
+                                            </i>
+                                        {% endif %}
+                                    {% endfor %}
                                 </div>
                             </div>
                             </div>

@@ -10,9 +10,15 @@
                             <div class="tab-content-first-page-student">                            
                                     <div class="text-style">
                                         <div class="label-contactPod"> 
-                                                <i class="fa-regular fa-file-pdf">
-                                                <a href="{{'/assets/upload/files/'}}"></a>
-                                                </i>
+                                                {% for pageCont in pageData %}
+                                                    {% if pageCont is not empty %}
+                                                        {% if pageCont.category == '1' %}
+                                                            <i class="fa-regular fa-file-pdf">
+                                                            <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">{{pageCont.title}}</a>
+                                                            </i>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                {% endfor %}
                                         </div>
                                     </div>
                             </div>
@@ -29,9 +35,15 @@
                             <div class="tab-content-first-page-student">                            
                                 <div class="text-style">
                                         <div class="label-contactPod"> 
-                                                <i class="fa-regular fa-file-pdf">
-                                                <a href="{{'/assets/upload/files/'}}"></a>
-                                                </i>
+                                                {% for pageCont in pageData %}
+                                                    {% if pageCont is not empty %}
+                                                        {% if pageCont.category == '2' %}
+                                                            <i class="fa-regular fa-file-pdf">
+                                                            <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">{{pageCont.title}}</a>
+                                                            </i>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                {% endfor %}
                                         </div>
                                     </div>
                             </div>

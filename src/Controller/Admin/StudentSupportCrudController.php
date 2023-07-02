@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\StudentSupport;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -21,8 +22,8 @@ class StudentSupportCrudController extends AbstractCrudController
     {
         return [
             TextEditorField::new('text')->setLabel('Текст'),
-            TextField::new('graduates')->setLabel('Выпускники'),
-            TextField::new('graduate_employment')->setLabel('Каналы занятости выпускников на'),
+            TextField::new('graduates')->setLabel('Выпускники(год)'),
+            DateField::new('graduate_employment')->setLabel('Каналы занятости выпускников на'),
             IntegerField::new('boys')->setLabel('Юношей'),
             IntegerField::new('girls')->setLabel('Девушек'),
             IntegerField::new('ovz')->setLabel('Лица с ОВЗ'),

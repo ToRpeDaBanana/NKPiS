@@ -16,12 +16,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                {% set pp = 0 %}
+                {% for pageCont in pageData1 %}
+                    {% if pageCont is not empty %}
+                        {% set pp = pp + 1 %}
+                        <tr>
+                            <td>{{pp}}</td>
+                            <td>{{pageCont.type|raw}}</td>
+                            <td>{{pageCont.fky|raw}}</td>
+                            <td>{{pageCont.number|raw}}</td>
+                        </tr>
+                     {% endif %}
+                {% endfor %}
             </tbody>
         </table>
         </div>
@@ -41,14 +47,20 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                {% set pp = 0 %}
+                {% for pageCont in pageData2 %}
+                    {% if pageCont is not empty %}
+                        {% set pp = pp + 1 %}
+                        <tr>
+                            <td>{{pp}}</td>
+                            <td>{{pageCont.name|raw}}</td>
+                            <td>{{pageCont.otdel|raw}}</td>
+                            <td>{{pageCont.numberPayment|raw}}</td>
+                            <td>{{pageCont.numberKorr|raw}}</td>
+                            <td>{{pageCont.bik|raw}}</td>
+                        </tr>
+                     {% endif %}
+                {% endfor %}
             </tbody>
         </table>
         </div>
@@ -65,13 +77,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                {% for pageCont in pageData3 %}
+                    {% if pageCont is not empty %}
+                        <tr>
+                            <td>{{pageCont.inn|raw}}</td>
+                            <td>{{pageCont.kpp|raw}}</td>
+                            <td>{{pageCont.okato|raw}}</td>
+                            <td>{{pageCont.ogrn|raw}}</td>
+                            <td>{{pageCont.oktmo|raw}}</td>
+                        </tr>
+                     {% endif %}
+                {% endfor %}
             </tbody>
         </table>
         </div>

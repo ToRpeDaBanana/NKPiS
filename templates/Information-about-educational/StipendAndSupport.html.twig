@@ -5,12 +5,11 @@
 
     <p class="label-contactPod"><a href="">Информация о стипендиях и иных видах поддержки обучающихся ГБПОУ КМТ</a></p>
 <div class="label-contactPod">
-    <h3>Размеры стипендий:</h3>
-    <ul>
-        <li>
-            Академическая стипендия (базовый размер) – 618 руб. – выплачивается по итогам сессии при успеваемости на «Хорошо» и «Отлично» 
-        </li>
-    </ul>
+     {% for pageCont in pageData %}
+        {% if pageCont is not empty %}
+            <p>{{pageCont.text|raw}}</p>
+        {% endif %}
+    {% endfor %}
 </div>
 <div class="label-contactPod">
     <p></p>
@@ -18,10 +17,16 @@
 <div class="contactPod-table">
     <table class="table">
         <thead>
+        {% for pageCont in pageData %}
+        {% if pageCont is not empty %}
             <tr>
-                <th colspan="4"><p align="center">Выпускники&nbsp;2021 года</p></th>
-                <th colspan="7"><p align="center">Каналы занятости выпускников на&nbsp;01.12.2021</p></th>
+            
+                <th colspan="4"><p align="center">Выпускники&nbsp;{{pageCont.graduates|raw}}&nbsp;год</p></th>
+                <th colspan="7"><p align="center">Каналы занятости выпускников на&nbsp;{{ pageCont.graduateEmployment|date('d.m.Y')|raw }}</p></th>
+                
             </tr>
+            {% endif %}
+            {% endfor %}
             <tr>
                 <th rowspan="2">
                     <p align="center">Всего</p>
@@ -70,41 +75,47 @@
 		</tr>
         </thead>
         <tbody>
-		<tr>
-			<td>
-			<p align="center">507</p>
-			</td>
-			<td>
-			<p align="center">446</p>
-			</td>
-			<td>
-			<p align="center">61</p>
-			</td>
-			<td>
-			<p align="center">0</p>
-			</td>
-			<td>
-			<p align="center">153</p>
-			</td>
-			<td>
-			<p align="center">0</p>
-			</td>
-			<td>
-			<p align="center">94</p>
-			</td>
-			<td>
-			<p align="center">1</p>
-			</td>
-			<td>
-			<p align="center">3</p>
-			</td>
-			<td>
-			<p align="center">248</p>
-			</td>
-			<td>
-			<p align="center">0</p>
-			</td>
-		</tr>
+        {% set arr = 0 %}
+    {% for pageCont in pageData %}
+        {% if pageCont is not empty %}
+        {% set arr = arr + pageCont.boys + pageCont.girls + pageCont.ovz + pageCont.actualEmployment + pageCont.actualEmploymentProf + pageCont.continueEduVyz + pageCont.continueEduSpo + pageCont.other + pageCont.vsRf + pageCont.dtiz %}
+            <tr>
+                <td>
+                <p align="center">{{arr}}</p>
+                </td>
+                <td>
+                <p align="center">{{pageCont.boys}}</p>
+                </td>
+                <td>
+                <p align="center">{{pageCont.girls}}</p>
+                </td>
+                <td>
+                <p align="center">{{pageCont.ovz}}</p>
+                </td>
+                <td>
+                <p align="center">{{pageCont.actualEmployment}}</p>
+                </td>
+                <td>
+                <p align="center">{{pageCont.actualEmploymentProf}}</p>
+                </td>
+                <td>
+                <p align="center">{{pageCont.continueEduVyz}}</p>
+                </td>
+                <td>
+                <p align="center">{{pageCont.continueEduSpo}}</p>
+                </td>
+                <td>
+                <p align="center">{{pageCont.other}}</p>
+                </td>
+                <td>
+                <p align="center">{{pageCont.vsRf}}</p>
+                </td>
+                <td>
+                <p align="center">{{pageCont.dtiz}}</p>
+                </td>
+            </tr>
+        {% endif %}
+    {% endfor %}
 	</tbody>
     </table>
 </div>

@@ -16,13 +16,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                {% for pageCont in pageData %}
+                    {% if pageCont is not empty %}
+                        <tr>
+                            <td>{{pageCont.name|raw}}</td>
+                            <td>{{pageCont.day|raw}}</td>
+                            <td>{{pageCont.time|raw}}</td>
+                            <td>{{pageCont.special|raw}}</td>
+                            <td>{{pageCont.phone|raw}}</td>
+                        </tr>
+                     {% endif %}
+                {% endfor %}
             </tbody>
         </table>
         </div>

@@ -32,6 +32,7 @@ use App\Entity\DopEdu;
 use App\Entity\DrivingDirections;
 use App\Entity\EconomucActivityDocument;
 use App\Entity\EduAndProductionComplex;
+use App\Entity\EduStandards;
 use App\Entity\EmployMonitoring;
 use App\Entity\EntranceTests;
 use App\Entity\ForEmloyText;
@@ -593,6 +594,14 @@ class EasyAdminSubscriber implements EventSubscriberInterface{
         }
         if ($entity instanceof InternationalCoop){
             $item = $entity->getInformDogovor();
+        if (!empty($item)){
+            $imgpath = $this->parameterBag->get('kernel.project_dir') . 
+            '/public/assets/upload/files/'.$item;
+            if(file_exists($imgpath)) unlink($imgpath);
+        }   
+        }
+        if ($entity instanceof EduStandards){
+            $item = $entity->getFile();
         if (!empty($item)){
             $imgpath = $this->parameterBag->get('kernel.project_dir') . 
             '/public/assets/upload/files/'.$item;
