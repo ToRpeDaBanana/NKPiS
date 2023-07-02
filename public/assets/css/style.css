@@ -2755,3 +2755,13 @@
     cursor: pointer;
     font-size: 15px !important;
     }
+    .spisoc-decor{
+        list-style-type: none !important;
+    }
+    .img-style{
+        width: 80%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+    

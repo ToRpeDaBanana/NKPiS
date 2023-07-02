@@ -1,37 +1,43 @@
 {% extends 'main_page/index.html.twig' %}
 {% block main %}
     <h1 class="label-contactPod">Охрана труда</h1>
-        <div>
-                <div class="tab-page-student">   
-                    <input id="tab-one7" type="checkbox" name="tabs">
-                        <label  for="tab-one7">Проходные баллы прошлых лет</label>
+       <div >
+        <div class="label-contactPod" >
+            <div class="tab-page-student">   
+                    <input id="tab-one1" type="checkbox" name="tabs">
+                        <label class="label-tab-for-other-pages" for="tab-one1">ИНСТРУКЦИИ ПО ОХРАНЕ ТРУДА</label>
                         <div class="tab-content">
                             <div class="tab-content-first-page-student">                            
-                                <div class="contactPod-table">
-                                    <ul>
-                                        <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' }}"></a></i>
-                                    </ul>
-                                </table>
-                                </div>
+                                    <div class="text-style">
+                                        <div class="label-contactPod"> 
+                                                <i class="fa-regular fa-file-pdf">
+                                                <a href="{{'/assets/upload/files/'}}"></a>
+                                                </i>
+                                        </div>
+                                    </div>
                             </div>
                         </div>
                     </div>
-        </div>
-        <div>
-                <div class="tab-page-student">   
-                    <input id="tab-one8" type="checkbox" name="tabs">
-                        <label  for="tab-one8">Проходные баллы прошлых лет</label>
+                </div>
+            </div>
+        <div >
+        <div class="label-contactPod" >
+            <div class="tab-page-student">   
+                    <input id="tab-one2" type="checkbox" name="tabs">
+                        <label class="label-tab-for-other-pages" for="tab-one2">НОРМАТИВНЫЕ ДОКУМЕНТЫ ПО ОХРАНЕ ТРУДА</label>
                         <div class="tab-content">
                             <div class="tab-content-first-page-student">                            
-                                <div class="contactPod-table">
-                                    <ul>
-                                        <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' }}"></a></i>
-                                    </ul>
-                                </table>
-                                </div>
+                                <div class="text-style">
+                                        <div class="label-contactPod"> 
+                                                <i class="fa-regular fa-file-pdf">
+                                                <a href="{{'/assets/upload/files/'}}"></a>
+                                                </i>
+                                        </div>
+                                    </div>
                             </div>
                         </div>
                     </div>
-        </div>
+                </div>
+            </div>
 
 {% endblock %}
