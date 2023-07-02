@@ -17,7 +17,7 @@ class MedicalExamAdmCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextEditorField::new('Медицинский осмотр для поступления текст')->setLabel(''),
+            TextEditorField::new('text')->setLabel('Медицинский осмотр для поступления текст'),
         ];
     }
     public function configureCrud(Crud $crud): Crud
