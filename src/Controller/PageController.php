@@ -196,7 +196,7 @@ class PageController extends AbstractController
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
-    #[Route('/payedic', methods:['GET'])]
+    #[Route('/payEdu', methods:['GET'])]
     public function payToEdicution(
         ManagerRegistry $doctrine,
         Request $request,
