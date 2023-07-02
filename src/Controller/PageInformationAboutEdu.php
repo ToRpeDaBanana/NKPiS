@@ -272,8 +272,8 @@ class PageInformationAboutEdu extends AbstractController
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
-    #[Route('/publicReportOfTheHead', methods:['GET'])]
-    public function PublicDocklad(
+    #[Route('/publicReport', methods:['GET'])]
+    public function PublicReport(
         ManagerRegistry $doctrine,
         SessionService $sessionService,
         SessionInterface $session,
@@ -285,7 +285,7 @@ class PageInformationAboutEdu extends AbstractController
         $pageContent = $entityManager->getRepository(PublicReport::class)->findAll();
 
 
-        return $this->render('Information-about-educational/PublicDocklad.html.twig', [
+        return $this->render('Information-about-educational/PublickDocklad.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
             'sessionData' => $sessionService->getSessionData($session)
