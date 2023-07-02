@@ -24,7 +24,7 @@ class AvailableEnvironmentCrudController extends AbstractCrudController
             ->setBasePath('public\assets\upload\img')
             ->setFormTypeOption('multiple', true)
             ->setLabel('Выбрать фото'),
-            TextEditorField::new('text_two')->setLabel('Текст-1'),
+            TextEditorField::new('text_two')->setLabel('Текст-2'),
         ];
     }
     public function configureCrud(Crud $crud): Crud

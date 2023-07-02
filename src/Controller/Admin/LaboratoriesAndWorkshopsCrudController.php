@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\LaboratoriesAndWorkshops;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class LaboratoriesAndWorkshopsCrudController extends AbstractCrudController
@@ -19,7 +20,7 @@ class LaboratoriesAndWorkshopsCrudController extends AbstractCrudController
     {
         return [
             TextField::new('name')->setLabel('Наименование лабораторий и мастерских'),
-            TextField::new('count')->setLabel('Количество'),
+            IntegerField::new('count')->setLabel('Количество'),
         ];
     }
     public function configureCrud(Crud $crud): Crud

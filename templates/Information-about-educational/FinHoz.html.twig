@@ -1,8 +1,11 @@
 {% extends 'main_page/index.html.twig' %}
 {% block main %}
     <h1 class="label-contactPod">Финансово-хозяйственная деятельность</h1>
-
-    <p class="label-contactPod">Сведения об остатках денежных средств по состоянию на (дата изменяемая) (тыс.рублей)</p>
+    {% for pageCont in pageData1 %}
+        {% if pageCont is not empty %}
+            <p class="label-contactPod">Сведения об остатках денежных средств по состоянию на {{ pageCont.date|date('d.m.Y')|raw }} (тыс.рублей)</p>
+        {% endif %}
+    {% endfor %}
     <br>
 <div class="contactPod-table">
     <table class="table">
@@ -24,19 +27,35 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>383 458,97</td>
-                <td> 303 337,67</td>
-                <td> 75 360,13</td>
-                <td> 4 761,18</td>
-            </tr>
+        {% set sum = 0 %}
+        {% for arr in pageData1 %}
+            {% if arr is not empty %}
+                {% set sum = sum + arr.sybsidyStateTask + arr.extraBudget + arr.targetSubsidies%}
+            {% endif %}
+        {% endfor %}
+        {% for pageCont in pageData1 %}
+            {% if pageCont is not empty %}
+                <tr>
+                    <td>{{sum}}</td>
+                    <td>{{pageCont.sybsidyStateTask|raw}}</td>
+                    <td>{{pageCont.extraBudget|raw}}</td>
+                    <td>{{pageCont.targetSubsidies|raw}}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
         </tbody>
     </table>
 </div>
 <div class="label-contactPod">
     <div class="text-style">
         <div>
-            <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' }}"></a></i>
+            {% for pageCont in pageData2 %}
+                {% if pageCont is not empty %}
+                        <i class="fa-regular fa-file-pdf">
+                        <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">{{pageCont.title}}</a>
+                        </i>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 </div>

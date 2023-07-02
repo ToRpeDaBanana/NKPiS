@@ -27,27 +27,28 @@
                         </tr>
                         </thead>
                         <tbody>
+                    {% for pageCont in pageData1 %}
+                        {% if pageCont is not empty %}
                             <tr>
                                 <td>Cреднее профессиональное</td>
-                                <td>
-                                    от 10 месяцев до 4 лет 10 месяцев
-                                </td>
-                                <td>
-                                    1940
-                                </td>
-                                <td>
-                                    1169
-                                </td>
-                                <td>
-                                    0
-                                </td>
+                                <td>{{pageCont.normativEdu|raw}}</td>
+                                <td>{{pageCont.budget|raw}}</td>
+                                <td>{{pageCont.contract|raw}}</td>
+                                <td>{{pageCont.countForeign|raw}}</td>
                             </tr>
+                        {% endif %}
+                    {% endfor %}
                         </tbody>
                     </table>
             </div>
         </div>
         <div >
             <h3 class="label-contactPod">Сведения о реализации образовательных программ дополнительного образования</h3>
+            {% for pageCont in pageData2 %}
+        {% if pageCont is not empty %}
+            <p class="label-contactPod">Дата актуальности данных: {{ pageCont.dataRevevance|date('d.m.Y')|raw }}</p>
+        {% endif %}
+    {% endfor %}
         <div class="label-contactPod" >
             <div class="tab-page-student">   
                     <input id="tab-one1" type="checkbox" name="tabs">
@@ -57,8 +58,6 @@
                                 <div class="contactPod-table">
                                     <table class="table">
                                     <thead>
-                                        <tr>
-                                                </tr>
                                         <tr>
                                             <th >Вид деятельности</th>
                                             <th >Название объединения</th>
@@ -72,17 +71,23 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                            {% for pageCont in pageData3 %}
+                                {% if pageCont is not empty %}
+                                    {% if pageCont.category =='1' %}
                                         <tr>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
+                                            <td>{{ pageCont.typeActivity|raw }}</td>
+                                            <td>{{ pageCont.nameAssociation|raw }}</td>
+                                            <td>{{ pageCont.groupName|raw }}</td>
+                                            <td>{{ pageCont.programCategory|raw }}</td>
+                                            <td>{{ pageCont.age|raw }}</td>
+                                            <td>{{ pageCont.fioTeacher|raw }}</td>
+                                            <td>{{ pageCont.trainingFree|raw }}</td>
+                                            <td>{{ pageCont.durationTraining|raw }}</td>
+                                            <td>{{ pageCont.formLesson|raw }}</td>
                                         </tr>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
                                     </tbody>
                                 </table>
                                 </div>
@@ -98,8 +103,6 @@
                                     <table class="table">
                                     <thead>
                                         <tr>
-                                                </tr>
-                                        <tr>
                                             <th >Вид деятельности</th>
                                             <th >Название объединения</th>
                                             <th >Название группы</th>
@@ -112,17 +115,23 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                            {% for pageCont in pageData3 %}
+                                {% if pageCont is not empty %}
+                                    {% if pageCont.category =='2' %}
                                         <tr>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
+                                            <td>{{ pageCont.typeActivity|raw }}</td>
+                                            <td>{{ pageCont.nameAssociation|raw }}</td>
+                                            <td>{{ pageCont.groupName|raw }}</td>
+                                            <td>{{ pageCont.programCategory|raw }}</td>
+                                            <td>{{ pageCont.age|raw }}</td>
+                                            <td>{{ pageCont.fioTeacher|raw }}</td>
+                                            <td>{{ pageCont.trainingFree|raw }}</td>
+                                            <td>{{ pageCont.durationTraining|raw }}</td>
+                                            <td>{{ pageCont.formLesson|raw }}</td>
                                         </tr>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
                                     </tbody>
                                 </table>
                                 </div>
@@ -136,9 +145,6 @@
                             <div class="tab-content-first-page-student">                            
                                <div class="contactPod-table">
                                     <table class="table">
-                                    <thead>
-                                        <tr>
-                                                </tr>
                                         <tr>
                                             <th >Вид деятельности</th>
                                             <th >Название объединения</th>
@@ -152,17 +158,23 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                            {% for pageCont in pageData3 %}
+                                {% if pageCont is not empty %}
+                                    {% if pageCont.category =='3' %}
                                         <tr>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
+                                            <td>{{ pageCont.typeActivity|raw }}</td>
+                                            <td>{{ pageCont.nameAssociation|raw }}</td>
+                                            <td>{{ pageCont.groupName|raw }}</td>
+                                            <td>{{ pageCont.programCategory|raw }}</td>
+                                            <td>{{ pageCont.age|raw }}</td>
+                                            <td>{{ pageCont.fioTeacher|raw }}</td>
+                                            <td>{{ pageCont.trainingFree|raw }}</td>
+                                            <td>{{ pageCont.durationTraining|raw }}</td>
+                                            <td>{{ pageCont.formLesson|raw }}</td>
                                         </tr>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
                                     </tbody>
                                 </table>
                                 </div>
@@ -178,8 +190,6 @@
                                     <table class="table">
                                     <thead>
                                         <tr>
-                                                </tr>
-                                        <tr>
                                             <th >Вид деятельности</th>
                                             <th >Название объединения</th>
                                             <th >Название группы</th>
@@ -192,17 +202,23 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                            {% for pageCont in pageData3 %}
+                                {% if pageCont is not empty %}
+                                    {% if pageCont.category =='4' %}
                                         <tr>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
+                                            <td>{{ pageCont.typeActivity|raw }}</td>
+                                            <td>{{ pageCont.nameAssociation|raw }}</td>
+                                            <td>{{ pageCont.groupName|raw }}</td>
+                                            <td>{{ pageCont.programCategory|raw }}</td>
+                                            <td>{{ pageCont.age|raw }}</td>
+                                            <td>{{ pageCont.fioTeacher|raw }}</td>
+                                            <td>{{ pageCont.trainingFree|raw }}</td>
+                                            <td>{{ pageCont.durationTraining|raw }}</td>
+                                            <td>{{ pageCont.formLesson|raw }}</td>
                                         </tr>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
                                     </tbody>
                                 </table>
                                 </div>
@@ -218,8 +234,6 @@
                                     <table class="table">
                                     <thead>
                                         <tr>
-                                                </tr>
-                                        <tr>
                                             <th >Вид деятельности</th>
                                             <th >Название объединения</th>
                                             <th >Название группы</th>
@@ -232,17 +246,23 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                            {% for pageCont in pageData3 %}
+                                {% if pageCont is not empty %}
+                                    {% if pageCont.category =='5' %}
                                         <tr>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
+                                            <td>{{ pageCont.typeActivity|raw }}</td>
+                                            <td>{{ pageCont.nameAssociation|raw }}</td>
+                                            <td>{{ pageCont.groupName|raw }}</td>
+                                            <td>{{ pageCont.programCategory|raw }}</td>
+                                            <td>{{ pageCont.age|raw }}</td>
+                                            <td>{{ pageCont.fioTeacher|raw }}</td>
+                                            <td>{{ pageCont.trainingFree|raw }}</td>
+                                            <td>{{ pageCont.durationTraining|raw }}</td>
+                                            <td>{{ pageCont.formLesson|raw }}</td>
                                         </tr>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
                                     </tbody>
                                 </table>
                                 </div>
@@ -258,8 +278,6 @@
                                     <table class="table">
                                     <thead>
                                         <tr>
-                                                </tr>
-                                        <tr>
                                             <th >Вид деятельности</th>
                                             <th >Название объединения</th>
                                             <th >Название группы</th>
@@ -272,17 +290,23 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                            {% for pageCont in pageData3 %}
+                                {% if pageCont is not empty %}
+                                    {% if pageCont.category =='6' %}
                                         <tr>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
+                                            <td>{{ pageCont.typeActivity|raw }}</td>
+                                            <td>{{ pageCont.nameAssociation|raw }}</td>
+                                            <td>{{ pageCont.groupName|raw }}</td>
+                                            <td>{{ pageCont.programCategory|raw }}</td>
+                                            <td>{{ pageCont.age|raw }}</td>
+                                            <td>{{ pageCont.fioTeacher|raw }}</td>
+                                            <td>{{ pageCont.trainingFree|raw }}</td>
+                                            <td>{{ pageCont.durationTraining|raw }}</td>
+                                            <td>{{ pageCont.formLesson|raw }}</td>
                                         </tr>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
                                     </tbody>
                                 </table>
                                 </div>
@@ -311,15 +335,19 @@
                     </tr>
                 </thead>
                 <tbody>
+            {% for pageCont in pageData4 %}
+                {% if pageCont is not empty %}
                     <tr>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
+                        <td>{{ pageCont.specialties|raw }}</td>
+                        <td>{{ pageCont.budget|raw }}</td>
+                        <td>{{ pageCont.contract|raw }}</td>
+                        <td>{{ pageCont.avgBall|raw }}</td>
+                        <td>{{ pageCont.recovery|raw }}</td>
+                        <td>{{ pageCont.deductions|raw }}</td>
+                        <td>{{ pageCont.translation|raw }}</td>
                     </tr>
+                {% endif %}
+            {% endfor %}
                 </tbody>
             </table>
         </div>
@@ -329,7 +357,13 @@
                 <h4>ЛИЦЕНЗИЯ НА ПРАВО ВЕДЕНИЯ ОБРАЗОВАТЕЛЬНОЙ ДЕЯТЕЛЬНОСТИ:</h4>
                 <div class="text-style">
                     <div>
-                        <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' }}"></a></i>
+                        {% for pageCont in pageData5 %}
+                        {% if pageCont is not empty %}
+                            <i class="fa-regular fa-file-pdf">
+                            <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">Лицензия на осуществление образовательной деятельности / выписка из реестра лицензий</a>
+                            </i>
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -337,13 +371,32 @@
         <div>
            <div class="label-contactPod">
                 <h4>СВИДЕТЕЛЬСТВО О ГОСУДАРСТВЕННОЙ АККРЕДИТАЦИИ:</h4>
-                <div class="text-style">
-                    <div>
-                        <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' }}"></a></i>
+                <div class="contactPod-table">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>серия:</th>
+                                    <th>№</th>
+                                    <th>Рег.номер</th>
+                                    <th>дата окончания срока действия:</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for pageCont in pageData5 %}
+                                {% if pageCont is not empty %}
+                                    <tr>
+                                        <td>{{ pageCont.series|raw }}</td>
+                                        <td>{{ pageCont.number|raw }}</td>
+                                        <td>{{ pageCont.regNumber|raw }}</td>
+                                        <td>{{ pageCont.date|raw }}</td>
+                                    </tr>  
+                                {% endif %}
+                            {% endfor %}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-        </div>
         <div>
             <h3 class="label-contactPod">Формы обучения</h3>
         <div class="contactPod-table">

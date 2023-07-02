@@ -3,6 +3,20 @@
 {% block main %}
     <h1 class="label-contactPod">Международное сотрудничество</h1>
 
-    <p class="label-contactPod"></p>
-
+    <p class="label-contactPod">СВЕДЕНИЯ О ЗАКЛЮЧЕННЫХ И ПЛАНИРУЕМЫХ К ЗАКЛЮЧЕНИЮ ДОГОВОРАХ С ИНОСТРАННЫМИ И (ИЛИ) МЕЖДУНАРОДНЫМИ ОРГАНИЗАЦИЯМИ ПО ВОПРОСАМ ОБРАЗОВАНИЯ И НАУКИ (ПРИ НАЛИЧИИ).</p>
+    {% for pageCont in pageData %}
+        {% if pageCont is not empty %}
+            <i class="fa-regular fa-file-pdf">
+            <a href="{{'/assets/upload/files/' ~ pageCont.informContract|raw }}">{{pageCont.informContract}}</a>
+            </i>
+        {% endif %}
+    {% endfor %}
+    <p class="label-contactPod">СВЕДЕНИЯ О МЕЖДУНАРОДНОЙ АККРЕДИТАЦИИ ОБРАЗОВАТЕЛЬНЫХ ПРОГРАММ (ПРИ НАЛИЧИИ).</p>
+    {% for pageCont in pageData %}
+        {% if pageCont is not empty %}
+            <i class="fa-regular fa-file-pdf">
+            <a href="{{'/assets/upload/files/' ~ pageCont.informDogovor|raw }}">{{pageCont.informDogovor}}</a>
+            </i>
+        {% endif %}
+    {% endfor %}
 {% endblock %}

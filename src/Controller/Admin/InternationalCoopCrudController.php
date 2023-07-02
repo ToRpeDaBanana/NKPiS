@@ -3,7 +3,9 @@
 namespace App\Controller\Admin;
 
 use App\Entity\InternationalCoop;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 
 class InternationalCoopCrudController extends AbstractCrudController
 {
@@ -12,14 +14,25 @@ class InternationalCoopCrudController extends AbstractCrudController
         return InternationalCoop::class;
     }
 
-    /*
+
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+            ImageField::new('inform_contract')
+            ->setUploadDir('public\assets\upload\files')
+            ->setBasePath('public\assets\upload\files')
+            ->setLabel('СВЕДЕНИЯ О ЗАКЛЮЧЕННЫХ И ПЛАНИРУЕМЫХ К ЗАКЛЮЧЕНИЮ ДОГОВОРАХ С ИНОСТРАННЫМИ И (ИЛИ) МЕЖДУНАРОДНЫМИ ОРГАНИЗАЦИЯМИ ПО ВОПРОСАМ ОБРАЗОВАНИЯ И НАУКИ (ПРИ НАЛИЧИИ).'),
+            ImageField::new('inform_dogovor')
+            ->setUploadDir('public\assets\upload\files')
+            ->setBasePath('public\assets\upload\files')
+            ->setLabel('СВЕДЕНИЯ О МЕЖДУНАРОДНОЙ АККРЕДИТАЦИИ ОБРАЗОВАТЕЛЬНЫХ ПРОГРАММ (ПРИ НАЛИЧИИ).'),
         ];
     }
-    */
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Международное сотрудничество');
+    }
 }

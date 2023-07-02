@@ -41,6 +41,7 @@ use App\Entity\Holidays;
 use App\Entity\ImportantKnow;
 use App\Entity\InformAboutWorkPrograms;
 use App\Entity\InterCertSchedule;
+use App\Entity\InternationalCoop;
 use App\Entity\LicenseEdu;
 use App\Entity\MedicalExam;
 use App\Entity\MedicalExamAdm;
@@ -581,6 +582,22 @@ class EasyAdminSubscriber implements EventSubscriberInterface{
                     }
                 }
             }    
+        }
+        if ($entity instanceof InternationalCoop){
+            $item = $entity->getInformContract();
+        if (!empty($item)){
+            $imgpath = $this->parameterBag->get('kernel.project_dir') . 
+            '/public/assets/upload/files/'.$item;
+            if(file_exists($imgpath)) unlink($imgpath);
+        }   
+        }
+        if ($entity instanceof InternationalCoop){
+            $item = $entity->getInformDogovor();
+        if (!empty($item)){
+            $imgpath = $this->parameterBag->get('kernel.project_dir') . 
+            '/public/assets/upload/files/'.$item;
+            if(file_exists($imgpath)) unlink($imgpath);
+        }   
         }
     }
 }

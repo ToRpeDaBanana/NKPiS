@@ -17,7 +17,7 @@ class Cabinet
     private ?string $name = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $count = null;
+    private ?int $count = null;
 
     public function getId(): ?int
     {
@@ -36,12 +36,12 @@ class Cabinet
         return $this;
     }
 
-    public function getCount(): ?string
+    public function getCount(): ?int
     {
         return $this->count;
     }
 
-    public function setCount(string $count): static
+    public function setCount(int $count): static
     {
         $this->count = $count;
 

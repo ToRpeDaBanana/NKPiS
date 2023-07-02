@@ -2,6 +2,14 @@
 
 {% block main %}
     <h1 class="label-contactPod">Доступная среда</h1>
-
-    <p class="label-contactPod"></p>
+    {% for pageCont in pageData %}
+        {% if pageCont is not empty %}
+            <p class="label-contactPod">{{pageCont.text|raw}}</p>
+             {% for photo in pageCont.photo %}
+                        <img src="{{ '/assets/upload/img/' ~ photo|raw }}" alt="">
+                {% endfor %}
+            <p class="label-contactPod">{{pageCont.textTwo|raw}}</p>
+        {% endif %}
+    {% endfor %}
+    
 {% endblock %}

@@ -17,11 +17,17 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                {% set pp = 0 %}
+                                {% for pageCont in pageData1 %}
+                                    {% if pageCont is not empty %}
+                                        {% set pp = pp + 1 %}
                                         <tr>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
+                                            <td>{{pp}}</td>
+                                            <td>{{pageCont.name|raw}}</td>
+                                            <td>{{pageCont.count|raw}}</td>
                                         </tr>
+                                    {% endif %}
+                                {% endfor %}
                                     </tbody>
                                 </table>
                             </div>
@@ -44,11 +50,17 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                     {% set pp = 0 %}
+                                {% for pageCont in pageData2 %}
+                                    {% if pageCont is not empty %}
+                                        {% set pp = pp + 1 %}
                                         <tr>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
+                                            <td>{{pp}}</td>
+                                            <td>{{pageCont.name|raw}}</td>
+                                            <td>{{pageCont.count|raw}}</td>
                                         </tr>
+                                    {% endif %}
+                                {% endfor %}
                                     </tbody>
                                 </table>
                             </div>
@@ -61,10 +73,12 @@
                     <input id="tab-one3" type="checkbox" name="tabs">
                         <label  for="tab-one3">Библиотеки</label>
                         <div class="tab-content">
-                            <div class="contactPod-table">                            
-                               <ul>
-                                <li><p></p></li>
-                               </ul>
+                            <div class="contactPod-table">
+                            {% for pageCont in pageData3 %}
+                                {% if pageCont is not empty %}
+                                    <p>{{pageCont.text|raw}}</p>
+                                {% endif %}
+                            {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -84,10 +98,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                {% for pageCont in pageData4 %}
+                                    {% if pageCont is not empty %}
                                         <tr>
-                                            <td>1</td>
-                                            <td>1</td>
+                                            <td>{{pageCont.address|raw}}</td>
+                                            <td>{{pageCont.name|raw}}</td>
                                         </tr>
+                                    {% endif %}
+                                {% endfor %}
                                     </tbody>
                                 </table>
                             </div>
@@ -100,9 +118,11 @@
                     <input id="tab-one5" type="checkbox" name="tabs">
                         <label  for="tab-one5">Средства обучения и воспитания</label>
                         <div class="tab-content">
-                            <ul>
-                                <li></li>
-                            </ul>
+                            {% for pageCont in pageData5 %}
+                                {% if pageCont is not empty %}
+                                    <p>{{pageCont.text|raw}}</p>
+                                {% endif %}
+                            {% endfor %}
                         </div>
                     </div>
     </div>
@@ -112,11 +132,20 @@
                     <input id="tab-one6" type="checkbox" name="tabs">
                         <label  for="tab-one6">Питание</label>
                         <div class="tab-content">
-                            <ul>
-                                <li><a href=""></a></li>
-                                <li><a href=""></a></li>
-                                <li><a href=""></a></li>
-                            </ul>
+                    {% for pageCont in pageData6 %}
+                        {% if pageCont is not empty %}
+                                <i class="fa-regular fa-file-pdf">
+                                <a href="{{'/assets/upload/files/' ~ pageCont.fileContract|raw }}">Договор на оказания услуг по организации питания</a>
+                                </i>
+                        {% endif %}
+                    {% endfor %}
+                    {% for pageCont in pageData6 %}
+                        {% if pageCont is not empty %}
+                                <i class="fa-regular fa-file-pdf">
+                                <a href="{{'/assets/upload/files/' ~ pageCont.fileDogovor|raw }}">Договор платного питания</a>
+                                </i>
+                        {% endif %}
+                    {% endfor %}
                         </div>
                     </div>
     </div>
@@ -126,7 +155,11 @@
                     <input id="tab-one7" type="checkbox" name="tabs">
                         <label  for="tab-one7">Медицинское обслуживание</label>
                         <div class="tab-content">
-                            <p></p>
+                            {% for pageCont in pageData7 %}
+                                {% if pageCont is not empty %}
+                                    <p>{{pageCont.text|raw}}</p>
+                                {% endif %}
+                            {% endfor %}
                         </div>
                     </div>
     </div>
@@ -140,19 +173,21 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th>Территория</th>
                                             <th>Доступ к сети интернет</th>
                                             <th>Скорость</th>
                                             <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                {% for pageCont in pageData8 %}
+                                    {% if pageCont is not empty %}
                                         <tr>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
+                                            <td>{{pageCont.accsess|raw}}</td>
+                                            <td>{{pageCont.speed|raw}}</td>
+                                            <td>{{pageCont.provider|raw}}</td>
                                         </tr>
+                                    {% endif %}
+                                {% endfor %}
                                     </tbody>
                                 </table>
                             </div>
