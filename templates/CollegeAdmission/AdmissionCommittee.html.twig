@@ -93,23 +93,128 @@
                     </div>
                 <div class="tab-page-student">   
                     <input id="tab-one6" type="checkbox" name="tabs">
-                        <label  for="tab-one6">Контрольные цифры приёма 2023-2024</label>
+                        <label  for="tab-one6">Контрольные цифры приёма {{ "now"|date("Y") }}-{{ "now"|date("Y")+1 }}</label>
                         <div class="tab-content">
                             <div class="tab-content-first-page-student">                            
                                 <div class="contactPod-table">
                                     <table class="table">
                                     <thead>
+                                        
                                         <tr>
-                                                </tr>
-                                        <tr>
-                                            <th rowspan="2">Курс</th>
-                                            <th rowspan="2">Профессия / Специальность</th>
-                                            <th rowspan="2">Программа обучения на базе</th>
-                                            <th rowspan="2">Количество бюджетных мест</th>
-                                            <th rowspan="2">Количество внебюджетных мест</th>
+                                            <th rowspan="2">Класс</th>
+                                            <th rowspan="2">Основа</th>
+                                            <th rowspan="2">Специальность</th>
+                                            <th rowspan="2">Срок обучения</th>
+                                            <th rowspan="2">КЦП</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                {% for pageCont in pageData5 %}
+                                    {% if pageCont is not empty %}
+                                        {% if pageCont.class == '9' and pageCont.basis == 'Бюджет' %}
+                                            <tr>
+                                                <td>{{pageCont.class|raw}}</td>
+                                                <td>{{pageCont.basis|raw}}</td>
+                                                <td>{{pageCont.speciality|raw}}</td>
+                                                <td>{{pageCont.trainingPeriod|raw}}</td>
+                                                <td>{{pageCont.cpc|raw}}</td>
+                                            </tr>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                    {% set arB = 0 %}
+                                    {% for item in pageData5 %}
+                                        {% if item.basis == 'Бюджет' and item.class == '9' %}
+                                            {% set arB = arB + item.cpc %}
+                                        {% endif %}
+                                    {% endfor %}
+                                            <tr>
+                                                <th>Всего(бюджет)</th>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <th>{{ arB }}</th>
+                                            </tr>
+                                            {% for pageCont in pageData5 %}
+                                    {% if pageCont is not empty %}
+                                        {% if pageCont.class == '9' and pageCont.basis == 'Внебюджет' %}
+                                            <tr>
+                                                <td>{{pageCont.class|raw}}</td>
+                                                <td>{{pageCont.basis|raw}}</td>
+                                                <td>{{pageCont.speciality|raw}}</td>
+                                                <td>{{pageCont.trainingPeriod|raw}}</td>
+                                                <td>{{pageCont.cpc|raw}}</td>
+                                            </tr>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                    {% set arС = 0 %}
+                                    {% for item in pageData5 %}
+                                        {% if item.basis == 'Внебюджет' and item.class == '9' %}
+                                            {% set arС = arС + item.cpc %}
+                                        {% endif %}
+                                    {% endfor %}
+                                            <tr>
+                                                <th>Всего(внебюджет)</th>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <th>{{ arС }}</th>
+                                            </tr>
+                                {# 11 #}
+                                {% for pageCont in pageData5 %}
+                                    {% if pageCont is not empty %}
+                                        {% if pageCont.class == '11' and pageCont.basis == 'Бюджет' %}
+                                            <tr>
+                                                <td>{{pageCont.class|raw}}</td>
+                                                <td>{{pageCont.basis|raw}}</td>
+                                                <td>{{pageCont.speciality|raw}}</td>
+                                                <td>{{pageCont.trainingPeriod|raw}}</td>
+                                                <td>{{pageCont.cpc|raw}}</td>
+                                            </tr>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                    {% set arB = 0 %}
+                                    {% for item in pageData5 %}
+                                        {% if item.basis == 'Бюджет' and item.class == '11' %}
+                                            {% set arB = arB + item.cpc %}
+                                        {% endif %}
+                                    {% endfor %}
+                                            <tr>
+                                                <th>Всего(бюджет)</th>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <th>{{ arB }}</th>
+                                            </tr>
+                                            {% for pageCont in pageData5 %}
+                                    {% if pageCont is not empty %}
+                                        {% if pageCont.class == '11' and pageCont.basis == 'Внебюджет' %}
+                                            <tr>
+                                                <td>{{pageCont.class|raw}}</td>
+                                                <td>{{pageCont.basis|raw}}</td>
+                                                <td>{{pageCont.speciality|raw}}</td>
+                                                <td>{{pageCont.trainingPeriod|raw}}</td>
+                                                <td>{{pageCont.cpc|raw}}</td>
+                                            </tr>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                    {% set arС = 0 %}
+                                    {% for item in pageData5 %}
+                                        {% if item.basis == 'Внебюджет' and item.class == '11' %}
+                                            {% set arС = arС + item.cpc %}
+                                        {% endif %}
+                                    {% endfor %}
+                                            <tr>
+                                                <th>Всего(внебюджет)</th>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <th>{{ arС }}</th>
+                                            </tr>
+                                
                                     </tbody>
                                 </table>
                                 </div>
@@ -130,11 +235,35 @@
                                         <tr>
                                             <th rowspan="2">Класс</th>
                                             <th rowspan="2">Специальность</th>
-                                            <th rowspan="2">Минимальные проходные баллы 2022</th>
+                                            <th rowspan="2">Минимальные проходные баллы {{ "now"|date("Y")-1 }}</th>
                                             <th rowspan="2">Срок обучения</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        {% for pageCont in pageData6 %}
+                                        {% if pageCont is not empty %}
+                                            {% if pageCont.class == '9' %}
+                                                <tr>
+                                                    <td>{{pageCont.class|raw}}</td>
+                                                    <td>{{pageCont.speciality|raw}}</td>
+                                                    <td>{{pageCont.minimalBall|raw}}</td>
+                                                    <td>{{pageCont.trainingPeriod|raw}}</td>
+                                                </tr>
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    {% for pageCont in pageData6 %}
+                                        {% if pageCont is not empty %}
+                                            {% if pageCont.class == '11' %}
+                                                <tr>
+                                                    <td>{{pageCont.class|raw}}</td>
+                                                    <td>{{pageCont.speciality|raw}}</td>
+                                                    <td>{{pageCont.minimalBall|raw}}</td>
+                                                    <td>{{pageCont.trainingPeriod|raw}}</td>
+                                                </tr>
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
                                     </tbody>
                                 </table>
                                 </div>

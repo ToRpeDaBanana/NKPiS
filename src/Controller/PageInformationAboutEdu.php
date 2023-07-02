@@ -44,6 +44,25 @@ use Symfony\Component\HttpFoundation\Request;
 
 class PageInformationAboutEdu extends AbstractController
 {
+    #[Route('/basicInformation', methods:['GET'])]
+    public function basicInformation(
+        ManagerRegistry $doctrine,
+        SessionService $sessionService,
+        SessionInterface $session,
+        EntityManagerInterface $entityManager 
+        
+    ): Response
+        
+    {
+        // $pageContent = $entityManager->getRepository(Documents::class)->findAll();
+
+
+        return $this->render('Information-about-educational/OsnovSved.html.twig', [
+            'controller_name' => 'PageController',
+            // 'pageData' => $pageContent,
+            'sessionData' => $sessionService->getSessionData($session)
+        ]);
+    }
     #[Route('/documents', methods:['GET'])]
     public function documents(
         ManagerRegistry $doctrine,
@@ -253,8 +272,8 @@ class PageInformationAboutEdu extends AbstractController
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
-    #[Route('/public-report-of-the-head', methods:['GET'])]
-    public function PublicDocklad(
+    #[Route('/publicReport', methods:['GET'])]
+    public function PublicReport(
         ManagerRegistry $doctrine,
         SessionService $sessionService,
         SessionInterface $session,
@@ -266,13 +285,13 @@ class PageInformationAboutEdu extends AbstractController
         $pageContent = $entityManager->getRepository(PublicReport::class)->findAll();
 
 
-        return $this->render('Information-about-educational/PublicDocklad.html.twig', [
+        return $this->render('Information-about-educational/PublickDocklad.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
-    #[Route('/specialists-and-services', methods:['GET'])]
+    #[Route('/specialistsAndServices', methods:['GET'])]
     public function RezimWorkSpecSupport(
         ManagerRegistry $doctrine,
         SessionService $sessionService,
