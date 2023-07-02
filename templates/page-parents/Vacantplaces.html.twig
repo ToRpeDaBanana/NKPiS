@@ -23,6 +23,9 @@
 	<tbody>
 {% for pageCont in pageData1 %}
     {% if pageCont is not empty %}
+	<tr>
+		<td style="text-align: center;" colspan="5"><strong>1 курс</strong></td>
+	</tr>
 		<tr>
 			<td>{{ pageCont.course|raw }}</td>
 			<td>{{ pageCont.professioSpecialty|raw }}</td>

@@ -67,6 +67,7 @@ function colorSiteCustom(color1,color2){
 	$('h5').css(textColor);
 	$('h3').css(textColor);
 	$('h2').css(textColor);
+	$('span').css(textColor);
 	$('h1').css(textColor);
 	$('dl').css(textColor);
 	$('.tab-page-student label').css(cssBorderColor);
@@ -77,6 +78,7 @@ function colorSiteCustom(color1,color2){
 	$('.news-date').css(news);
 	$('.news-number').css(news);
 	$('thead').css(cssColor);
+	$('th').css(textColorBlack);
 	$('td').css(textColor);
 	$('legend').css(textColor);
 	$('b').css(textColor);
@@ -272,6 +274,8 @@ function customStyle(){
 }
 
 function classicStyleSite(){
+	$('th').removeAttr("style");
+	$('thead').removeAttr("style");
 	$('.header-top-left').removeAttr("style");
 	$('.container-nav-menu').removeAttr("style");
 	$('.tab label').removeAttr("style");
