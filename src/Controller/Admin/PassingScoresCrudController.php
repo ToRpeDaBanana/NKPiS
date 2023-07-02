@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\PassingScores;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -25,5 +26,11 @@ class PassingScoresCrudController extends AbstractCrudController
             TextField::new('minimal_ball')->setLabel('Минимальный проходной балл'),
             TextField::new('training_period')->setLabel('Срок обучения'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Проходные баллы прошлых лет');
     }
 }

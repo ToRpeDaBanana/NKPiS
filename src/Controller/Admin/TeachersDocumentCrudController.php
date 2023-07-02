@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\TeachersDocument;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -24,6 +25,12 @@ class TeachersDocumentCrudController extends AbstractCrudController
             ->setBasePath('public\assets\upload\files')
             ->setLabel('Документ'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Педагогический состав документы');
     }
 
 }

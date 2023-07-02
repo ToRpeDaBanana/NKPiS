@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\AcceptanceCheckDigits;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -20,5 +21,11 @@ class AcceptanceCheckDigitsCrudController extends AbstractCrudController
             TextField::new('years_title')->setLabel('Год приёма'),
             TextEditorField::new('text')->setLabel('Текст'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Год приёма');
     }
 }

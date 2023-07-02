@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\HelpAGraduate;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 
@@ -20,6 +21,12 @@ class HelpAGraduateCrudController extends AbstractCrudController
             TextEditorField::new('text_one')->setLabel('Текст-1'),
             TextEditorField::new('text_two')->setLabel('Текст-2'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('В помощь выпускнику');
     }
 
 }

@@ -20,7 +20,7 @@ class AboutCentre
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $title = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 800, nullable: true)]
     private ?string $text_two = null;
 
     #[ORM\Column(length: 255)]
@@ -29,7 +29,7 @@ class AboutCentre
     #[ORM\Column(length: 255)]
     private ?string $email = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 800, nullable: true)]
     private ?string $text_tree = null;
 
     #[ORM\Column(type: Types::ARRAY, nullable: true)]

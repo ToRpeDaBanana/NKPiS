@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\CollegeAdmissionTitle;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
@@ -30,6 +31,12 @@ class CollegeAdmissionTitleCrudController extends AbstractCrudController
             ->setBasePath('public\assets\upload\img')
             ->setLabel('Выбрать фото'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Информация о приёмной комиссии');
     }
 
 }

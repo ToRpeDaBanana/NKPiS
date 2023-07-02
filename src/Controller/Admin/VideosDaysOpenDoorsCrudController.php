@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\VideosDaysOpenDoors;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -23,6 +24,12 @@ class VideosDaysOpenDoorsCrudController extends AbstractCrudController
             TextEditorField::new('text')->setLabel('Текст'),
             UrlField::new('link')->setLabel('Ссылка'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Дни открытых дверей информация');
     }
 
 }

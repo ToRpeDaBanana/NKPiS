@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\NewsCentre;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
@@ -31,6 +32,12 @@ class NewsCentreCrudController extends AbstractCrudController
             TextEditorField::new('text_two')->setLabel('Текст-2'),
             
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('новость')
+            ->setEntityLabelInPlural('Новости центра');
     }
 
 }

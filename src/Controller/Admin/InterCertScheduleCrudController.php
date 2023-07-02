@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\InterCertSchedule;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -24,6 +25,12 @@ class InterCertScheduleCrudController extends AbstractCrudController
             ->setFormTypeOption('multiple', true)
             ->setLabel('Выбрать файл(ы)'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Рассписание промежуточной аттестации');
     }
 
 }

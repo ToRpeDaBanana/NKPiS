@@ -20,7 +20,7 @@ class OpenDoorsTable
     #[ORM\Column(length: 255)]
     private ?string $address = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 1000)]
     private ?string $text = null;
 
     #[ORM\Column(length: 255)]

@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\NormativeDocuments;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
@@ -24,5 +25,11 @@ class NormativeDocumentsCrudController extends AbstractCrudController
             ->setFormTypeOption('multiple', true)
             ->setLabel('Выбрать файл'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Нормативные документы приёмной комиссии');
     }
 }

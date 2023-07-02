@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\SliderReclama;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
@@ -28,6 +29,12 @@ class SliderReclamaCrudController extends AbstractCrudController
             ->setBasePath('public\assets\upload\img')
             ->setLabel('Фото для мобильной версии'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('элемент')
+            ->setEntityLabelInPlural('Элементы слайдера рекламы');
     }
 
 }

@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\PhotoGallery;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -28,6 +29,12 @@ class PhotoGalleryCrudController extends AbstractCrudController
             ->setFormTypeOption('multiple', true)
             ->setLabel('Выбрать фото'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Фотогалерея');
     }
 
 }

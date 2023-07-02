@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\MedicalServiceDocument;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 
@@ -28,5 +29,11 @@ class MedicalServiceDocumentCrudController extends AbstractCrudController
             ->setFormTypeOption('multiple', true)
             ->setLabel('Дополнительные документы'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Документы');
     }
 }

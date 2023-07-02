@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\TransferCollege;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -23,6 +24,12 @@ class TransferCollegeCrudController extends AbstractCrudController
             TextField::new('sub_title')->setLabel('Подзаголовок'),
             TextEditorField::new('text_instruction')->setLabel('Пошаговая инструкция для перевода в колледж'),
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('запись')
+            ->setEntityLabelInPlural('Переход в колледж из другого учебного заведения');
     }
 
 }
