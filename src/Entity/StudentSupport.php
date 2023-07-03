@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\StudentSupportRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: StudentSupportRepository::class)]
@@ -18,9 +19,8 @@ class StudentSupport
 
     #[ORM\Column(length: 255)]
     private ?string $graduates = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $graduate_employment = null;
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: false)]
+    private ?\DateTimeInterface $graduate_employment = null;
 
     #[ORM\Column]
     private ?int $boys = null;
@@ -80,13 +80,12 @@ class StudentSupport
 
         return $this;
     }
-
-    public function getGraduateEmployment(): ?string
+    public function getGraduateEmployment(): ?\DateTimeInterface
     {
         return $this->graduate_employment;
     }
 
-    public function setGraduateEmployment(string $graduate_employment): static
+    public function setGraduateEmployment(\DateTimeInterface $graduate_employment): self
     {
         $this->graduate_employment = $graduate_employment;
 

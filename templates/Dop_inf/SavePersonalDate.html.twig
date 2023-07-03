@@ -6,7 +6,15 @@
                 <h3 >Законы</h3>
                 <div class="text-style">
                     <div class="label-contactPod">
-                        <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' }}"></a></i>
+                         {% for pageCont in pageData %}
+                            {% if pageCont is not empty %}
+                                {% if pageCont.category == '1' %}
+                                    <i class="fa-regular fa-file-pdf">
+                                    <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">{{pageCont.title}}</a>
+                                    </i>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -15,7 +23,15 @@
                 <h3 >Приказы</h3>
                 <div class="text-style">
                     <div class="label-contactPod">
-                        <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' }}"></a></i>
+                        {% for pageCont in pageData %}
+                            {% if pageCont is not empty %}
+                                {% if pageCont.category == '2' %}
+                                    <i class="fa-regular fa-file-pdf">
+                                    <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">{{pageCont.title}}</a>
+                                    </i>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -24,7 +40,15 @@
                 <h3 >Указы, постановления, распоряжения</h3>
                 <div class="text-style">
                     <div class="label-contactPod">
-                        <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' }}"></a></i>
+                        {% for pageCont in pageData %}
+                            {% if pageCont is not empty %}
+                                {% if pageCont.category == '3' %}
+                                    <i class="fa-regular fa-file-pdf">
+                                    <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">{{pageCont.title}}</a>
+                                    </i>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -33,7 +57,15 @@
                 <h3 >Рекомендации</h3>
                 <div class="text-style">
                     <div class="label-contactPod">
-                        <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' }}"></a></i>
+                        {% for pageCont in pageData %}
+                            {% if pageCont is not empty %}
+                                {% if pageCont.category == '4' %}
+                                    <i class="fa-regular fa-file-pdf">
+                                    <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">{{pageCont.title}}</a>
+                                    </i>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>

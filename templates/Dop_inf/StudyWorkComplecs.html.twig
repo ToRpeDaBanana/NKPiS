@@ -2,7 +2,13 @@
 {% block main %}
     <h1 class="label-contactPod">Учебно-производственный комплекс</h1>
     <br>
-    <p></p>
-    <img class="img-style" src="" alt="">
-
+    {% for pageCont in pageData %}
+        {% if pageCont is not empty %}
+            <p>{{pageCont.text|raw}}</p>
+            {% for photo in pageData.photo %}
+                <img class="img-style" src="{{ '/assets/upload/img/' ~ photo|raw }}" alt="">
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+    
 {% endblock %}

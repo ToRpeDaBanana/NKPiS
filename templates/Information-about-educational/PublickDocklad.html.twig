@@ -5,7 +5,13 @@
         <div class="label-contactPod">
         <div class="text-style">
             <div>
-                <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' }}"></a></i>
+                {% for pageCont in pageData %}
+                    {% if pageCont is not empty %}
+                        <i class="fa-regular fa-file-pdf">
+                            <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">{{pageCont.title|raw}}</a>
+                        </i>
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
         </div>
