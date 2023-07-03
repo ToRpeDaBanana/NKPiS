@@ -227,8 +227,9 @@
         animation-duration: 0.8s;
         animation-direction: normal;
         z-index: 1;
-        display: none;
-    }.pod-nav-menu.hide{
+        /* display: none; */
+    }
+    .pod-nav-menu.hide{
         height: 0;
         opacity: 0;
         pointer-events: none;
@@ -240,7 +241,8 @@
     .nav-menu-first{
         margin-left:20px ;
     }
-    .nav-menu ul{
+    .nav-menu > ul{
+        display: flex;
         list-style-type: none;
         margin: 10px;
     }
@@ -1355,6 +1357,7 @@
         min-height: auto;
     }
     @media (max-width: 500px){
+       
         .logo-slide-2{
             position: absolute;z-index: 10;top: 20%;margin-left: 0.5%;
             font-family: 'PT Sans', sans-serif;
@@ -1559,6 +1562,15 @@
     }
     }
     @media (max-width: 1200px){
+        .nav-menu.hide{
+            opacity: 0;
+            pointer-events: none;
+            animation-name: exam;
+            animation-duration: 0.8s;
+            animation-direction: normal;
+            z-index: 1;
+            display: none;
+        }
         .header__menu {
             position: fixed;
             top: -100%;
