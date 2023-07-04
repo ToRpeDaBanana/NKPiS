@@ -25,6 +25,7 @@ use App\Entity\CalendarTrainingSchedule;
 use App\Entity\CallSchedule;
 use App\Entity\CollegeAdmission;
 use App\Entity\CollegeAdmissionTitle;
+use App\Entity\Comment;
 use App\Entity\Curriculum;
 use App\Entity\DemoExam;
 use App\Entity\Documents;
@@ -371,17 +372,6 @@ class EasyAdminSubscriber implements EventSubscriberInterface{
             if(file_exists($imgpath)) unlink($imgpath);
             }
         }
-        if ($entity instanceof QuestionAnswer){
-            if(is_array($entity->getFile())){
-                foreach($entity->getFile() as $item){
-                    if (!empty($item)){
-                    $imgpath = $this->parameterBag->get('kernel.project_dir') . 
-                    '/public/assets/upload/files/'.$item;
-                    if(file_exists($imgpath)) unlink($imgpath);
-                    }
-                }
-            }    
-        }
         if ($entity instanceof Schedule){
             if(is_array($entity->getFile())){
                 foreach($entity->getFile() as $item){
@@ -601,6 +591,22 @@ class EasyAdminSubscriber implements EventSubscriberInterface{
         }   
         }
         if ($entity instanceof EduStandards){
+            $item = $entity->getFile();
+        if (!empty($item)){
+            $imgpath = $this->parameterBag->get('kernel.project_dir') . 
+            '/public/assets/upload/files/'.$item;
+            if(file_exists($imgpath)) unlink($imgpath);
+        }   
+        }
+        if ($entity instanceof Comment){
+            $item = $entity->getFile();
+        if (!empty($item)){
+            $imgpath = $this->parameterBag->get('kernel.project_dir') . 
+            '/public/assets/upload/files/'.$item;
+            if(file_exists($imgpath)) unlink($imgpath);
+        }   
+        }
+        if ($entity instanceof QuestionAnswer){
             $item = $entity->getFile();
         if (!empty($item)){
             $imgpath = $this->parameterBag->get('kernel.project_dir') . 

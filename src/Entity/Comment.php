@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\CommentRepository;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -20,8 +21,20 @@ class Comment
     #[ORM\Column(length: 255)]
     private ?string $email = null;
 
+    #[ORM\Column(length: 400)]
+    private ?string $text = null;
+
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date = null;
+
+    
+     #[Assert\File(
+         maxSize:"5M",  // ограничение на максимальный размер файла
+     )]
+
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $file = null;
 
     public function getId(): ?int
     {
@@ -51,6 +64,17 @@ class Comment
 
         return $this;
     }
+    public function getText(): ?string
+    {
+        return $this->text;
+    }
+
+    public function setText(string $text): self
+    {
+        $this->text = $text;
+
+        return $this;
+    }
 
     public function getDate(): ?\DateTimeInterface
     {
@@ -60,6 +84,17 @@ class Comment
     public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
+
+        return $this;
+    }
+    public function getFile(): ?string
+    {
+        return $this->file;
+    }
+
+    public function setFile(?string $file): self
+    {
+        $this->file = $file;
 
         return $this;
     }

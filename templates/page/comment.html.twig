@@ -3,23 +3,67 @@
 {% block main %}
     <h1 class="label-contactPod">Отзывы об учреждении</h1>
     <div class="news-div-1">
-    <div class="news-div">
+        {# {{ form_start(form) }}
+        {{ form_row(form.name) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.text) }}
+        {{ form_row(form.file) }}
+        <button type="submit">Submit</button>
+        {{ form_end(form) }} #}
+
+        {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(form.name) }}
+    </div>
+    
+    <div class="form-group">
+        {{ form_label(form.email) }}
+        {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(form.email) }}
+    </div>
+    
+    <div class="form-group">
+        {{ form_label(form.text) }}
+        {{ form_widget(form.text, {'attr': {'class': 'form-control', 'rows': 4}}) }}
+        {{ form_errors(form.text) }}
+    </div>
+    
+    <div class="form-group">
+        {{ form_label(form.file) }}
+        {{ form_widget(form.file, {'attr': {'class': 'form-control-file'}}) }}
+        {{ form_errors(form.file) }}
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Отправить</button>
+{{ form_end(form) }}
+{% for pageCont in pageData|reverse %}
+    {% if pageCont is not empty %}
+            <div class="news-div">
                     <div class="news-date-div">
                         <div class="news-border"></div>
                         <div class="news-date">
-                            03.06.2023
-                            ФИО
+                            {{ pageCont.date|date('d.m.Y')|raw }}
+                            {{ pageCont.name|raw }}
                         </div>
                         <div class="news-number">
-                        №1
+                        {{ pageCont.id|raw }}
+                        
                         </div>
                     </div>
                     <div class="news-label">
-                        <p>Текст отзыва</p>
+                        <p>{{ pageCont.text|raw }}</p>
                         <br>
+                        {% if pageCont.file is not empty %}
+                            <a href="{{ pageCont.file|raw }}">Вложенный файл</a>
+                        {% endif %}
                         <br>
                     </div>
 
+                </div>
+    {% endif %}
+{% endfor %}
     </div>
-</div>
+    
 {% endblock %}

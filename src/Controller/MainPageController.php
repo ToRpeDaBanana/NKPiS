@@ -3,8 +3,10 @@
 namespace App\Controller;
 use App\Entity\Category;
 use App\Entity\News;
+use App\Entity\QuestionAnswer;
 use App\Entity\SliderMain;
 use App\Entity\SliderReclama;
+use App\Form\QuestionAnswerType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,6 +15,9 @@ use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Service\SessionService;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 class MainPageController extends AbstractController
 {
     #[Route('/', name: 'app_main_page')]
@@ -25,10 +30,38 @@ class MainPageController extends AbstractController
         EntityManagerInterface $entityManager, 
         ManagerRegistry $doctrine,
         SessionService $sessionService,
+        SluggerInterface $slugger
     ): Response
 
     {
-        
+        $review = new QuestionAnswer();
+        $form = $this->createForm(QuestionAnswerType::class, $review);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+             /** @var UploadedFile $file */
+             $file = $form->get('file')->getData();
+             if ($file) {
+                 $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+                 $safeFilename = $slugger->slug($originalFilename);
+                 $newFilename = $safeFilename.'-'.uniqid().'.'.$file->guessExtension();
+                 try {
+                     $file->move(
+                         $this->getParameter('kernel.project_dir') . 
+                         '/public/assets/upload/files/',
+                         $newFilename
+                     );
+                 } catch (FileException $e) {
+                 }
+ 
+                 $review->setFile($newFilename);
+            }
+            $review->setDate(new \DateTime());
+            $entityManager->persist($review);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('questionandanswer_new');
+        }
 
         // $includeValues = [
         //     'fontSize',
@@ -90,6 +123,7 @@ class MainPageController extends AbstractController
         
         return $this->render('main_page/index.html.twig', [
             'controller_name' => 'MainPageController',
+            'form' => $form->createView(),
             'pageData1' => $pageContent1,
             'pageData2' => $pageContent2,
             'pageData3' => $pageContent3,

@@ -3,26 +3,63 @@
 {% block main %}
     <h1 class="label-contactPod">Задать вопрос</h1>
     {# Шаблон вопроса #}
+    {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(form.name) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.phone) }}
+        {{ form_widget(form.phone, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(form.phone) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.email) }}
+        {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(form.email) }}
+    </div>
+    
+    <div class="form-group">
+        {{ form_label(form.text_question) }}
+        {{ form_widget(form.text_question, {'attr': {'class': 'form-control', 'rows': 4}}) }}
+        {{ form_errors(form.text_question) }}
+    </div>
+    
+    <div class="form-group">
+        {{ form_label(form.file) }}
+        {{ form_widget(form.file, {'attr': {'class': 'form-control-file'}}) }}
+        {{ form_errors(form.file) }}
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Отправить</button>
+{{ form_end(form) }}
 
+{% for pageCont in pageData|reverse %}
+    {% if pageCont is not empty %}
 <div class="all-answer-question">
+
 <div class="news-div-1-1">
+
     <div class="news-div">
                     <div class="news-date-div">
                         <div class="news-border"></div>
                         <div class="news-date">
-                            03.06.2023
+                            {{ pageCont.date|date('d.m.Y')|raw }}
+                            {{ pageCont.name|raw }}
                         </div>
                         <div class="news-number">
-                        №1
+                        <p>вопрос <strong>№{{ pageCont.id|raw }}</strong></p>
                         </div>
                     </div>
                     <div class="news-label">
-                        <p>Вопрос</p>
+                        <p>{{ pageCont.textQuestion|raw }}</p>
                         <br>
                         <br>
                     </div>
 
     </div>
+    
 </div>
     {# Шаблон ответа #}
         <div class="news-div-1">
@@ -30,19 +67,22 @@
                     <div class="news-date-div">
                         <div class="news-border"></div>
                         <div class="news-date">
-                            03.06.2023
+                            {{ pageCont.dateAnswer|date('d.m.Y')|raw }}
+                            {{ pageCont.nameAnswer|raw }}
                         </div>
                         <div class="news-number">
-                        №1
+                        <p>ответ на вопрос <strong>№{{ pageCont.id|raw }}</strong></p>
                         </div>
                     </div>
                     <div class="news-label">
-                        <p class="QandA">Ответ</p>
+                        <p class="QandA">{{ pageCont.textAnswer|raw }}</p>
                         <br>
                         <br>
                     </div>
 
     </div>
+    </div>
 </div>
-</div>
+{% endif %}
+{% endfor %}
 {% endblock %}

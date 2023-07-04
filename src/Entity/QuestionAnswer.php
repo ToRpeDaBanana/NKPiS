@@ -3,19 +3,20 @@
 namespace App\Entity;
 
 use App\Repository\QuestionAnswerRepository;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: QuestionAnswerRepository::class)]
+
+ #[ORM\HasLifecycleCallbacks()]
+
 class QuestionAnswer
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $whom = null;
 
     #[ORM\Column(length: 255)]
     private ?string $name = null;
@@ -28,30 +29,65 @@ class QuestionAnswer
 
     #[ORM\Column(length: 1000)]
     private ?string $text_question = null;
-
-    #[ORM\Column(type: Types::ARRAY, nullable: true)]
-    private ?array $file = null;
+    #[Assert\File(
+        maxSize:"5M",  // ограничение на максимальный размер файла
+    )]
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $file = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $name_answer = null;
+
+    #[ORM\Column(length: 1000, nullable: true)]
+    private ?string $text_answer = null;
+
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $date_answer = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
-
-    public function getWhom(): ?string
+    public function getDateAnswer(): ?\DateTimeInterface
     {
-        return $this->whom;
+        return $this->date_answer;
     }
 
-    public function setWhom(string $whom): static
+
+    #[ORM\PreUpdate]
+
+
+    public function setDateAnswer(): static
     {
-        $this->whom = $whom;
+        $this->date_answer = new \DateTime();
 
         return $this;
     }
+    public function getTextAnswer(): ?string
+    {
+        return $this->text_answer;
+    }
 
+    public function setTextAnswer(string $text_answer): static
+    {
+        $this->text_answer = $text_answer;
+
+        return $this;
+    }
+    public function getNameAnswer(): ?string
+    {
+        return $this->name_answer;
+    }
+
+    public function setNameAnswer(string $name_answer): static
+    {
+        $this->name_answer = $name_answer;
+
+        return $this;
+    }
     public function getName(): ?string
     {
         return $this->name;
@@ -100,12 +136,12 @@ class QuestionAnswer
         return $this;
     }
 
-    public function getFile(): ?array
+    public function getFile(): ?string
     {
         return $this->file;
     }
 
-    public function setFile(?array $file): static
+    public function setFile(?string $file): static
     {
         $this->file = $file;
 

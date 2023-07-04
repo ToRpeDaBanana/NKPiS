@@ -27,6 +27,7 @@ use App\Entity\CalendarTrainingSchedule;
 use App\Entity\CallSchedule;
 use App\Entity\CollegeAdmission;
 use App\Entity\CollegeAdmissionTitle;
+use App\Entity\Comment;
 use App\Entity\Curriculum;
 use App\Entity\DemoExam;
 use App\Entity\Documents;
@@ -75,6 +76,7 @@ use App\Entity\ProfDocument;
 use App\Entity\ProfessionalEdu;
 use App\Entity\PsychologicalSupport;
 use App\Entity\PublicReport;
+use App\Entity\QuestionAnswer;
 use App\Entity\Schedule;
 use App\Entity\SliderMain;
 use App\Entity\SliderReclama;
@@ -137,9 +139,11 @@ class DashboardController extends AbstractDashboardController
         return [
 
             MenuItem::linkToDashboard('Панель управления', 'fa fa-home'),
-            MenuItem::section('Новости', ''),
+            MenuItem::section('Новости, отзывы, вопросы', ''),
                 MenuItem::linkToCrud('Новости', '', News::class),
                 MenuItem::linkToCrud('Новости центра', '', NewsCentre::class),
+                MenuItem::linkToCrud('Отзывы', '', Comment::class),
+                MenuItem::linkToCrud('Вопросы и ответы', '', QuestionAnswer::class),
                 
             MenuItem::section('Слайдеры', ''),
                 MenuItem::linkToCrud('Основной слайдер', '', SliderMain::class),

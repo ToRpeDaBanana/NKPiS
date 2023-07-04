@@ -42,22 +42,22 @@ class PageParentsController extends AbstractController
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
-    #[Route('/questionandanswer', methods:['GET'])]
-    public function questionandanswer(
-        ManagerRegistry $doctrine,
-        SessionService $sessionService,
-        SessionInterface $session,
-        EntityManagerInterface $entityManager 
-    ): Response
+    // #[Route('/questionandanswer', methods:['GET'])]
+    // public function questionandanswer(
+    //     ManagerRegistry $doctrine,
+    //     SessionService $sessionService,
+    //     SessionInterface $session,
+    //     EntityManagerInterface $entityManager 
+    // ): Response
         
-    {
-        $pageContent = $entityManager->getRepository(QuestionAnswer::class)->findAll();
-        return $this->render('page-parents/Questionandanswer.html.twig', [
-            'controller_name' => 'PageController',
-            'pageData' => $pageContent,
-            'sessionData' => $sessionService->getSessionData($session)
-        ]);
-    }
+    // {
+    //     $pageContent = $entityManager->getRepository(QuestionAnswer::class)->findAll();
+    //     return $this->render('page-parents/Questionandanswer.html.twig', [
+    //         'controller_name' => 'PageController',
+    //         'pageData' => $pageContent,
+    //         'sessionData' => $sessionService->getSessionData($session)
+    //     ]);
+    // }
     #[Route('/psychologicalsupport', methods:['GET'])]
     public function psychologicalsupport(
         ManagerRegistry $doctrine,

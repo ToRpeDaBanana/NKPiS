@@ -24,8 +24,8 @@ class SliderMainCrudController extends AbstractCrudController
             TextEditorField::new('text')->setLabel('Текст'),
             UrlField::new('link')->setLabel('Ссылка'),
             ImageField::new('photo')
-            ->setUploadDir('public\assets\upload\img')
-            ->setBasePath('public\assets\upload\img')
+            ->setUploadDir('\assets\upload\img')
+            ->setBasePath('\assets\upload\img')
             ->setLabel('Фото'),
         ];
     }

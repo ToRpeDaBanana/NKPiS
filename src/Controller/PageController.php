@@ -156,25 +156,25 @@ class PageController extends AbstractController
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
-    #[Route('/comment', methods:['GET'])]
-    public function comment(
-        ManagerRegistry $doctrine,
-        SessionService $sessionService,
-        SessionInterface $session,
-        EntityManagerInterface $entityManager  
-    ): Response
+    // #[Route('/comment', methods:['GET'])]
+    // public function comment(
+    //     ManagerRegistry $doctrine,
+    //     SessionService $sessionService,
+    //     SessionInterface $session,
+    //     EntityManagerInterface $entityManager  
+    // ): Response
         
-    {
-        $pageContent = $entityManager->getRepository(Comment::class)->findAll();
-        // var_dump($pageAbout);
-        // exit;
+    // {
+    //     $pageContent = $entityManager->getRepository(Comment::class)->findAll();
+    //     // var_dump($pageAbout);
+    //     // exit;
 
-        return $this->render('page/comment.html.twig', [
-            'controller_name' => 'PageController',
-            'pageData' => $pageContent,
-            'sessionData' => $sessionService->getSessionData($session)
-        ]);
-    }
+    //     return $this->render('page/comment.html.twig', [
+    //         'controller_name' => 'PageController',
+    //         'pageData' => $pageContent,
+    //         'sessionData' => $sessionService->getSessionData($session)
+    //     ]);
+    // }
     #[Route('/ourAch', methods:['GET'])]
     public function ourAch(
         ManagerRegistry $doctrine,
