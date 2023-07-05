@@ -2,31 +2,44 @@
 
 {% block main %}
     <h1 class="label-contactPod">Задать вопрос</h1>
+    <div style="display: flex;" id="text-confirmation">
+        <div>
+            <p>Я подтверждаю свое согласие:</p>
+            <p>На использование в качестве каналов передачи информации, содержащейся в обращении, открытых каналов связи сети Интернет.</p>
+            <p><a href="https://www.rg.ru/documents/2006/07/29/personaljnye-dannye-dok.html">На обработку моих персональных данных в соответствии с федеральным законом РФ от 27.07.2006 № 152-ФЗ "О персональных данных".</a></p>
+            <p>В случае согласия с установленным порядком нажмите "Согласен" для продолжения работы. Если Вы не согласны, нажмите "Не согласен" для завершения работы.</p>
+            <p>
+                    <a  href="#" onclick="toggleVisibility()" id="btn-yes">Согласен</a>&nbsp; / &nbsp;<a href="/" class="btn btn-link">Не согласен</a>
+            </p>
+        </div>
+    </div>
+<div  style="display: none;" id="div-otziv" class="news-div-1">
     {# Шаблон вопроса #}
     {{ form_start(form) }}
-    <div class="form-group">
+
+    <div style="width: 350px;" class="form-group">
         {{ form_label(form.name) }}
         {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
         {{ form_errors(form.name) }}
     </div>
-    <div class="form-group">
+    <div style="width: 350px;" class="form-group">
         {{ form_label(form.phone) }}
         {{ form_widget(form.phone, {'attr': {'class': 'form-control'}}) }}
         {{ form_errors(form.phone) }}
     </div>
-    <div class="form-group">
+    <div style="width: 350px;" class="form-group">
         {{ form_label(form.email) }}
         {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
         {{ form_errors(form.email) }}
     </div>
     
-    <div class="form-group">
+    <div style="width: 350px;" class="form-group">
         {{ form_label(form.text_question) }}
         {{ form_widget(form.text_question, {'attr': {'class': 'form-control', 'rows': 4}}) }}
         {{ form_errors(form.text_question) }}
     </div>
     
-    <div class="form-group">
+    <div style="width: 350px;" class="form-group">
         {{ form_label(form.file) }}
         {{ form_widget(form.file, {'attr': {'class': 'form-control-file'}}) }}
         {{ form_errors(form.file) }}
@@ -34,14 +47,15 @@
     
     <button type="submit" class="btn btn-primary">Отправить</button>
 {{ form_end(form) }}
+</div>
 
 {% for pageCont in pageData|reverse %}
     {% if pageCont is not empty %}
-<div class="all-answer-question">
+<div style="display: flex;flex-direction: column;align-items: center;" class="all-answer-question">
 
-<div class="news-div-1-1">
+<div style="width: 80%;" class="news-div-1">
 
-    <div class="news-div">
+    <div  class="news-div">
                     <div class="news-date-div">
                         <div class="news-border"></div>
                         <div class="news-date">
@@ -62,7 +76,7 @@
     
 </div>
     {# Шаблон ответа #}
-        <div class="news-div-1">
+        <div style="width: 80%;" class="news-div-1-1">
     <div class="news-div">
                     <div class="news-date-div">
                         <div class="news-border"></div>
@@ -82,6 +96,7 @@
 
     </div>
     </div>
+</div>
 </div>
 {% endif %}
 {% endfor %}

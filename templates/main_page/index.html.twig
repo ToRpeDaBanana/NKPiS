@@ -39,6 +39,7 @@
 	        <script src="{{'/assets/js/For-slider-reklama.js'}}"></script>
             <script src="{{'/assets/js/For-slider-news.js'}}"></script>
             <script src="{{'/assets/js/For-slider.js'}}"></script>
+			<script src="{{'/assets/js/tab-menu.js'}}"></script>
             
         {% endblock %}
     </head>
@@ -141,7 +142,7 @@
  			<div class="app-header-nav-menu">
 			        <span id="hh1"><img class="img_1" src="{{'/assets/img/Group 64.png'}}" alt="">&nbsp;&nbsp;О нас</span>
                 
-			        <div class="nav-menu">
+			        <div style="border-top: 3.5px solid orange;" class="nav-menu">
 			        	<ul >
                         
 				        	 <ul>
@@ -173,7 +174,7 @@
 			       
 			       <div class="app-header-nav-menu">
 			        <span id="hh1"><img class="img_1" src="{{'/assets/img/Group 65.png'}}" alt="">&nbsp;&nbsp;Родителям</span>
-			        <div class="nav-menu">
+			        <div style="border-top: 3.5px solid #57DD5C;" class="nav-menu">
 						<ul>
 				        	 <ul>
 				        		<li><a href="{{'/vacantplaces'}}">Вакантные места для приема<br>(перевода) обучающихся</a></li>
@@ -195,7 +196,7 @@
 
 			    <div class="app-header-nav-menu">
 			        <span id="hh1"><img class="img_1" src="{{'/assets/img/Group 66.png'}}" alt="">&nbsp;&nbsp;Учащимся</span>
-			        <div class="nav-menu">
+			        <div style="border-top: 3.5px solid #6BD6F8" class="nav-menu">
 						<ul>
 				        	 <ul>
 				        		<li><a href="{{'/studyperiods'}}">Расписание, учебные периоды, каникулы</a></li>
@@ -223,7 +224,7 @@
 			    
 			    <div class="app-header-nav-menu">
 			        <span id="hh1"><img class="img_1" src="{{'/assets/img/Group 67.png'}}" alt="">&nbsp;&nbsp;Педагогам</span>
-			        <div class="nav-menu">
+			        <div style="border-top: 3.5px solid #FA4988" class="nav-menu">
 						<ul>
 				        	 <ul>
 				        		<li><a href="{{'/jobopenings'}}">Вакансии</a></li>
@@ -237,7 +238,7 @@
 
 			    <div class="app-header-nav-menu">
 			        <span id="hh1"><img class="img_1" src="{{'/assets/img/Group 68.png'}}" alt="">&nbsp;&nbsp;Поступление в колледж</span>
-			        <div class="nav-menu">
+			        <div style="border-top: 3.5px solid #B368EE" class="nav-menu">
 						<ul>
 				        	 <ul>
 				        		<li><a href="{{'/admissionCommittee'}}">Приемная комиссия</a></li>
@@ -373,7 +374,7 @@
                             <div class="first-slider">
                             <img class="img_slider" src="{{'/assets/upload/img/'}}{{ pageCont.firstPhoto|first|raw }}" alt="">
                             <p class="date-time" style="">{{ pageCont.date|date('d-m-Y')|raw }}</p>
-                            <h2 class="logo-slide-2" style="">{{ pageCont.title|raw }}</h2>
+                            <h2 class="logo-slide-2" style="max-width: 30ch;width: 90%;">{{ pageCont.title|raw }}</h2>
                             <a class="button-slide-2" href="{{'/news/'}}{{pageCont.id}}">Подробнее</a>
                             </div>
                             </a>
@@ -445,6 +446,8 @@
 									{{ form_errors(form.email) }}
 								</div>
                             </li>
+							<br>
+							<button disabled id="check-btn"  type="submit" class="btn btn-primary"/>Отправить</button>
                         </ul>
 	
     
@@ -454,7 +457,7 @@
     
     
     
-    				<button type="submit" class="btn btn-primary">Отправить</button>
+    				
 
                     </div>
                     <div class="tab-content-2-1">
@@ -481,7 +484,7 @@
                         </li>
 						
                         <li>
-                            <input name="check" class="custom-checkbox" id="check" type="checkbox"><label  id="chec" for="check" >Я подтверждаю свое согласие:</label><p class="hui">На использование в качестве каналов передачи информации, содержащейся в обращении, открытых каналов связи сети Интернет. На обработку моих персональных данных в соответствии с федеральным законом РФ от 27.07.2006 № 152-ФЗ "О персональных данных".</p>
+                            <input onclick="toggleButton()" name="check" class="custom-checkbox" id="check" type="checkbox"><label  id="chec" for="check" >Я подтверждаю свое согласие:</label><p class="hui">На использование в качестве каналов передачи информации, содержащейся в обращении, открытых каналов связи сети Интернет. На обработку моих персональных данных в соответствии с федеральным законом РФ от 27.07.2006 № 152-ФЗ "О персональных данных".</p>
                         </li>
 						{{ form_end(form) }}
                     </ul>
