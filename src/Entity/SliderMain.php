@@ -4,6 +4,9 @@ namespace App\Entity;
 
 use App\Repository\SliderMainRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Constraints\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: SliderMainRepository::class)]
 class SliderMain
@@ -21,6 +24,17 @@ class SliderMain
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $link = null;
+
+    // #[Assert\File(
+    //     maxSize:"1M",
+    //     // maxWidth: 2560,
+    //     // maxHeight: 1440,
+    //     // mimeTypes: ['image/jpeg', 'image/png'],
+    //     // maxWidth: 1920,
+    //     // maxHeight: 1080,
+    //     // maxHeightMessage: "Фотография слишком велика по высоте",
+    //     // maxWidthMessage: "Фотография слишком велика по ширине",
+    // )]
 
     #[ORM\Column(length: 255)]
     private ?string $photo = null;
