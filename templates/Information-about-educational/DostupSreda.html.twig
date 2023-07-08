@@ -6,7 +6,7 @@
         {% if pageCont is not empty %}
             <p class="label-contactPod">{{pageCont.text|raw}}</p>
              {% for photo in pageCont.photo %}
-                        <img src="{{ '/assets/upload/img/' ~ photo|raw }}" alt="">
+                        <img src="{{ asset('/assets/upload/img/') ~ photo|raw }}" alt="">
                 {% endfor %}
             <p class="label-contactPod">{{pageCont.textTwo|raw}}</p>
         {% endif %}

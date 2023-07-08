@@ -10,7 +10,7 @@
                             {% if pageCont is not empty %}
                                 {% if pageCont.category == '1' %}
                                     <i class="fa-regular fa-file-pdf">
-                                    <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">{{pageCont.title}}</a>
+                                    <a href="{{asset('/assets/upload/files/') ~ pageCont.file|raw }}">{{pageCont.title}}</a>
                                     </i>
                                 {% endif %}
                             {% endif %}
@@ -27,7 +27,7 @@
                             {% if pageCont is not empty %}
                                 {% if pageCont.category == '2' %}
                                     <i class="fa-regular fa-file-pdf">
-                                    <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">{{pageCont.title}}</a>
+                                    <a href="{{asset('/assets/upload/files/') ~ pageCont.file|raw }}">{{pageCont.title}}</a>
                                     </i>
                                 {% endif %}
                             {% endif %}
@@ -44,7 +44,7 @@
                             {% if pageCont is not empty %}
                                 {% if pageCont.category == '3' %}
                                     <i class="fa-regular fa-file-pdf">
-                                    <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">{{pageCont.title}}</a>
+                                    <a href="{{asset('/assets/upload/files/') ~ pageCont.file|raw }}">{{pageCont.title}}</a>
                                     </i>
                                 {% endif %}
                             {% endif %}
@@ -61,7 +61,7 @@
                             {% if pageCont is not empty %}
                                 {% if pageCont.category == '4' %}
                                     <i class="fa-regular fa-file-pdf">
-                                    <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">{{pageCont.title}}</a>
+                                    <a href="{{asset('/assets/upload/files/') ~ pageCont.file|raw }}">{{pageCont.title}}</a>
                                     </i>
                                 {% endif %}
                             {% endif %}

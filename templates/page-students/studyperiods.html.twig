@@ -6,7 +6,7 @@
         <ul>
         {% for pageCont in pageData1 %}
             {% if pageCont is not empty %}
-                <li><i class="fa-regular fa-file-pdf"><a class="style-link" href="{{'/assets/upload/files/'}}{{ pageCont.file|raw }}">{{ pageCont.title|raw }}</a></i></li>
+                <li><i class="fa-regular fa-file-pdf"><a class="style-link" href="{{asset('/assets/upload/files/')}}{{ pageCont.file|raw }}">{{ pageCont.title|raw }}</a></i></li>
             {% endif %}
         {% endfor %}
         </ul>
@@ -27,7 +27,7 @@
                     {% for pageCont in pageData2 %}
                         {% if pageCont is not empty %}
                             {% for file in pageCont.file %}
-                                <p><a class="style-link" href="{{'/assets/upload/files/' ~ file|raw }}">{{ file|raw }}</a></p>
+                                <p><a class="style-link" href="{{asset('/assets/upload/files/') ~ file|raw }}">{{ file|raw }}</a></p>
                             {% endfor %}
                         {% endif %}
                     {% endfor %}
@@ -70,7 +70,7 @@
 {% for pageCont in pageData4 %}
     {% if pageCont is not empty %}
         {% for file in pageCont.file %}
-            <a href="{{'/assets/upload/files/' ~ file|raw }}">{{ file|raw }}</a>
+            <a href="{{asset('/assets/upload/files/') ~ file|raw }}">{{ file|raw }}</a>
         {% endfor %}
     {% endif %}
 {% endfor %}

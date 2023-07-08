@@ -13,7 +13,7 @@
                 <h1>{{ pageCont.title|raw }}</h1>
                 <p>{{ pageCont.textOne|raw }}</p>
                 {% for photo in pageCont.photo %}
-                    <img src="{{ '/assets/upload/img/' ~ photo|raw }}" alt="">
+                    <img src="{{ asset('/assets/upload/img/') ~ photo|raw }}" alt="">
                 {% endfor %}
                 <p>{{ pageCont.textTwo|raw }}</p>
             </div>

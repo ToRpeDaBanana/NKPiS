@@ -6,6 +6,7 @@ use App\Entity\ProfDocument;
 use App\Entity\TeachersContests;
 use App\Entity\VacanciesTeachers;
 use App\Entity\VeteransLabor;
+use App\Entity\Contact;
 use App\Entity\VeteransLaborDocument;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -29,11 +30,12 @@ class PageTeachersController extends AbstractController
         
     {
         $pageContent = $entityManager->getRepository(VacanciesTeachers::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
 
         return $this->render('page-teachers/Jobopenings.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -48,11 +50,12 @@ class PageTeachersController extends AbstractController
         
     {
         $pageContent = $entityManager->getRepository(TeachersContests::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
 
         return $this->render('page-teachers/Conferences.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -67,11 +70,12 @@ class PageTeachersController extends AbstractController
         
     {
         $pageContent = $entityManager->getRepository(ProfDocument::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
 
         return $this->render('page-teachers/TradeUnion.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -87,12 +91,13 @@ class PageTeachersController extends AbstractController
     {
         $pageContent1 = $entityManager->getRepository(VeteransLabor::class)->findAll();
         $pageContent2 = $entityManager->getRepository(VeteransLaborDocument::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
 
         return $this->render('page-teachers/CouncilofVeteransofPedagogicalLabor.html.twig', [
             'controller_name' => 'PageController',
             'pageData1' => $pageContent1,
             'pageData2' => $pageContent2,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -108,12 +113,13 @@ class PageTeachersController extends AbstractController
     {
         $pageContent1 = $entityManager->getRepository(VeteransLabor::class)->findAll();
         $pageContent2 = $entityManager->getRepository(VeteransLaborDocument::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
 
         return $this->render('page-teachers/CouncilofVeteransofPedagogicalLaborId.html.twig', [
             'controller_name' => 'PageController',
             'pageData1' => $pageContent1,
             'pageData2' => $pageContent2,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }

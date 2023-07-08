@@ -16,7 +16,7 @@
                     
                         <ul>
                         <div class="teacher-flex-box-1">
-                            <img class="directro-logo-teacher" src="{{'/assets/upload/img/'}}{{ pageCont.photo|default('siluet.png')|raw }}" alt="">
+                            <img class="directro-logo-teacher" src="{{asset('/assets/upload/img/')}}{{ pageCont.photo|default('siluet.png')|raw }}" alt="">
                             <div>
                                 <ul>
                                     <li>
@@ -53,7 +53,7 @@
                             <div><h5>{{ pageCont.name|raw }}</h5></div>
                         <ul>
                             <div class="teacher-flex-box-1">
-                                    <img class="directro-logo-teacher" src="{{'/assets/upload/img/'}}{{ pageCont.photo|default('siluet.png')|raw }}" alt="">
+                                    <img class="directro-logo-teacher" src="{{asset('/assets/upload/img/')}}{{ pageCont.photo|default('siluet.png')|raw }}" alt="">
                                 <div>
                                     <ul>
                                         <li>
@@ -92,7 +92,7 @@
         {% for pageCont in pageData2 %}
             {% if pageCont is not empty %}
                 <li>
-                    <a href="{{'/assets/upload/files/'}}{{ pageCont.file|raw }}">{{ pageCont.title|raw }}</a>
+                    <a href="{{asset('/assets/upload/files/')}}{{ pageCont.file|raw }}">{{ pageCont.title|raw }}</a>
                 </li>
             {% endif %}
         {% endfor %}
@@ -107,7 +107,7 @@
             {% if pageCont is not empty %}
                 {% if pageCont.categoryJobTitle == 'low' %}
                     <div class="element-galery">
-                        <div ><img class="galery-sotrudnik" src="{{'/assets/upload/img/'}}{{ pageCont.photo|default('siluet.png')|raw }}"></div>
+                        <div ><img class="galery-sotrudnik" src="{{asset('/assets/upload/img/')}}{{ pageCont.photo|default('siluet.png')|raw }}"></div>
                         <p>{{ pageCont.name|raw }}</p>
                         <p>{{ pageCont.jobTitle|raw }}</p>
                     </div>

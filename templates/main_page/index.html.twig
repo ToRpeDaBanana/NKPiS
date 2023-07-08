@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>{% block title %}НКПиС{% endblock %}</title>
         {# <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>"> #}
-        <link rel="icon" href="{{'/assets/img/iconSite.png'}}" type="image/png">
+        <link rel="icon" href="{{ asset('/assets/img/iconSite.png')}}" type="image/png">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>НКПиС</title>
@@ -16,15 +16,18 @@
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+        {# <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script> #}
         <script src="https://kit.fontawesome.com/591871d84f.js" crossorigin="anonymous"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         
         
         {% block stylesheets %}
 
-        <link rel="stylesheet" href="{{'/assets/css/style.css'}}">
+        {# <link rel="stylesheet" href="{{'/assets/css/style.css'}}"> #}
+			{{encore_entry_link_tags('app')}}
+			
+			
         {% endblock %}
 
         {% block javascripts %}
@@ -32,14 +35,15 @@
                 var myData = '{{ sessionData | json_encode | raw }}';
                 var myData1 = JSON.parse(myData);
             </script>
-            <script src="{{'/assets/js/burger.js'}}"></script>
+			{{encore_entry_script_tags('js')}}
+            {#<script src="{{'/assets/js/burger.js'}}"></script>
             <script src="{{'/assets/js/For-visually-impaired.js'}}"></script>
 	        <script src="{{'/assets/js/nav-menu.js'}}"></script>
 	        <script src="{{'/assets/js/slick.min.js'}}"></script>
 	        <script src="{{'/assets/js/For-slider-reklama.js'}}"></script>
             <script src="{{'/assets/js/For-slider-news.js'}}"></script>
             <script src="{{'/assets/js/For-slider.js'}}"></script>
-			<script src="{{'/assets/js/tab-menu.js'}}"></script>
+			<script src="{{'/assets/js/tab-menu.js'}}"></script>#}
             
         {% endblock %}
     </head>
@@ -70,9 +74,9 @@
 		<div class="between-interval">
 			<p class = "between-interval-text">Междустрочный итервал</p>
 		<div class="flex-between-interval">
-			<a class ="between-interval-small"><img  src="{{'/assets/img/Group49.png'}}" alt=""></a>
-			<a class ="between-interval-midle"><img  src="{{'/assets/img/Group 50.png'}}" alt=""></a>
-			<a class ="between-interval-large"><img  src="{{'/assets/img/Group 51.png'}}" alt=""></a>
+			<a class ="between-interval-small"><img  src="{{ asset('/assets/img/Group49.png')}}" alt=""></a>
+			<a class ="between-interval-midle"><img  src="{{ asset('/assets/img/Group 50.png')}}" alt=""></a>
+			<a class ="between-interval-large"><img  src="{{ asset('/assets/img/Group 51.png')}}" alt=""></a>
 		</div>
 		</div>
 		<div class = "color-site">
@@ -95,17 +99,17 @@
 
 		<div class="header-top-left">
 			<span class="for-slepix-pidorasov">
-				<a class="for-visually-impaired"><img src="{{'/assets/img/Group 2.png'}}" alt=""></a>
-				<a href="#contakt"><img src="{{'/assets/img/Group 1.png'}}" alt=""></a>
+				<a class="for-visually-impaired"><img src="{{ asset('/assets/img/Group 2.png') }}" alt=""></a>
+				<a href="#contakt"><img src="{{ asset('/assets/img/Group 1.png') }}" alt=""></a>
 			</span>
 				<span class="socialnetworks">
-					<a href="вк"><img src="{{'/assets/img/uil_vk.png'}}" alt=""></a>
-					<a href="тг"><img src="{{'/assets/img/Vector.png'}}" alt=""></a>
+					<a href="вк"><img src="{{ asset('assets/img/uil_vk.png') }}" alt=""></a>
+					<a href="тг"><img src="{{ asset('/assets/img/Vector.png') }}" alt=""></a>
 				</span>
 		</div>
 		<div class="main_part_header">
 			<div class="logo">
-			<a href="/"><img class="img_logo" src="{{'/assets/img/NKPiS.png'}}" alt=""></a>
+			<a href="{{ path('app_main_page') }}"><img class="img_logo" src="{{ asset('/assets/img/NKPiS.png')}}" alt=""></a>
 			</div>
 			<div class="main_header">
 			<div class="ministr">
@@ -125,7 +129,7 @@
 				</div>
 			<div class="call">
 				<div class="png_call">
-					<img class="img_1" src="{{'/assets/img/Group 63.png'}}" alt="" width="52px">
+					<img class="img_1" src="{{ asset('/assets/img/Group 63.png')}}" alt="" width="52px">
 				</div>
 				<div class="call_me">
 					<p>Позвоните нам:</p>
@@ -140,7 +144,7 @@
  		<nav id="up-nav-menu" class="header__menu">
         
  			<div class="app-header-nav-menu">
-			        <span id="hh1"><img class="img_1" src="{{'/assets/img/Group 64.png'}}" alt="">&nbsp;&nbsp;О нас</span>
+			        <span id="hh1"><img class="img_1" src="{{ asset('/assets/img/Group 64.png')}}" alt="">&nbsp;&nbsp;О нас</span>
                 
 			        <div style="border-top: 3.5px solid orange;" class="nav-menu">
 			        	<ul >
@@ -153,7 +157,7 @@
 				        	
 				        		<span id="hh">Органы управления</span>
 		 						<li class="pod-nav-menu">
-		 							<a href="{{'governingBodies/controlSoviet'}}">Управляющий совет</a>
+		 							<a href="{{'/governingBodies/controlSoviet'}}">Управляющий совет</a>
 		 						</li>
 		 					</ul>
 		 					<ul>
@@ -173,7 +177,7 @@
 			</div>
 			       
 			       <div class="app-header-nav-menu">
-			        <span id="hh1"><img class="img_1" src="{{'/assets/img/Group 65.png'}}" alt="">&nbsp;&nbsp;Родителям</span>
+			        <span id="hh1"><img class="img_1" src="{{ asset('/assets/img/Group 65.png')}}" alt="">&nbsp;&nbsp;Родителям</span>
 			        <div style="border-top: 3.5px solid #57DD5C;" class="nav-menu">
 						<ul>
 				        	 <ul>
@@ -195,7 +199,7 @@
 			    </div>
 
 			    <div class="app-header-nav-menu">
-			        <span id="hh1"><img class="img_1" src="{{'/assets/img/Group 66.png'}}" alt="">&nbsp;&nbsp;Учащимся</span>
+			        <span id="hh1"><img class="img_1" src="{{ asset('/assets/img/Group 66.png')}}" alt="">&nbsp;&nbsp;Учащимся</span>
 			        <div style="border-top: 3.5px solid #6BD6F8" class="nav-menu">
 						<ul>
 				        	 <ul>
@@ -223,7 +227,7 @@
 			    </div>
 			    
 			    <div class="app-header-nav-menu">
-			        <span id="hh1"><img class="img_1" src="{{'/assets/img/Group 67.png'}}" alt="">&nbsp;&nbsp;Педагогам</span>
+			        <span id="hh1"><img class="img_1" src="{{ asset('/assets/img/Group 67.png')}}" alt="">&nbsp;&nbsp;Педагогам</span>
 			        <div style="border-top: 3.5px solid #FA4988" class="nav-menu">
 						<ul>
 				        	 <ul>
@@ -237,7 +241,7 @@
 			    </div>
 
 			    <div class="app-header-nav-menu">
-			        <span id="hh1"><img class="img_1" src="{{'/assets/img/Group 68.png'}}" alt="">&nbsp;&nbsp;Поступление в колледж</span>
+			        <span id="hh1"><img class="img_1" src="{{ asset('/assets/img/Group 68.png')}}" alt="">&nbsp;&nbsp;Поступление в колледж</span>
 			        <div style="border-top: 3.5px solid #B368EE" class="nav-menu">
 						<ul>
 				        	 <ul>
@@ -266,7 +270,7 @@
                     <div  class="podpis_first_slider">
                             <a href="{{ pageCont.link|raw }}">
                             <div class="first-slider">
-                            <img class="img_slider" src="{{'/assets/upload/img/'}}{{ pageCont.photo|raw }}" alt="">
+                            <img class="img_slider" src="{{ asset('/assets/upload/img/')}}{{ pageCont.photo|raw }}" alt="">
                             <div class="logo-slide" style="">{{ pageCont.title|raw }}</div>
                             <div class="podpis-slide" style="">{{ pageCont.text|raw }}</div>
                             <a class="button-slide" href="{{ pageCont.link|raw }}">Подробнее</a>
@@ -282,7 +286,7 @@
 			</div>
 	
             <div class="director-logo">
-                    <img src="{{'/assets/img/director-logo.jpg'}}" alt="" class="director">
+                    <img src="{{ asset('/assets/img/director-logo.jpg')}}" alt="" class="director">
                 </div>
             <div class="tab">
                 
@@ -317,7 +321,7 @@
                     <div class="first-str-icon">
                     <a class="first-icon" href="#">
                         <div class="button-fast-dostup">
-                                <img class="img_1" src="{{'/assets/img/shkola_protiv_bullinga 1.png'}}" alt="">
+                                <img class="img_1" src="{{ asset('/assets/img/shkola_protiv_bullinga 1.png')}}" alt="">
                                 <br>
                                 <p class="button-fast-dostup-text">Приёмная комиссия<br>(номер телефона)</p>
                             
@@ -325,7 +329,7 @@
                     </a>
                     <a class="first-icon" href="#">
                         <div class="button-fast-dostup">
-                                <img class="img_1" src="{{'/assets/img/professii_i_specialnosti_2 1.png'}}" alt="">
+                                <img class="img_1" src="{{ asset('/assets/img/professii_i_specialnosti_2 1.png')}}" alt="">
                                 <br>
                                 <p class="button-fast-dostup-text">Специальности и<br>профессии</p>
                             
@@ -333,7 +337,7 @@
                     </a>
                     <a class="first-icon" href="#">
                         <div class="button-fast-dostup">
-                                <img class="img_1" src="{{'/assets/img/meropriyatiya 1.png'}}" alt="">
+                                <img class="img_1" src="{{ asset('/assets/img/meropriyatiya 1.png')}}" alt="">
                                 <br>
                                 <p class="button-fast-dostup-text">Мероприятия для<br>абитуриентов</p>
                             
@@ -343,7 +347,7 @@
                     <div class="second-str-icon">
                     <a class="first-icon" href="#">
                         <div class="button-fast-dostup">
-                                <img class="img_1" src="{{'/assets/img/Kontakty 1.png'}}" alt="">
+                                <img class="img_1" src="{{ asset('/assets/img/Kontakty 1.png')}}" alt="">
                                 <br>
                                 <p class="button-fast-dostup-text">Получить консультацию<br>приёмной комиссии</p>
                             
@@ -351,7 +355,7 @@
                     </a>
                     <a class="first-icon" href="#">
                         <div class="button-fast-dostup">
-                                <img class="img_1" src="{{'/assets/img/formy_dokumentov 1.png'}}" alt="">
+                                <img class="img_1" src="{{ asset('/assets/img/formy_dokumentov 1.png')}}" alt="">
                                 <br>
                                 <p class="button-fast-dostup-text">Заказать справку</p>
                             
@@ -372,7 +376,7 @@
                     <div  class="podpis_first_slider">
                             <a href="{{'/news/'}}{{pageCont.id}}">
                             <div class="first-slider">
-                            <img class="img_slider" src="{{'/assets/upload/img/'}}{{ pageCont.firstPhoto|first|raw }}" alt="">
+                            <img class="img_slider" src="{{asset('/assets/upload/img/') }}{{ pageCont.firstPhoto|first|raw }}" alt="">
                             <p class="date-time" style="">{{ pageCont.date|date('d-m-Y')|raw }}</p>
                             <h2 class="logo-slide-2" style="max-width: 30ch;width: 90%;">{{ pageCont.title|raw }}</h2>
                             <a class="button-slide-2" href="{{'/news/'}}{{pageCont.id}}">Подробнее</a>
@@ -390,8 +394,8 @@
                 {% for pageCont in pageData2 %}
                     {% if pageCont is not empty %}
                         <div class="sLider__item">
-                            <a class="first-child" href=""><img class="img_slider" src="{{'/assets/upload/img/'}}{{ pageCont.photoPc|raw }}" alt=""></a>
-                            <a class="second-child" href=""><img  class="img_slider" src="{{'/assets/upload/img/'}}{{ pageCont.photoMobile|raw }}" alt=""></a>
+                            <a class="first-child" href=""><img class="img_slider" src="{{asset('/assets/upload/img/')}}{{ pageCont.photoPc|raw }}" alt=""></a>
+                            <a class="second-child" href=""><img  class="img_slider" src="{{ asset('/assets/upload/img/')}}{{ pageCont.photoMobile|raw }}" alt=""></a>
                         </div>
                     {% endif %}
                 {% endfor %}
@@ -484,7 +488,7 @@
                         </li>
 						
                         <li>
-                            <input onclick="toggleButton()" name="check" class="custom-checkbox" id="check" type="checkbox"><label  id="chec" for="check" >Я подтверждаю свое согласие:</label><p class="hui">На использование в качестве каналов передачи информации, содержащейся в обращении, открытых каналов связи сети Интернет. На обработку моих персональных данных в соответствии с федеральным законом РФ от 27.07.2006 № 152-ФЗ "О персональных данных".</p>
+                            <input  name="check" class="custom-checkbox" id="check" type="checkbox"><label  id="chec" for="check" >Я подтверждаю свое согласие:</label><p class="hui">На использование в качестве каналов передачи информации, содержащейся в обращении, открытых каналов связи сети Интернет. На обработку моих персональных данных в соответствии с федеральным законом РФ от 27.07.2006 № 152-ФЗ "О персональных данных".</p>
                         </li>
 						{{ form_end(form) }}
                     </ul>
@@ -572,35 +576,63 @@
 				<p>Контактные данные</p>
 			</div>
 		<div class="common-contackt">
+		
+                
 			<div class="our-contakt">
 				<h3 class="logo-otdel">Наши контакты</h3>
 				<ul>
-					<li><p class="Officials">Директор<br>Фамилия<br>Имя отчество</p></li>
-					<li><p>Тел.: 8 800 555 35 35<br>E-mail:Любой</p></li>
-					<li><p class="Officials">Секретарь<br>Фамилия<br>Имя отчество</p></p></li>
-					<li><p>Тел.: 8 800 555 35 35<br>E-mail:Любой</p></li>
+		{% for pageCont in contact %}
+            {% if pageCont is not empty %}
+				{% if pageCont.category == '1' %}
+					<li><p class="Officials">Директор<br>{{pageCont.surname|raw}}<br>{{pageCont.name|raw}}&nbsp;{{pageCont.othestvo|raw}}</p></li>
+					<li><p>Тел.:&nbsp;{{pageCont.phone|raw}}<br>E-mail:&nbsp;{{pageCont.email|raw}}</p></li>
+				{% endif %}
+				{% if pageCont.category == '2' %}
+					<li><p class="Officials">Секретарь<br>{{pageCont.surname|raw}}<br>{{pageCont.name|raw}}&nbsp;{{pageCont.othestvo|raw}}</p></p></li>
+					<li><p>Тел.:&nbsp;{{pageCont.phone|raw}}<br>E-mail:&nbsp;{{pageCont.email|raw}}</p></li>
+				{% endif %}
+{% endif %}
+		{% endfor %}
 				</ul>
 			</div>
+			
+			
 			<div class="contakt-DONM">
 			<div class="contakt-DONM-1">
 				<h3 class="logo-otdel-1">Контакты ДОНМ</h3>
 				<ul>
-					<li><p class="Officials">Инспектор округа<br>Фамилия<br>Имя отчество</p></li>
-					<li><p>Тел.: 8 800 555 35 35</p></li>
-					<li><p>E-mail:Любой</p></li>
-					<li><p class="Officials">Межрайонный совет<br>Фамилия<br>Имя отчество</p></li>
-					<li><p>Тел.: 8 800 555 35 35</p></li>
-					<li><p>E-mail:Любой</p></li>
+				{% for pageCont in contact %}
+            {% if pageCont is not empty %}
+					{% if pageCont.category == '3' %}
+					<li><p class="Officials">Инспектор округа<br>{{pageCont.surname|raw}}<br>{{pageCont.name|raw}}&nbsp;{{pageCont.othestvo|raw}}</p></li>
+					<li><p>Тел.:&nbsp;{{pageCont.phone|raw}}</p></li>
+					<li><p>E-mail:&nbsp;{{pageCont.email|raw}}</p></li>
+					{% endif %}
+					{% if pageCont.category == '5' %}
+					<li><p class="Officials">Межрайонный совет<br>{{pageCont.surname|raw}}<br>{{pageCont.name|raw}}&nbsp;{{pageCont.othestvo|raw}}</p></li>
+					<li><p>Тел.:&nbsp;{{pageCont.phone|raw}}</p></li>
+					<li><p>E-mail:&nbsp;{{pageCont.email|raw}}</p></li>
+					{% endif %}
+					{% endif %}
+					{% endfor %}
 				</ul>
 			</div>
 			<div class="contakt-DONM-2">
 				<ul >
-					<li><p class="Officials">Куратор округа<br>Фамилия<br>Имя отчество</p></li>
-					<li><p>Тел.: 8 800 555 35 35</p></li>
-					<li><p>E-mail:Любой</p></li>
-					<li><p class="Officials">Представитель управ. совета<br>Фамилия<br>Имя отчество</p></li>
-					<li><p>Тел.: 8 800 555 35 35</p></li>
-					<li><p>E-mail:Любой</p></li>
+				{% for pageCont in contact %}
+            {% if pageCont is not empty %}
+				{% if pageCont.category == '4' %}
+					<li><p class="Officials">Куратор округа<br>{{pageCont.surname|raw}}<br>{{pageCont.name|raw}}&nbsp;{{pageCont.othestvo|raw}}</p></li>
+					<li><p>Тел.:&nbsp;{{pageCont.phone|raw}}</p></li>
+					<li><p>E-mail:&nbsp;{{pageCont.email|raw}}</p></li>
+				{% endif %}
+				{% if pageCont.category == '6' %}
+					<li><p class="Officials">Представитель управ. совета<br>{{pageCont.surname|raw}}<br>{{pageCont.name|raw}}&nbsp;{{pageCont.othestvo|raw}}</p></li>
+					<li><p>Тел.:&nbsp;{{pageCont.phone|raw}}</p></li>
+					<li><p>E-mail:&nbsp;{{pageCont.email|raw}}</p></li>
+				{% endif %}
+				{% endif %}
+				{% endfor %}
 				</ul>
 			</div>
 			</div>
@@ -610,10 +642,10 @@
 				<div class="for-down-footer">
 					<span class="button-down-footer">
 						<a class="for-visually-impaired">
-							<img src="{{'/assets/img/Group 2 (1).png'}}" alt="">
+							<img src="{{ asset('/assets/img/Group 2 (1).png')}}" alt="">
 						</a>
                         <a class="classic-site-version-btn">
-			                <img src="{{'/assets/img/Group 3.png'}}" alt="">
+			                <img src="{{ asset('/assets/img/Group 3.png')}}" alt="">
 		                </a>
 					</span>
 					<p>2023 © Государственное автономное профессиональное образовательное<br>

@@ -8,7 +8,7 @@
     {% if pageCont is not empty %}
        <div class="platform-for-photo">
             <a href="{{'/photoAndVideo/photoGallery/'}}{{pageCont.id}}">
-                <img class="for-galery" src="{{'/assets/upload/img/'}}{{ pageCont.mainPhoto|raw }}" alt="">
+                <img class="for-galery" src="{{asset('/assets/upload/img/')}}{{ pageCont.mainPhoto|raw }}" alt="">
                 <span>{{pageCont.title}}</span>
                 {% set count = pageCont.photo|length %}
                 <span>{{ count }}&nbsp;фото</span>

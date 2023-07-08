@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Entity\Comment;
+use App\Entity\Contact;
 use App\Entity\ControlSovChairman;
 use App\Entity\ControlSovDocuments;
 use App\Entity\ControlSovMeetings;
@@ -44,10 +45,11 @@ class PageController extends AbstractController
     {
         $pageContent1 = $entityManager->getRepository(Teachers::class)->findAll();
         $pageContent2 = $entityManager->getRepository(TeachersDocument::class)->findAll();
-        
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page/teachers.html.twig', [
             'controller_name' => 'PageController',
             'pageData1' => $pageContent1,
+            'contact' => $contact,
             'pageData2' => $pageContent2,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
@@ -62,10 +64,12 @@ class PageController extends AbstractController
     ): Response
         
     {
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         $pageContent = $entityManager->getRepository(GeneralInf::class)->findAll();
         return $this->render('page/generalInformation.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -81,10 +85,11 @@ class PageController extends AbstractController
         $pageContent = $entityManager->getRepository(DepartmentContacts::class)->findAll();
         // var_dump($pageAbout);
         // exit;
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page/contactPod.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -100,10 +105,11 @@ class PageController extends AbstractController
         $pageContent = $entityManager->getRepository(News::class)->findAll();
         // var_dump($pageAbout);
         // exit;
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page/news.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -121,11 +127,12 @@ class PageController extends AbstractController
         // $pageContent = $entityManager->getRepository(News::class)->findAll();
         // var_dump($pageAbout);
         // exit;
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page/newsId.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
             // 'pageData2' => $pageContent2,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -145,13 +152,14 @@ class PageController extends AbstractController
         $pageContent5 = $entityManager->getRepository(ControlSovPastMeetings::class)->findAll();
         // var_dump($pageAbout);
         // exit;
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page/controlSov.html.twig', [
             'controller_name' => 'PageController',
             'pageData1' => $pageContent1,
             'pageData2' => $pageContent2,
             'pageData3' => $pageContent3,
             'pageData4' => $pageContent4,
+            'contact' => $contact,
             'pageData5' => $pageContent5,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
@@ -188,11 +196,12 @@ class PageController extends AbstractController
         $pageContent2 = $entityManager->getRepository(OurAchievementsTable::class)->findAll();
         // var_dump($pageAbout);
         // exit;
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page/ourAch.html.twig', [
             'controller_name' => 'PageController',
             'pageData1' => $pageContent1,
             'pageData2' => $pageContent2,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -209,10 +218,11 @@ class PageController extends AbstractController
         $pageContent = $entityManager->getRepository(PaidEduServ::class)->findAll();
         // var_dump($pageAbout);
         // exit;
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page/payToEdicution.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -228,10 +238,11 @@ class PageController extends AbstractController
         $pageContent = $entityManager->getRepository(PhotoGallery::class)->findAll();
         // var_dump($pageAbout);
         // exit;
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page/photo.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -247,10 +258,11 @@ class PageController extends AbstractController
         $pageContent = $entityManager->getRepository(PhotoGallery::class)->findAll();
         // var_dump($pageAbout);
         // exit;
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page/photoId.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }

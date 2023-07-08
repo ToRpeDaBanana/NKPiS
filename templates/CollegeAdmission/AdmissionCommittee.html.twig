@@ -6,7 +6,7 @@
     <div class="label-contactPod">
 {% for pageCont in pageData1 %}
     {% if pageCont is not empty %}
-        <img class = "img" src="{{'/assets/upload/img/'}}{{ pageCont.photo|raw }}" alt="">
+        <img class = "img" src="{{asset('/assets/upload/img/')}}{{ pageCont.photo|raw }}" alt="">
         <p>{{ pageCont.text|raw}}</p>
         <p>Звоните:&nbsp;{{ pageCont.phone|raw}}</p>
         <p>Пишите:&nbsp;{{ pageCont.email|raw}}</p>
@@ -83,7 +83,7 @@
                                         <p>{{ pageCont.text|raw}}</p>
                                         {% for file in pageCont.file %}
                                             <div>
-                                                <a href="{{ '/assets/upload/files/' ~ file|raw }}" alt="">{{file}}</a>
+                                                <a href="{{ asset('/assets/upload/files/') ~ file|raw }}" alt="">{{file}}</a>
                                             </div>
                                         {% endfor %}
                                     {% endif %}
@@ -303,7 +303,7 @@
         <div class="label-contactPod">
             <div class="text-style">
                                 <div class="label-contactPod">
-                                    <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' }}"></a></i>
+                                    <i class="fa-regular fa-file-pdf"><a href="{{asset('/assets/upload/files/') }}"></a></i>
                                 </div>
                             </div>
         </div>

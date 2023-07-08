@@ -2,10 +2,12 @@
 
 namespace App\Controller;
 use App\Entity\Category;
+use App\Entity\Contact;
 use App\Entity\News;
 use App\Entity\QuestionAnswer;
 use App\Entity\SliderMain;
 use App\Entity\SliderReclama;
+use App\Entity\Teachers;
 use App\Form\QuestionAnswerType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -98,6 +100,7 @@ class MainPageController extends AbstractController
         $pageContent1 = $entityManager->getRepository(SliderMain::class)->findAll();
         $pageContent2 = $entityManager->getRepository(SliderReclama::class)->findAll();
         $pageContent3 = $entityManager->getRepository(News::class)->findAll();
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         // $sessionValues = [];
         // foreach($includeValues as $item){
         //     if ($session->has($item)){
@@ -127,6 +130,7 @@ class MainPageController extends AbstractController
             'pageData1' => $pageContent1,
             'pageData2' => $pageContent2,
             'pageData3' => $pageContent3,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session),
         ]);
     }

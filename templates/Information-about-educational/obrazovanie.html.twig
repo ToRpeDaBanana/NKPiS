@@ -360,7 +360,7 @@
                         {% for pageCont in pageData5 %}
                         {% if pageCont is not empty %}
                             <i class="fa-regular fa-file-pdf">
-                            <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">Лицензия на осуществление образовательной деятельности / выписка из реестра лицензий</a>
+                            <a href="{{asset('/assets/upload/files/') ~ pageCont.file|raw }}">Лицензия на осуществление образовательной деятельности / выписка из реестра лицензий</a>
                             </i>
                         {% endif %}
                         {% endfor %}
@@ -418,7 +418,7 @@
                     {% for pageCont in pageData6 %}
                         {% if pageCont is not empty %}
                             <i class="fa-regular fa-file-pdf">
-                                <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">Положение (инструкция) об организации дистанционного обучения</a>
+                                <a href="{{asset('/assets/upload/files/') ~ pageCont.file|raw }}">Положение (инструкция) об организации дистанционного обучения</a>
                             </i>
                         {% endif %}
                     {% endfor %}
@@ -444,10 +444,10 @@
                                                         {% if pageCont is not empty %}
                                                             {% if pageCont.category == '1' %} 
                                                             <i class="fa-regular fa-file-pdf">
-                                                            <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">{{pageCont.title}}</a>
+                                                            <a href="{{asset('/assets/upload/files/') ~ pageCont.file|raw }}">{{pageCont.title}}</a>
                                                             </i>&nbsp;
                                                             <i class="fa-regular fa-file-pdf">
-                                                            <a href="{{'/assets/upload/files/' ~ pageCont.description|raw }}">Описание образовательной программы</a>
+                                                            <a href="{{asset('/assets/upload/files/') ~ pageCont.description|raw }}">Описание образовательной программы</a>
                                                             </i>
                                                         {% endif %}
                                                         {% endif %}
@@ -467,10 +467,10 @@
                                                         {% if pageCont is not empty %}
                                                             {% if pageCont.category == '1' %} 
                                                             <i class="fa-regular fa-file-pdf">
-                                                            <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">{{pageCont.title}}</a>
+                                                            <a href="{{asset('/assets/upload/files/') ~ pageCont.file|raw }}">{{pageCont.title}}</a>
                                                             </i>&nbsp;
                                                             <i class="fa-regular fa-file-pdf">
-                                                            <a href="{{'/assets/upload/files/' ~ pageCont.description|raw }}">Описание образовательной программы</a>
+                                                            <a href="{{asset('/assets/upload/files/') ~ pageCont.description|raw }}">Описание образовательной программы</a>
                                                             </i>
                                                         {% endif %}
                                                         {% endif %}
@@ -500,10 +500,10 @@
                                                                             {% if pageCont is not empty %}
                                                                                 {% if pageCont.category == '1' %} 
                                                                                 <i class="fa-regular fa-file-pdf">
-                                                                                <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">{{pageCont.title}}</a>
+                                                                                <a href="{{asset('/assets/upload/files/') ~ pageCont.file|raw }}">{{pageCont.title}}</a>
                                                                                 </i>&nbsp;
                                                                                 <i class="fa-regular fa-file-pdf">
-                                                                                <a href="{{'/assets/upload/files/' ~ pageCont.description|raw }}">Описание образовательной программы</a>
+                                                                                <a href="{{asset('/assets/upload/files/') ~ pageCont.description|raw }}">Описание образовательной программы</a>
                                                                                 </i>
                                                                             {% endif %}
                                                                             {% endif %}
@@ -522,10 +522,10 @@
                                                                             {% if pageCont is not empty %}
                                                                                 {% if pageCont.category == '2' %} 
                                                                                 <i class="fa-regular fa-file-pdf">
-                                                                                <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">{{pageCont.title}}</a>
+                                                                                <a href="{{asset('/assets/upload/files/') ~ pageCont.file|raw }}">{{pageCont.title}}</a>
                                                                                 </i>&nbsp;
                                                                                 <i class="fa-regular fa-file-pdf">
-                                                                                <a href="{{'/assets/upload/files/' ~ pageCont.description|raw }}">Описание образовательной программы</a>
+                                                                                <a href="{{asset('/assets/upload/files/') ~ pageCont.description|raw }}">Описание образовательной программы</a>
                                                                                 </i>
                                                                             {% endif %}
                                                                             {% endif %}
@@ -544,10 +544,10 @@
                                                                             {% if pageCont is not empty %}
                                                                                 {% if pageCont.category == '3' %} 
                                                                                 <i class="fa-regular fa-file-pdf">
-                                                                                <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">{{pageCont.title}}</a>
+                                                                                <a href="{{asset('/assets/upload/files/') ~ pageCont.file|raw }}">{{pageCont.title}}</a>
                                                                                 </i>&nbsp;
                                                                                 <i class="fa-regular fa-file-pdf">
-                                                                                <a href="{{'/assets/upload/files/' ~ pageCont.description|raw }}">Описание образовательной программы</a>
+                                                                                <a href="{{asset('/assets/upload/files/') ~ pageCont.description|raw }}">Описание образовательной программы</a>
                                                                                 </i>
                                                                             {% endif %}
                                                                             {% endif %}
@@ -566,10 +566,10 @@
                                                                             {% if pageCont is not empty %}
                                                                                 {% if pageCont.category == '4' %} 
                                                                                 <i class="fa-regular fa-file-pdf">
-                                                                                <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">{{pageCont.title}}</a>
+                                                                                <a href="{{asset('/assets/upload/files/') ~ pageCont.file|raw }}">{{pageCont.title}}</a>
                                                                                 </i>&nbsp;
                                                                                 <i class="fa-regular fa-file-pdf">
-                                                                                <a href="{{'/assets/upload/files/' ~ pageCont.description|raw }}">Описание образовательной программы</a>
+                                                                                <a href="{{asset('/assets/upload/files/') ~ pageCont.description|raw }}">Описание образовательной программы</a>
                                                                                 </i>
                                                                             {% endif %}
                                                                             {% endif %}
@@ -590,10 +590,10 @@
                                                         {% if pageCont is not empty %}
                                                             {% if pageCont.category == '5' %} 
                                                                 <i class="fa-regular fa-file-pdf">
-                                                                <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">{{pageCont.title}}</a>
+                                                                <a href="{{asset('/assets/upload/files/') ~ pageCont.file|raw }}">{{pageCont.title}}</a>
                                                                 </i>&nbsp;
                                                                 <i class="fa-regular fa-file-pdf">
-                                                                <a href="{{'/assets/upload/files/' ~ pageCont.description|raw }}">Описание образовательной программы</a>
+                                                                <a href="{{asset('/assets/upload/files/') ~ pageCont.description|raw }}">Описание образовательной программы</a>
                                                                 </i>
                                                             {% endif %}
                                                         {% endif %}
@@ -629,10 +629,10 @@
                                                                         {% for pageCont in pageData9 %}
                                                                             {% if pageCont is not empty %}
                                                                                     <i class="fa-regular fa-file-pdf">
-                                                                                    <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">{{pageCont.title}}</a>
+                                                                                    <a href="{{asset('/assets/upload/files/') ~ pageCont.file|raw }}">{{pageCont.title}}</a>
                                                                                     </i>&nbsp;
                                                                                     <i class="fa-regular fa-file-pdf">
-                                                                                    <a href="{{'/assets/upload/files/' ~ pageCont.description|raw }}">Описание образовательной программы</a>
+                                                                                    <a href="{{asset('/assets/upload/files/') ~ pageCont.description|raw }}">Описание образовательной программы</a>
                                                                                     </i>
                                                                             {% endif %}
                                                                         {% endfor %}
@@ -663,7 +663,7 @@
                                                                         {% for pageCont in pageData10 %}
                                                                             {% if pageCont is not empty %}
                                                                                     <i class="fa-regular fa-file-pdf">
-                                                                                    <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">{{pageCont.title}}</a>
+                                                                                    <a href="{{asset('/assets/upload/files/') ~ pageCont.file|raw }}">{{pageCont.title}}</a>
                                                                                     </i>
                                                                             {% endif %}
                                                                         {% endfor %}
@@ -694,7 +694,7 @@
                                                                         {% for pageCont in pageData11 %}
                                                                             {% if pageCont is not empty %}
                                                                                     <i class="fa-regular fa-file-pdf">
-                                                                                    <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">{{pageCont.title}}</a>
+                                                                                    <a href="{{asset('/assets/upload/files/') ~ pageCont.file|raw }}">{{pageCont.title}}</a>
                                                                                     </i>
                                                                             {% endif %}
                                                                         {% endfor %}

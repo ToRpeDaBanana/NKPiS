@@ -8,7 +8,7 @@
         {# Банеры с приглашением на работу #}
             {% for pageCont in pageData1 %}
                 {% if pageCont is not empty %}
-                    <img class="img-style" src="{{'/assets/upload/img/'}}{{ pageCont.photo|raw }}" alt="">
+                    <img class="img-style" src="{{asset('/assets/upload/img/')}}{{ pageCont.photo|raw }}" alt="">
                     &nbsp;
                     &nbsp;
                     &nbsp;

@@ -26,6 +26,7 @@ class ScheduleCrudController extends AbstractCrudController
             ImageField::new('file')->setUploadDir('public\assets\upload\files')
             ->setBasePath('public\assets\upload\files')
             ->setFormTypeOption('multiple', true)
+            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Выбрать файл'),
         ];
     }

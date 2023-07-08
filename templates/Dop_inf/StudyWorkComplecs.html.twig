@@ -6,7 +6,7 @@
         {% if pageCont is not empty %}
             <p>{{pageCont.text|raw}}</p>
             {% for photo in pageData.photo %}
-                <img class="img-style" src="{{ '/assets/upload/img/' ~ photo|raw }}" alt="">
+                <img class="img-style" src="{{ asset('/assets/upload/img/') ~ photo|raw }}" alt="">
             {% endfor %}
         {% endif %}
     {% endfor %}

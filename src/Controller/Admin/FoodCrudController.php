@@ -21,10 +21,12 @@ class FoodCrudController extends AbstractCrudController
             ImageField::new('file_contract')
             ->setUploadDir('public\assets\upload\files')
             ->setBasePath('public\assets\upload\files')
+            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Договор на оказания услуг по организации питания'),
             ImageField::new('file_dogovor')
             ->setUploadDir('public\assets\upload\files')
             ->setBasePath('public\assets\upload\files')
+            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Договор платного питания'),
         ];
     }

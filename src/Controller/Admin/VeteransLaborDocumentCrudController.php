@@ -21,6 +21,7 @@ class VeteransLaborDocumentCrudController extends AbstractCrudController
             ImageField::new('file')
             ->setUploadDir('public\assets\upload\files')
             ->setBasePath('public\assets\upload\files')
+            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Документ'),
         ];
     }

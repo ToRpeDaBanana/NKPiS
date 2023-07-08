@@ -27,6 +27,7 @@ class NewsCentreCrudController extends AbstractCrudController
             ImageField::new('photo')
             ->setUploadDir('public\assets\upload\img')
             ->setBasePath('public\assets\upload\img')
+            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setFormTypeOption('multiple', true)
             ->setLabel('Фото-1'),
             TextEditorField::new('text_two')->setLabel('Текст-2'),

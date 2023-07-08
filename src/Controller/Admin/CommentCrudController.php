@@ -31,6 +31,7 @@ class CommentCrudController extends AbstractCrudController
             ImageField::new('file')
             ->setUploadDir('\assets\upload\files')
             ->setBasePath('\assets\upload\files')
+            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Файл')
         ];
     }

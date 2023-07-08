@@ -18,14 +18,14 @@
                     <h1>{{ pageData.title|raw }}</h1>
                     <p>{{ pageData.firstText|raw }}</p>
                     {% for photo in pageData.firstPhoto %}
-                        <img src="{{ '/assets/upload/img/' ~ photo|raw }}" alt="">
+                        <img src="{{ asset('/assets/upload/img/') ~ photo|raw }}" alt="">
                     {% endfor %}
                     <p>{{ pageData.secondText|raw }}</p>
                     {% for photo in pageData.secondPhoto %}
-                        <img src="{{ '/assets/upload/img/' ~ photo|raw }}" alt="">
+                        <img src="{{ asset('/assets/upload/img/') ~ photo|raw }}" alt="">
                     {% endfor %}
                     {% for file in pageData.file %}
-                        <a href="{{'/assets/upload/files/' ~ file|raw }}"></a>
+                        <a href="{{ asset('/assets/upload/files/') ~ file|raw }}"></a>
                     {% endfor %}
                     
                 </div>

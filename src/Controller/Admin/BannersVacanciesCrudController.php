@@ -18,8 +18,10 @@ class BannersVacanciesCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            ImageField::new('photo')->setUploadDir('public\assets\upload\img')
+            ImageField::new('photo')
+            ->setUploadDir('public\assets\upload\img')
             ->setBasePath('public\assets\upload\files')
+            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Выбрать банер вакансии'),
         ];
     }

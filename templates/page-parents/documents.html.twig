@@ -8,7 +8,7 @@
          <div class="text-style">
             <div>
                 {% for file in pageCont.treaty %}
-                <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' ~ file|raw }}">{{ file|raw }}</a></i>
+                <i class="fa-regular fa-file-pdf"><a href="{{asset('/assets/upload/files/') ~ file|raw }}">{{ file|raw }}</a></i>
                 {% endfor %}
             </div>
         </div>
@@ -20,7 +20,7 @@
          <div class="text-style">
             <div>
                 {% for file in pageCont.vaccination %}
-                <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/' ~ file|raw }}">{{ file|raw }}</a></i>
+                <i class="fa-regular fa-file-pdf"><a href="{{asset('/assets/upload/files/') ~ file|raw }}">{{ file|raw }}</a></i>
                 {% endfor %}
             </div>
         </div>

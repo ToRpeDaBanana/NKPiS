@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\EduAndProductionComplex;
 use App\Entity\LaborProtection;
 use App\Entity\PersonalDataProtection;
+use App\Entity\Contact;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -27,11 +28,12 @@ class PageDopInf extends AbstractController
         
     {
         $pageContent = $entityManager->getRepository(PersonalDataProtection::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
 
         return $this->render('Dop_inf/SavePersonalDate.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -46,11 +48,12 @@ class PageDopInf extends AbstractController
         
     {
         $pageContent = $entityManager->getRepository(LaborProtection::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
 
         return $this->render('Dop_inf/SaveTrud.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -66,10 +69,11 @@ class PageDopInf extends AbstractController
     {
         $pageContent = $entityManager->getRepository(EduAndProductionComplex::class)->findAll();
 
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('Dop_inf/StudyWorkComplecs.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }

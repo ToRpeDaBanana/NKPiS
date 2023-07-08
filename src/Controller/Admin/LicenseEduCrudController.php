@@ -25,6 +25,7 @@ class LicenseEduCrudController extends AbstractCrudController
             TextField::new('date')->setLabel('Дата окончания срока действия'),
             ImageField::new('file')
             ->setUploadDir('public\assets\upload\files')
+            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setBasePath('public\assets\upload\files')
             ->setLabel('Лицензия на осуществление образовательной деятельности / выписка из реестра лицензий'),
         ];

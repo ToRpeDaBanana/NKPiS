@@ -28,17 +28,20 @@ class NewsCrudController extends AbstractCrudController
             ImageField::new('first_photo')
             ->setUploadDir('public\assets\upload\img')
             ->setBasePath('public\assets\upload\img')
+            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setFormTypeOption('multiple', true)
             ->setLabel('Фото-1'),
             TextEditorField::new('second_text')->setLabel('Текст-2'),
             ImageField::new('second_photo')
             ->setUploadDir('public\assets\upload\img')
             ->setBasePath('public\assets\upload\img')
+            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setFormTypeOption('multiple', true)
             ->setLabel('Фото-2'),
             ImageField::new('file')
             ->setUploadDir('public\assets\upload\files')
             ->setBasePath('public\assets\upload\files')
+            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setFormTypeOption('multiple', true)
             ->setLabel('Выбрать файл'),
             

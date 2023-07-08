@@ -4,6 +4,7 @@ namespace App\Controller;
 use App\Entity\QuestionAnswer;
 use App\Form\QuestionAnswerType;
 use App\Service\SessionService;
+use App\Entity\Contact;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -55,10 +56,11 @@ class QuestionAnswerController extends AbstractController
             return $this->redirectToRoute('questionandanswer_new');
         }
         $pageContent = $entityManager->getRepository(QuestionAnswer::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page-parents/Questionandanswer.html.twig', [
             'form' => $form->createView(),
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session),
         ]);
     }

@@ -34,6 +34,7 @@ class DocumentsCrudController extends AbstractCrudController
             ImageField::new('document')
             ->setUploadDir('public\assets\upload\files')
             ->setBasePath('public\assets\upload\files')
+            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Документ'),
         ];
     }

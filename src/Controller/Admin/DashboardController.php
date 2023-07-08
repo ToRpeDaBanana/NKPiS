@@ -28,6 +28,7 @@ use App\Entity\CallSchedule;
 use App\Entity\CollegeAdmission;
 use App\Entity\CollegeAdmissionTitle;
 use App\Entity\Comment;
+use App\Entity\Contact;
 use App\Entity\Curriculum;
 use App\Entity\DemoExam;
 use App\Entity\Documents;
@@ -144,6 +145,7 @@ class DashboardController extends AbstractDashboardController
                 MenuItem::linkToCrud('Новости центра', '', NewsCentre::class),
                 MenuItem::linkToCrud('Отзывы', '', Comment::class),
                 MenuItem::linkToCrud('Вопросы и ответы', '', QuestionAnswer::class),
+                MenuItem::linkToCrud('Контактные данные', '', Contact::class),
                 
             MenuItem::section('Слайдеры', ''),
                 MenuItem::linkToCrud('Основной слайдер', '', SliderMain::class),

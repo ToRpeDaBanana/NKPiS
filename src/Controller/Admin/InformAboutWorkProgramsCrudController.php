@@ -23,10 +23,12 @@ class InformAboutWorkProgramsCrudController extends AbstractCrudController
             ImageField::new('file')
             ->setUploadDir('public\assets\upload\files')
             ->setBasePath('public\assets\upload\files')
+            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Документ'),
             ImageField::new('description')
             ->setUploadDir('public\assets\upload\files')
             ->setBasePath('public\assets\upload\files')
+            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Описание образовательной программы'),
         ];
     }

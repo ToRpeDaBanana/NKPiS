@@ -16,6 +16,7 @@ use App\Entity\InterCertSchedule;
 use App\Entity\NewsCentre;
 use App\Entity\Olympiads;
 use App\Entity\Schedule;
+use App\Entity\Contact;
 use App\Entity\Vacancies;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -42,13 +43,14 @@ class PageStudentsController extends AbstractController
         $pageContent2 = $entityManager->getRepository(Schedule::class)->findAll();
         $pageContent3 = $entityManager->getRepository(CallSchedule::class)->findAll();
         $pageContent4 = $entityManager->getRepository(CalendarStudy::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page-students/studyperiods.html.twig', [
             'controller_name' => 'PageController',
             'pageData1' => $pageContent1,
             'pageData2' => $pageContent2,
             'pageData3' => $pageContent3,
             'pageData4' => $pageContent4,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -61,10 +63,12 @@ class PageStudentsController extends AbstractController
     ): Response
         
     {
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         $pageContent = $entityManager->getRepository(InterCertSchedule::class)->findAll();
         return $this->render('page-students/certification.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -78,10 +82,11 @@ class PageStudentsController extends AbstractController
         
     {
         $pageContent = $entityManager->getRepository(DemoExam::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page-students/demoexam.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -95,10 +100,11 @@ class PageStudentsController extends AbstractController
         
     {
         $pageContent = $entityManager->getRepository(Olympiads::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page-students/olympiads.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -112,10 +118,11 @@ class PageStudentsController extends AbstractController
         
     {
         $pageContent = $entityManager->getRepository(AboutCentre::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page-students/aboutcentre.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -129,10 +136,11 @@ class PageStudentsController extends AbstractController
         
     {
         $pageContent = $entityManager->getRepository(NewsCentre::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page-students/newscenter.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -146,10 +154,11 @@ class PageStudentsController extends AbstractController
         
     {
         $pageContent = $entityManager->getRepository(NewsCentre::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page-students/newscenterId.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -163,10 +172,11 @@ class PageStudentsController extends AbstractController
         
     {
         $pageContent = $entityManager->getRepository(HelpAGraduate::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page-students/helpgraduatestudent.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -180,10 +190,11 @@ class PageStudentsController extends AbstractController
         
     {
         $pageContent = $entityManager->getRepository(EmployMonitoring::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page-students/monitoringofemployment.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -198,11 +209,12 @@ class PageStudentsController extends AbstractController
     {
         $pageContent1 = $entityManager->getRepository(BannersVacancies::class)->findAll();
         $pageContent2 = $entityManager->getRepository(Vacancies::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page-students/Vacanciesandemployers.html.twig', [
             'controller_name' => 'PageController',
             'pageData1' => $pageContent1,
             'pageData2' => $pageContent2,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -217,11 +229,12 @@ class PageStudentsController extends AbstractController
     {
         $pageContent1 = $entityManager->getRepository(ForEmloyText::class)->findAll();
         $pageContent2 = $entityManager->getRepository(ForEmployTable::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page-students/Employers.html.twig', [
             'controller_name' => 'PageController',
             'pageData1' => $pageContent1,
             'pageData2' => $pageContent2,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }

@@ -8,7 +8,7 @@
             {% for pageCont in pageData %}
                 {% if pageCont is not empty %}
                  {% for file in pageCont.parentFolder %}
-                    <i class="fa-regular fa-file-pdf"><a class="link-color" href="{{'/assets/upload/files/' ~ file|raw }}">{{ file|raw }}</a></i>
+                    <i class="fa-regular fa-file-pdf"><a class="link-color" href="{{asset('/assets/upload/files/') ~ file|raw }}">{{ file|raw }}</a></i>
                     {% endfor %}
                 {% endif %}
             {% endfor %}
@@ -18,7 +18,7 @@
             {% for pageCont in pageData %}
                 {% if pageCont is not empty %}
                     {% for file in pageCont.procedur %}
-                        <i class="fa-regular fa-file-pdf"><a class="link-color" href="{{'/assets/upload/files/' ~ file|raw }}">{{file|raw }}</a></i>
+                        <i class="fa-regular fa-file-pdf"><a class="link-color" href="{{asset('/assets/upload/files/') ~ file|raw }}">{{file|raw }}</a></i>
                     {% endfor %}
                 {% endif %}
             {% endfor %}

@@ -27,6 +27,7 @@ class ControlSovChairmanCrudController extends AbstractCrudController
             ImageField::new('photo')
             ->setUploadDir('public/assets/upload/img')
             ->setBasePath('public/assets/upload/img')
+            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Фото'),
         ];
     }

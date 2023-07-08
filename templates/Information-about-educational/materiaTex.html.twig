@@ -135,14 +135,14 @@
                     {% for pageCont in pageData6 %}
                         {% if pageCont is not empty %}
                                 <i class="fa-regular fa-file-pdf">
-                                <a href="{{'/assets/upload/files/' ~ pageCont.fileContract|raw }}">Договор на оказания услуг по организации питания</a>
+                                <a href="{{asset('/assets/upload/files/') ~ pageCont.fileContract|raw }}">Договор на оказания услуг по организации питания</a>
                                 </i>
                         {% endif %}
                     {% endfor %}
                     {% for pageCont in pageData6 %}
                         {% if pageCont is not empty %}
                                 <i class="fa-regular fa-file-pdf">
-                                <a href="{{'/assets/upload/files/' ~ pageCont.fileDogovor|raw }}">Договор платного питания</a>
+                                <a href="{{asset('/assets/upload/files/') ~ pageCont.fileDogovor|raw }}">Договор платного питания</a>
                                 </i>
                         {% endif %}
                     {% endfor %}

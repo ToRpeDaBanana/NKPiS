@@ -9,6 +9,7 @@ use App\Entity\OraganizationMedicalLink;
 use App\Entity\PsychologicalSupport;
 use App\Entity\QuestionAnswer;
 use App\Entity\Vacancies;
+use App\Entity\Contact;
 use App\Entity\VacanForAdmTitle;
 use App\Entity\VacannciesForAdmission;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -34,11 +35,12 @@ class PageParentsController extends AbstractController
     {
         $pageContent1 = $entityManager->getRepository(VacannciesForAdmission::class)->findAll();
         $pageContent2 = $entityManager->getRepository(VacanForAdmTitle::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page-parents/Vacantplaces.html.twig', [
             'controller_name' => 'PageController',
             'pageData1' => $pageContent1,
             'pageData2' => $pageContent2,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -68,10 +70,11 @@ class PageParentsController extends AbstractController
         
     {
         $pageContent = $entityManager->getRepository(PsychologicalSupport::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page-parents/Psychologicalsupport.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -85,10 +88,11 @@ class PageParentsController extends AbstractController
         
     {
         $pageContent = $entityManager->getRepository(OraganizationMedicalLink::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page-parents/Medicalservice.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -102,10 +106,11 @@ class PageParentsController extends AbstractController
         
     {
         $pageContent = $entityManager->getRepository(MedicalExam::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page-parents/Medicalexamination.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -119,10 +124,11 @@ class PageParentsController extends AbstractController
         
     {
         $pageContent = $entityManager->getRepository(ImportantKnow::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page-parents/ItsImportanttoknow.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -136,10 +142,11 @@ class PageParentsController extends AbstractController
         
     {
         $pageContent = $entityManager->getRepository(MedicalServiceDocument::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
         return $this->render('page-parents/documents.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controller;
-
+use App\Entity\Contact;
 use App\Entity\AcceptanceCheckDigits;
 use App\Entity\AcceptanceCheckDigitsTable;
 use App\Entity\CollegeAdmission;
@@ -45,6 +45,7 @@ class PageCollegeAdmissionController extends AbstractController
         $pageContent7 = $entityManager->getRepository(MedicalExamAdm::class)->findAll();
         $pageContent8 = $entityManager->getRepository(TransferCollege::class)->findAll();
         $pageContent9 = $entityManager->getRepository(TransferWithinCollege::class)->findAll();
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
 
 
         return $this->render('CollegeAdmission/AdmissionCommittee.html.twig', [
@@ -58,6 +59,7 @@ class PageCollegeAdmissionController extends AbstractController
             'pageData7' => $pageContent7,
             'pageData8' => $pageContent8,
             'pageData9' => $pageContent9,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -72,11 +74,13 @@ class PageCollegeAdmissionController extends AbstractController
         
     {
         $pageContent = $entityManager->getRepository(SpecialtiesProfessions::class)->findAll();
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
 
 
         return $this->render('CollegeAdmission/Profession.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -91,11 +95,12 @@ class PageCollegeAdmissionController extends AbstractController
         
     {
         $pageContent = $entityManager->getRepository(EntranceTests::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
 
         return $this->render('CollegeAdmission/Entrancetests.html.twig', [
             'controller_name' => 'PageController',
             'pageData' => $pageContent,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }
@@ -111,12 +116,13 @@ class PageCollegeAdmissionController extends AbstractController
     {
         $pageContent1 = $entityManager->getRepository(VideosDaysOpenDoors::class)->findAll();
         $pageContent2 = $entityManager->getRepository(OpenDoorsTable::class)->findAll();
-
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
 
         return $this->render('CollegeAdmission/OpenDays.html.twig', [
             'controller_name' => 'PageController',
             'pageData1' => $pageContent1,
             'pageData2' => $pageContent2,
+            'contact' => $contact,
             'sessionData' => $sessionService->getSessionData($session)
         ]);
     }

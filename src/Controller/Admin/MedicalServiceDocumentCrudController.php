@@ -21,12 +21,14 @@ class MedicalServiceDocumentCrudController extends AbstractCrudController
             ImageField::new('treaty')
             ->setUploadDir('public\assets\upload\files')
             ->setBasePath('public\assets\upload\files')
+            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setFormTypeOption('multiple', true)
             ->setLabel('Договор по оказанию услуг по медобслуживанию'),
             ImageField::new('vaccination')
             ->setUploadDir('public\assets\upload\files')
             ->setBasePath('public\assets\upload\files')
             ->setFormTypeOption('multiple', true)
+            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Дополнительные документы'),
         ];
     }

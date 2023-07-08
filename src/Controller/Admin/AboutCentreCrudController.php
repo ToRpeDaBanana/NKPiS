@@ -30,10 +30,12 @@ class AboutCentreCrudController extends AbstractCrudController
             ImageField::new('photo')->setUploadDir('public\assets\upload\img')
             ->setBasePath('public\assets\upload\img')
             ->setFormTypeOption('multiple', true)
+            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Выбрать фото'),
             ImageField::new('file')->setUploadDir('public\assets\upload\files')
             ->setBasePath('public\assets\upload\files')
             ->setFormTypeOption('multiple', true)
+            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Выбрать файл'),
         ];
     }

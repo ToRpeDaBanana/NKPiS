@@ -85,6 +85,7 @@ class QuestionAnswerCrudController extends AbstractCrudController
             yield ImageField::new('file')
             ->setUploadDir('public\assets\upload\files')
             ->setBasePath('\assets\upload\files')
+            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Файл');
             
             yield DateField::new('date')

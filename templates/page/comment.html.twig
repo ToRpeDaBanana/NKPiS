@@ -9,7 +9,7 @@
             <p><a href="https://www.rg.ru/documents/2006/07/29/personaljnye-dannye-dok.html">На обработку моих персональных данных в соответствии с федеральным законом РФ от 27.07.2006 № 152-ФЗ "О персональных данных".</a></p>
             <p>В случае согласия с установленным порядком нажмите "Согласен" для продолжения работы. Если Вы не согласны, нажмите "Не согласен" для завершения работы.</p>
             <p>
-                    <a  href="#" onclick="toggleVisibility()" id="btn-yes">Согласен</a>&nbsp; / &nbsp;<a href="/" class="btn btn-link">Не согласен</a>
+                    <a  href="#" id="btn-yes">Согласен</a>&nbsp; / &nbsp;<a href="/" class="btn btn-link">Не согласен</a>
             </p>
         </div>
     </div>
@@ -49,6 +49,7 @@
     
     <button type="submit" class="btn btn-primary">Отправить</button>
 {{ form_end(form) }}
+</div>
 {% for pageCont in pageData|reverse %}
     {% if pageCont is not empty %}
             <div class="news-div">
@@ -67,7 +68,7 @@
                         <p>{{ pageCont.text|raw }}</p>
                         <br>
                         {% if pageCont.file is not empty %}
-                            <a href="{{ pageCont.file|raw }}">Вложенный файл</a>
+                            <a href="{{asset('/assets/upload/files/')}}{{ pageCont.file|raw }}">Вложенный файл</a>
                         {% endif %}
                         <br>
                     </div>
@@ -75,6 +76,6 @@
                 </div>
     {% endif %}
 {% endfor %}
-    </div>
+    
     
 {% endblock %}

@@ -24,12 +24,14 @@ class PaidEduServCrudController extends AbstractCrudController
             ->setUploadDir('public\assets\upload\files')
             ->setBasePath('public\assets\upload\files')
             ->setFormTypeOption('multiple', true)
+            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Родительская плата'),
 
             ImageField::new('procedur')
             ->setUploadDir('public\assets\upload\files')
             ->setBasePath('public\assets\upload\files')
             ->setFormTypeOption('multiple', true)
+            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Порядок оказания услуг')
         ];
     }

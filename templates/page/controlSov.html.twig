@@ -11,7 +11,7 @@
 			</div>
 
 			<div class="controlSov-lider">
-				<div><img class="controlSov-img" src="{{'/assets/upload/img/'}}{{ pageCont.photo|default('siluet.png')|raw }}" alt=""></div>
+				<div><img class="controlSov-img" src="{{asset('/assets/upload/img/')}}{{ pageCont.photo|default('siluet.png')|raw }}" alt=""></div>
 				<div class="controlSov-lider-text">
 					<h3>{{ pageCont.name|raw }}</h3>
 					<dl>
@@ -75,7 +75,7 @@
 			{% for pageCont in pageData4 %}
             	{% if pageCont is not empty %}
                 	{% if pageCont.categoryDocument == '0' %}
-                		<i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/'}}{{ pageCont.document|raw }}">{{ pageCont.document|raw }}</a></i>
+                		<i class="fa-regular fa-file-pdf"><a href="{{asset('/assets/upload/files/')}}{{ pageCont.document|raw }}">{{ pageCont.document|raw }}</a></i>
 				{% endif %}
             {% endif %}
         {% endfor %}
@@ -85,7 +85,7 @@
 			{% for pageCont in pageData4 %}
             	{% if pageCont is not empty %}
                 	{% if pageCont.categoryDocument == '1' %}
-                <i class="fa-regular fa-file-pdf"><a href="{{'/assets/upload/files/'}}{{ pageCont.document|raw }}">{{ pageCont.document|raw }}</a></i>
+                <i class="fa-regular fa-file-pdf"><a href="{{asset('/assets/upload/files/')}}{{ pageCont.document|raw }}">{{ pageCont.document|raw }}</a></i>
 				{% endif %}
             {% endif %}
         {% endfor %}
@@ -97,7 +97,7 @@
             <h4 class="label-contactPod">Предстоящие заседания</h4>
 			{% for pageCont in pageData3 %}
             	{% if pageCont is not empty %}
-            		<p class="label-contactPod-link"> {{ pageCont.planned|raw }} {{ pageCont.datePlanned|date('d-m-Y H:i')|raw }} </p>
+            		<p class="label-contactPod-link"> {{ pageCont.planned|raw }} {{ pageCont.datePlanned|date('d.m.Y')|raw }} </p>
 				{% endif %}
 			{% endfor %}
         </div>
@@ -118,8 +118,8 @@
         {% if pageCont is not empty %}
 			<tr>
 				<td>{{ pageCont.datePast|date('d-m-Y')|raw }}</td>
-				<td><a href="{{'/assets/upload/files/'}}{{ pageCont.agenda|raw }}">Повестка заседания</a></td>
-				<td><a href="{{'/assets/upload/files/'}}{{ pageCont.protocol|raw }}">Протокол заседания</a></td>
+				<td><a href="{{asset('/assets/upload/files/')}}{{ pageCont.agenda|raw }}">Повестка заседания</a></td>
+				<td><a href="{{asset('/assets/upload/files/')}}{{ pageCont.protocol|raw }}">Протокол заседания</a></td>
 				<td><a href="{{ pageCont.link|raw}}">Смотреть</a></td>
 			</tr>
 		{% endif %}

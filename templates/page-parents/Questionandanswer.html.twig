@@ -70,6 +70,9 @@
                         <p>{{ pageCont.textQuestion|raw }}</p>
                         <br>
                         <br>
+                        {% if pageCont.file is not empty %}
+                            <a href="{{asset('/assets/upload/files/')}}{{ pageCont.file|raw }}">Вложенный файл</a>
+                        {% endif %}
                     </div>
 
     </div>

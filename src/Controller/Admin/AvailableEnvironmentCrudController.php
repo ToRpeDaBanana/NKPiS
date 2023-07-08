@@ -23,6 +23,7 @@ class AvailableEnvironmentCrudController extends AbstractCrudController
             ImageField::new('photo')->setUploadDir('public\assets\upload\img')
             ->setBasePath('public\assets\upload\img')
             ->setFormTypeOption('multiple', true)
+            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Выбрать фото'),
             TextEditorField::new('text_two')->setLabel('Текст-2'),
         ];

@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 
+use App\Entity\Contact;
 use App\Entity\Comment;
 use App\Form\CommentType;
 use App\Service\SessionService;
@@ -57,11 +58,13 @@ class CommentController extends AbstractController
         }
 
         $pageContent = $entityManager->getRepository(Comment::class)->findAll();
+        $contact = $entityManager->getRepository(Contact::class)->findAll();
 
         return $this->render('page/comment.html.twig', [
             'form' => $form->createView(),
             'pageData' => $pageContent,
             'sessionData' => $sessionService->getSessionData($session),
+            'contact' => $contact,
         ]);
     }
 }

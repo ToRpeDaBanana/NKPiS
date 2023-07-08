@@ -52,7 +52,7 @@
             {% for pageCont in pageData2 %}
                 {% if pageCont is not empty %}
                         <i class="fa-regular fa-file-pdf">
-                        <a href="{{'/assets/upload/files/' ~ pageCont.file|raw }}">{{pageCont.title}}</a>
+                        <a href="{{asset('/assets/upload/files/') ~ pageCont.file|raw }}">{{pageCont.title}}</a>
                         </i>
                 {% endif %}
             {% endfor %}

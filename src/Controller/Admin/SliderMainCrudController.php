@@ -28,6 +28,7 @@ class SliderMainCrudController extends AbstractCrudController
             // ->setHelp('Only .png and .jpg')
             ->setUploadDir('public/assets/upload/img')
             ->setBasePath('/assets/upload/img')
+            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             // ->setFormTypeOption('constraints', [
             //     new File([
             //         'maxSize' => '1M',
