@@ -27,13 +27,13 @@ class AboutCentreCrudController extends AbstractCrudController
             TextField::new('senior_foreman')->setLabel('Старший мастер площадки'),
             EmailField::new('email')->setLabel('Электронный адрес'),
             TextEditorField::new('text_tree')->setLabel('Текст-3'),
-            ImageField::new('photo')->setUploadDir('public\assets\upload\img')
-            ->setBasePath('public\assets\upload\img')
+            ImageField::new('photo')->setUploadDir('public/assets/upload/img')
+            ->setBasePath('public/assets/upload/img')
             ->setFormTypeOption('multiple', true)
             ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Выбрать фото'),
-            ImageField::new('file')->setUploadDir('public\assets\upload\files')
-            ->setBasePath('public\assets\upload\files')
+            ImageField::new('file')->setUploadDir('public/assets/upload/files')
+            ->setBasePath('public/assets/upload/files')
             ->setFormTypeOption('multiple', true)
             ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Выбрать файл'),

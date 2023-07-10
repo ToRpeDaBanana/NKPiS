@@ -21,12 +21,12 @@ class PhotoGalleryCrudController extends AbstractCrudController
         return [
             TextField::new('title')->setLabel('Заголовок'),
             ImageField::new('main_photo')
-            ->setUploadDir('public\assets\upload\img')
-            ->setBasePath('public\assets\upload\img')
+            ->setUploadDir('public/assets/upload/img')
+            ->setBasePath('public/assets/upload/img')
             ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Выбрать главное фото'),
-            ImageField::new('photo')->setUploadDir('public\assets\upload\img')
-            ->setBasePath('public\assets\upload\img')
+            ImageField::new('photo')->setUploadDir('public/assets/upload/img')
+            ->setBasePath('public/assets/upload/img')
             ->setFormTypeOption('multiple', true)
             ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Выбрать фото'),

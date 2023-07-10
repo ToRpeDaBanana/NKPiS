@@ -46,7 +46,7 @@ class QuestionAnswerCrudController extends AbstractCrudController
             ->setLabel('Текст вопроса');
 
             // yield ImageField::new('file')
-            // ->setUploadDir('public\assets\upload\files')
+            // ->setUploadDir('public/assets/upload/files')
             // ->setBasePath('\assets\upload\files')
             // ->setLabel('Файл');
             
@@ -83,7 +83,7 @@ class QuestionAnswerCrudController extends AbstractCrudController
             ->setLabel('Текст вопроса');
 
             yield ImageField::new('file')
-            ->setUploadDir('public\assets\upload\files')
+            ->setUploadDir('public/assets/upload/files')
             ->setBasePath('\assets\upload\files')
             ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Файл');

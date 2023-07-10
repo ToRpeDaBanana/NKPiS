@@ -27,8 +27,8 @@ class CollegeAdmissionTitleCrudController extends AbstractCrudController
             TextField::new('phone')->setLabel('Телефон'),
             TextField::new('address')->setLabel('Адрес'),
             ImageField::new('photo')
-            ->setUploadDir('public\assets\upload\img')
-            ->setBasePath('public\assets\upload\img')
+            ->setUploadDir('public/assets/upload/img')
+            ->setBasePath('public/assets/upload/img')
             ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Выбрать фото'),
         ];

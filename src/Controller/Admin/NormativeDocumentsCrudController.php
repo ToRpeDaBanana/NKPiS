@@ -20,8 +20,8 @@ class NormativeDocumentsCrudController extends AbstractCrudController
         return [
             TextEditorField::new('text')->setLabel('Текст'),
             ImageField::new('file')
-            ->setUploadDir('public\assets\upload\files')
-            ->setBasePath('public\assets\upload\files')
+            ->setUploadDir('public/assets/upload/files')
+            ->setBasePath('public/assets/upload/files')
             ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setFormTypeOption('multiple', true)
             ->setLabel('Выбрать файл'),

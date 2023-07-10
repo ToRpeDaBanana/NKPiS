@@ -21,13 +21,13 @@ class SliderReclamaCrudController extends AbstractCrudController
         return [
             UrlField::new('link')->setLabel('Ссылка'),
             ImageField::new('photo_pc')
-            ->setUploadDir('public\assets\upload\img')
-            ->setBasePath('public\assets\upload\img')
+            ->setUploadDir('public/assets/upload/img')
+            ->setBasePath('public/assets/upload/img')
             ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Фото для ПК версии'),
             ImageField::new('photo_mobile')
-            ->setUploadDir('public\assets\upload\img')
-            ->setBasePath('public\assets\upload\img')
+            ->setUploadDir('public/assets/upload/img')
+            ->setBasePath('public/assets/upload/img')
             ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Фото для мобильной версии'),
         ];

@@ -21,8 +21,8 @@ class EduAndProductionComplexCrudController extends AbstractCrudController
         return [
             TextEditorField::new('text')->setLabel('Текст'),
             ImageField::new('photo')
-            ->setUploadDir('public\assets\upload\img')
-            ->setBasePath('public\assets\upload\img')
+            ->setUploadDir('public/assets/upload/img')
+            ->setBasePath('public/assets/upload/img')
             ->setFormTypeOption('multiple', true)
             ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Фотографии'),

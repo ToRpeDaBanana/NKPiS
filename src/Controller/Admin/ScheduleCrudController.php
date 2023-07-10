@@ -23,8 +23,8 @@ class ScheduleCrudController extends AbstractCrudController
                 '1 Семестр' => '1 Семестр',
                 '2 Семестр' => '2 Семестр',
             ])->setLabel('Семестр'),
-            ImageField::new('file')->setUploadDir('public\assets\upload\files')
-            ->setBasePath('public\assets\upload\files')
+            ImageField::new('file')->setUploadDir('public/assets/upload/files')
+            ->setBasePath('public/assets/upload/files')
             ->setFormTypeOption('multiple', true)
             ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Выбрать файл'),

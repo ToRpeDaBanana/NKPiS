@@ -17,8 +17,8 @@ class CalendarStudyCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            ImageField::new('file')->setUploadDir('public\assets\upload\files')
-            ->setBasePath('public\assets\upload\files')
+            ImageField::new('file')->setUploadDir('public/assets/upload/files')
+            ->setBasePath('public/assets/upload/files')
             ->setFormTypeOption('multiple', true)
             ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Выбрать файл(ы)'),

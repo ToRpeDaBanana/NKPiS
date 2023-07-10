@@ -29,8 +29,8 @@ class PersonalDataProtectionCrudController extends AbstractCrudController
             ->setLabel('Категория документа'),
             TextField::new('title')->setLabel('Заголовок документа'),
             ImageField::new('file')
-            ->setUploadDir('public\assets\upload\files')
-            ->setBasePath('public\assets\upload\files')
+            ->setUploadDir('public/assets/upload/files')
+            ->setBasePath('public/assets/upload/files')
             ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Документ'),
         ];

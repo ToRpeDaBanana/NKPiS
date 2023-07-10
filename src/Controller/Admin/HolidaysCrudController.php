@@ -20,8 +20,8 @@ class HolidaysCrudController extends AbstractCrudController
     {
         return [
             TextField::new('title')->setLabel('Заголовок документа'),
-            ImageField::new('file')->setUploadDir('public\assets\upload\files')
-            ->setBasePath('public\assets\upload\files')
+            ImageField::new('file')->setUploadDir('public/assets/upload/files')
+            ->setBasePath('public/assets/upload/files')
             ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Выбрать файл'),
         ];

@@ -19,8 +19,8 @@ class InstructionsOrgDistanceCrudController extends AbstractCrudController
     {
         return [
             ImageField::new('file')
-            ->setUploadDir('public\assets\upload\files')
-            ->setBasePath('public\assets\upload\files')
+            ->setUploadDir('public/assets/upload/files')
+            ->setBasePath('public/assets/upload/files')
             ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Положение (инструкция) об организации дистанционного обучения'),
         ];

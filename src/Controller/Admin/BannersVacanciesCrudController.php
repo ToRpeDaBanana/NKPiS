@@ -19,8 +19,8 @@ class BannersVacanciesCrudController extends AbstractCrudController
     {
         return [
             ImageField::new('photo')
-            ->setUploadDir('public\assets\upload\img')
-            ->setBasePath('public\assets\upload\files')
+            ->setUploadDir('public/assets/upload/img')
+            ->setBasePath('public/assets/upload/files')
             ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Выбрать банер вакансии'),
         ];

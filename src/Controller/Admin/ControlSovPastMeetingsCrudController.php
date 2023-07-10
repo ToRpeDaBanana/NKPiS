@@ -23,12 +23,12 @@ class ControlSovPastMeetingsCrudController extends AbstractCrudController
         return [
         
            DateField::new('date_past')->setFormat('dd MM yyyy')->setLabel('Дата'),
-           ImageField::new('agenda')->setUploadDir('public\assets\upload\files')
-           ->setBasePath('public\assets\upload\files')
+           ImageField::new('agenda')->setUploadDir('public/assets/upload/files')
+           ->setBasePath('public/assets/upload/files')
            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
            ->setLabel('Повестка'),
-           ImageField::new('protocol')->setUploadDir('public\assets\upload\files')
-           ->setBasePath('public\assets\upload\files')
+           ImageField::new('protocol')->setUploadDir('public/assets/upload/files')
+           ->setBasePath('public/assets/upload/files')
            ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
            ->setLabel('Протокол'),
            TextField::new('link')->setLabel('Ссылка'),

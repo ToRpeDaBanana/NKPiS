@@ -32,8 +32,8 @@ class DocumentsCrudController extends AbstractCrudController
             ->setLabel('Категория документа'),
             TextField::new('title_document')->setLabel('Заголовок документа'),
             ImageField::new('document')
-            ->setUploadDir('public\assets\upload\files')
-            ->setBasePath('public\assets\upload\files')
+            ->setUploadDir('public/assets/upload/files')
+            ->setBasePath('public/assets/upload/files')
             ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Документ'),
         ];

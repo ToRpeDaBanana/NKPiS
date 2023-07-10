@@ -25,8 +25,8 @@ class ControlSovDocumentsCrudController extends AbstractCrudController
                 'Иные (дополнительные) документы управляющего совета' => 0,
             ])->setLabel('Категория файла'),
             ImageField::new('document')
-            ->setUploadDir('public\assets\upload\files')
-            ->setBasePath('public\assets\upload\files')
+            ->setUploadDir('public/assets/upload/files')
+            ->setBasePath('public/assets/upload/files')
             ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Выбрать файл')
         ];

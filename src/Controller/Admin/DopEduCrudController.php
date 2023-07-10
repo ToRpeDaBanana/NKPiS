@@ -30,14 +30,14 @@ class DopEduCrudController extends AbstractCrudController
             ])->setLabel('Категория'),
             TextField::new('title')->setLabel('Заголовок документа'),
             ImageField::new('file')
-            ->setUploadDir('public\assets\upload\files')
-            ->setBasePath('public\assets\upload\files')
+            ->setUploadDir('public/assets/upload/files')
+            ->setBasePath('public/assets/upload/files')
             ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Документ'),
             ImageField::new('description')
-            ->setUploadDir('public\assets\upload\files')
+            ->setUploadDir('public/assets/upload/files')
             ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
-            ->setBasePath('public\assets\upload\files')
+            ->setBasePath('public/assets/upload/files')
             ->setLabel('Описание образовательной программы'),
         ];
     }

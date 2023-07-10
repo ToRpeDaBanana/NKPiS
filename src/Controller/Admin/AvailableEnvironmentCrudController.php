@@ -20,8 +20,8 @@ class AvailableEnvironmentCrudController extends AbstractCrudController
     {
         return [
             TextEditorField::new('text')->setLabel('Текст-1'),
-            ImageField::new('photo')->setUploadDir('public\assets\upload\img')
-            ->setBasePath('public\assets\upload\img')
+            ImageField::new('photo')->setUploadDir('public/assets/upload/img')
+            ->setBasePath('public/assets/upload/img')
             ->setFormTypeOption('multiple', true)
             ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('Выбрать фото'),

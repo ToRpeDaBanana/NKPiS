@@ -19,13 +19,13 @@ class InternationalCoopCrudController extends AbstractCrudController
     {
         return [
             ImageField::new('inform_contract')
-            ->setUploadDir('public\assets\upload\files')
-            ->setBasePath('public\assets\upload\files')
+            ->setUploadDir('public/assets/upload/files')
+            ->setBasePath('public/assets/upload/files')
             ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('СВЕДЕНИЯ О ЗАКЛЮЧЕННЫХ И ПЛАНИРУЕМЫХ К ЗАКЛЮЧЕНИЮ ДОГОВОРАХ С ИНОСТРАННЫМИ И (ИЛИ) МЕЖДУНАРОДНЫМИ ОРГАНИЗАЦИЯМИ ПО ВОПРОСАМ ОБРАЗОВАНИЯ И НАУКИ (ПРИ НАЛИЧИИ).'),
             ImageField::new('inform_dogovor')
-            ->setUploadDir('public\assets\upload\files')
-            ->setBasePath('public\assets\upload\files')
+            ->setUploadDir('public/assets/upload/files')
+            ->setBasePath('public/assets/upload/files')
             ->setUploadedFileNamePattern('[year]-[month]-[day]-[slug]-[contenthash].[extension]')
             ->setLabel('СВЕДЕНИЯ О МЕЖДУНАРОДНОЙ АККРЕДИТАЦИИ ОБРАЗОВАТЕЛЬНЫХ ПРОГРАММ (ПРИ НАЛИЧИИ).'),
         ];
