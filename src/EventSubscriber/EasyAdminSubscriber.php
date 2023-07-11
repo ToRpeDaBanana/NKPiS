@@ -74,6 +74,7 @@ use App\Entity\VacanciesTeachers;
 use App\Entity\VacannciesForAdmission;
 use App\Entity\VeteransLabor;
 use App\Entity\VeteransLaborDocument;
+use App\Entity\ProtivCorp;
 use App\Entity\VideosDaysOpenDoors;
 use Doctrine\ORM\Mapping\Entity;
 use EasyCorp\Bundle\EasyAdminBundle\Event\AfterEntityDeletedEvent;
@@ -607,6 +608,14 @@ class EasyAdminSubscriber implements EventSubscriberInterface{
         }   
         }
         if ($entity instanceof QuestionAnswer){
+            $item = $entity->getFile();
+        if (!empty($item)){
+            $imgpath = $this->parameterBag->get('kernel.project_dir') . 
+            '/public/assets/upload/files/'.$item;
+            if(file_exists($imgpath)) unlink($imgpath);
+        }   
+        }
+        if ($entity instanceof ProtivCorp){
             $item = $entity->getFile();
         if (!empty($item)){
             $imgpath = $this->parameterBag->get('kernel.project_dir') . 

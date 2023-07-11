@@ -251,11 +251,12 @@ class PageController extends AbstractController
         ManagerRegistry $doctrine,
         SessionService $sessionService,
         SessionInterface $session,
-        EntityManagerInterface $entityManager  
+        EntityManagerInterface $entityManager,
+        int $id,  
     ): Response
         
     {
-        $pageContent = $entityManager->getRepository(PhotoGallery::class)->findAll();
+        $pageContent = $entityManager->getRepository(PhotoGallery::class)->find($id);
         // var_dump($pageAbout);
         // exit;
         $contact = $entityManager->getRepository(Contact::class)->findAll();

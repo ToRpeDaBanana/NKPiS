@@ -1,8 +1,8 @@
 doctrine:
     dbal:
+
         #url: '%env(resolve:DATABASE_URL)%'
-        #mapping_types:
-        #    bit: boolean
+        
         connections:
             default:
                 driver: 'pdo_mysql'
@@ -11,6 +11,9 @@ doctrine:
                 dbname: 'nkpis'
                 user: 'root'
                 password: ''
+                mapping_types:
+                    bit: boolean
+        
         # IMPORTANT: You MUST configure your server version,
         # either here or in the DATABASE_URL env var (see .env file)
         #server_version: '15'

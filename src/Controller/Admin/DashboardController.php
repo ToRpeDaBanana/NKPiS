@@ -75,6 +75,7 @@ use App\Entity\PersonalDataProtection;
 use App\Entity\PhotoGallery;
 use App\Entity\ProfDocument;
 use App\Entity\ProfessionalEdu;
+use App\Entity\ProtivCorp;
 use App\Entity\PsychologicalSupport;
 use App\Entity\PublicReport;
 use App\Entity\QuestionAnswer;
@@ -278,9 +279,10 @@ class DashboardController extends AbstractDashboardController
                 MenuItem::linkToCrud('Защита персональных данных', '', PersonalDataProtection::class),
                 MenuItem::linkToCrud('Охрана труда', '', LaborProtection::class),
                 MenuItem::linkToCrud('Учебно-производственный комплекс', '', EduAndProductionComplex::class),
+            MenuItem::linkToCrud('Противодействие коррупции', '', ProtivCorp::class),
             // MenuItem::section('Пользователи'),
             // MenuItem::linkToCrud('Категории', 'fa fa-tags', Category::class),
-            // MenuItem::linkToCrud('Администраторы', 'fas fa-list', User::class),
+            MenuItem::linkToCrud('Администраторы', '', User::class),
         ];
     }
 }

@@ -2442,6 +2442,9 @@
         height: auto;
         background-color: #d3d7da;
         border-radius: 5px;
+        margin-right: 1%;
+        margin-left: 1%;
+
     }
     .platform-for-photo:hover{
         background-color: #bf1f3a;
@@ -2726,12 +2729,18 @@
     .photo-galery{
         display: flex;
         justify-content: center;
-    align-items: center;
+        align-items: center;
     }
-    .photo-albom{
-        display: flex;
-        justify-content: center;
-    align-items: center;
+    .gallery-photo-albom-all{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Три колонки равной ширины */
+        grid-gap: 10px; /* Промежуток между элементами */
+    }
+    .photo-albom img{
+        display: block;
+        object-fit: fill;
+        width: 60%;
+        height: 50%;
     }
     @media (max-width:1000px) {
         .flex-galery-sotrudnik {

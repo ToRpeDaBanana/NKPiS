@@ -1,0 +1,18 @@
+{% extends 'main_page/index.html.twig' %}
+{% block title %}Противодействие коррупции{% endblock %}
+{% block main %}
+    <h1 class="label-contactPod">Противодействие коррупции</h1>
+<div class="label-contactPod">
+    {% for pageCont in pageData %}
+    {% if pageCont is not empty %}
+         <div class="text-style">
+            <div>
+                {% for file in pageCont.file %}
+                <i class="fa-regular fa-file-pdf"><a href="{{asset('/assets/upload/files/') ~ file|raw }}">{{ pageCont.title|raw }}</a></i>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
+</div>
+{% endblock %}
