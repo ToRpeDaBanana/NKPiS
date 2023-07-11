@@ -1,0 +1,47 @@
+<IfModule mod_negotiation.c>
+    Options -MultiViews
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    Options +FollowSymLinks
+    IndexIgnore */*
+    RewriteEngine on
+    DirectoryIndex /public/index.php
+    
+    #git
+    RewriteCond %{REQUEST_URI}::$0 ^(/.+)/(.*)::\2$
+    RewriteRule .* - [E=BASE:%1]
+
+    RewriteCond %{HTTP:Authorization} .+
+    RewriteRule ^ - [E=HTTP_AUTHORIZATION:%0]
+
+    RewriteCond %{ENV:REDIRECT_STATUS} =""
+    RewriteRule ^index\.php(?:/(.*)|$) %{ENV:BASE}/$1 [R=301,L]
+    
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^public/index.php [L]
+    #/git
+    
+    RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -f
+    RewriteCond %{REQUEST_URI} ^/(public)
+    RewriteRule ^(.+) /public/$1
+    RewriteRule ^assets/(.*)$ /public/assets/$1 [L]
+    RewriteRule ^build/(.*)$ /public/build/$1 [L]
+    RewriteRule ^bundles/(.*)$ /public/bundles/$1 [L]
+    
+    # Если запрос не начинается с public, добавляем его
+    RewriteCond %{REQUEST_URI} !^/(public)
+    RewriteRule (.*) /public/$1
+    # Если файл или каталог не существует, обращаемся к /public/index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /public/index.php
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+    <IfModule mod_alias.c>
+        RedirectMatch 307 ^/$ /index.php/
+    </IfModule>
+</IfModule>
+
+AddHandler application/x-httpd-php-8.1 .php
