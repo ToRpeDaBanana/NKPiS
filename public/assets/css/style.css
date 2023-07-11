@@ -1110,7 +1110,7 @@
           font-family: 'PT Sans', sans-serif;
           font-size: 15px;
          width: 100%;
-        height: 200px;
+         height: auto;
         border: 0px solid black;
         border-radius: 0px;
         background-color: white;
@@ -1203,7 +1203,46 @@
         gap: 2%;
     }
     @media (max-width: 970px){
-    
+        #contakt{
+            background: #007cad;
+            height: 800px;
+        }
+        .Slider{
+            position: relative;
+                max-width: 100%;
+                display: flex;
+                z-index: 1000;
+                justify-content: center;
+                align-items: center;
+                padding-top: 5%;
+                padding-bottom: 5%;
+                margin: 0 5% 5%;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #00A877;
+                margin-top: 3%;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                border-radius: 10px;
+        
+        }
+        .Wrapper{
+            background: #00A877;
+        height: auto;
+            z-index: 100;;
+            }
+        .second-str-icon{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .first-str-icon{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
         .common-contackt{
         display: flex;
         flex-direction: column;
